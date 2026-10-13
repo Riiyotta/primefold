@@ -1,0 +1,305 @@
+{
+  "id": "content.case-study",
+  "kind": "section",
+  "category": "CONTENT",
+  "purpose": "Customer case study: breadcrumb, h1, subtitle, pills, banner, three stat cards, rich-text body (eyebrow h6, h3, quote cards, numbered cards, video) and an About block (image card + information card).",
+  "tags": [
+    "case-study",
+    "customer-story",
+    "stats",
+    "cms"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/CaseStudy.jsx",
+    "src/pages/cms/RichText.jsx",
+    "src/pages/cms/shared.jsx",
+    "src/pages/cms/cms.css"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": [
+      "tablet numbered-card grid is a Framer bug; spec recommends repeat(3,1fr) (not the measured value)"
+    ]
+  },
+  "allowedTemplates": [
+    "template.case-study"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 5,
+        "maxWordsBasis": "longest real case-study title"
+      },
+      "breadcrumb": {
+        "type": "text",
+        "required": true,
+        "maxWords": 1,
+        "maxWordsBasis": "longest real instance: 1 words",
+        "placeholderOnly": true
+      },
+      "subtitle": {
+        "type": "text",
+        "required": true,
+        "maxWords": 9,
+        "maxWordsBasis": "longest real subtitle",
+        "placeholderOnly": true
+      },
+      "pills": {
+        "type": "list",
+        "required": true,
+        "minItems": 1,
+        "maxItems": 8,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "label": {
+              "type": "text",
+              "required": true,
+              "maxWords": 4,
+              "maxWordsBasis": "longest real pill label"
+            },
+            "badge": {
+              "type": "enum",
+              "required": true,
+              "values": [
+                "none",
+                "xi",
+                "ri"
+              ]
+            }
+          }
+        },
+        "countBasis": "real studies have 4-7 pills"
+      },
+      "banner": {
+        "type": "asset",
+        "required": true,
+        "roles": [
+          "customer.imagery"
+        ]
+      },
+      "stats": {
+        "type": "list",
+        "required": true,
+        "minItems": 3,
+        "maxItems": 3,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "value": {
+              "type": "text",
+              "required": true,
+              "maxWords": 3,
+              "maxWordsBasis": "real values like '0 → 150' = 3 tokens",
+              "placeholderOnly": true
+            },
+            "label": {
+              "type": "text",
+              "required": true,
+              "maxWords": 16,
+              "maxWordsBasis": "longest real stat label",
+              "placeholderOnly": true
+            },
+            "color": {
+              "type": "enum",
+              "required": true,
+              "values": [
+                "teal",
+                "green",
+                "orange"
+              ]
+            }
+          }
+        },
+        "countBasis": "three stats per study"
+      },
+      "blocks": {
+        "type": "list",
+        "required": true,
+        "minItems": 1,
+        "maxItems": 35,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "type": {
+              "type": "enum",
+              "required": true,
+              "values": [
+                "h6",
+                "h3",
+                "p",
+                "spacer",
+                "video",
+                "quoteCard",
+                "numberedCards"
+              ]
+            },
+            "text": {
+              "type": "text",
+              "required": false,
+              "maxWords": 109,
+              "maxWordsBasis": "longest real paragraph words in cms-data",
+              "placeholderOnly": true
+            },
+            "author": {
+              "type": "text",
+              "required": false,
+              "maxWords": 3,
+              "maxWordsBasis": "real author names are 2 words",
+              "placeholderOnly": true
+            },
+            "authorRole": {
+              "type": "text",
+              "required": false,
+              "maxWords": 6,
+              "maxWordsBasis": "e.g. 'Intelligence Analyst, NAS Invest' = 5",
+              "placeholderOnly": true
+            },
+            "cards": {
+              "type": "list",
+              "required": false,
+              "minItems": 3,
+              "maxItems": 3,
+              "item": {
+                "type": "object",
+                "required": true,
+                "fields": {
+                  "title": {
+                    "type": "text",
+                    "required": true,
+                    "maxWords": 8,
+                    "maxWordsBasis": "real numbered-card titles up to 5 words"
+                  },
+                  "body": {
+                    "type": "text",
+                    "required": true,
+                    "maxWords": 60,
+                    "maxWordsBasis": "real numbered-card bodyWords up to 60"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "countBasis": "real studies have up to 23 blocks; +12 headroom is a design choice"
+      },
+      "about": {
+        "type": "object",
+        "required": true,
+        "fields": {
+          "heading": {
+            "type": "text",
+            "required": true,
+            "maxWords": 3,
+            "maxWordsBasis": "'About <Client>'"
+          },
+          "logo": {
+            "type": "asset",
+            "required": true,
+            "roles": [
+              "customer.logo"
+            ]
+          },
+          "image": {
+            "type": "asset",
+            "required": true,
+            "roles": [
+              "customer.imagery"
+            ]
+          },
+          "description": {
+            "type": "text",
+            "required": true,
+            "maxWords": 26,
+            "maxWordsBasis": "longest real client description",
+            "placeholderOnly": true
+          },
+          "website": {
+            "type": "link",
+            "required": false,
+            "labelMaxWords": 2,
+            "maxWordsBasis": "longest real label: 2 words"
+          },
+          "info": {
+            "type": "list",
+            "required": true,
+            "minItems": 3,
+            "maxItems": 4,
+            "item": {
+              "type": "object",
+              "required": true,
+              "fields": {
+                "label": {
+                  "type": "text",
+                  "required": true,
+                  "maxWords": 3,
+                  "maxWordsBasis": "Employees / Clients / Industry / Products in use"
+                },
+                "values": {
+                  "type": "list",
+                  "required": true,
+                  "minItems": 1,
+                  "maxItems": 4,
+                  "item": {
+                    "type": "text",
+                    "required": true,
+                    "maxWords": 6,
+                    "maxWordsBasis": "real values up to 5 words"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "hover-color",
+        "trigger": "hover",
+        "reducedMotionFallback": "instant-swap",
+        "note": "breadcrumb link colour; Visit Website arrow pill glow",
+        "measuredFrom": [
+          "specs/blog-case-studies.md:190"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "absent in CaseStudy.jsx and RichText.jsx"
+  },
+  "responsive": {
+    "desktop": "content 1280; stats 3 x 416; numbered cards 3 x 416",
+    "tablet": "stats 3 x 246; numbered cards: Framer bug renders 3 fixed 300px columns clipped (prefer 1fr)",
+    "phone": "everything single column"
+  },
+  "notes": [
+    "Every field in this section is customer-attributed; fields flagged placeholderOnly must not carry real names, claims or numbers."
+  ],
+  "measuredFrom": [
+    "specs/blog-case-studies.md:181",
+    "specs/blog-case-studies.md:220",
+    "src/pages/CaseStudy.jsx:75"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [
+    "customer.imagery",
+    "customer.logo"
+  ],
+  "version": "1.0.0"
+}

@@ -1,0 +1,121 @@
+{
+  "id": "conversion.cta-band",
+  "kind": "section",
+  "category": "CONVERSION",
+  "purpose": "Dark rounded CTA card over the animated wave background. Four variants: main (everywhere), roles (company/careers/contact desktop), xi (adds a glass Start free trial pill) and security (desktop only). Below 1200px every variant renders main.",
+  "tags": [
+    "cta",
+    "conversion",
+    "shader",
+    "dark-card"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/components/CTA.jsx"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": [
+      "WebGL wave is not reproduced; drift amplitude/period are chosen values (CLONE_SPEC 14.2, CTA.jsx comment)"
+    ]
+  },
+  "allowedTemplates": "any",
+  "variants": [
+    "main",
+    "roles",
+    "xi",
+    "security"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "mustPrecedeFooter": true
+  },
+  "content": {
+    "fields": {
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 6,
+        "maxWordsBasis": "longest real instance: 6 words"
+      },
+      "body": {
+        "type": "text",
+        "required": true,
+        "maxWords": 14,
+        "maxWordsBasis": "longest real instance: 14 words"
+      },
+      "button": {
+        "type": "link",
+        "required": true,
+        "labelMaxWords": 3,
+        "maxWordsBasis": "longest real label: 3 words"
+      },
+      "extraButton": {
+        "type": "link",
+        "required": false,
+        "labelMaxWords": 3,
+        "maxWordsBasis": "longest real label: 3 words"
+      },
+      "background": {
+        "type": "asset",
+        "required": true,
+        "roles": [
+          "fx.shader-fallback"
+        ]
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "shader-drift",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-first-frame",
+        "note": "static PNG with a 12s ease-in-out alternate drift (chosen values, not measured)",
+        "measuredFrom": [
+          "src/components/CTA.jsx:10"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "yes",
+    "reducedMotionSource": "src/components/CTA.jsx:12"
+  },
+  "responsive": {
+    "desktop": "card 1280x388 (roles 368, security 408)",
+    "tablet": "770x372, main copy for every variant",
+    "phone": "350x356, main copy for every variant"
+  },
+  "notes": [],
+  "measuredFrom": [
+    "CLONE_SPEC.md:333",
+    "specs/plans-security-contact-404.md:35",
+    "src/components/CTA.jsx:23",
+    "src/components/CTA.jsx:12"
+  ],
+  "rules": [
+    {
+      "id": "CTA_XI_REQUIRES_EXTRA",
+      "when": {
+        "variant": "xi"
+      },
+      "require": [
+        "extraButton"
+      ]
+    },
+    {
+      "id": "CTA_NON_XI_FORBIDS_EXTRA",
+      "when": {
+        "variantNot": "xi"
+      },
+      "forbid": [
+        "extraButton"
+      ]
+    }
+  ],
+  "retrievalEligible": true,
+  "assetRoles": [
+    "fx.shader-fallback"
+  ],
+  "version": "1.0.0"
+}

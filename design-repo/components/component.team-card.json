@@ -1,0 +1,30 @@
+{
+  "id": "component.team-card",
+  "kind": "component",
+  "purpose": "Square photo (240, phone 200, radius 12, ring) with name and role below.",
+  "props": {
+    "photo": "asset person.team-photo",
+    "name": "text",
+    "role": "text"
+  },
+  "variants": [
+    "default"
+  ],
+  "usesTokens": [
+    "radius.md",
+    "elevation.ring-hairline"
+  ],
+  "implementedBy": [
+    "src/pages/company/Team.jsx"
+  ],
+  "usedBySections": [
+    "features.team-ticker"
+  ],
+  "measuredFrom": [
+    "src/pages/company/Team.jsx:22",
+    "specs/company-careers-legal.md:67"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

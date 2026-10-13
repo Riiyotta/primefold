@@ -1,0 +1,145 @@
+{
+  "id": "proof.outcomes",
+  "kind": "section",
+  "category": "PROOF",
+  "purpose": "Dark customer outcome cards with rolling 80px numbers, an outcome headline, person and client logo.",
+  "tags": [
+    "outcomes",
+    "stats",
+    "digit-roll",
+    "customer-claim",
+    "home-only"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/components/Outcomes.jsx",
+    "src/components/outcomes/RollingNumber.jsx"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": []
+  },
+  "allowedTemplates": [
+    "template.home"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "homeRouteOnly": true,
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "eyebrow": {
+        "type": "text",
+        "required": true,
+        "maxWords": 1,
+        "maxWordsBasis": "longest real instance: 1 words"
+      },
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 4,
+        "maxWordsBasis": "longest real instance: 4 words"
+      },
+      "lead": {
+        "type": "text",
+        "required": true,
+        "maxWords": 6,
+        "maxWordsBasis": "longest real instance: 6 words"
+      },
+      "cards": {
+        "type": "list",
+        "required": true,
+        "minItems": 2,
+        "maxItems": 4,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "backdrop": {
+              "type": "asset",
+              "required": true,
+              "roles": [
+                "customer.imagery"
+              ]
+            },
+            "logo": {
+              "type": "asset",
+              "required": true,
+              "roles": [
+                "customer.logo"
+              ]
+            },
+            "value": {
+              "type": "text",
+              "required": true,
+              "maxWords": 2,
+              "maxWordsBasis": "real values '5x', '150 customers', '1 hour', '1 market' = max 2 words",
+              "placeholderOnly": true
+            },
+            "headline": {
+              "type": "text",
+              "required": true,
+              "maxWords": 17,
+              "maxWordsBasis": "longest real instance: 17 words",
+              "placeholderOnly": true
+            },
+            "personName": {
+              "type": "text",
+              "required": true,
+              "maxWords": 3,
+              "maxWordsBasis": "real names are 2 words; budget 3",
+              "placeholderOnly": true
+            },
+            "personRole": {
+              "type": "text",
+              "required": true,
+              "maxWords": 6,
+              "maxWordsBasis": "real role+company strings up to 5 words",
+              "placeholderOnly": true
+            }
+          }
+        },
+        "countBasis": "real grid has 4 cards (500+764 / 764+500)"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "digit-roll",
+        "trigger": "in-view",
+        "reducedMotionFallback": "static-final-frame",
+        "note": "each char column translateY 0 -> -264px, .5s [.25,.46,.45,.94], +.1s/char, blur 0->2->2->0",
+        "measuredFrom": [
+          "CLONE_SPEC.md:329"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "absent in Outcomes.jsx and RollingNumber.jsx"
+  },
+  "responsive": {
+    "desktop": "2 rows: 500+764 / 764+500, cards 492 tall",
+    "tablet": "500-wide cards become flex:1",
+    "phone": "all cards 350x492 stacked"
+  },
+  "notes": [
+    "Outcome numbers and headlines are real third-party claims; placeholderOnly."
+  ],
+  "measuredFrom": [
+    "CLONE_SPEC.md:316",
+    "src/components/outcomes/RollingNumber.jsx:9",
+    "src/components/Outcomes.jsx:5"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [
+    "customer.imagery",
+    "customer.logo"
+  ],
+  "version": "1.0.0"
+}

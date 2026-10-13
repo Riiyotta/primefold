@@ -1,0 +1,94 @@
+{
+  "elevation": {
+    "ring-hairline": {
+      "$type": "shadow",
+      "$value": "0 0 0 1px rgba(0,0,0,.08)",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:101"
+        ]
+      },
+      "$description": "plain card ring"
+    },
+    "card": {
+      "$type": "shadow",
+      "$value": "0 0 0 1px rgba(0,0,0,.08), 0 1px 2px 0 rgba(36,36,36,.04)",
+      "$extensions": {
+        "measuredFrom": [
+          "src/components/CTA.jsx:70"
+        ]
+      },
+      "$description": "standard card/CTA shadow"
+    },
+    "button-ring": {
+      "$type": "shadow",
+      "$value": "0 0 0 1px rgba(38,57,90,.16), 0 1px 1px 0 rgba(38,57,91,.1)",
+      "$extensions": {
+        "measuredFrom": [
+          "src/index.css:42"
+        ]
+      },
+      "$description": "pill button rest"
+    },
+    "button-hover": {
+      "$type": "shadow",
+      "$value": "0 0 0 1px rgba(38,57,90,.16), 0 5px 5px 0 rgba(38,57,91,.15)",
+      "$extensions": {
+        "measuredFrom": [
+          "src/index.css:47"
+        ]
+      },
+      "$description": "pill button hover"
+    },
+    "footer-ring": {
+      "$type": "shadow",
+      "$value": "0 0 0 1px rgb(226,226,226)",
+      "$extensions": {
+        "measuredFrom": [
+          "src/components/Footer.jsx:52"
+        ]
+      },
+      "$description": "footer card ring"
+    },
+    "cms-ring": {
+      "$type": "shadow",
+      "$value": "0 0 0 1.6px rgba(0,0,0,.08)",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/blog-case-studies.md:56"
+        ]
+      },
+      "$description": "stat / quote / numbered cards"
+    },
+    "window": {
+      "$type": "shadow",
+      "$value": "0 24px 60px rgba(0,0,0,.45)",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:208"
+        ]
+      },
+      "$description": "A1 window / answer card"
+    },
+    "pill-security": {
+      "$type": "shadow",
+      "$value": "0 4.37px 2.21px rgba(0,0,0,.06), 0 10.51px 5.32px rgba(0,0,0,.08), 0 19.78px 10px rgba(0,0,0,.12), 0 35.29px 15px rgba(0,0,0,.15)",
+      "$extensions": {
+        "measuredFrom": [
+          "src/pages/security/SecurityHero.jsx:7"
+        ]
+      },
+      "$description": "security hero centre pill"
+    },
+    "dropdown-field": {
+      "$type": "shadow",
+      "$value": "0 4px 8px rgba(43,43,43,.35)",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:339"
+        ]
+      },
+      "$description": "phone country dropdown"
+    }
+  }
+}

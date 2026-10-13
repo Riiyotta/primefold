@@ -1,0 +1,30 @@
+{
+  "id": "component.case-card",
+  "kind": "component",
+  "purpose": "Case-study index card: same image treatment, headline title and a 'Read story' row whose gap grows 16 -> 20 on hover.",
+  "props": {
+    "image": "asset",
+    "title": "text",
+    "readLabel": "text",
+    "to": "target"
+  },
+  "variants": [
+    "default"
+  ],
+  "usesTokens": [
+    "component.cms-card.image-radius"
+  ],
+  "implementedBy": [
+    "src/pages/CaseStudies.jsx"
+  ],
+  "usedBySections": [
+    "content.card-grid"
+  ],
+  "measuredFrom": [
+    "src/pages/CaseStudies.jsx:7",
+    "specs/blog-case-studies.md:112"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

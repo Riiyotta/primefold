@@ -1,0 +1,31 @@
+{
+  "id": "component.faq-item",
+  "kind": "component",
+  "purpose": "Expandable FAQ card: 20/28 headline question + plus/minus icon; independent toggling; 0.2s tween.",
+  "props": {
+    "question": "text",
+    "answer": "text",
+    "defaultOpen": "bool"
+  },
+  "variants": [
+    "default"
+  ],
+  "usesTokens": [
+    "radius.md",
+    "elevation.ring-hairline",
+    "motion.duration-toggle"
+  ],
+  "implementedBy": [
+    "src/pages/plans/PlansFaq.jsx"
+  ],
+  "usedBySections": [
+    "features.faq-accordion"
+  ],
+  "measuredFrom": [
+    "src/pages/plans/PlansFaq.jsx:9",
+    "specs/plans-security-contact-404.md:207"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

@@ -1,0 +1,85 @@
+{
+  "radius": {
+    "xs": {
+      "$type": "dimension",
+      "$value": "4px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:54"
+        ]
+      }
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "8px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:137"
+        ]
+      }
+    },
+    "field": {
+      "$type": "dimension",
+      "$value": "10px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:352"
+        ]
+      }
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "12px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:49"
+        ]
+      }
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "16px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:101"
+        ]
+      }
+    },
+    "xl-window": {
+      "$type": "dimension",
+      "$value": "18px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:249"
+        ]
+      }
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": "24px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:335"
+        ]
+      }
+    },
+    "quote-card": {
+      "$type": "dimension",
+      "$value": "25.6px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/blog-case-studies.md:216"
+        ]
+      }
+    },
+    "pill": {
+      "$type": "dimension",
+      "$value": "999px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:109"
+        ]
+      }
+    }
+  }
+}

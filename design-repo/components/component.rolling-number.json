@@ -1,0 +1,28 @@
+{
+  "id": "component.rolling-number",
+  "kind": "component",
+  "purpose": "Digit roll: each character a 88px column of 4 copies translating 0 -> -264px, .5s [.25,.46,.45,.94], +.1s/char, blur 0->2->2->0.",
+  "props": {
+    "value": "text"
+  },
+  "variants": [
+    "default"
+  ],
+  "usesTokens": [
+    "motion.ease-digit",
+    "fontFamily.favorit"
+  ],
+  "implementedBy": [
+    "src/components/outcomes/RollingNumber.jsx"
+  ],
+  "usedBySections": [
+    "proof.outcomes"
+  ],
+  "measuredFrom": [
+    "src/components/outcomes/RollingNumber.jsx:7",
+    "CLONE_SPEC.md:329"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

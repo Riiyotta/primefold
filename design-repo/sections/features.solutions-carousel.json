@@ -1,0 +1,126 @@
+{
+  "id": "features.solutions-carousel",
+  "kind": "section",
+  "category": "FEATURES",
+  "purpose": "'Built for every team' horizontally scrolling team/use-case image cards with arrow buttons and scroll-linked sideways drift.",
+  "tags": [
+    "carousel",
+    "drift",
+    "personas",
+    "home-only"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/components/Solutions.jsx",
+    "src/components/solutions/motion.js"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": []
+  },
+  "allowedTemplates": [
+    "template.home"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "homeRouteOnly": true,
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "eyebrow": {
+        "type": "text",
+        "required": true,
+        "maxWords": 1,
+        "maxWordsBasis": "longest real instance: 1 words"
+      },
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 4,
+        "maxWordsBasis": "longest real instance: 4 words"
+      },
+      "cards": {
+        "type": "list",
+        "required": true,
+        "minItems": 3,
+        "maxItems": 8,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "image": {
+              "type": "asset",
+              "required": true,
+              "roles": [
+                "photo.scene-card"
+              ]
+            },
+            "title": {
+              "type": "text",
+              "required": true,
+              "maxWords": 4,
+              "maxWordsBasis": "longest real instance: 4 words"
+            },
+            "body": {
+              "type": "text",
+              "required": true,
+              "maxWords": 14,
+              "maxWordsBasis": "longest real instance: 14 words"
+            },
+            "cta": {
+              "type": "link",
+              "required": true,
+              "labelMaxWords": 2,
+              "maxWordsBasis": "longest real label: 2 words"
+            }
+          }
+        },
+        "countBasis": "real carousel has 5 cards; maxOffset formula in spec assumes 5"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "carousel-slide",
+        "trigger": "click",
+        "reducedMotionFallback": "instant-swap",
+        "note": "arrow snaps +-489px, .5s [.42,0,0,1]",
+        "measuredFrom": [
+          "CLONE_SPEC.md:291"
+        ]
+      },
+      {
+        "pattern": "scroll-linked-offset",
+        "trigger": "scroll",
+        "reducedMotionFallback": "no-animation",
+        "note": "entry translate(120,120)->0 spring k500 c83; drift offset += .4 x delta, spring k110 c28 m.6",
+        "measuredFrom": [
+          "CLONE_SPEC.md:291"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "absent in Solutions.jsx and solutions/motion.js (drift and entry spring ignore prefers-reduced-motion)"
+  },
+  "responsive": {
+    "desktop": "cards 465x488 gap 24",
+    "tablet": "same card size; entry offset kept",
+    "phone": "cards 320x364; header stacks"
+  },
+  "notes": [],
+  "measuredFrom": [
+    "CLONE_SPEC.md:286",
+    "src/components/Solutions.jsx:18"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [
+    "photo.scene-card"
+  ],
+  "version": "1.0.0"
+}

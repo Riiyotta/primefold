@@ -1,0 +1,121 @@
+{
+  "button": {
+    "height": {
+      "$type": "dimension",
+      "$value": "40px",
+      "$extensions": {
+        "measuredFrom": [
+          "src/index.css:41"
+        ]
+      }
+    },
+    "padding": {
+      "$type": "dimension",
+      "$value": "8px 14px",
+      "$extensions": {
+        "measuredFrom": [
+          "src/index.css:41"
+        ]
+      }
+    },
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.pill}",
+      "$extensions": {
+        "measuredFrom": [
+          "src/index.css:41"
+        ]
+      }
+    },
+    "arrow-height": {
+      "$type": "dimension",
+      "$value": "32px",
+      "$extensions": {
+        "measuredFrom": [
+          "src/index.css:59"
+        ]
+      },
+      "$description": "Transparent (Arrow Icon) variant"
+    }
+  },
+  "info-card": {
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.md}",
+      "$extensions": {
+        "measuredFrom": [
+          "src/pages/shared-info/InfoCard.jsx:7"
+        ]
+      }
+    },
+    "padding": {
+      "$type": "dimension",
+      "$value": "24px",
+      "$extensions": {
+        "measuredFrom": [
+          "src/pages/shared-info/InfoCard.jsx:7"
+        ]
+      }
+    },
+    "background": {
+      "$type": "color",
+      "$value": "{color.surface-soft}",
+      "$extensions": {
+        "measuredFrom": [
+          "src/pages/shared-info/InfoCard.jsx:7"
+        ]
+      }
+    }
+  },
+  "plan-card": {
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.lg}",
+      "$extensions": {
+        "measuredFrom": [
+          "src/pages/plans/PlansHero.jsx:14"
+        ]
+      }
+    },
+    "padding": {
+      "$type": "dimension",
+      "$value": "32px",
+      "$extensions": {
+        "measuredFrom": [
+          "src/pages/plans/PlansHero.jsx:14"
+        ]
+      }
+    }
+  },
+  "cta-card": {
+    "radius": {
+      "$type": "dimension",
+      "$value": "{radius.xl}",
+      "$extensions": {
+        "measuredFrom": [
+          "src/components/CTA.jsx:69"
+        ]
+      }
+    },
+    "background": {
+      "$type": "color",
+      "$value": "{color.ink}",
+      "$extensions": {
+        "measuredFrom": [
+          "src/components/CTA.jsx:69"
+        ]
+      }
+    }
+  },
+  "cms-card": {
+    "image-radius": {
+      "$type": "dimension",
+      "$value": "{radius.lg}",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/blog-case-studies.md:88"
+        ]
+      }
+    }
+  }
+}

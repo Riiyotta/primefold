@@ -1,0 +1,112 @@
+{
+  "id": "content.open-roles",
+  "kind": "section",
+  "category": "CONTENT",
+  "purpose": "Open roles list (#roles): title block and static job rows with meta line, h5, description and a black Apply button.",
+  "tags": [
+    "jobs",
+    "roles",
+    "anchor"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/careers/OpenRoles.jsx"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": []
+  },
+  "allowedTemplates": [
+    "template.careers"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "eyebrow": {
+        "type": "text",
+        "required": true,
+        "maxWords": 1,
+        "maxWordsBasis": "longest real instance: 1 words"
+      },
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 4,
+        "maxWordsBasis": "longest real instance: 4 words"
+      },
+      "lead": {
+        "type": "text",
+        "required": true,
+        "maxWords": 13,
+        "maxWordsBasis": "longest real instance: 13 words"
+      },
+      "roles": {
+        "type": "list",
+        "required": true,
+        "minItems": 1,
+        "maxItems": 8,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "title": {
+              "type": "text",
+              "required": true,
+              "maxWords": 3,
+              "maxWordsBasis": "longest real instance: 3 words"
+            },
+            "location": {
+              "type": "text",
+              "required": true,
+              "maxWords": 3,
+              "maxWordsBasis": "longest real instance: 3 words"
+            },
+            "apply": {
+              "type": "target",
+              "required": true
+            }
+          }
+        },
+        "countBasis": "real list has 4 rows"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "none",
+        "trigger": "load",
+        "reducedMotionFallback": "no-animation",
+        "note": "no row hover (only the Apply button hover)",
+        "measuredFrom": [
+          "specs/company-careers-legal.md:136"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "no motion in this section"
+  },
+  "responsive": {
+    "desktop": "rows 1280 wide, height 136",
+    "tablet": "770 wide",
+    "phone": "meta line wraps; live quirk: title wrapper fixed at 128px so the lead overlaps the first row"
+  },
+  "notes": [
+    "Apply links in the source are real live personio job URLs: dest:job-posting is pinned must-not-reuse-live-endpoint.",
+    "The eyebrow reads 'Questions' on the live site although the section is about roles (measured verbatim)."
+  ],
+  "measuredFrom": [
+    "specs/company-careers-legal.md:117",
+    "src/pages/careers/OpenRoles.jsx:5"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [],
+  "version": "1.0.0"
+}

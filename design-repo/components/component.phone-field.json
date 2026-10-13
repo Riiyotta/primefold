@@ -1,0 +1,29 @@
+{
+  "id": "component.phone-field",
+  "kind": "component",
+  "purpose": "Combobox country-code picker (195 options, default Germany +49) plus tel input.",
+  "props": {
+    "defaultCountry": "Germany"
+  },
+  "variants": [
+    "default"
+  ],
+  "usesTokens": [
+    "elevation.dropdown-field",
+    "radius.field"
+  ],
+  "implementedBy": [
+    "src/pages/contact/PhoneField.jsx",
+    "src/pages/contact/countries.js"
+  ],
+  "usedBySections": [
+    "conversion.contact-form"
+  ],
+  "measuredFrom": [
+    "src/pages/contact/PhoneField.jsx:5",
+    "specs/plans-security-contact-404.md:339"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

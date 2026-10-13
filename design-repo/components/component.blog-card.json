@@ -1,0 +1,32 @@
+{
+  "id": "component.blog-card",
+  "kind": "component",
+  "purpose": "Fully linked card: 16:9 image (radius 16, 1px overlay border), date, 20/28 headline title, optional author row.",
+  "props": {
+    "image": "asset cms.post-image",
+    "title": "text",
+    "date": "text",
+    "author": "object?",
+    "to": "target"
+  },
+  "variants": [
+    "default"
+  ],
+  "usesTokens": [
+    "component.cms-card.image-radius",
+    "color.table-sublabel"
+  ],
+  "implementedBy": [
+    "src/pages/Blog.jsx"
+  ],
+  "usedBySections": [
+    "content.card-grid"
+  ],
+  "measuredFrom": [
+    "src/pages/Blog.jsx:30",
+    "specs/blog-case-studies.md:86"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

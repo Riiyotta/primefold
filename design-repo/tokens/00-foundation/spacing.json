@@ -1,0 +1,130 @@
+{
+  "spacing": {
+    "4": {
+      "$type": "dimension",
+      "$value": "4px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:121"
+        ]
+      }
+    },
+    "8": {
+      "$type": "dimension",
+      "$value": "8px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:341"
+        ]
+      }
+    },
+    "12": {
+      "$type": "dimension",
+      "$value": "12px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:109"
+        ]
+      }
+    },
+    "16": {
+      "$type": "dimension",
+      "$value": "16px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:248"
+        ]
+      }
+    },
+    "20": {
+      "$type": "dimension",
+      "$value": "20px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/blog-case-studies.md:82"
+        ]
+      }
+    },
+    "24": {
+      "$type": "dimension",
+      "$value": "24px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:133"
+        ]
+      }
+    },
+    "32": {
+      "$type": "dimension",
+      "$value": "32px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:292"
+        ]
+      }
+    },
+    "40": {
+      "$type": "dimension",
+      "$value": "40px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:320"
+        ]
+      }
+    },
+    "56": {
+      "$type": "dimension",
+      "$value": "56px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:245"
+        ]
+      }
+    },
+    "64": {
+      "$type": "dimension",
+      "$value": "64px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:273"
+        ]
+      }
+    },
+    "88": {
+      "$type": "dimension",
+      "$value": "88px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:305"
+        ]
+      }
+    },
+    "120": {
+      "$type": "dimension",
+      "$value": "120px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:196"
+        ]
+      }
+    },
+    "156": {
+      "$type": "dimension",
+      "$value": "156px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:69"
+        ]
+      }
+    },
+    "168": {
+      "$type": "dimension",
+      "$value": "168px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:305"
+        ]
+      }
+    }
+  }
+}

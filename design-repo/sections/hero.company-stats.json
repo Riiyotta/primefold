@@ -1,0 +1,138 @@
+{
+  "id": "hero.company-stats",
+  "kind": "section",
+  "category": "HERO",
+  "purpose": "Company hero over a full-bleed photo: eyebrow, h1, lead with a bold clause, two CTAs and four glass stat cards.",
+  "tags": [
+    "hero",
+    "company",
+    "stats",
+    "glass"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/company/CompanyHero.jsx"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": []
+  },
+  "allowedTemplates": [
+    "template.company"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "mustFollowNav": true
+  },
+  "content": {
+    "fields": {
+      "backdrop": {
+        "type": "asset",
+        "required": true,
+        "roles": [
+          "hero.backdrop-photo"
+        ]
+      },
+      "eyebrow": {
+        "type": "text",
+        "required": true,
+        "maxWords": 1,
+        "maxWordsBasis": "longest real instance: 1 words"
+      },
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 8,
+        "maxWordsBasis": "longest real instance: 8 words"
+      },
+      "lead": {
+        "type": "text",
+        "required": true,
+        "maxWords": 30,
+        "maxWordsBasis": "real lead is 26 words: 'Primefold reads, connects and analyzes information… decide what to do next.'"
+      },
+      "ctaPrimary": {
+        "type": "link",
+        "required": true,
+        "labelMaxWords": 3,
+        "maxWordsBasis": "longest real label: 3 words"
+      },
+      "ctaSecondary": {
+        "type": "link",
+        "required": true,
+        "labelMaxWords": 3,
+        "maxWordsBasis": "longest real label: 3 words"
+      },
+      "stats": {
+        "type": "list",
+        "required": true,
+        "minItems": 4,
+        "maxItems": 4,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "label": {
+              "type": "text",
+              "required": true,
+              "maxWords": 5,
+              "maxWordsBasis": "longest real instance: 5 words"
+            },
+            "value": {
+              "type": "text",
+              "required": true,
+              "maxWords": 1,
+              "maxWordsBasis": "real values 2024, EU, 2, 100% = 1 token"
+            },
+            "icon": {
+              "type": "asset",
+              "required": true,
+              "roles": [
+                "ui.illustration-svg",
+                "ui.icon-mask"
+              ]
+            }
+          }
+        },
+        "countBasis": "STATS in CompanyHero.jsx = 4"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "none",
+        "trigger": "load",
+        "reducedMotionFallback": "no-animation",
+        "note": "no appear animation, no parallax (measured)",
+        "measuredFrom": [
+          "specs/company-careers-legal.md:11"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "no motion in this section"
+  },
+  "responsive": {
+    "desktop": "hero 902 tall; stat cards 4 x 308x216",
+    "tablet": "2 x 377x200",
+    "phone": "1 x 350x192; hero 1507 tall"
+  },
+  "notes": [],
+  "measuredFrom": [
+    "specs/company-careers-legal.md:31",
+    "src/pages/company/CompanyHero.jsx:20"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [
+    "hero.backdrop-photo",
+    "ui.icon-mask",
+    "ui.illustration-svg"
+  ],
+  "version": "1.0.0"
+}

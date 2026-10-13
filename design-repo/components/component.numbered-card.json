@@ -1,0 +1,32 @@
+{
+  "id": "component.numbered-card",
+  "kind": "component",
+  "purpose": "Dark numbered card (radius 24, panel-1) with a 32px coloured number badge in three schemes, 24/32 title and 14/20 body.",
+  "props": {
+    "n": "1|2|3",
+    "title": "text",
+    "body": "text"
+  },
+  "variants": [
+    "default"
+  ],
+  "usesTokens": [
+    "color.panel-1",
+    "radius.xl",
+    "color.teal-2",
+    "color.orange-2"
+  ],
+  "implementedBy": [
+    "src/pages/cms/RichText.jsx"
+  ],
+  "usedBySections": [
+    "content.case-study"
+  ],
+  "measuredFrom": [
+    "src/pages/cms/RichText.jsx:41",
+    "specs/blog-case-studies.md:220"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

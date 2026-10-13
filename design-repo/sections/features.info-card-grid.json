@@ -1,0 +1,146 @@
+{
+  "id": "features.info-card-grid",
+  "kind": "section",
+  "category": "FEATURES",
+  "purpose": "Section title row (eyebrow, H2, optional lead) over a grid of small icon+title+description info cards; used for plan trust ('In every plan'), security facts and company commitments. Variant selects the column count.",
+  "tags": [
+    "info-cards",
+    "trust",
+    "grid",
+    "title-row"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/shared-info/InfoCard.jsx",
+    "src/pages/shared-info/SectionTitle.jsx",
+    "src/pages/shared-info/MaskIcon.jsx",
+    "src/pages/plans/PlansTrust.jsx",
+    "src/pages/security/FourFacts.jsx",
+    "src/pages/company/Commitments.jsx"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": []
+  },
+  "allowedTemplates": [
+    "template.plans",
+    "template.security",
+    "template.company"
+  ],
+  "variants": [
+    "four-up",
+    "three-up"
+  ],
+  "constraints": {
+    "maxPerPage": 1
+  },
+  "content": {
+    "fields": {
+      "eyebrow": {
+        "type": "text",
+        "required": true,
+        "maxWords": 4,
+        "maxWordsBasis": "longest real instance: 4 words"
+      },
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 5,
+        "maxWordsBasis": "longest real instance: 5 words"
+      },
+      "side": {
+        "type": "text",
+        "required": false,
+        "maxWords": 21,
+        "maxWordsBasis": "longest real instance: 21 words"
+      },
+      "cards": {
+        "type": "list",
+        "required": true,
+        "minItems": 3,
+        "maxItems": 4,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "icon": {
+              "type": "asset",
+              "required": true,
+              "roles": [
+                "ui.icon-mask"
+              ]
+            },
+            "title": {
+              "type": "text",
+              "required": true,
+              "maxWords": 6,
+              "maxWordsBasis": "longest real instance: 6 words"
+            },
+            "body": {
+              "type": "text",
+              "required": true,
+              "maxWords": 19,
+              "maxWordsBasis": "longest real instance: 19 words"
+            }
+          }
+        },
+        "countBasis": "plans trust 4, security facts 3, company commitments 4"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "none",
+        "trigger": "load",
+        "reducedMotionFallback": "no-animation",
+        "note": "no hover state and no appear animation on info cards",
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:52"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "no motion in this section"
+  },
+  "responsive": {
+    "desktop": "four-up 4 x 302 / three-up 3 x 410.66, gap 24",
+    "tablet": "2 columns of 373",
+    "phone": "1 column 350"
+  },
+  "notes": [
+    "Live copy typo on /security card 1 ('our data is stored…', missing leading 'Y') exists in source Four Facts; do not reproduce.",
+    "Company Commitments is a separate component in source (Commitments.jsx) but visually the same info card; grouped here by design."
+  ],
+  "measuredFrom": [
+    "specs/plans-security-contact-404.md:49",
+    "specs/plans-security-contact-404.md:180",
+    "specs/plans-security-contact-404.md:266",
+    "specs/company-careers-legal.md:50",
+    "src/pages/shared-info/InfoCard.jsx:7"
+  ],
+  "rules": [
+    {
+      "id": "INFO_GRID_FOUR_UP",
+      "when": {
+        "variant": "four-up"
+      },
+      "countField": "cards",
+      "countEquals": 4
+    },
+    {
+      "id": "INFO_GRID_THREE_UP",
+      "when": {
+        "variant": "three-up"
+      },
+      "countField": "cards",
+      "countEquals": 3
+    }
+  ],
+  "retrievalEligible": true,
+  "assetRoles": [
+    "ui.icon-mask"
+  ],
+  "version": "1.0.0"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "primitive.mask-icon",
+  "kind": "primitive",
+  "purpose": "Single-colour glyph drawn as a CSS mask so the colour comes from a token.",
+  "props": {
+    "src": "asset ui.icon-mask",
+    "size": "number px",
+    "color": "token"
+  },
+  "variants": [
+    "default"
+  ],
+  "usesTokens": [
+    "iconSize.mask",
+    "color.ink"
+  ],
+  "implementedBy": [
+    "src/pages/shared-info/MaskIcon.jsx"
+  ],
+  "usedBySections": [
+    "features.info-card-grid",
+    "conversion.contact-form"
+  ],
+  "measuredFrom": [
+    "src/pages/shared-info/MaskIcon.jsx:8",
+    "specs/plans-security-contact-404.md:410"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

@@ -1,0 +1,754 @@
+{
+  "pageSpecVersion": "1.0.0",
+  "template": "template.home",
+  "route": "/",
+  "meta": {
+    "title": "Primefold — All the layers, one intelligence",
+    "description": "One AI-native engine applied to every industry it runs. Surveys, portfolios and company data turned into decisions — Experience, Real Estate and Corporate Intelligence.",
+    "ogImage": {
+      "assetRole": "brand.site-icons",
+      "assetSource": "reuse-exact",
+      "alt": "Primefold social preview image"
+    }
+  },
+  "nodes": [
+    {
+      "section": "shell.navbar",
+      "variant": "overlay",
+      "content": {
+        "items": [
+          {
+            "label": "Products",
+            "menu": [
+              {
+                "label": "Experience Intelligence",
+                "to": "/experience-intelligence"
+              },
+              {
+                "label": "Real Estate Intelligence",
+                "to": "/realestate-intelligence"
+              },
+              {
+                "label": "More in 2027"
+              }
+            ]
+          },
+          {
+            "label": "Plans",
+            "to": "/plans"
+          },
+          {
+            "label": "Security",
+            "to": "/security"
+          },
+          {
+            "label": "Resources",
+            "menu": [
+              {
+                "label": "Blog",
+                "to": "/blog"
+              },
+              {
+                "label": "Case Studies",
+                "to": "/case-studies"
+              },
+              {
+                "label": "Help center XI",
+                "to": "dest:help-center-xi"
+              },
+              {
+                "label": "Help center RI",
+                "to": "dest:help-center-ri"
+              }
+            ]
+          },
+          {
+            "label": "Company",
+            "menu": [
+              {
+                "label": "About Us",
+                "to": "/company"
+              },
+              {
+                "label": "Careers",
+                "to": "/careers"
+              },
+              {
+                "label": "Contact",
+                "to": "/contact"
+              }
+            ]
+          }
+        ],
+        "signIn": {
+          "label": "Sign in",
+          "to": "dest:app-signin"
+        },
+        "bookCall": {
+          "label": "Book a call",
+          "to": "dest:booking"
+        }
+      },
+      "motion": {
+        "pattern": "nav-state-swap",
+        "trigger": "scroll",
+        "reducedMotionFallback": "instant-swap"
+      }
+    },
+    {
+      "section": "hero.home-carousel",
+      "variant": "default",
+      "content": {
+        "slides": [
+          {
+            "background": {
+              "assetRole": "hero.backdrop-photo",
+              "assetSource": "generate-new",
+              "alt": "Conference room with a city landmark in the window"
+            },
+            "title": "Everything answers. If you simply ask.",
+            "body": "Type a question, get the work done: the analysis, the report, the next move. One intelligence per field.",
+            "ctas": [
+              {
+                "label": "Book a call",
+                "to": "dest:booking"
+              },
+              {
+                "label": "See how it works",
+                "to": "#see-the-platform"
+              }
+            ]
+          },
+          {
+            "background": {
+              "assetRole": "hero.backdrop-photo",
+              "assetSource": "generate-new",
+              "alt": "People browsing in a modern store with large windows."
+            },
+            "title": "Ask your customers, your tenants, your teams. Anyone.",
+            "body": "Experience Intelligence, built to find the value in every voice.",
+            "ctas": [
+              {
+                "label": "Explore XI",
+                "to": "/experience-intelligence"
+              },
+              {
+                "label": "Book a call",
+                "to": "dest:booking"
+              }
+            ]
+          },
+          {
+            "background": {
+              "assetRole": "hero.backdrop-photo",
+              "assetSource": "generate-new",
+              "alt": "A view of a city skyline at dusk"
+            },
+            "title": "Ask your portfolio anything.",
+            "body": "Real Estate Intelligence, built to grow asset value.",
+            "ctas": [
+              {
+                "label": "Explore RI",
+                "to": "/realestate-intelligence"
+              },
+              {
+                "label": "Book a call",
+                "to": "dest:booking"
+              }
+            ]
+          }
+        ],
+        "tabs": [
+          {
+            "label": "Platform",
+            "icon": {
+              "assetRole": "brand.logo-mark",
+              "assetSource": "reuse-exact",
+              "alt": ""
+            },
+            "interactive": true
+          },
+          {
+            "label": "Experience Intelligence",
+            "icon": {
+              "assetRole": "brand.product-badge",
+              "assetSource": "reuse-exact",
+              "alt": ""
+            },
+            "interactive": true
+          },
+          {
+            "label": "Real Estate Intelligence",
+            "icon": {
+              "assetRole": "brand.product-badge",
+              "assetSource": "reuse-exact",
+              "alt": ""
+            },
+            "interactive": true
+          },
+          {
+            "label": "More coming in 2027",
+            "icon": {
+              "assetRole": "brand.product-badge",
+              "assetSource": "reuse-exact",
+              "alt": ""
+            },
+            "interactive": false
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "autoplay-slide",
+        "trigger": "timer",
+        "reducedMotionFallback": "disable-autoplay"
+      }
+    },
+    {
+      "section": "proof.logo-ticker",
+      "variant": "default",
+      "content": {
+        "logos": [
+          {
+            "logo": {
+              "assetRole": "customer.logo",
+              "assetSource": "placeholder",
+              "alt": "Neutral logo box"
+            },
+            "alt": "Customer logo"
+          },
+          {
+            "logo": {
+              "assetRole": "customer.logo",
+              "assetSource": "placeholder",
+              "alt": "Neutral logo box"
+            },
+            "alt": "Customer logo"
+          },
+          {
+            "logo": {
+              "assetRole": "customer.logo",
+              "assetSource": "placeholder",
+              "alt": "Neutral logo box"
+            },
+            "alt": "Customer logo"
+          },
+          {
+            "logo": {
+              "assetRole": "customer.logo",
+              "assetSource": "placeholder",
+              "alt": "Neutral logo box"
+            },
+            "alt": "Customer logo"
+          },
+          {
+            "logo": {
+              "assetRole": "customer.logo",
+              "assetSource": "placeholder",
+              "alt": "Neutral logo box"
+            },
+            "alt": "Customer logo"
+          },
+          {
+            "logo": {
+              "assetRole": "customer.logo",
+              "assetSource": "placeholder",
+              "alt": "Neutral logo box"
+            },
+            "alt": "Customer logo"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "marquee",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-first-frame"
+      }
+    },
+    {
+      "section": "features.how-it-works",
+      "variant": "default",
+      "content": {
+        "eyebrow": "Ask. Understand. Act.",
+        "title": "How a question becomes a next move.",
+        "backdrop": {
+          "assetRole": "product.illustration-still",
+          "assetSource": "generate-new",
+          "alt": "Dark stage backdrop"
+        },
+        "question": "Why are customers cancelling, and what do we fix first?",
+        "sources": [
+          {
+            "label": "Surveys"
+          },
+          {
+            "label": "Reviews"
+          },
+          {
+            "label": "Email"
+          },
+          {
+            "label": "Tickets"
+          },
+          {
+            "label": "Contracts"
+          },
+          {
+            "label": "Spreadsheets"
+          }
+        ],
+        "steps": [
+          "Reading 6 sources",
+          "Analyzed 212 responses",
+          "Onboarding is the top complaint, and support replies run late.",
+          "Checked service agreement",
+          "Creating 1 chart"
+        ],
+        "answerHeadline": "Slow onboarding drives 41% of cancellations.",
+        "bars": [
+          {
+            "label": "Slow onboarding",
+            "value": "41%"
+          },
+          {
+            "label": "Unanswered tickets",
+            "value": "22%"
+          },
+          {
+            "label": "Pricing",
+            "value": "14%"
+          }
+        ],
+        "nextStep": "Draft onboarding fix plan"
+      },
+      "motion": {
+        "pattern": "loop-demo",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-final-frame"
+      }
+    },
+    {
+      "section": "features.intelligence-cards",
+      "variant": "default",
+      "content": {
+        "eyebrow": "One intelligence. Applied to different fields.",
+        "title": "Turn questions into better decisions.",
+        "lead": "Each intelligence has its own language, its own sources, its own expertise.",
+        "cards": [
+          {
+            "product": "XI",
+            "status": "Live today · CX · HR · product",
+            "title": "Experience Intelligence",
+            "description": "Turn every survey, review, ticket and message into a prioritized decision your team can act on – in one conversation, on live data.",
+            "to": "/experience-intelligence",
+            "badge": {
+              "assetRole": "brand.product-badge",
+              "assetSource": "reuse-exact",
+              "alt": ""
+            },
+            "visual": {
+              "assetRole": "product.illustration-still",
+              "assetSource": "generate-new",
+              "alt": "Survey mock"
+            }
+          },
+          {
+            "product": "RI",
+            "status": "Beta · GA H2 2026",
+            "title": "Real Estate Intelligence",
+            "description": "Underwriting, risk, rent rolls and capex, answered in one conversation.",
+            "to": "/realestate-intelligence",
+            "badge": {
+              "assetRole": "brand.product-badge",
+              "assetSource": "reuse-exact",
+              "alt": ""
+            },
+            "visual": {
+              "assetRole": "product.illustration-still",
+              "assetSource": "generate-new",
+              "alt": "Building photo with document card"
+            }
+          },
+          {
+            "product": "CI",
+            "status": "Planned 2027",
+            "title": "More coming in 2027",
+            "badge": {
+              "assetRole": "brand.product-badge",
+              "assetSource": "reuse-exact",
+              "alt": ""
+            },
+            "visual": {
+              "assetRole": "ui.icon-mask",
+              "assetSource": "generate-new",
+              "alt": "Grid of generic icons"
+            }
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "hover-grow",
+        "trigger": "hover",
+        "reducedMotionFallback": "instant-swap"
+      }
+    },
+    {
+      "section": "proof.testimonials",
+      "variant": "default",
+      "content": {
+        "slides": [
+          {
+            "product": "XI",
+            "backdrop": {
+              "assetRole": "customer.imagery",
+              "assetSource": "placeholder",
+              "alt": "Neutral placeholder photo"
+            },
+            "quote": "\"Placeholder quote describing one concrete outcome in a single sentence.\"",
+            "personName": "Customer Name",
+            "personRole": "Job title",
+            "customerLogo": {
+              "assetRole": "customer.logo",
+              "assetSource": "placeholder",
+              "alt": "Neutral logo box"
+            },
+            "cta": {
+              "label": "Explore XI",
+              "to": "/experience-intelligence"
+            }
+          },
+          {
+            "product": "RI",
+            "backdrop": {
+              "assetRole": "customer.imagery",
+              "assetSource": "placeholder",
+              "alt": "Neutral placeholder photo"
+            },
+            "quote": "\"Second placeholder quote about portfolio analysis, kept short.\"",
+            "personName": "Customer Name",
+            "personRole": "Job title",
+            "customerLogo": {
+              "assetRole": "customer.logo",
+              "assetSource": "placeholder",
+              "alt": "Neutral logo box"
+            },
+            "cta": {
+              "label": "Explore RI",
+              "to": "/realestate-intelligence"
+            }
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "carousel-slide",
+        "trigger": "click",
+        "reducedMotionFallback": "instant-swap"
+      }
+    },
+    {
+      "section": "features.solutions-carousel",
+      "variant": "default",
+      "content": {
+        "eyebrow": "Solutions",
+        "title": "Built for every team.",
+        "cards": [
+          {
+            "image": {
+              "assetRole": "photo.scene-card",
+              "assetSource": "generate-new",
+              "alt": "Generic workplace scene"
+            },
+            "title": "Asset manager",
+            "body": "Talk to your portfolio. Know your exposure, renewals and obligations, down to the clause.",
+            "cta": {
+              "label": "Explore RI",
+              "to": "/realestate-intelligence"
+            }
+          },
+          {
+            "image": {
+              "assetRole": "photo.scene-card",
+              "assetSource": "generate-new",
+              "alt": "Generic workplace scene"
+            },
+            "title": "CX manager",
+            "body": "Know why customers leave and how to fix it.",
+            "cta": {
+              "label": "Explore XI",
+              "to": "/experience-intelligence"
+            }
+          },
+          {
+            "image": {
+              "assetRole": "photo.scene-card",
+              "assetSource": "generate-new",
+              "alt": "Generic workplace scene"
+            },
+            "title": "HR / People manager",
+            "body": "Ask your people. Act while it still matters.",
+            "cta": {
+              "label": "Explore XI",
+              "to": "/experience-intelligence"
+            }
+          },
+          {
+            "image": {
+              "assetRole": "photo.scene-card",
+              "assetSource": "generate-new",
+              "alt": "Generic workplace scene"
+            },
+            "title": "Marketing manager",
+            "body": "Every campaign, survey and review. Read and turned into your next move.",
+            "cta": {
+              "label": "Explore XI",
+              "to": "/experience-intelligence"
+            }
+          },
+          {
+            "image": {
+              "assetRole": "photo.scene-card",
+              "assetSource": "generate-new",
+              "alt": "Generic workplace scene"
+            },
+            "title": "Product manager",
+            "body": "Talk to your users. Know what to build next, ranked by impact.",
+            "cta": {
+              "label": "Explore XI",
+              "to": "/experience-intelligence"
+            }
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "carousel-slide",
+        "trigger": "click",
+        "reducedMotionFallback": "instant-swap"
+      }
+    },
+    {
+      "section": "proof.trust",
+      "variant": "default",
+      "content": {
+        "eyebrow": "Trust",
+        "title": "Trust, built into every layer.",
+        "lead": "Your data passes through three layers of protection before you receive a recommendation.",
+        "items": [
+          {
+            "title": "Hosted in Germany & GDPR-compliant",
+            "body": "Your data is stored on servers in Germany, built to GDPR requirements."
+          },
+          {
+            "title": "Answers you can trace, not guess",
+            "body": "Every answer links back to the source it came from. See the evidence behind the answer, not just the result."
+          },
+          {
+            "title": "Your workspace",
+            "body": "What the platform learns stays in your workspace."
+          }
+        ],
+        "panel": {
+          "assetRole": "motion.lottie",
+          "assetSource": "generate-new",
+          "alt": "Animated panel about hosting and traceability"
+        }
+      },
+      "motion": {
+        "pattern": "progress-line",
+        "trigger": "in-view",
+        "reducedMotionFallback": "static-final-frame"
+      }
+    },
+    {
+      "section": "proof.outcomes",
+      "variant": "default",
+      "content": {
+        "eyebrow": "Outcomes",
+        "title": "Real impact. Real outcomes.",
+        "lead": "How teams turn intelligence into action.",
+        "cards": [
+          {
+            "backdrop": {
+              "assetRole": "customer.imagery",
+              "assetSource": "placeholder",
+              "alt": "Neutral placeholder photo"
+            },
+            "logo": {
+              "assetRole": "customer.logo",
+              "assetSource": "placeholder",
+              "alt": "Neutral logo box"
+            },
+            "value": "10x",
+            "headline": "Placeholder outcome headline describing one measurable result.",
+            "personName": "Customer Name",
+            "personRole": "Job title"
+          },
+          {
+            "backdrop": {
+              "assetRole": "customer.imagery",
+              "assetSource": "placeholder",
+              "alt": "Neutral placeholder photo"
+            },
+            "logo": {
+              "assetRole": "customer.logo",
+              "assetSource": "placeholder",
+              "alt": "Neutral logo box"
+            },
+            "value": "2 hours",
+            "headline": "Second placeholder outcome headline for a different team.",
+            "personName": "Customer Name",
+            "personRole": "Job title"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "digit-roll",
+        "trigger": "in-view",
+        "reducedMotionFallback": "static-final-frame"
+      }
+    },
+    {
+      "section": "conversion.cta-band",
+      "variant": "main",
+      "content": {
+        "title": "Ask your data. Get the answer.",
+        "body": "Bring a real business question. Get the answer you need to move forward.",
+        "button": {
+          "label": "Book a call",
+          "to": "dest:booking"
+        },
+        "background": {
+          "assetRole": "fx.shader-fallback",
+          "assetSource": "generate-new",
+          "alt": "Teal and orange wave on black"
+        }
+      },
+      "motion": {
+        "pattern": "shader-drift",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-first-frame"
+      }
+    },
+    {
+      "section": "shell.footer",
+      "variant": "default",
+      "content": {
+        "blurb": "One intelligence. Built for every field. Stay in the loop. Update on what's new.",
+        "newsletter": {
+          "endpointRole": "endpoint.newsletter-form",
+          "endpoint": "project-owned-placeholder"
+        },
+        "columns": [
+          {
+            "head": "Products",
+            "links": [
+              {
+                "label": "Experience Intelligence",
+                "to": "/experience-intelligence"
+              },
+              {
+                "label": "Real Estate Intelligence",
+                "to": "/realestate-intelligence"
+              }
+            ]
+          },
+          {
+            "head": "Explore",
+            "links": [
+              {
+                "label": "How it works",
+                "to": "/"
+              },
+              {
+                "label": "Plans",
+                "to": "/plans"
+              },
+              {
+                "label": "Security",
+                "to": "/security"
+              }
+            ]
+          },
+          {
+            "head": "Resources",
+            "links": [
+              {
+                "label": "Blog",
+                "to": "/blog"
+              },
+              {
+                "label": "Help Center XI",
+                "to": "dest:help-center-xi"
+              },
+              {
+                "label": "Help Center RI",
+                "to": "dest:help-center-ri"
+              }
+            ]
+          },
+          {
+            "head": "Company",
+            "links": [
+              {
+                "label": "About",
+                "to": "/company"
+              },
+              {
+                "label": "Careers",
+                "to": "/careers"
+              },
+              {
+                "label": "Contact",
+                "to": "/contact"
+              }
+            ]
+          }
+        ],
+        "legalLinks": [
+          {
+            "label": "Imprint",
+            "to": "/imprint"
+          },
+          {
+            "label": "Data privacy",
+            "to": "/data-privacy"
+          },
+          {
+            "label": "Terms of service",
+            "to": "/terms-of-service"
+          }
+        ],
+        "cookieSettingsLabel": "Cookie Settings",
+        "copyright": "© 2026 saypien GmbH · Berlin & Frankfurt",
+        "socials": [
+          {
+            "label": "X",
+            "to": "dest:social-x"
+          },
+          {
+            "label": "LinkedIn",
+            "to": "dest:social-linkedin"
+          },
+          {
+            "label": "Mail",
+            "to": "/contact"
+          }
+        ],
+        "hostedNote": "Hosted in Germany · Built to GDPR requirements",
+        "logo": {
+          "assetRole": "brand.logo-mark",
+          "assetSource": "reuse-exact",
+          "alt": ""
+        },
+        "wordmark": {
+          "assetRole": "brand.wordmark-ghost",
+          "assetSource": "reuse-exact",
+          "alt": ""
+        }
+      },
+      "motion": {
+        "pattern": "scroll-linked-offset",
+        "trigger": "scroll",
+        "reducedMotionFallback": "no-animation"
+      }
+    }
+  ]
+}

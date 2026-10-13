@@ -1,0 +1,30 @@
+{
+  "id": "component.newsletter-form",
+  "kind": "component",
+  "purpose": "Pill email field (placeholder you@company.com) with a 100x36 black Subscribe button; 320 wide in the footer, 300 on the blog hero. INERT in source.",
+  "props": {
+    "endpointRole": "endpoint.newsletter-form"
+  },
+  "variants": [
+    "default"
+  ],
+  "usesTokens": [
+    "radius.pill",
+    "color.divider"
+  ],
+  "implementedBy": [
+    "src/components/Footer.jsx",
+    "src/pages/Blog.jsx"
+  ],
+  "usedBySections": [
+    "shell.footer",
+    "hero.index-intro"
+  ],
+  "measuredFrom": [
+    "src/components/Footer.jsx:73",
+    "src/pages/Blog.jsx:6"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

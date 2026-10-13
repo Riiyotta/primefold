@@ -1,0 +1,142 @@
+{
+  "id": "features.solutions-tabs",
+  "kind": "section",
+  "category": "FEATURES",
+  "purpose": "'Built for every team' tabbed panel (persona tabs) with an image card and a dark card showing marquee quote pills plus 'What you get'. Not the home carousel.",
+  "tags": [
+    "tabs",
+    "personas",
+    "marquee",
+    "product"
+  ],
+  "status": "spec-only-source-in-progress",
+  "implementedBy": [],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": [
+      "tab-pill motion values beyond the spring config (spec 7.4)"
+    ]
+  },
+  "allowedTemplates": [
+    "template.product"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {},
+  "content": {
+    "fields": {
+      "eyebrow": {
+        "type": "text",
+        "required": true,
+        "maxWords": 1,
+        "maxWordsBasis": "longest real instance: 1 words"
+      },
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 4,
+        "maxWordsBasis": "longest real instance: 4 words"
+      },
+      "tabs": {
+        "type": "list",
+        "required": true,
+        "minItems": 3,
+        "maxItems": 4,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "label": {
+              "type": "text",
+              "required": true,
+              "maxWords": 4,
+              "maxWordsBasis": "longest real instance: 4 words"
+            },
+            "body": {
+              "type": "text",
+              "required": true,
+              "maxWords": 14,
+              "maxWordsBasis": "longest real instance: 14 words"
+            },
+            "quotes": {
+              "type": "list",
+              "required": true,
+              "minItems": 3,
+              "maxItems": 3,
+              "item": {
+                "type": "text",
+                "required": true,
+                "maxWords": 11,
+                "maxWordsBasis": "longest real instance: 11 words"
+              }
+            },
+            "image": {
+              "type": "asset",
+              "required": true,
+              "roles": [
+                "photo.scene-card"
+              ]
+            },
+            "cta": {
+              "type": "link",
+              "required": true,
+              "labelMaxWords": 3,
+              "maxWordsBasis": "longest real label: 3 words"
+            },
+            "whatYouGet": {
+              "type": "text",
+              "required": true,
+              "maxWords": 30,
+              "maxWordsBasis": "spec 2d: 'one paragraph, 1-3 sentences, ~20-30 words'"
+            }
+          }
+        },
+        "countBasis": "spec 2d: XI has 4 tabs, RI has 3"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "marquee",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-first-frame",
+        "note": "three rows of pills at ~40.6 px/s; rows 1 and 3 left, row 2 right; no hover pause",
+        "measuredFrom": [
+          "specs/product-pages.md:391"
+        ]
+      },
+      {
+        "pattern": "tab-pill",
+        "trigger": "click",
+        "reducedMotionFallback": "instant-swap",
+        "note": "active tab pill spring bounce .2 duration .4; panel swaps instantly",
+        "measuredFrom": [
+          "specs/product-pages.md:376"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "unknown",
+    "reducedMotionSource": "source file src/pages/product/SolutionsTabs.jsx does not exist on disk at build time"
+  },
+  "responsive": {
+    "desktop": "panel 400 + 864 both 440 tall",
+    "tablet": "377 + 377",
+    "phone": "stacked 350 + 350; tab bar overflows and is clipped (no scroll) on the live site"
+  },
+  "notes": [
+    "Source status at build time: src/pages/ExperienceIntelligence.jsx and RealEstateIntelligence.jsx are still the placeholder 'building…' pages, and App.jsx does not import ProductPage. src/pages/product/* is an in-progress, unmounted implementation (ProductPage.jsx imports ./SolutionsTabs and ./product.css, which do not exist on disk). The contract is grounded in the measured spec specs/product-pages.md, not in running source.",
+    "Live-site quirk: at 390 the tab bar is clipped, not scrollable (spec 2d)."
+  ],
+  "measuredFrom": [
+    "specs/product-pages.md:367"
+  ],
+  "retrievalEligible": false,
+  "rules": [],
+  "assetRoles": [
+    "photo.scene-card"
+  ],
+  "version": "1.0.0"
+}

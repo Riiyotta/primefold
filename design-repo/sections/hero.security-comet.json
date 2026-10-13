@@ -1,0 +1,105 @@
+{
+  "id": "hero.security-comet",
+  "kind": "section",
+  "category": "HERO",
+  "purpose": "Dark security hero with warm glow, eyebrow, h1, lead, Book a call and an animated three-ring comet graphic around a GDPR/fingerprint pill.",
+  "tags": [
+    "hero",
+    "security",
+    "svg-animation",
+    "dark"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/security/SecurityHero.jsx",
+    "src/pages/security/CometRing.jsx"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": []
+  },
+  "allowedTemplates": [
+    "template.security"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "mustFollowNav": true
+  },
+  "content": {
+    "fields": {
+      "eyebrow": {
+        "type": "text",
+        "required": true,
+        "maxWords": 1,
+        "maxWordsBasis": "longest real instance: 1 words"
+      },
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 7,
+        "maxWordsBasis": "longest real instance: 7 words"
+      },
+      "lead": {
+        "type": "text",
+        "required": true,
+        "maxWords": 30,
+        "maxWordsBasis": "spec 2.1: lead is 3 lines @1440; real copy is 30 words"
+      },
+      "cta": {
+        "type": "link",
+        "required": true,
+        "labelMaxWords": 3,
+        "maxWordsBasis": "longest real label: 3 words"
+      },
+      "tiles": {
+        "type": "list",
+        "required": true,
+        "minItems": 2,
+        "maxItems": 2,
+        "item": {
+          "type": "asset",
+          "required": true,
+          "roles": [
+            "ui.illustration-svg"
+          ]
+        },
+        "countBasis": "GDPR tile + fingerprint tile"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "comet-dash",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-first-frame",
+        "note": "13 dash copies per ring, head offset decreases 25 units/s: 4.0s lap, infinite, 3 rings",
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:260"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "absent in SecurityHero.jsx and CometRing.jsx (infinite CSS keyframes)"
+  },
+  "responsive": {
+    "desktop": "hero 1046 tall; text 600 + animation 640x886",
+    "tablet": "385x533 animation; hero 1080",
+    "phone": "stacked; animation 350x484; hero 1084"
+  },
+  "notes": [],
+  "measuredFrom": [
+    "specs/plans-security-contact-404.md:236",
+    "src/pages/security/CometRing.jsx:7"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [
+    "ui.illustration-svg"
+  ],
+  "version": "1.0.0"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "component.segmented-toggle",
+  "kind": "component",
+  "purpose": "Pill track with two or more segments; active segment white with ring, inactive label opacity .7; cross-fade (no sliding thumb).",
+  "props": {
+    "segments": "list",
+    "active": "index"
+  },
+  "variants": [
+    "default"
+  ],
+  "usesTokens": [
+    "color.surface-soft",
+    "motion.duration-toggle"
+  ],
+  "implementedBy": [
+    "src/pages/plans/Segmented.jsx"
+  ],
+  "usedBySections": [
+    "hero.pricing"
+  ],
+  "measuredFrom": [
+    "src/pages/plans/Segmented.jsx:5",
+    "specs/plans-security-contact-404.md:84"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

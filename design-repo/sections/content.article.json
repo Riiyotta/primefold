@@ -1,0 +1,186 @@
+{
+  "id": "content.article",
+  "kind": "section",
+  "category": "CONTENT",
+  "purpose": "Blog post: h1, divider, author + 'Last updated' meta row, 16:9 banner and a rich-text body (headings with anchors, lists, quote, images, YouTube facade, in-body buttons). Ends directly into the CTA.",
+  "tags": [
+    "article",
+    "blog",
+    "rich-text",
+    "cms"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/BlogPost.jsx",
+    "src/pages/cms/RichText.jsx",
+    "src/pages/cms/shared.jsx",
+    "src/pages/cms/cms.css"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": [
+      "code/pre/table/figure fallbacks (not used in the 12 posts)",
+      "in-body primary button hover (no CSS rule found)"
+    ]
+  },
+  "allowedTemplates": [
+    "template.blog-post"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 15,
+        "maxWordsBasis": "longest real post h1 in specs/cms-data.json"
+      },
+      "author": {
+        "type": "object",
+        "required": false,
+        "fields": {
+          "name": {
+            "type": "text",
+            "required": true,
+            "maxWords": 3,
+            "maxWordsBasis": "real names are 2 words",
+            "placeholderOnly": true
+          },
+          "role": {
+            "type": "text",
+            "required": true,
+            "maxWords": 4,
+            "maxWordsBasis": "real role up to 4 words"
+          },
+          "avatar": {
+            "type": "asset",
+            "required": true,
+            "roles": [
+              "person.author-avatar"
+            ]
+          }
+        }
+      },
+      "lastUpdated": {
+        "type": "text",
+        "required": true,
+        "maxWords": 3,
+        "maxWordsBasis": "Framer MMM D, YYYY = 3 tokens"
+      },
+      "banner": {
+        "type": "asset",
+        "required": true,
+        "roles": [
+          "cms.post-image"
+        ]
+      },
+      "blocks": {
+        "type": "list",
+        "required": true,
+        "minItems": 1,
+        "maxItems": 67,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "type": {
+              "type": "enum",
+              "required": true,
+              "values": [
+                "p",
+                "h1",
+                "h2",
+                "h3",
+                "h4",
+                "h5",
+                "ul",
+                "ol",
+                "quote",
+                "img",
+                "video",
+                "button",
+                "spacer"
+              ]
+            },
+            "text": {
+              "type": "text",
+              "required": false,
+              "maxWords": 109,
+              "maxWordsBasis": "longest real body paragraph block = 109 words (specs/cms-data.json)"
+            },
+            "items": {
+              "type": "list",
+              "required": false,
+              "minItems": 1,
+              "maxItems": 40,
+              "item": {
+                "type": "text",
+                "required": true,
+                "maxWords": 109,
+                "maxWordsBasis": "list items bounded by paragraph budget"
+              }
+            },
+            "image": {
+              "type": "asset",
+              "required": false,
+              "roles": [
+                "cms.post-image",
+                "embed.video-facade"
+              ]
+            },
+            "button": {
+              "type": "link",
+              "required": false,
+              "labelMaxWords": 4,
+              "maxWordsBasis": "longest real label: 4 words"
+            }
+          }
+        },
+        "countBasis": "real posts have up to 49 blocks; +18 headroom is a design choice, not measured"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "hover-color",
+        "trigger": "hover",
+        "reducedMotionFallback": "instant-swap",
+        "note": "body links #594AFF -> #212121 + underline (instant); heading anchors #212121 -> #545454",
+        "measuredFrom": [
+          "specs/blog-case-studies.md:153"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "absent in BlogPost.jsx and RichText.jsx (no motion)"
+  },
+  "responsive": {
+    "desktop": "column 840 (800 content); gap 60",
+    "tablet": "770 content",
+    "phone": "350 content; meta row stacks"
+  },
+  "notes": [
+    "Body prose is intentionally not transcribed in the source specs; only block structure and word counts are recorded."
+  ],
+  "measuredFrom": [
+    "specs/blog-case-studies.md:123",
+    "specs/blog-case-studies.md:145",
+    "src/pages/BlogPost.jsx:9",
+    "specs/cms-data.json:1815"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [
+    "cms.post-image",
+    "embed.video-facade",
+    "person.author-avatar"
+  ],
+  "version": "1.0.0"
+}

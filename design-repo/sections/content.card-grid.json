@@ -1,0 +1,144 @@
+{
+  "id": "content.card-grid",
+  "kind": "section",
+  "category": "CONTENT",
+  "purpose": "Responsive grid of linked cards (16:9 image, then title and meta); blog variant shows date + author, case-study variant shows a 'Read story' row.",
+  "tags": [
+    "cards",
+    "grid",
+    "cms",
+    "blog",
+    "case-studies"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/Blog.jsx",
+    "src/pages/CaseStudies.jsx",
+    "src/pages/cms/shared.jsx",
+    "src/pages/cms/cms.css"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": []
+  },
+  "allowedTemplates": [
+    "template.blog-index",
+    "template.case-studies-index"
+  ],
+  "variants": [
+    "blog",
+    "case-study"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "cards": {
+        "type": "list",
+        "required": true,
+        "minItems": 1,
+        "maxItems": 24,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "image": {
+              "type": "asset",
+              "required": true,
+              "roles": [
+                "cms.post-image"
+              ]
+            },
+            "title": {
+              "type": "text",
+              "required": true,
+              "maxWords": 15,
+              "maxWordsBasis": "longest real blog/case-study title (specs/cms-data.json)"
+            },
+            "date": {
+              "type": "text",
+              "required": false,
+              "maxWords": 3,
+              "maxWordsBasis": "real dates like 'Oct 1, 2026' = 3 tokens"
+            },
+            "author": {
+              "type": "object",
+              "required": false,
+              "fields": {
+                "name": {
+                  "type": "text",
+                  "required": true,
+                  "maxWords": 3,
+                  "maxWordsBasis": "real names are 2 words",
+                  "placeholderOnly": true
+                },
+                "role": {
+                  "type": "text",
+                  "required": true,
+                  "maxWords": 4,
+                  "maxWordsBasis": "real role 'Head of Customer Experience' = 4 words"
+                },
+                "avatar": {
+                  "type": "asset",
+                  "required": true,
+                  "roles": [
+                    "person.author-avatar"
+                  ]
+                }
+              }
+            },
+            "readLabel": {
+              "type": "text",
+              "required": false,
+              "maxWords": 2,
+              "maxWordsBasis": "longest real instance: 2 words"
+            },
+            "to": {
+              "type": "target",
+              "required": true
+            }
+          }
+        },
+        "countBasis": "real: 12 blog cards, 3 case-study cards"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "hover-color",
+        "trigger": "hover",
+        "reducedMotionFallback": "instant-swap",
+        "note": "title colour ink -> rgb(84,84,84); case card 'Read story' gap 16 -> 20; spring bounce .2 duration .4",
+        "measuredFrom": [
+          "specs/blog-case-studies.md:38"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "absent in Blog.jsx and CaseStudies.jsx (CSS hover transitions)"
+  },
+  "responsive": {
+    "desktop": "4 columns of 305, column-gap 20 row-gap 32",
+    "tablet": "2 columns of 375",
+    "phone": "1 column 350"
+  },
+  "notes": [
+    "5 of 12 blog posts have no author: the original renders Framer's empty-image placeholder circle; author is optional."
+  ],
+  "measuredFrom": [
+    "specs/blog-case-studies.md:80",
+    "specs/blog-case-studies.md:86",
+    "specs/blog-case-studies.md:112",
+    "src/pages/Blog.jsx:30"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [
+    "cms.post-image",
+    "person.author-avatar"
+  ],
+  "version": "1.0.0"
+}

@@ -1,0 +1,175 @@
+{
+  "id": "features.how-it-works",
+  "kind": "section",
+  "category": "FEATURES",
+  "purpose": "Title stack plus the dark animated A1 Loop product demo (ask, read sources, understand, answer, act, trace): shows the value proposition as a worked example. Anchor target #see-the-platform.",
+  "tags": [
+    "product-demo",
+    "animation",
+    "loop",
+    "home-only"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/components/HowItWorks.jsx",
+    "src/components/how/A1Loop.jsx",
+    "src/components/how/a1.css",
+    "src/components/how/motion.js"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": [
+      "A1 per-element transitions only summarised (CLONE_SPEC 14.4)",
+      "WebGL Silk orb only available as fallback PNGs"
+    ]
+  },
+  "allowedTemplates": [
+    "template.home"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "homeRouteOnly": true,
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "eyebrow": {
+        "type": "text",
+        "required": true,
+        "maxWords": 3,
+        "maxWordsBasis": "longest real instance: 3 words"
+      },
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 7,
+        "maxWordsBasis": "longest real instance: 7 words"
+      },
+      "backdrop": {
+        "type": "asset",
+        "required": true,
+        "roles": [
+          "product.illustration-still"
+        ]
+      },
+      "question": {
+        "type": "text",
+        "required": true,
+        "maxWords": 10,
+        "maxWordsBasis": "longest real instance: 10 words"
+      },
+      "sources": {
+        "type": "list",
+        "required": true,
+        "minItems": 6,
+        "maxItems": 6,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "label": {
+              "type": "text",
+              "required": true,
+              "maxWords": 1,
+              "maxWordsBasis": "longest real instance: 1 words"
+            }
+          }
+        },
+        "countBasis": "SOURCES in A1Loop.jsx = 6 pills"
+      },
+      "steps": {
+        "type": "list",
+        "required": true,
+        "minItems": 4,
+        "maxItems": 6,
+        "item": {
+          "type": "text",
+          "required": true,
+          "maxWords": 10,
+          "maxWordsBasis": "longest real instance: 10 words"
+        }
+      },
+      "answerHeadline": {
+        "type": "text",
+        "required": true,
+        "maxWords": 6,
+        "maxWordsBasis": "longest real instance: 6 words"
+      },
+      "bars": {
+        "type": "list",
+        "required": true,
+        "minItems": 3,
+        "maxItems": 3,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "label": {
+              "type": "text",
+              "required": true,
+              "maxWords": 2,
+              "maxWordsBasis": "longest real instance: 2 words"
+            },
+            "value": {
+              "type": "text",
+              "required": true,
+              "maxWords": 1,
+              "maxWordsBasis": "percent figure, 1 token"
+            }
+          }
+        }
+      },
+      "nextStep": {
+        "type": "text",
+        "required": true,
+        "maxWords": 4,
+        "maxWordsBasis": "longest real instance: 4 words"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "loop-demo",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-final-frame",
+        "note": "9-state loop ~21.5s: Rest 1000, Ask 2600, Sent 400, Understand 3800, Act 7200, Press 250, Trace 5500, Fade 600, Reset 150 ms",
+        "measuredFrom": [
+          "CLONE_SPEC.md:226"
+        ]
+      },
+      {
+        "pattern": "scroll-linked-offset",
+        "trigger": "scroll",
+        "reducedMotionFallback": "no-animation",
+        "note": "section translate(80,80)->(0,0) over scrollY 0..500, spring k500 c60 (off on phone)",
+        "measuredFrom": [
+          "CLONE_SPEC.md:187"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "yes",
+    "reducedMotionSource": "src/components/how/a1.css:214"
+  },
+  "responsive": {
+    "desktop": "demo card 1280x520, radius 16",
+    "tablet": "demo card height 500; same delays",
+    "phone": "card 350x500, compact layout, Act hold 7300ms, scroll offset disabled"
+  },
+  "notes": [],
+  "measuredFrom": [
+    "CLONE_SPEC.md:201",
+    "src/components/how/A1Loop.jsx:22",
+    "src/components/how/a1.css:214",
+    "src/components/how/A1Loop.jsx:62"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [
+    "product.illustration-still"
+  ],
+  "version": "1.0.0"
+}

@@ -1,0 +1,208 @@
+{
+  "id": "hero.product-live-chat",
+  "kind": "section",
+  "category": "HERO",
+  "purpose": "Dark product hero: eyebrow badge, h1, lead, two CTAs and a typing 'Live Conversation' chat demo over a WebGL rays background; one hero template serves both intelligences via the product enum.",
+  "tags": [
+    "hero",
+    "product",
+    "chat-demo",
+    "webgl",
+    "typing"
+  ],
+  "status": "spec-only-source-in-progress",
+  "implementedBy": [
+    "src/pages/product/LiveConversation.jsx",
+    "src/pages/product/Rays.jsx",
+    "src/pages/product/ProductPage.jsx",
+    "src/pages/product/content.js"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": [
+      "hero chat avatar is a base64 component default (spec 7.5)",
+      "hamburger-open state on these pages (spec 7.6)"
+    ]
+  },
+  "allowedTemplates": [
+    "template.product"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "mustFollowNav": true
+  },
+  "content": {
+    "fields": {
+      "product": {
+        "type": "enum",
+        "required": true,
+        "values": [
+          "XI",
+          "RI"
+        ]
+      },
+      "eyebrowLabel": {
+        "type": "text",
+        "required": true,
+        "maxWords": 3,
+        "maxWordsBasis": "longest real instance: 3 words"
+      },
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 8,
+        "maxWordsBasis": "longest real instance: 8 words"
+      },
+      "lead": {
+        "type": "text",
+        "required": true,
+        "maxWords": 25,
+        "maxWordsBasis": "spec 1: XI lead is 16 words; RI lead is 'one paragraph, 2 sentences, ~25 words'"
+      },
+      "ctaPrimary": {
+        "type": "link",
+        "required": true,
+        "labelMaxWords": 3,
+        "maxWordsBasis": "longest real label: 3 words"
+      },
+      "ctaSecondary": {
+        "type": "link",
+        "required": true,
+        "labelMaxWords": 4,
+        "maxWordsBasis": "longest real label: 4 words"
+      },
+      "badge": {
+        "type": "asset",
+        "required": true,
+        "roles": [
+          "brand.product-badge"
+        ]
+      },
+      "prompts": {
+        "type": "list",
+        "required": true,
+        "minItems": 3,
+        "maxItems": 3,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "pill": {
+              "type": "text",
+              "required": true,
+              "maxWords": 8,
+              "maxWordsBasis": "longest real instance: 8 words"
+            },
+            "ask": {
+              "type": "text",
+              "required": true,
+              "maxWords": 13,
+              "maxWordsBasis": "longest real instance: 13 words"
+            },
+            "answer": {
+              "type": "text",
+              "required": true,
+              "maxWords": 25,
+              "maxWordsBasis": "longest real instance: 25 words"
+            },
+            "tiles": {
+              "type": "list",
+              "required": true,
+              "minItems": 3,
+              "maxItems": 3,
+              "item": {
+                "type": "object",
+                "required": true,
+                "fields": {
+                  "value": {
+                    "type": "text",
+                    "required": true,
+                    "maxWords": 2,
+                    "maxWordsBasis": "real tile values e.g. '4.2 yrs', '3 assets', '9 accounts' = 2 words"
+                  },
+                  "label": {
+                    "type": "text",
+                    "required": true,
+                    "maxWords": 7,
+                    "maxWordsBasis": "longest real label 'of detractors cite delivery comms' = 5; budget 7"
+                  }
+                }
+              }
+            },
+            "chips": {
+              "type": "list",
+              "required": true,
+              "minItems": 3,
+              "maxItems": 3,
+              "item": {
+                "type": "text",
+                "required": true,
+                "maxWords": 4,
+                "maxWordsBasis": "real chip labels up to 3 words e.g. 'Lease schedule', 'Rent roll Q2'; budget 4"
+              }
+            }
+          }
+        },
+        "countBasis": "spec 1.2: three prompts per product"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "typing-loop",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-final-frame",
+        "note": "3 chars / 24ms, hold 3.8s, then next prompt (~5s per prompt)",
+        "measuredFrom": [
+          "specs/product-pages.md:137"
+        ]
+      },
+      {
+        "pattern": "shader-rays",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-first-frame",
+        "note": "WebGL rays + pointer glow; rAF only while intersecting",
+        "measuredFrom": [
+          "specs/product-pages.md:165"
+        ]
+      },
+      {
+        "pattern": "hover-color",
+        "trigger": "hover",
+        "reducedMotionFallback": "instant-swap",
+        "note": "prompt pill background/colour .2s; pill CTA glow",
+        "measuredFrom": [
+          "specs/product-pages.md:127"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "yes",
+    "reducedMotionSource": "src/pages/product/LiveConversation.jsx:118"
+  },
+  "responsive": {
+    "desktop": "hero 900 high, row max 1280; XI left 672/chat 560, RI left 612/chat 612",
+    "tablet": "row stays horizontal; chat 361x564 compact layout (<480 wide)",
+    "phone": "column gap 48; hero height 1137; chat 350x598"
+  },
+  "notes": [
+    "Source status at build time: src/pages/ExperienceIntelligence.jsx and RealEstateIntelligence.jsx are still the placeholder 'building…' pages, and App.jsx does not import ProductPage. src/pages/product/* is an in-progress, unmounted implementation (ProductPage.jsx imports ./SolutionsTabs and ./product.css, which do not exist on disk). The contract is grounded in the measured spec specs/product-pages.md, not in running source.",
+    "Per spec 2a the RI accent in the chat is #EA7500, different from the RI eyebrow badge (rgb(202,123,87) in the hero, rgb(233,116,0) on plans)."
+  ],
+  "measuredFrom": [
+    "specs/product-pages.md:49",
+    "specs/product-pages.md:88",
+    "src/pages/product/LiveConversation.jsx:118",
+    "src/pages/product/Rays.jsx:106"
+  ],
+  "retrievalEligible": false,
+  "rules": [],
+  "assetRoles": [
+    "brand.product-badge"
+  ],
+  "version": "1.0.0"
+}

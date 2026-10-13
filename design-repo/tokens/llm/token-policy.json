@@ -1,0 +1,22 @@
+{
+  "$description": "What is enforced vs convention for token usage.",
+  "rawValueRestrictions": {
+    "color": "reference tokens by path; never emit a raw literal",
+    "fontFamily": "reference tokens by path; never emit a raw literal",
+    "fontSize": "reference tokens by path; never emit a raw literal",
+    "fontWeight": "reference tokens by path; never emit a raw literal",
+    "radius": "reference tokens by path; never emit a raw literal",
+    "spacing": "reference tokens by path; never emit a raw literal",
+    "elevation": "reference tokens by path; never emit a raw literal",
+    "motion": "reference tokens by path; never emit a raw literal"
+  },
+  "enforced": [
+    "asset roles are closed (schema enum + semantic validator)",
+    "motion object is closed (pattern/trigger/reducedMotionFallback)",
+    "link targets are routes, anchors or dest:<role> (never a literal live URL)"
+  ],
+  "convention": [
+    "token references in prose guidance (README, section purpose)"
+  ],
+  "overrides": "NOT AVAILABLE. A PageSpec node carries only {section, variant, content, motion}; there is no per-instance style/token override field. Styling is owned entirely by section/component contracts, so there is nothing to validate or mutate at the PageSpec layer (MASTER-GUIDE 3.21). Drift of the catalog/policy against real token files is checked in extraction/verify_all.py instead."
+}

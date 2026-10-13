@@ -1,0 +1,28 @@
+{
+  "id": "primitive.checkbox",
+  "kind": "primitive",
+  "purpose": "16x16 radius-4 checkbox, checked bg #FAF9F8 with #44423E tick mask, focus ring #09f.",
+  "props": {
+    "required": "bool"
+  },
+  "variants": [
+    "default"
+  ],
+  "usesTokens": [
+    "color.focus-ring",
+    "radius.xs"
+  ],
+  "implementedBy": [
+    "src/pages/contact/ContactForm.jsx"
+  ],
+  "usedBySections": [
+    "conversion.contact-form"
+  ],
+  "measuredFrom": [
+    "src/pages/contact/ContactForm.jsx:56",
+    "specs/plans-security-contact-404.md:355"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

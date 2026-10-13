@@ -1,0 +1,49 @@
+{
+  "iconSize": {
+    "badge": {
+      "$type": "dimension",
+      "$value": "20px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:250"
+        ]
+      }
+    },
+    "mask": {
+      "$type": "dimension",
+      "$value": "24px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:49"
+        ]
+      }
+    },
+    "caret": {
+      "$type": "dimension",
+      "$value": "16px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:134"
+        ]
+      }
+    },
+    "contact": {
+      "$type": "dimension",
+      "$value": "20px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:318"
+        ]
+      }
+    },
+    "chip": {
+      "$type": "dimension",
+      "$value": "16px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/product-pages.md:124"
+        ]
+      }
+    }
+  }
+}

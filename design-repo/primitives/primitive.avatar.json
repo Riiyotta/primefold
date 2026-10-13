@@ -1,0 +1,31 @@
+{
+  "id": "primitive.avatar",
+  "kind": "primitive",
+  "purpose": "36x36 circular author avatar; when the post has no author, a plain light-grey circle (or omitted row).",
+  "props": {
+    "image": "asset person.author-avatar",
+    "name": "text",
+    "role": "text"
+  },
+  "variants": [
+    "default"
+  ],
+  "usesTokens": [
+    "color.hairline-cms",
+    "radius.pill"
+  ],
+  "implementedBy": [
+    "src/pages/cms/shared.jsx"
+  ],
+  "usedBySections": [
+    "content.card-grid",
+    "content.article"
+  ],
+  "measuredFrom": [
+    "src/pages/cms/shared.jsx:60",
+    "specs/blog-case-studies.md:96"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

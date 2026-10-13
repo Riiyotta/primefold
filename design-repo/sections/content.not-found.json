@@ -1,0 +1,95 @@
+{
+  "id": "content.not-found",
+  "kind": "section",
+  "category": "CONTENT",
+  "purpose": "404 block: eyebrow, 404 h1, 'Nothing to see here.' h2, one line of copy and a black Back to homepage button.",
+  "tags": [
+    "404",
+    "error",
+    "not-found"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/NotFound.jsx"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": []
+  },
+  "allowedTemplates": [
+    "template.not-found"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "eyebrow": {
+        "type": "text",
+        "required": true,
+        "maxWords": 1,
+        "maxWordsBasis": "longest real instance: 1 words"
+      },
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 1,
+        "maxWordsBasis": "longest real instance: 1 words"
+      },
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 4,
+        "maxWordsBasis": "longest real instance: 4 words"
+      },
+      "body": {
+        "type": "text",
+        "required": true,
+        "maxWords": 13,
+        "maxWordsBasis": "longest real instance: 13 words"
+      },
+      "cta": {
+        "type": "link",
+        "required": true,
+        "labelMaxWords": 3,
+        "maxWordsBasis": "longest real label: 3 words"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "none",
+        "trigger": "load",
+        "reducedMotionFallback": "no-animation",
+        "note": "no motion apart from the global eyebrow spinner",
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:14"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "no motion in this section"
+  },
+  "responsive": {
+    "desktop": "height 900 (100vh), padding 168",
+    "tablet": "height 1080 (=100vh)",
+    "phone": "padding 44/20; under-nav overlap bug as on /contact"
+  },
+  "notes": [
+    "Also rendered by BlogPost.jsx / CaseStudy.jsx for unknown slugs and by the App.jsx '*' route.",
+    "The live 404 document title and description are copied from /contact (live-site quirk)."
+  ],
+  "measuredFrom": [
+    "specs/plans-security-contact-404.md:371",
+    "src/pages/NotFound.jsx:16"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [],
+  "version": "1.0.0"
+}

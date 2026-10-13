@@ -1,0 +1,524 @@
+{
+  "color": {
+    "ink": {
+      "$type": "color",
+      "$value": "rgb(26,24,20)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:8"
+        ]
+      },
+      "$description": "dark text, black buttons, CTA background (CLONE_SPEC 0.3)"
+    },
+    "ink-2": {
+      "$type": "color",
+      "$value": "rgb(33,33,33)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:9"
+        ]
+      },
+      "$description": "section H2s, trust item titles"
+    },
+    "ink-cta": {
+      "$type": "color",
+      "$value": "rgb(33,30,28)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:10"
+        ]
+      },
+      "$description": "hero white-CTA label text"
+    },
+    "grey-600": {
+      "$type": "color",
+      "$value": "rgb(84,84,84)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:11"
+        ]
+      },
+      "$description": "body paragraphs, footer links"
+    },
+    "grey-550": {
+      "$type": "color",
+      "$value": "rgb(84,82,78)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:12"
+        ]
+      },
+      "$description": "intelligence card descriptions, form helper text"
+    },
+    "grey-500": {
+      "$type": "color",
+      "$value": "rgb(97,97,97)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:13"
+        ]
+      },
+      "$description": "eyebrow label + spinner, job meta"
+    },
+    "social": {
+      "$type": "color",
+      "$value": "rgb(68,66,62)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:14"
+        ]
+      },
+      "$description": "footer social icons"
+    },
+    "page-alt": {
+      "$type": "color",
+      "$value": "rgb(250,249,248)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:15"
+        ]
+      },
+      "$description": "Content sheet / How-it-works / FAQ / Open roles background"
+    },
+    "card-tint": {
+      "$type": "color",
+      "$value": "rgba(0,0,0,0.04)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:16"
+        ]
+      },
+      "$description": "intelligence card outer frame (desktop)"
+    },
+    "card-tint-solid": {
+      "$type": "color",
+      "$value": "rgb(240,239,238)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:17"
+        ]
+      },
+      "$description": "intelligence card frame on tablet/phone"
+    },
+    "divider": {
+      "$type": "color",
+      "$value": "rgb(226,226,226)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:18"
+        ]
+      },
+      "$description": "footer dividers and ring"
+    },
+    "nav-border": {
+      "$type": "color",
+      "$value": "rgb(235,235,235)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:19"
+        ]
+      },
+      "$description": "scrolled nav border / white nav bottom border"
+    },
+    "track": {
+      "$type": "color",
+      "$value": "rgb(237,237,237)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:20"
+        ]
+      },
+      "$description": "trust indicator track; also security trust-card body text (rgb 237,237,237)"
+    },
+    "teal": {
+      "$type": "color",
+      "$value": "rgb(39,168,150)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:21"
+        ]
+      },
+      "$description": "trust indicator fill, ticks, billing 'Save annually'"
+    },
+    "teal-2": {
+      "$type": "color",
+      "$value": "rgb(63,209,188)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:22"
+        ]
+      },
+      "$description": "A1 loop dots/checks/branches; comet ring 3"
+    },
+    "teal-xi": {
+      "$type": "color",
+      "$value": "rgb(32,131,116)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:23"
+        ]
+      },
+      "$description": "XI badge / 'Live today' label"
+    },
+    "orange": {
+      "$type": "color",
+      "$value": "rgb(202,123,87)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:24"
+        ]
+      },
+      "$description": "RI beta label, sweep gradient"
+    },
+    "orange-2": {
+      "$type": "color",
+      "$value": "rgb(249,157,114)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:25"
+        ]
+      },
+      "$description": "A1 answer dot, glows, comet ring 2"
+    },
+    "glow-teal": {
+      "$type": "color",
+      "$value": "#16FFDE",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:26"
+        ]
+      },
+      "$description": "button hover glow"
+    },
+    "purple": {
+      "$type": "color",
+      "$value": "rgb(89,74,255)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:27"
+        ]
+      },
+      "$description": "'Planned 2027' label; legal-page link colour is the same #594AFF"
+    },
+    "dark-window": {
+      "$type": "color",
+      "$value": "rgb(22,21,19)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:28"
+        ]
+      },
+      "$description": "A1 window / answer body"
+    },
+    "dark-stage": {
+      "$type": "color",
+      "$value": "rgb(11,11,12)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:29"
+        ]
+      },
+      "$description": "A1 stage background"
+    },
+    "panel-1": {
+      "$type": "color",
+      "$value": "rgb(40,38,34)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:30"
+        ]
+      },
+      "$description": "card mock surfaces; numbered case-study cards"
+    },
+    "panel-2": {
+      "$type": "color",
+      "$value": "rgb(68,66,62)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:31"
+        ]
+      },
+      "$description": "PDF image area"
+    },
+    "panel-3": {
+      "$type": "color",
+      "$value": "rgb(53,51,46)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:32"
+        ]
+      },
+      "$description": "CI icon circles"
+    },
+    "cream": {
+      "$type": "color",
+      "$value": "rgb(254,250,243)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:33"
+        ]
+      },
+      "$description": "label text on black buttons"
+    },
+    "a1-text": {
+      "$type": "color",
+      "$value": "rgb(240,238,234)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:34"
+        ]
+      },
+      "$description": "A1 demo primary text"
+    },
+    "a1-text-2": {
+      "$type": "color",
+      "$value": "rgb(203,199,192)",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:35"
+        ]
+      },
+      "$description": "A1 demo secondary text; dark-hero lead text"
+    },
+    "white": {
+      "$type": "color",
+      "$value": "#ffffff",
+      "$extensions": {
+        "measuredFrom": [
+          "src/index.css:24"
+        ]
+      },
+      "$description": "page background (body)"
+    },
+    "surface-soft": {
+      "$type": "color",
+      "$value": "rgb(250,250,249)",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:392"
+        ]
+      },
+      "$description": "toggle tracks, info-card bg"
+    },
+    "hairline-table": {
+      "$type": "color",
+      "$value": "rgb(234,234,234)",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:393"
+        ]
+      },
+      "$description": "comparison-table row dividers"
+    },
+    "divider-plan-card": {
+      "$type": "color",
+      "$value": "#E1E1D4",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:394"
+        ]
+      },
+      "$description": "pricing-card divider line"
+    },
+    "tick-bg": {
+      "$type": "color",
+      "$value": "rgba(39,168,150,.24)",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:395"
+        ]
+      },
+      "$description": "tick circle background"
+    },
+    "cross-grey": {
+      "$type": "color",
+      "$value": "rgb(162,158,152)",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:396"
+        ]
+      },
+      "$description": "comparison cross icon"
+    },
+    "table-value": {
+      "$type": "color",
+      "$value": "rgb(53,51,46)",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:397"
+        ]
+      },
+      "$description": "comparison text values"
+    },
+    "table-sublabel": {
+      "$type": "color",
+      "$value": "rgb(102,102,102)",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:398"
+        ]
+      },
+      "$description": "comparison header sub-labels / meta text"
+    },
+    "badge-ri": {
+      "$type": "color",
+      "$value": "rgb(233,116,0)",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:399"
+        ]
+      },
+      "$description": "RI badge square (plans/product badge). NOTE: product-page chat accent for RI is #EA7500 and hero eyebrow badge uses orange rgb(202,123,87): three near-identical RI oranges exist on the live site."
+    },
+    "form-label": {
+      "$type": "color",
+      "$value": "rgb(44,44,44)",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:401"
+        ]
+      },
+      "$description": "form labels, contact link-card titles"
+    },
+    "link-linkedin": {
+      "$type": "color",
+      "$value": "rgb(9,102,194)",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:404"
+        ]
+      },
+      "$description": "LinkedIn icon on /contact (third-party brand colour)"
+    },
+    "tag-pill": {
+      "$type": "color",
+      "$value": "rgb(245,245,241)",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/blog-case-studies.md:54"
+        ]
+      },
+      "$description": "case-study pill background"
+    },
+    "stat-card": {
+      "$type": "color",
+      "$value": "rgb(246,246,246)",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/blog-case-studies.md:55"
+        ]
+      },
+      "$description": "stat and quote card background"
+    },
+    "hairline-cms": {
+      "$type": "color",
+      "$value": "rgb(235,235,235)",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/blog-case-studies.md:53"
+        ]
+      },
+      "$description": "CMS hairlines (same value as nav-border)"
+    },
+    "link-body": {
+      "$type": "color",
+      "$value": "#594AFF",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/blog-case-studies.md:58"
+        ]
+      },
+      "$description": "rich-text link colour (hover #212121 + underline)"
+    },
+    "stat-green": {
+      "$type": "color",
+      "$value": "rgb(20,169,0)",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/blog-case-studies.md:62"
+        ]
+      },
+      "$description": "case-study stat value colour (green)"
+    },
+    "stat-orange": {
+      "$type": "color",
+      "$value": "rgb(255,123,0)",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/blog-case-studies.md:62"
+        ]
+      },
+      "$description": "case-study stat value colour (orange)"
+    },
+    "security-glow": {
+      "$type": "color",
+      "$value": "rgba(171,160,136,.5)",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:406"
+        ]
+      },
+      "$description": "security hero glow"
+    },
+    "security-pill": {
+      "$type": "color",
+      "$value": "rgba(23,21,18,.8)",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:405"
+        ]
+      },
+      "$description": "security hero centre pill"
+    },
+    "field-bg": {
+      "$type": "color",
+      "$value": "#FBF9F60D",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:402"
+        ]
+      },
+      "$description": "form input background"
+    },
+    "field-ring": {
+      "$type": "color",
+      "$value": "#2222221F",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:402"
+        ]
+      },
+      "$description": "form input ring"
+    },
+    "field-focus": {
+      "$type": "color",
+      "$value": "#54524E",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:402"
+        ]
+      },
+      "$description": "form focus border"
+    },
+    "field-placeholder": {
+      "$type": "color",
+      "$value": "#616161",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:402"
+        ]
+      },
+      "$description": "form placeholder"
+    },
+    "focus-ring": {
+      "$type": "color",
+      "$value": "#09f",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:403"
+        ]
+      },
+      "$description": "checkbox focus ring"
+    }
+  }
+}

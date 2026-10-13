@@ -1,0 +1,264 @@
+{
+  "fontFamily": {
+    "headline": {
+      "$type": "fontFamily",
+      "$value": "\"Stack Sans Headline\", \"Stack Sans Headline Placeholder\", sans-serif",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:38"
+        ]
+      },
+      "$description": "Framer fallback stack; headings, plan names, big numbers"
+    },
+    "inter": {
+      "$type": "fontFamily",
+      "$value": "Inter, \"Inter Placeholder\", sans-serif",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:39"
+        ]
+      },
+      "$description": "body, UI labels"
+    },
+    "favorit": {
+      "$type": "fontFamily",
+      "$value": "\"ABC Favorit Trial Book\", \"ABC Favorit Trial Book Placeholder\", sans-serif",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:40"
+        ]
+      },
+      "$description": "TRIAL-licensed face (see assets/asset-roles.json fontFaces); outcome digits, intelligence card titles, phone hero/testimonial titles"
+    },
+    "stack-sans-text": {
+      "$type": "fontFamily",
+      "$value": "\"Stack Sans Text\", \"Stack Sans Text Placeholder\", sans-serif",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:302"
+        ]
+      },
+      "$description": "contact Submit label and in-body primary button only"
+    }
+  },
+  "fontSize": {
+    "10": {
+      "$type": "dimension",
+      "$value": "10px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/product-pages.md:247"
+        ]
+      }
+    },
+    "12": {
+      "$type": "dimension",
+      "$value": "12px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:91"
+        ]
+      }
+    },
+    "13": {
+      "$type": "dimension",
+      "$value": "13px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:104"
+        ]
+      }
+    },
+    "14": {
+      "$type": "dimension",
+      "$value": "14px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:78"
+        ]
+      }
+    },
+    "16": {
+      "$type": "dimension",
+      "$value": "16px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:77"
+        ]
+      }
+    },
+    "18": {
+      "$type": "dimension",
+      "$value": "18px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:74"
+        ]
+      }
+    },
+    "20": {
+      "$type": "dimension",
+      "$value": "20px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:89"
+        ]
+      }
+    },
+    "24": {
+      "$type": "dimension",
+      "$value": "24px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/product-pages.md:314"
+        ]
+      }
+    },
+    "26": {
+      "$type": "dimension",
+      "$value": "26px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:95"
+        ]
+      }
+    },
+    "28": {
+      "$type": "dimension",
+      "$value": "28px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:95"
+        ]
+      }
+    },
+    "32": {
+      "$type": "dimension",
+      "$value": "32px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:95"
+        ]
+      }
+    },
+    "40": {
+      "$type": "dimension",
+      "$value": "40px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/blog-case-studies.md:155"
+        ]
+      }
+    },
+    "42": {
+      "$type": "dimension",
+      "$value": "42px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:74"
+        ]
+      }
+    },
+    "44": {
+      "$type": "dimension",
+      "$value": "44px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:79"
+        ]
+      }
+    },
+    "48": {
+      "$type": "dimension",
+      "$value": "48px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:79"
+        ]
+      }
+    },
+    "56": {
+      "$type": "dimension",
+      "$value": "56px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:74"
+        ]
+      }
+    },
+    "64": {
+      "$type": "dimension",
+      "$value": "64px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:73"
+        ]
+      }
+    },
+    "80": {
+      "$type": "dimension",
+      "$value": "80px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:94"
+        ]
+      }
+    }
+  },
+  "fontWeight": {
+    "300": {
+      "$type": "fontWeight",
+      "$value": 300,
+      "$extensions": {
+        "measuredFrom": [
+          "specs/blog-case-studies.md:217"
+        ]
+      }
+    },
+    "350": {
+      "$type": "fontWeight",
+      "$value": 350,
+      "$extensions": {
+        "measuredFrom": [
+          "src/index.css:8"
+        ]
+      }
+    },
+    "400": {
+      "$type": "fontWeight",
+      "$value": 400,
+      "$extensions": {
+        "measuredFrom": [
+          "src/index.css:6"
+        ]
+      }
+    },
+    "500": {
+      "$type": "fontWeight",
+      "$value": 500,
+      "$extensions": {
+        "measuredFrom": [
+          "src/index.css:32"
+        ]
+      }
+    },
+    "600": {
+      "$type": "fontWeight",
+      "$value": 600,
+      "$extensions": {
+        "measuredFrom": [
+          "src/index.css:14"
+        ]
+      }
+    },
+    "700": {
+      "$type": "fontWeight",
+      "$value": 700,
+      "$extensions": {
+        "measuredFrom": [
+          "src/index.css:7"
+        ]
+      }
+    }
+  }
+}

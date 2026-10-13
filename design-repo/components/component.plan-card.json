@@ -1,0 +1,32 @@
+{
+  "id": "component.plan-card",
+  "kind": "component",
+  "purpose": "Pricing card: name + tag, description, price + suffix, full-width CTA, divider graphic, tick feature list with optional quarter tag.",
+  "props": {
+    "name": "text",
+    "tag": "text?",
+    "price": "text",
+    "features": "list"
+  },
+  "variants": [
+    "default"
+  ],
+  "usesTokens": [
+    "component.plan-card.radius",
+    "component.plan-card.padding",
+    "elevation.ring-hairline"
+  ],
+  "implementedBy": [
+    "src/pages/plans/PlansHero.jsx"
+  ],
+  "usedBySections": [
+    "hero.pricing"
+  ],
+  "measuredFrom": [
+    "src/pages/plans/PlansHero.jsx:12",
+    "specs/plans-security-contact-404.md:101"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

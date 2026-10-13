@@ -1,0 +1,260 @@
+{
+  "text": {
+    "primary": {
+      "$type": "color",
+      "$value": "{color.ink}",
+      "$extensions": {
+        "measuredFrom": [
+          "src/index.css:24"
+        ]
+      },
+      "$description": "body copy colour on white"
+    },
+    "heading": {
+      "$type": "color",
+      "$value": "{color.ink-2}",
+      "$extensions": {
+        "measuredFrom": [
+          "src/index.css:33"
+        ]
+      },
+      "$description": "section H2 colour"
+    },
+    "body": {
+      "$type": "color",
+      "$value": "{color.grey-600}",
+      "$extensions": {
+        "measuredFrom": [
+          "src/index.css:36"
+        ]
+      },
+      "$description": "lead / descriptions"
+    },
+    "body-warm": {
+      "$type": "color",
+      "$value": "{color.grey-550}",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:38"
+        ]
+      },
+      "$description": "card descriptions"
+    },
+    "eyebrow": {
+      "$type": "color",
+      "$value": "{color.grey-500}",
+      "$extensions": {
+        "measuredFrom": [
+          "src/index.css:32"
+        ]
+      },
+      "$description": "eyebrow label"
+    },
+    "inverse": {
+      "$type": "color",
+      "$value": "{color.white}",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:73"
+        ]
+      },
+      "$description": "text on dark surfaces"
+    },
+    "inverse-secondary": {
+      "$type": "color",
+      "$value": "{color.a1-text-2}",
+      "$extensions": {
+        "measuredFrom": [
+          "src/pages/security/SecurityHero.jsx:55"
+        ]
+      },
+      "$description": "lead on dark hero"
+    },
+    "on-black-button": {
+      "$type": "color",
+      "$value": "{color.cream}",
+      "$extensions": {
+        "measuredFrom": [
+          "src/index.css:53"
+        ]
+      },
+      "$description": "label on black pill"
+    },
+    "accent-positive": {
+      "$type": "color",
+      "$value": "{color.teal}",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:90"
+        ]
+      },
+      "$description": "ticks, 'Save annually'"
+    },
+    "link-article": {
+      "$type": "color",
+      "$value": "{color.link-body}",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/blog-case-studies.md:58"
+        ]
+      },
+      "$description": "rich-text links"
+    }
+  },
+  "surface": {
+    "page": {
+      "$type": "color",
+      "$value": "{color.white}",
+      "$extensions": {
+        "measuredFrom": [
+          "src/index.css:24"
+        ]
+      },
+      "$description": "default page"
+    },
+    "alt": {
+      "$type": "color",
+      "$value": "{color.page-alt}",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:41"
+        ]
+      },
+      "$description": "content sheet, faq, open roles"
+    },
+    "soft": {
+      "$type": "color",
+      "$value": "{color.surface-soft}",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:392"
+        ]
+      },
+      "$description": "info cards, toggle tracks"
+    },
+    "inverse": {
+      "$type": "color",
+      "$value": "{color.ink}",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:34"
+        ]
+      },
+      "$description": "CTA card, dark heroes, black buttons"
+    },
+    "dark-window": {
+      "$type": "color",
+      "$value": "{color.dark-window}",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:53"
+        ]
+      },
+      "$description": "A1 window"
+    },
+    "dark-stage": {
+      "$type": "color",
+      "$value": "{color.dark-stage}",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:54"
+        ]
+      },
+      "$description": "A1 stage, RI panels"
+    },
+    "stat": {
+      "$type": "color",
+      "$value": "{color.stat-card}",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/blog-case-studies.md:55"
+        ]
+      },
+      "$description": "case-study stat and quote cards"
+    },
+    "numbered": {
+      "$type": "color",
+      "$value": "{color.panel-1}",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/blog-case-studies.md:57"
+        ]
+      },
+      "$description": "case-study numbered cards"
+    }
+  },
+  "border": {
+    "hairline": {
+      "$type": "shadow",
+      "$value": "{elevation.ring-hairline}",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:101"
+        ]
+      },
+      "$description": "card ring"
+    },
+    "divider": {
+      "$type": "color",
+      "$value": "{color.divider}",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:43"
+        ]
+      },
+      "$description": "footer dividers"
+    },
+    "bar": {
+      "$type": "color",
+      "$value": "{color.nav-border}",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:44"
+        ]
+      },
+      "$description": "white nav bar bottom border"
+    }
+  },
+  "brand": {
+    "xi": {
+      "$type": "color",
+      "$value": "{color.teal-xi}",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:48"
+        ]
+      },
+      "$description": "Experience Intelligence"
+    },
+    "ri": {
+      "$type": "color",
+      "$value": "{color.orange}",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:49"
+        ]
+      },
+      "$description": "Real Estate Intelligence (hero/cms badges)"
+    },
+    "ri-badge": {
+      "$type": "color",
+      "$value": "{color.badge-ri}",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:399"
+        ]
+      },
+      "$description": "RI badge square on plans"
+    },
+    "ci": {
+      "$type": "color",
+      "$value": "{color.purple}",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:52"
+        ]
+      },
+      "$description": "Corporate/next intelligence"
+    }
+  }
+}

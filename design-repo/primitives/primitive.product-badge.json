@@ -1,0 +1,32 @@
+{
+  "id": "primitive.product-badge",
+  "kind": "primitive",
+  "purpose": "20x20 radius-4 square with white 'XI' or 'RI' (Inter Bold 12.1/18.15).",
+  "props": {
+    "product": "XI|RI"
+  },
+  "variants": [
+    "XI",
+    "RI"
+  ],
+  "usesTokens": [
+    "color.teal-xi",
+    "color.badge-ri",
+    "radius.xs",
+    "iconSize.badge"
+  ],
+  "implementedBy": [
+    "src/pages/plans/ProductBadge.jsx"
+  ],
+  "usedBySections": [
+    "hero.pricing",
+    "features.comparison-table"
+  ],
+  "measuredFrom": [
+    "src/pages/plans/ProductBadge.jsx:2",
+    "specs/plans-security-contact-404.md:54"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

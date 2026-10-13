@@ -1,0 +1,31 @@
+{
+  "id": "component.stat-card-cms",
+  "kind": "component",
+  "purpose": "Case-study stat card: rgb(246,246,246), radius 24, 1.6px ring, 48/56 coloured value + 16/24 500 label.",
+  "props": {
+    "value": "text",
+    "label": "text",
+    "color": "teal|green|orange"
+  },
+  "variants": [
+    "default"
+  ],
+  "usesTokens": [
+    "color.stat-card",
+    "elevation.cms-ring",
+    "radius.xl"
+  ],
+  "implementedBy": [
+    "src/pages/CaseStudy.jsx"
+  ],
+  "usedBySections": [
+    "content.case-study"
+  ],
+  "measuredFrom": [
+    "src/pages/CaseStudy.jsx:12",
+    "specs/blog-case-studies.md:199"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

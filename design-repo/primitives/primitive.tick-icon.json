@@ -1,0 +1,31 @@
+{
+  "id": "primitive.tick-icon",
+  "kind": "primitive",
+  "purpose": "20x20 tick (bg rgba(39,168,150,.24), glyph teal) and 24x24 cross (rgb(162,158,152)) masks for feature lists and the comparison table.",
+  "props": {
+    "kind": "tick|cross"
+  },
+  "variants": [
+    "tick",
+    "cross"
+  ],
+  "usesTokens": [
+    "color.tick-bg",
+    "color.teal",
+    "color.cross-grey"
+  ],
+  "implementedBy": [
+    "src/pages/plans/Tick.jsx"
+  ],
+  "usedBySections": [
+    "hero.pricing",
+    "features.comparison-table"
+  ],
+  "measuredFrom": [
+    "src/pages/plans/Tick.jsx:6",
+    "src/pages/plans/Tick.jsx:15"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

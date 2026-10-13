@@ -1,0 +1,48 @@
+{
+  "id": "primitive.button",
+  "kind": "primitive",
+  "purpose": "Framer pill button: ring shadow, hover glow gradient, label 16/24 500. Five variants.",
+  "props": {
+    "variant": "white|black|glass|glass-dark|arrow",
+    "label": "text",
+    "to": "target"
+  },
+  "variants": [
+    "white",
+    "black",
+    "glass",
+    "glass-dark",
+    "arrow"
+  ],
+  "usesTokens": [
+    "component.button.height",
+    "component.button.padding",
+    "component.button.radius",
+    "elevation.button-ring",
+    "elevation.button-hover",
+    "color.cream",
+    "motion.duration-hover"
+  ],
+  "implementedBy": [
+    "src/components/shared/Button.jsx",
+    "src/index.css"
+  ],
+  "usedBySections": [
+    "shell.navbar",
+    "hero.home-carousel",
+    "conversion.cta-band",
+    "hero.pricing",
+    "conversion.contact-form",
+    "hero.careers",
+    "content.open-roles",
+    "content.not-found"
+  ],
+  "measuredFrom": [
+    "src/index.css:41",
+    "src/index.css:59",
+    "CLONE_SPEC.md:109"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

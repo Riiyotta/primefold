@@ -1,0 +1,31 @@
+{
+  "id": "primitive.divider",
+  "kind": "primitive",
+  "purpose": "1px hairline: rgb(235,235,235) on CMS pages, rgb(226,226,226) in the footer.",
+  "props": {
+    "tone": "cms|footer"
+  },
+  "variants": [
+    "cms",
+    "footer"
+  ],
+  "usesTokens": [
+    "color.nav-border",
+    "color.divider"
+  ],
+  "implementedBy": [
+    "src/pages/BlogPost.jsx",
+    "src/components/Footer.jsx"
+  ],
+  "usedBySections": [
+    "content.article",
+    "shell.footer"
+  ],
+  "measuredFrom": [
+    "src/pages/BlogPost.jsx:16",
+    "src/components/Footer.jsx:99"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

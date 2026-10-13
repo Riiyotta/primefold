@@ -1,0 +1,28 @@
+{
+  "id": "component.logo-ticker-track",
+  "kind": "component",
+  "purpose": "Duplicated-list marquee track of 246x120 logo tiles at 50px/s with per-index appear delay.",
+  "props": {
+    "logos": "list asset customer.logo"
+  },
+  "variants": [
+    "default"
+  ],
+  "usesTokens": [
+    "motion.duration-toggle"
+  ],
+  "implementedBy": [
+    "src/components/HowItWorks.jsx",
+    "src/components/how/how.css"
+  ],
+  "usedBySections": [
+    "proof.logo-ticker"
+  ],
+  "measuredFrom": [
+    "src/components/HowItWorks.jsx:20",
+    "src/components/how/how.css:11"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

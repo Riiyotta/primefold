@@ -1,0 +1,255 @@
+{
+  "id": "hero.pricing",
+  "kind": "section",
+  "category": "HERO",
+  "purpose": "Plans hero: eyebrow, h1, lead, two CTAs, product and billing toggles and the three pricing cards (XI state) or one 'Explore Primefold RI' card (RI state).",
+  "tags": [
+    "pricing",
+    "plans",
+    "toggle",
+    "hero"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/plans/PlansHero.jsx",
+    "src/pages/plans/Segmented.jsx",
+    "src/pages/plans/ProductBadge.jsx",
+    "src/pages/plans/Tick.jsx",
+    "src/pages/plans/data.js"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": []
+  },
+  "allowedTemplates": [
+    "template.plans"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "mustFollowNav": true
+  },
+  "content": {
+    "fields": {
+      "eyebrow": {
+        "type": "text",
+        "required": true,
+        "maxWords": 1,
+        "maxWordsBasis": "longest real instance: 1 words"
+      },
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 6,
+        "maxWordsBasis": "longest real instance: 6 words"
+      },
+      "product": {
+        "type": "enum",
+        "required": true,
+        "values": [
+          "XI",
+          "RI"
+        ]
+      },
+      "lead": {
+        "type": "text",
+        "required": true,
+        "maxWords": 19,
+        "maxWordsBasis": "longest real instance: 19 words"
+      },
+      "ctaPrimary": {
+        "type": "link",
+        "required": true,
+        "labelMaxWords": 3,
+        "maxWordsBasis": "longest real label: 3 words"
+      },
+      "ctaSecondary": {
+        "type": "link",
+        "required": true,
+        "labelMaxWords": 3,
+        "maxWordsBasis": "longest real label: 3 words"
+      },
+      "billingToggle": {
+        "type": "bool",
+        "required": false
+      },
+      "plans": {
+        "type": "list",
+        "required": false,
+        "minItems": 3,
+        "maxItems": 3,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "name": {
+              "type": "text",
+              "required": true,
+              "maxWords": 2,
+              "maxWordsBasis": "longest real instance: 2 words"
+            },
+            "tag": {
+              "type": "text",
+              "required": false,
+              "maxWords": 3,
+              "maxWordsBasis": "longest real instance: 3 words"
+            },
+            "description": {
+              "type": "text",
+              "required": true,
+              "maxWords": 7,
+              "maxWordsBasis": "longest real instance: 7 words"
+            },
+            "price": {
+              "type": "text",
+              "required": true,
+              "maxWords": 2,
+              "maxWordsBasis": "longest real instance: 2 words"
+            },
+            "suffix": {
+              "type": "text",
+              "required": false,
+              "maxWords": 4,
+              "maxWordsBasis": "longest real instance: 4 words"
+            },
+            "cta": {
+              "type": "link",
+              "required": true,
+              "labelMaxWords": 5,
+              "maxWordsBasis": "longest real label: 5 words"
+            },
+            "features": {
+              "type": "list",
+              "required": true,
+              "minItems": 6,
+              "maxItems": 11,
+              "item": {
+                "type": "object",
+                "required": true,
+                "fields": {
+                  "label": {
+                    "type": "text",
+                    "required": true,
+                    "maxWords": 8,
+                    "maxWordsBasis": "longest real instance: 8 words"
+                  },
+                  "quarter": {
+                    "type": "text",
+                    "required": false,
+                    "maxWords": 1,
+                    "maxWordsBasis": "longest real instance: 1 words"
+                  }
+                }
+              },
+              "countBasis": "spec 1.2: Free Trial 6, Business 9, Enterprise 11 features"
+            }
+          }
+        }
+      },
+      "riCard": {
+        "type": "object",
+        "required": false,
+        "fields": {
+          "label": {
+            "type": "text",
+            "required": true,
+            "maxWords": 2,
+            "maxWordsBasis": "longest real instance: 2 words"
+          },
+          "title": {
+            "type": "text",
+            "required": true,
+            "maxWords": 3,
+            "maxWordsBasis": "longest real instance: 3 words"
+          },
+          "body": {
+            "type": "text",
+            "required": true,
+            "maxWords": 11,
+            "maxWordsBasis": "longest real instance: 11 words"
+          },
+          "cta": {
+            "type": "link",
+            "required": true,
+            "labelMaxWords": 2,
+            "maxWordsBasis": "longest real label: 2 words"
+          }
+        }
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "toggle-fade",
+        "trigger": "click",
+        "reducedMotionFallback": "instant-swap",
+        "note": "segment bg/shadow cross-fade in place, tween .2s ease (no sliding thumb)",
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:92"
+        ]
+      },
+      {
+        "pattern": "hover-color",
+        "trigger": "hover",
+        "reducedMotionFallback": "instant-swap",
+        "note": "inactive segment label opacity .7 -> 1",
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:86"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "absent in PlansHero.jsx and Segmented.jsx (CSS transitions only)"
+  },
+  "responsive": {
+    "desktop": "cards grid 3 x 416, gap 16/24",
+    "tablet": "2 columns of 377; Enterprise wraps",
+    "phone": "1 column 350; product toggle labels shorten to XI / RI"
+  },
+  "notes": [
+    "Monthly/annual toggle changes nothing in the cards (measured); it only changes the comparison-table header sub-labels.",
+    "RI state hides the billing toggle and swaps the grid for riCard."
+  ],
+  "measuredFrom": [
+    "specs/plans-security-contact-404.md:68",
+    "specs/plans-security-contact-404.md:96",
+    "specs/plans-security-contact-404.md:121",
+    "src/pages/plans/PlansHero.jsx:12"
+  ],
+  "rules": [
+    {
+      "id": "PRICING_XI_REQUIRES_PLANS",
+      "when": {
+        "field": "product",
+        "equals": "XI"
+      },
+      "require": [
+        "plans"
+      ],
+      "forbid": [
+        "riCard"
+      ]
+    },
+    {
+      "id": "PRICING_RI_REQUIRES_RICARD",
+      "when": {
+        "field": "product",
+        "equals": "RI"
+      },
+      "require": [
+        "riCard"
+      ],
+      "forbid": [
+        "plans",
+        "billingToggle"
+      ]
+    }
+  ],
+  "retrievalEligible": true,
+  "assetRoles": [],
+  "version": "1.0.0"
+}

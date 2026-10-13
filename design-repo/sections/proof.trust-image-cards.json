@@ -1,0 +1,99 @@
+{
+  "id": "proof.trust-image-cards",
+  "kind": "section",
+  "category": "PROOF",
+  "purpose": "Two shader-backed image cards with a dark bottom overlay and white headline + body (security trust statements).",
+  "tags": [
+    "cards",
+    "shader",
+    "trust",
+    "security"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/security/TrustCards.jsx"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": [
+      "shader parameters for these cards not read from source (spec 7.3)"
+    ]
+  },
+  "allowedTemplates": [
+    "template.security"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "cards": {
+        "type": "list",
+        "required": true,
+        "minItems": 2,
+        "maxItems": 2,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "backdrop": {
+              "type": "asset",
+              "required": true,
+              "roles": [
+                "fx.shader-fallback"
+              ]
+            },
+            "title": {
+              "type": "text",
+              "required": true,
+              "maxWords": 5,
+              "maxWordsBasis": "longest real instance: 5 words"
+            },
+            "body": {
+              "type": "text",
+              "required": true,
+              "maxWords": 30,
+              "maxWordsBasis": "spec 2.3: card 1 about 30 words; card 2 is 17 words"
+            }
+          }
+        },
+        "countBasis": "spec 2.3: exactly two cards"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "shader-drift",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-first-frame",
+        "note": "WebGL wave (same as CTA); card 2 rotated 180deg; static PNG fallback",
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:280"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "absent in TrustCards.jsx (static fallback image, no motion in source)"
+  },
+  "responsive": {
+    "desktop": "2 x 632, height 435",
+    "tablet": "2 x 377",
+    "phone": "1 x 350 stacked, gap 16"
+  },
+  "notes": [],
+  "measuredFrom": [
+    "specs/plans-security-contact-404.md:277",
+    "src/pages/security/TrustCards.jsx:3"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [
+    "fx.shader-fallback"
+  ],
+  "version": "1.0.0"
+}

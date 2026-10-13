@@ -1,0 +1,189 @@
+{
+  "motion": {
+    "duration-hover": {
+      "$type": "duration",
+      "$value": "0.3s",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:117"
+        ]
+      },
+      "$description": "button hover tween"
+    },
+    "duration-toggle": {
+      "$type": "duration",
+      "$value": "0.2s",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:92"
+        ]
+      },
+      "$description": "segmented toggle / faq tween"
+    },
+    "duration-card-hover": {
+      "$type": "duration",
+      "$value": "0.4s",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/blog-case-studies.md:38"
+        ]
+      },
+      "$description": "cms card hover spring duration"
+    },
+    "duration-carousel": {
+      "$type": "duration",
+      "$value": "0.5s",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:270"
+        ]
+      },
+      "$description": "testimonial / solutions slide"
+    },
+    "duration-hero-autoplay": {
+      "$type": "duration",
+      "$value": "6s",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:171"
+        ]
+      },
+      "$description": "hero slide progress"
+    },
+    "duration-hero-content": {
+      "$type": "duration",
+      "$value": "1000ms",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:177"
+        ]
+      },
+      "$description": "hero content block entrance"
+    },
+    "duration-spinner-frame": {
+      "$type": "duration",
+      "$value": "80ms",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:121"
+        ]
+      },
+      "$description": "eyebrow braille frame"
+    },
+    "ease-framer": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.44,
+        0,
+        0.56,
+        1
+      ],
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:142"
+        ]
+      },
+      "$description": "default Framer tween"
+    },
+    "ease-soft-out": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.42,
+        0,
+        0,
+        1
+      ],
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:176"
+        ]
+      },
+      "$description": "hero slide + carousels"
+    },
+    "ease-digit": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.25,
+        0.46,
+        0.45,
+        0.94
+      ],
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:329"
+        ]
+      },
+      "$description": "outcome digit roll"
+    },
+    "spring-card-hover": {
+      "$type": "spring",
+      "$value": {
+        "stiffness": 210,
+        "damping": 30,
+        "mass": 1
+      },
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:257"
+        ]
+      },
+      "$description": "intelligence card flex grow"
+    },
+    "spring-sheet": {
+      "$type": "spring",
+      "$value": {
+        "stiffness": 500,
+        "damping": 60,
+        "mass": 1
+      },
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:187"
+        ]
+      },
+      "$description": "content sheet offset, mobile card stack"
+    },
+    "spring-solutions-entry": {
+      "$type": "spring",
+      "$value": {
+        "stiffness": 500,
+        "damping": 83,
+        "mass": 1
+      },
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:290"
+        ]
+      },
+      "$description": "solutions entry offset"
+    },
+    "spring-solutions-drift": {
+      "$type": "spring",
+      "$value": {
+        "stiffness": 110,
+        "damping": 28,
+        "mass": 0.6
+      },
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:291"
+        ]
+      },
+      "$description": "solutions scroll drift"
+    },
+    "lenis": {
+      "$type": "other",
+      "$value": {
+        "duration": 1.4,
+        "smoothWheel": true,
+        "anchors": true
+      },
+      "$extensions": {
+        "measuredFrom": [
+          "src/hooks/useLenis.js:7"
+        ]
+      },
+      "$description": "global smooth scroll"
+    }
+  }
+}

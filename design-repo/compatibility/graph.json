@@ -1,0 +1,253 @@
+{
+  "version": "1.0.0",
+  "$description": "Rhythm/structure/content rules. Every rule id here must be implemented in schema/semantic_validate.py (IMPLEMENTED_RULES) and vice versa (checked by extraction/verify_all.py). Rules were checked against the 13 real templates at write time (structure.py asserts).",
+  "severityEnum": [
+    "error",
+    "warn"
+  ],
+  "rules": [
+    {
+      "id": "NAVBAR_FIRST",
+      "severity": "error",
+      "kind": "structure",
+      "description": "shell.navbar is the first node on every page.",
+      "checkedAgainst": "all 13 templates"
+    },
+    {
+      "id": "FOOTER_LAST",
+      "severity": "error",
+      "kind": "structure",
+      "description": "shell.footer is the last node on every page.",
+      "checkedAgainst": "all 13 templates"
+    },
+    {
+      "id": "CTA_BEFORE_FOOTER",
+      "severity": "error",
+      "kind": "structure",
+      "description": "conversion.cta-band sits immediately before shell.footer on every page (all 13 real templates render it there).",
+      "checkedAgainst": "all 13 templates"
+    },
+    {
+      "id": "ONE_PER_PAGE",
+      "severity": "error",
+      "kind": "structure",
+      "description": "A section whose contract sets constraints.onePerPage / maxPerPage 1 may appear once.",
+      "exceptions": []
+    },
+    {
+      "id": "ONE_HERO",
+      "severity": "error",
+      "kind": "structure",
+      "description": "At most one HERO-category section per page, and it directly follows the navbar when present.",
+      "exceptions": [],
+      "exceptionNote": "No template has two heroes; hero-less templates are covered by PAGE_HAS_HERO, not by an exception here."
+    },
+    {
+      "id": "PAGE_HAS_HERO",
+      "severity": "warn",
+      "kind": "structure",
+      "description": "Pages normally open with a HERO section.",
+      "exceptions": [
+        {
+          "template": "template.blog-post",
+          "reason": "title/h1 lives inside the page's own content section (no separate hero) on the live site"
+        },
+        {
+          "template": "template.case-study",
+          "reason": "title/h1 lives inside the page's own content section (no separate hero) on the live site"
+        },
+        {
+          "template": "template.contact",
+          "reason": "title/h1 lives inside the page's own content section (no separate hero) on the live site"
+        },
+        {
+          "template": "template.legal",
+          "reason": "title/h1 lives inside the page's own content section (no separate hero) on the live site"
+        },
+        {
+          "template": "template.not-found",
+          "reason": "title/h1 lives inside the page's own content section (no separate hero) on the live site"
+        }
+      ]
+    },
+    {
+      "id": "SECTION_TEMPLATE_RESTRICTION",
+      "severity": "error",
+      "kind": "structure",
+      "description": "Sections with allowedTemplates (e.g. every home-only section) may only appear in those templates.",
+      "exceptions": []
+    },
+    {
+      "id": "NODE_VARIANT_ALLOWED",
+      "severity": "error",
+      "kind": "structure",
+      "description": "A node's variant must be one of the variants the template node allows (this encodes the navbar overlay/white choice per template and the CTA variant).",
+      "exceptions": []
+    },
+    {
+      "id": "ROUTE_VARIANT_OVERRIDE",
+      "severity": "error",
+      "kind": "structure",
+      "description": "When routes.json declares variantOverrides for the PageSpec's route, nodes must use exactly that variant.",
+      "exceptions": []
+    },
+    {
+      "id": "TEMPLATE_NODE_MATCH",
+      "severity": "error",
+      "kind": "structure",
+      "description": "Node sequence must match the declared template: required nodes present, order preserved, no extra sections, repeats only where repeatable.",
+      "exceptions": []
+    },
+    {
+      "id": "ROUTE_TEMPLATE_MATCH",
+      "severity": "error",
+      "kind": "structure",
+      "description": "PageSpec.route must exist in routes.json and bind to PageSpec.template.",
+      "exceptions": []
+    },
+    {
+      "id": "NO_ADJACENT_SAME_SECTION",
+      "severity": "error",
+      "kind": "rhythm",
+      "description": "The same (section, variant) may not appear twice in a row.",
+      "exceptions": []
+    },
+    {
+      "id": "NO_ADJACENT_SAME_CATEGORY",
+      "severity": "warn",
+      "kind": "rhythm",
+      "description": "Adjacent sections should not share a category unless the real template does exactly that.",
+      "exceptions": [
+        {
+          "template": "template.home",
+          "pair": [
+            "features.how-it-works",
+            "features.intelligence-cards"
+          ],
+          "reason": "Both are FEATURES blocks inside the same Content sheet on the live home page (Home.jsx renders them back to back)."
+        },
+        {
+          "template": "template.home",
+          "pair": [
+            "proof.trust",
+            "proof.outcomes"
+          ],
+          "reason": "Trust then Outcomes are two PROOF blocks rendered back to back on the live home page."
+        },
+        {
+          "template": "template.product",
+          "pair": [
+            "features.step-cards",
+            "features.use-cases"
+          ],
+          "reason": "Whole product page body is one #how-it-works sheet of FEATURES blocks (spec section 2)."
+        },
+        {
+          "template": "template.product",
+          "pair": [
+            "features.use-cases",
+            "features.sources"
+          ],
+          "reason": "Same #how-it-works sheet."
+        },
+        {
+          "template": "template.product",
+          "pair": [
+            "features.sources",
+            "features.solutions-tabs"
+          ],
+          "reason": "Same #how-it-works sheet."
+        },
+        {
+          "template": "template.product",
+          "pair": [
+            "features.solutions-tabs",
+            "features.loop-cards"
+          ],
+          "reason": "Same #how-it-works sheet."
+        },
+        {
+          "template": "template.plans",
+          "pair": [
+            "features.comparison-table",
+            "features.info-card-grid"
+          ],
+          "reason": "Live plans page order: comparison table, then Trust ('In every plan') cards."
+        },
+        {
+          "template": "template.plans",
+          "pair": [
+            "features.info-card-grid",
+            "features.faq-accordion"
+          ],
+          "reason": "Live plans page order: Trust cards then FAQ."
+        },
+        {
+          "template": "template.contact",
+          "pair": [
+            "conversion.contact-form",
+            "conversion.cta-band"
+          ],
+          "reason": "Contact form section is followed by the page CTA card (both CONVERSION)."
+        },
+        {
+          "template": "template.company",
+          "pair": [
+            "features.info-card-grid",
+            "features.team-ticker"
+          ],
+          "reason": "Commitments then Team inside the same Content wrapper."
+        }
+      ]
+    },
+    {
+      "id": "PLANS_COMPARISON_TABLE_XI_ONLY",
+      "severity": "error",
+      "kind": "structure",
+      "description": "On template.plans the comparison table is present iff hero.pricing.content.product == 'XI' (live page removes it in the RI state).",
+      "exceptions": []
+    },
+    {
+      "id": "SECTION_CONDITIONAL_RULES",
+      "severity": "error",
+      "kind": "content",
+      "description": "Section-contract 'rules' (require/forbid fields by variant or field value, exact list counts) hold.",
+      "exceptions": []
+    },
+    {
+      "id": "MAX_WORDS",
+      "severity": "error",
+      "kind": "content",
+      "description": "Every text/link-label/alt field respects its contract maxWords, per node instance.",
+      "exceptions": []
+    },
+    {
+      "id": "MOTION_PAIR",
+      "severity": "error",
+      "kind": "content",
+      "description": "node.motion must be one of the (pattern, trigger, reducedMotionFallback) triples the section contract allows.",
+      "exceptions": []
+    },
+    {
+      "id": "ASSET_ROLE_POLICY",
+      "severity": "error",
+      "kind": "content",
+      "description": "assetRole must be allowed for the field and assetSource must be allowed by the role's pinned generationPolicy.",
+      "exceptions": []
+    },
+    {
+      "id": "LINK_TARGET_CLOSED",
+      "severity": "error",
+      "kind": "content",
+      "description": "Link targets are internal routes (known paths), anchors or dest:<role>; never a literal URL. Internal paths must resolve to routes.json.",
+      "exceptions": []
+    },
+    {
+      "id": "PLACEHOLDER_ONLY_DENYLIST",
+      "severity": "error",
+      "kind": "content",
+      "description": "Fields flagged placeholderOnly must not contain a real customer or person name from assets/asset-roles.json realIdentities.",
+      "exceptions": []
+    }
+  ]
+}

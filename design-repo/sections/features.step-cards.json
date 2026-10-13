@@ -1,0 +1,139 @@
+{
+  "id": "features.step-cards",
+  "kind": "section",
+  "category": "FEATURES",
+  "purpose": "'Ask. Understand. Act.' three illustrated step cards; XI uses light animated illustrations, RI uses dark A1-style demo panels.",
+  "tags": [
+    "steps",
+    "illustration",
+    "animation",
+    "product"
+  ],
+  "status": "spec-only-source-in-progress",
+  "implementedBy": [
+    "src/pages/product/StepCards.jsx",
+    "src/pages/product/XiIllustrations.jsx",
+    "src/pages/product/RiIllustrations.jsx"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": [
+      "per-variant geometry of XI card 02/03 and RI A2/A3 states was not decoded (spec 7.1)"
+    ]
+  },
+  "allowedTemplates": [
+    "template.product"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {},
+  "content": {
+    "fields": {
+      "eyebrow": {
+        "type": "text",
+        "required": true,
+        "maxWords": 3,
+        "maxWordsBasis": "longest real instance: 3 words"
+      },
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 7,
+        "maxWordsBasis": "longest real instance: 7 words"
+      },
+      "steps": {
+        "type": "list",
+        "required": true,
+        "minItems": 3,
+        "maxItems": 3,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "stepLabel": {
+              "type": "text",
+              "required": true,
+              "maxWords": 3,
+              "maxWordsBasis": "longest real instance: 3 words"
+            },
+            "title": {
+              "type": "text",
+              "required": true,
+              "maxWords": 5,
+              "maxWordsBasis": "longest real instance: 5 words"
+            },
+            "body": {
+              "type": "text",
+              "required": true,
+              "maxWords": 17,
+              "maxWordsBasis": "longest real instance: 17 words"
+            },
+            "illustration": {
+              "type": "asset",
+              "required": true,
+              "roles": [
+                "product.illustration-still",
+                "ui.illustration-svg"
+              ]
+            }
+          }
+        },
+        "countBasis": "spec 2a: exactly three cards per product"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "loop-demo",
+        "trigger": "in-view",
+        "reducedMotionFallback": "static-final-frame",
+        "note": "XI 02 orbit variants V1..V11 ~6s then hold; XI 03 nine-state chat; RI A2 21.7s orchestrated loop; replay on re-enter",
+        "measuredFrom": [
+          "specs/product-pages.md:236"
+        ]
+      },
+      {
+        "pattern": "orbit-rings",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-final-frame",
+        "note": "rings rotate -360/+360 over 9/10/11/12s linear",
+        "measuredFrom": [
+          "specs/product-pages.md:233"
+        ]
+      },
+      {
+        "pattern": "stagger-appear",
+        "trigger": "in-view",
+        "reducedMotionFallback": "instant-swap",
+        "note": "XI 01 box opacity 0->1 y30->0 .3s; per-character blur appear .025s/char",
+        "measuredFrom": [
+          "specs/product-pages.md:227"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "yes",
+    "reducedMotionSource": "src/pages/product/XiIllustrations.jsx:75"
+  },
+  "responsive": {
+    "desktop": "3 columns of 416, cards 416x498",
+    "tablet": "2 columns of 377; third wraps",
+    "phone": "1 column 350; cards 1-2 are 518 tall"
+  },
+  "notes": [
+    "Source status at build time: src/pages/ExperienceIntelligence.jsx and RealEstateIntelligence.jsx are still the placeholder 'building…' pages, and App.jsx does not import ProductPage. src/pages/product/* is an in-progress, unmounted implementation (ProductPage.jsx imports ./SolutionsTabs and ./product.css, which do not exist on disk). The contract is grounded in the measured spec specs/product-pages.md, not in running source."
+  ],
+  "measuredFrom": [
+    "specs/product-pages.md:192",
+    "src/pages/product/XiIllustrations.jsx:75"
+  ],
+  "retrievalEligible": false,
+  "rules": [],
+  "assetRoles": [
+    "product.illustration-still",
+    "ui.illustration-svg"
+  ],
+  "version": "1.0.0"
+}

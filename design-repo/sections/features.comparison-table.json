@@ -1,0 +1,145 @@
+{
+  "id": "features.comparison-table",
+  "kind": "section",
+  "category": "FEATURES",
+  "purpose": "Plan comparison table with sticky plan header and sticky category rows; shown only in the XI state of /plans.",
+  "tags": [
+    "table",
+    "sticky",
+    "plans"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/plans/ComparisonTable.jsx",
+    "src/pages/plans/data.js"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": [
+      "tablet/phone value columns have no plan headers on the live site (spec 7.6) - reproduced as measured"
+    ]
+  },
+  "allowedTemplates": [
+    "template.plans"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "productLabel": {
+        "type": "text",
+        "required": true,
+        "maxWords": 2,
+        "maxWordsBasis": "longest real instance: 2 words"
+      },
+      "monthlyNotes": {
+        "type": "list",
+        "required": true,
+        "minItems": 3,
+        "maxItems": 3,
+        "item": {
+          "type": "text",
+          "required": true,
+          "maxWords": 7,
+          "maxWordsBasis": "longest real instance: 7 words"
+        }
+      },
+      "annualNotes": {
+        "type": "list",
+        "required": true,
+        "minItems": 3,
+        "maxItems": 3,
+        "item": {
+          "type": "text",
+          "required": true,
+          "maxWords": 7,
+          "maxWordsBasis": "longest real instance: 7 words"
+        }
+      },
+      "groups": {
+        "type": "list",
+        "required": true,
+        "minItems": 5,
+        "maxItems": 5,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "title": {
+              "type": "text",
+              "required": true,
+              "maxWords": 3,
+              "maxWordsBasis": "longest real instance: 3 words"
+            },
+            "rows": {
+              "type": "list",
+              "required": true,
+              "minItems": 2,
+              "maxItems": 5,
+              "item": {
+                "type": "object",
+                "required": true,
+                "fields": {
+                  "label": {
+                    "type": "text",
+                    "required": true,
+                    "maxWords": 6,
+                    "maxWordsBasis": "longest real instance: 6 words"
+                  },
+                  "values": {
+                    "type": "list",
+                    "required": true,
+                    "minItems": 3,
+                    "maxItems": 3,
+                    "item": {
+                      "type": "text",
+                      "required": true,
+                      "maxWords": 2,
+                      "maxWordsBasis": "real cell values: Unlimited, Up to 3, 30 days, Q2, Q3/Q4, tick, cross = max 2 words"
+                    }
+                  }
+                }
+              },
+              "countBasis": "spec 1.3 groups have 3,5,3,5,3 rows"
+            }
+          }
+        },
+        "countBasis": "spec 1.3: five groups"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "none",
+        "trigger": "load",
+        "reducedMotionFallback": "no-animation",
+        "note": "sticky headers only; no motion",
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:133"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "no motion in this section"
+  },
+  "responsive": {
+    "desktop": "label column 438 + 3 x 281",
+    "tablet": "plan header cells not rendered (measured live-site behaviour)",
+    "phone": "label column 120, value columns 77; values unlabeled"
+  },
+  "notes": [],
+  "measuredFrom": [
+    "specs/plans-security-contact-404.md:130",
+    "src/pages/plans/ComparisonTable.jsx:8"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [],
+  "version": "1.0.0"
+}

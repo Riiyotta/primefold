@@ -1,0 +1,132 @@
+{
+  "id": "proof.testimonials",
+  "kind": "section",
+  "category": "PROOF",
+  "purpose": "Full-width dark customer-quote carousel with arrow and dot controls; each slide links to the relevant product.",
+  "tags": [
+    "testimonial",
+    "carousel",
+    "customer-quote",
+    "home-only"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/components/Testimonials.jsx",
+    "src/components/testimonials/testimonials.css"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": []
+  },
+  "allowedTemplates": [
+    "template.home"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "homeRouteOnly": true,
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "slides": {
+        "type": "list",
+        "required": true,
+        "minItems": 2,
+        "maxItems": 6,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "product": {
+              "type": "enum",
+              "required": true,
+              "values": [
+                "XI",
+                "RI"
+              ]
+            },
+            "backdrop": {
+              "type": "asset",
+              "required": true,
+              "roles": [
+                "customer.imagery"
+              ]
+            },
+            "quote": {
+              "type": "text",
+              "required": true,
+              "maxWords": 24,
+              "maxWordsBasis": "longest real instance: 24 words",
+              "placeholderOnly": true
+            },
+            "personName": {
+              "type": "text",
+              "required": true,
+              "maxWords": 3,
+              "maxWordsBasis": "real names are 2 words; budget 3",
+              "placeholderOnly": true
+            },
+            "personRole": {
+              "type": "text",
+              "required": true,
+              "maxWords": 5,
+              "maxWordsBasis": "longest real instance: 5 words",
+              "placeholderOnly": true
+            },
+            "customerLogo": {
+              "type": "asset",
+              "required": true,
+              "roles": [
+                "customer.logo"
+              ]
+            },
+            "cta": {
+              "type": "link",
+              "required": true,
+              "labelMaxWords": 2,
+              "maxWordsBasis": "longest real label: 2 words"
+            }
+          }
+        },
+        "countBasis": "real carousel has 4 slides; loop buffer in Testimonials.jsx COPIES=5"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "carousel-slide",
+        "trigger": "click",
+        "reducedMotionFallback": "instant-swap",
+        "note": "translateX by 1304px, .5s tween [.42,0,0,1]; swipe >=50px; no autoplay",
+        "measuredFrom": [
+          "CLONE_SPEC.md:270"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "absent in Testimonials.jsx and testimonials.css"
+  },
+  "responsive": {
+    "desktop": "slides 1280x650 gap 24, active spreads to viewport-48",
+    "tablet": "same mechanics (matchMedia 810 splits phone)",
+    "phone": "slides 358x600, padding 40/20/24, titles ABC Favorit 32/40"
+  },
+  "notes": [
+    "quote, personName, personRole are placeholderOnly: real names/quotes are third-party attributed copy and are on the deny-list in assets/asset-roles.json realIdentities."
+  ],
+  "measuredFrom": [
+    "CLONE_SPEC.md:268",
+    "src/components/Testimonials.jsx:9"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [
+    "customer.imagery",
+    "customer.logo"
+  ],
+  "version": "1.0.0"
+}

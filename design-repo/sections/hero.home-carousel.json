@@ -1,0 +1,170 @@
+{
+  "id": "hero.home-carousel",
+  "kind": "section",
+  "category": "HERO",
+  "purpose": "Full-viewport three-slide autoplay carousel that introduces the platform and each intelligence, with progress tabs; drives to Book a call and product pages.",
+  "tags": [
+    "hero",
+    "carousel",
+    "autoplay",
+    "parallax",
+    "home-only"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/components/Hero.jsx",
+    "src/components/hero/hero.css"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": [
+      "tablet/phone hamburger menu over the hero"
+    ]
+  },
+  "allowedTemplates": [
+    "template.home"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "mustFollowNav": true,
+    "homeRouteOnly": true
+  },
+  "content": {
+    "fields": {
+      "slides": {
+        "type": "list",
+        "required": true,
+        "minItems": 3,
+        "maxItems": 3,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "background": {
+              "type": "asset",
+              "required": true,
+              "roles": [
+                "hero.backdrop-photo"
+              ]
+            },
+            "title": {
+              "type": "text",
+              "required": true,
+              "maxWords": 8,
+              "maxWordsBasis": "longest real instance: 8 words",
+              "note": "renders as 2-3 lines; the slide-1 string has a hard double space between sentences"
+            },
+            "body": {
+              "type": "text",
+              "required": true,
+              "maxWords": 18,
+              "maxWordsBasis": "longest real instance: 18 words"
+            },
+            "ctas": {
+              "type": "list",
+              "required": true,
+              "minItems": 2,
+              "maxItems": 2,
+              "item": {
+                "type": "link",
+                "required": true,
+                "labelMaxWords": 4,
+                "maxWordsBasis": "longest real label: 4 words"
+              }
+            }
+          }
+        },
+        "countBasis": "SLIDES in Hero.jsx has 3 slides"
+      },
+      "tabs": {
+        "type": "list",
+        "required": true,
+        "minItems": 4,
+        "maxItems": 4,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "label": {
+              "type": "text",
+              "required": true,
+              "maxWords": 4,
+              "maxWordsBasis": "longest real instance: 4 words"
+            },
+            "icon": {
+              "type": "asset",
+              "required": true,
+              "roles": [
+                "brand.logo-mark",
+                "brand.product-badge"
+              ]
+            },
+            "interactive": {
+              "type": "bool",
+              "required": true
+            }
+          }
+        },
+        "countBasis": "TABS in Hero.jsx has 4 tabs, the 4th is static"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "autoplay-slide",
+        "trigger": "timer",
+        "reducedMotionFallback": "disable-autoplay",
+        "note": "6s linear progress bar then advance; slide panel 300ms + content 1000ms cubic-bezier(.42,0,0,1)",
+        "measuredFrom": [
+          "CLONE_SPEC.md:171"
+        ]
+      },
+      {
+        "pattern": "scroll-parallax",
+        "trigger": "scroll",
+        "reducedMotionFallback": "no-animation",
+        "note": "hero container translateY = 0.6 x scrollY",
+        "measuredFrom": [
+          "src/components/Hero.jsx:82"
+        ]
+      },
+      {
+        "pattern": "hover-color",
+        "trigger": "hover",
+        "reducedMotionFallback": "instant-swap",
+        "note": "pill CTA glow opacity on hover",
+        "measuredFrom": [
+          "CLONE_SPEC.md:119"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "partial",
+    "reducedMotionSource": "src/components/hero/hero.css:91-93"
+  },
+  "responsive": {
+    "desktop": "100vh, title Stack Sans Headline 64/72; tab cards 215x102 row at bottom",
+    "tablet": "tabs row wraps (y 698..868), label 14/20",
+    "phone": "title ABC Favorit 48/56; tabs become a horizontally scrolling chip row (44px) with prev/next round buttons"
+  },
+  "notes": [
+    "reduced-motion CSS only removes the slide keyframes; the 6s autoplay timer and the scroll parallax in Hero.jsx still run. The design contract's fallback (disable-autoplay) is stricter than the source."
+  ],
+  "measuredFrom": [
+    "CLONE_SPEC.md:152",
+    "src/components/Hero.jsx:6",
+    "src/components/hero/hero.css:91"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [
+    "brand.logo-mark",
+    "brand.product-badge",
+    "hero.backdrop-photo"
+  ],
+  "version": "1.0.0"
+}

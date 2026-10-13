@@ -1,0 +1,106 @@
+{
+  "id": "features.faq-accordion",
+  "kind": "section",
+  "category": "FEATURES",
+  "purpose": "FAQ accordion: independent expandable cards (first open by default) under a title row with a lead.",
+  "tags": [
+    "faq",
+    "accordion",
+    "plans"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/plans/PlansFaq.jsx",
+    "src/pages/plans/data.js"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": []
+  },
+  "allowedTemplates": [
+    "template.plans"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "eyebrow": {
+        "type": "text",
+        "required": true,
+        "maxWords": 1,
+        "maxWordsBasis": "longest real instance: 1 words"
+      },
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 5,
+        "maxWordsBasis": "longest real instance: 5 words"
+      },
+      "lead": {
+        "type": "text",
+        "required": true,
+        "maxWords": 11,
+        "maxWordsBasis": "longest real instance: 11 words"
+      },
+      "items": {
+        "type": "list",
+        "required": true,
+        "minItems": 3,
+        "maxItems": 8,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "question": {
+              "type": "text",
+              "required": true,
+              "maxWords": 12,
+              "maxWordsBasis": "longest real instance: 12 words"
+            },
+            "answer": {
+              "type": "text",
+              "required": true,
+              "maxWords": 55,
+              "maxWordsBasis": "spec 1.5: answer 2 is 2 paragraphs ~55 words; others 1-3 sentences"
+            }
+          }
+        },
+        "countBasis": "real FAQ has 6 items"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "accordion",
+        "trigger": "click",
+        "reducedMotionFallback": "instant-swap",
+        "note": "height/opacity/rotate tween 0.2s [0.44,0,0.56,1]; items toggle independently; item 1 open",
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:211"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "absent in PlansFaq.jsx"
+  },
+  "responsive": {
+    "desktop": "cards max 1320-40, gap 12",
+    "tablet": "same; question wraps",
+    "phone": "h3 266 wide, 2-3 lines"
+  },
+  "notes": [],
+  "measuredFrom": [
+    "specs/plans-security-contact-404.md:197",
+    "src/pages/plans/PlansFaq.jsx:6"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [],
+  "version": "1.0.0"
+}

@@ -1,0 +1,203 @@
+{
+  "id": "conversion.contact-form",
+  "kind": "section",
+  "category": "CONVERSION",
+  "purpose": "Two-column contact section: intro with three link cards (email, booking, LinkedIn) and a 'Send us a message' form card (name, work mail, company, optional phone with country picker, message, consent, submit).",
+  "tags": [
+    "contact",
+    "form",
+    "link-cards",
+    "inert-form"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/contact/ContactIntro.jsx",
+    "src/pages/contact/ContactForm.jsx",
+    "src/pages/contact/PhoneField.jsx",
+    "src/pages/contact/countries.js"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": [
+      "submit/success/error states were never exercised on the live site (spec 7.1-7.2)",
+      "link-card hover duration measured coarsely (spec 7.5)"
+    ]
+  },
+  "allowedTemplates": [
+    "template.contact"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "eyebrow": {
+        "type": "text",
+        "required": true,
+        "maxWords": 1,
+        "maxWordsBasis": "longest real instance: 1 words"
+      },
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 5,
+        "maxWordsBasis": "longest real instance: 5 words"
+      },
+      "lead": {
+        "type": "text",
+        "required": true,
+        "maxWords": 13,
+        "maxWordsBasis": "longest real instance: 13 words"
+      },
+      "linkCards": {
+        "type": "list",
+        "required": true,
+        "minItems": 3,
+        "maxItems": 3,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "icon": {
+              "type": "asset",
+              "required": true,
+              "roles": [
+                "ui.icon-mask"
+              ]
+            },
+            "title": {
+              "type": "text",
+              "required": true,
+              "maxWords": 4,
+              "maxWordsBasis": "longest real instance: 4 words"
+            },
+            "sub": {
+              "type": "text",
+              "required": true,
+              "maxWords": 6,
+              "maxWordsBasis": "longest real instance: 6 words"
+            },
+            "to": {
+              "type": "target",
+              "required": true
+            }
+          }
+        },
+        "countBasis": "LINKS in ContactIntro.jsx = 3"
+      },
+      "formTitle": {
+        "type": "text",
+        "required": true,
+        "maxWords": 4,
+        "maxWordsBasis": "longest real instance: 4 words"
+      },
+      "form": {
+        "type": "form",
+        "required": true,
+        "endpointRole": "endpoint.contact-form"
+      },
+      "fields": {
+        "type": "list",
+        "required": true,
+        "minItems": 5,
+        "maxItems": 5,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "label": {
+              "type": "text",
+              "required": true,
+              "maxWords": 2,
+              "maxWordsBasis": "longest real instance: 2 words"
+            },
+            "placeholder": {
+              "type": "text",
+              "required": false,
+              "maxWords": 3,
+              "maxWordsBasis": "longest real instance: 3 words"
+            },
+            "kind": {
+              "type": "enum",
+              "required": true,
+              "values": [
+                "text",
+                "email",
+                "phone",
+                "textarea"
+              ]
+            },
+            "required": {
+              "type": "bool",
+              "required": true
+            }
+          }
+        },
+        "countBasis": "spec 3.1: Name, Work Mail, Company Name, Phone, Your Message"
+      },
+      "consentText": {
+        "type": "text",
+        "required": true,
+        "maxWords": 14,
+        "maxWordsBasis": "longest real instance: 14 words"
+      },
+      "submitLabel": {
+        "type": "text",
+        "required": true,
+        "maxWords": 1,
+        "maxWordsBasis": "longest real instance: 1 words"
+      },
+      "callPrompt": {
+        "type": "text",
+        "required": true,
+        "maxWords": 3,
+        "maxWordsBasis": "longest real instance: 3 words"
+      },
+      "callLink": {
+        "type": "link",
+        "required": true,
+        "labelMaxWords": 3,
+        "maxWordsBasis": "longest real label: 3 words"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "hover-color",
+        "trigger": "hover",
+        "reducedMotionFallback": "instant-swap",
+        "note": "link-card background -> rgb(250,249,248) .2-.25s; submit opacity 1 -> .5 on hover; disabled until valid",
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:320"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "absent in ContactForm.jsx / ContactIntro.jsx / PhoneField.jsx (CSS transitions only)"
+  },
+  "responsive": {
+    "desktop": "row gap 32/56; left 580 / right 644; section padding 168/20/88",
+    "tablet": "left 325 / right 389",
+    "phone": "stacked 350; padding 44/20/44 (content sits under the 80px nav: measured live-site bug)"
+  },
+  "notes": [
+    "The form is INERT in source: submit is prevented, nothing is sent. The live primefold.ai form is a real Framer endpoint that was never cloned. Pinned role endpoint.contact-form = must-not-reuse-live-endpoint.",
+    "Consent text names the real company ('Primefold'); replace for other owners."
+  ],
+  "measuredFrom": [
+    "specs/plans-security-contact-404.md:304",
+    "src/pages/contact/ContactForm.jsx:4",
+    "src/pages/contact/ContactForm.jsx:32"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [
+    "ui.icon-mask"
+  ],
+  "version": "1.0.0"
+}

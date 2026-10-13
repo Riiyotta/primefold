@@ -1,0 +1,612 @@
+{
+  "$description": "Closed asset-role / destination-role registry. Roles used in PageSpec fields are exactly these names; policies are pinned (extraction/verify_all.py PINNED_POLICIES) so a role cannot silently be moved to a different-but-valid policy.",
+  "legalNotice": "primefold.ai is a live commercial site (README: 'built for reference and study. Not for public deployment'). Nothing in public/assets may be shipped in a generated page for any other owner without verified rights.",
+  "policyEnum": [
+    "may-generate-new",
+    "must-reuse-exact",
+    "must-not-fabricate",
+    "must-not-reuse-live-endpoint"
+  ],
+  "assetSourceEnum": [
+    "reuse-exact",
+    "generate-new",
+    "placeholder"
+  ],
+  "assetSourcePolicyMap": {
+    "may-generate-new": [
+      "generate-new",
+      "placeholder"
+    ],
+    "must-reuse-exact": [
+      "reuse-exact"
+    ],
+    "must-not-fabricate": [
+      "placeholder"
+    ],
+    "must-not-reuse-live-endpoint": []
+  },
+  "assetRoles": [
+    {
+      "role": "brand.logo-mark",
+      "kind": "image",
+      "generationPolicy": "must-reuse-exact",
+      "allowedAssetSources": [
+        "reuse-exact"
+      ],
+      "generationGuidance": "Use the owner's own exact logo files. Never redraw, recolour or 'improve' the mark.",
+      "licensingGuidance": "Primefold's own marks: reuse only on pages owned by the same company. Do not ship them on another brand's page.",
+      "usageEvidence": [
+        "src/components/Navbar.jsx:137",
+        "src/components/Footer.jsx:59"
+      ],
+      "realFiles": [
+        "public/assets/svg/logo-white.svg",
+        "public/assets/svg/logo-dark.svg",
+        "public/assets/0ngLiiCSe7c81sENFiXDCxUe8Ew.svg",
+        "public/assets/Ok2FqoeufFP2awsp0MRNxJXTDA.svg"
+      ]
+    },
+    {
+      "role": "brand.wordmark-ghost",
+      "kind": "image",
+      "generationPolicy": "must-reuse-exact",
+      "allowedAssetSources": [
+        "reuse-exact"
+      ],
+      "generationGuidance": "Giant footer wordmark; reuse the exact SVG, fill #1A1814 (token color.ink).",
+      "licensingGuidance": "Owner's wordmark; same restriction as brand.logo-mark.",
+      "usageEvidence": [
+        "src/components/Footer.jsx:138"
+      ],
+      "realFiles": [
+        "public/assets/L5IVS7Cn2X7mzYJB2j1MVEECRKk.svg"
+      ]
+    },
+    {
+      "role": "brand.product-badge",
+      "kind": "image",
+      "generationPolicy": "must-reuse-exact",
+      "allowedAssetSources": [
+        "reuse-exact"
+      ],
+      "generationGuidance": "XI / RI / CI product badges: reuse exact files; do not invent new product badges or colours.",
+      "licensingGuidance": "Owner's product marks; reuse only for the owner.",
+      "usageEvidence": [
+        "src/components/Hero.jsx:41",
+        "src/pages/plans/ProductBadge.jsx:2"
+      ],
+      "realFiles": [
+        "public/assets/8Xe3QbAF8z173WRaVrPeURWrGc.svg",
+        "public/assets/Vmatt47vXW6vUstSo8WnUvQwvRQ.svg",
+        "public/assets/FKdTY48jmzOKCr6FVHOYD8MSv7s.svg",
+        "public/assets/cms/badge-xi.svg",
+        "public/assets/cms/badge-ri.svg"
+      ]
+    },
+    {
+      "role": "brand.site-icons",
+      "kind": "image",
+      "generationPolicy": "must-reuse-exact",
+      "allowedAssetSources": [
+        "reuse-exact"
+      ],
+      "generationGuidance": "Favicon, apple-touch icon and og:image: exact files only.",
+      "licensingGuidance": "Owner's identity assets; reuse only for the owner.",
+      "usageEvidence": [
+        "index.html:6",
+        "src/pages/cms/shared.jsx:6"
+      ],
+      "realFiles": [
+        "public/assets/M6DJjtLV2Hcvugi8jnGRQrtj4AQ.png",
+        "public/assets/6ZajvfY2Qd7ebNvpcE5rKduPAoo.png",
+        "public/assets/3yxlygKzhxi7QeanjmIbfyH244.png",
+        "public/assets/kCEvWj6X9M889dINz1Dophu60Y8.png"
+      ]
+    },
+    {
+      "role": "ui.icon-mask",
+      "kind": "icon",
+      "generationPolicy": "may-generate-new",
+      "allowedAssetSources": [
+        "generate-new",
+        "placeholder"
+      ],
+      "generationGuidance": "Generic single-colour glyphs rendered as CSS masks (colour from a token). New glyphs may be drawn in the same 16/20-unit style.",
+      "licensingGuidance": "Generic UI glyphs; the extracted originals are still the site owner's artwork, so draw new ones rather than copying files for other owners. Third-party brand colour exception: LinkedIn glyph uses rgb(9,102,194).",
+      "usageEvidence": [
+        "src/pages/shared-info/MaskIcon.jsx:8",
+        "public/assets/MANIFEST.md:222"
+      ],
+      "realFiles": [
+        "public/assets/pages/plans/icon-tick-16.svg",
+        "public/assets/pages/security/icon-hosted-germany.svg",
+        "public/assets/pages/contact/icon-mail.svg",
+        "public/assets/cms/icon-arrow-right-mask.svg"
+      ]
+    },
+    {
+      "role": "ui.illustration-svg",
+      "kind": "image",
+      "generationPolicy": "may-generate-new",
+      "allowedAssetSources": [
+        "generate-new",
+        "placeholder"
+      ],
+      "generationGuidance": "Small decorative full-colour SVG tiles (security tiles, orbit source icons, stat tiles). Generate new original artwork in the same duotone style.",
+      "licensingGuidance": "Contains no third-party marks except the German flag tile (public-domain national flag).",
+      "usageEvidence": [
+        "src/pages/security/SecurityHero.jsx:32"
+      ],
+      "realFiles": [
+        "public/assets/pages/security/7ERMi7fk0ghkwyi7viAZS06g6w.svg",
+        "public/assets/pages/security/ibbCaDYtLP74SJYvXs8caLQZw.svg",
+        "public/assets/pages/company/xHFcroRcWC2fxNduO7fVX1WKWvQ.svg"
+      ]
+    },
+    {
+      "role": "fx.shader-fallback",
+      "kind": "image",
+      "generationPolicy": "may-generate-new",
+      "allowedAssetSources": [
+        "generate-new",
+        "placeholder"
+      ],
+      "generationGuidance": "Static stand-ins for WebGL shaders (CTA wave, card waves, glow textures, silk orbs). Generate a new teal/orange-on-black wave or render the shader; prefer original generation.",
+      "licensingGuidance": "Generated by the owner's shader; treat the PNGs as owner artwork - do not reuse for other owners.",
+      "usageEvidence": [
+        "src/components/CTA.jsx:73",
+        "src/pages/careers/CareersHero.jsx:33"
+      ],
+      "realFiles": [
+        "public/assets/5V8gmDlH6VshGL3t6Yw2BakE8M.png",
+        "public/assets/pages/careers/DLxHDgiuFQf9DQC0sTFOvpSlftU.png",
+        "public/assets/5Ckt2QR4YEmQXqkie4amifMhcg.png"
+      ]
+    },
+    {
+      "role": "hero.backdrop-photo",
+      "kind": "image",
+      "generationPolicy": "may-generate-new",
+      "allowedAssetSources": [
+        "generate-new",
+        "placeholder"
+      ],
+      "generationGuidance": "Full-bleed scenic photography behind a hero (conference room, store interior, skyline). Generate or license new scenic imagery with no identifiable people or readable third-party signage.",
+      "licensingGuidance": "Originals were downloaded from Framer-hosted URLs; photographer/stock licence is unknown. Do not ship the originals for other owners.",
+      "usageEvidence": [
+        "src/components/Hero.jsx:8",
+        "src/pages/company/CompanyHero.jsx:67"
+      ],
+      "realFiles": [
+        "public/assets/RAjs2AsxMPYWQK7qgQzwPegjUEI.webp",
+        "public/assets/whU1ew3cUmTlwn8jZq7aYOjcWOU.webp",
+        "public/assets/0ludMTRIYsIsZjBXbYoAOYh09IY.webp",
+        "public/assets/pages/company/cThFoE5iLieFxYjJ383g6O72ETg.webp"
+      ]
+    },
+    {
+      "role": "photo.scene-card",
+      "kind": "image",
+      "generationPolicy": "may-generate-new",
+      "allowedAssetSources": [
+        "generate-new",
+        "placeholder"
+      ],
+      "generationGuidance": "Role/team scene photos on solutions cards and tabs. Generate new generic workplace imagery; avoid identifiable people.",
+      "licensingGuidance": "Framer-hosted originals with unknown licence; do not reuse for other owners.",
+      "usageEvidence": [
+        "src/components/Solutions.jsx:8",
+        "public/assets/MANIFEST.md:158"
+      ],
+      "realFiles": [
+        "public/assets/RIjH19JJ8DvQamX9HDKg7VWbBM.webp",
+        "public/assets/pages/experience-intelligence/T4r3OA3ib810aHqjuLi9sIekZKM.png",
+        "public/assets/pages/realestate-intelligence/fPL5khSQQDMO551QMFXPouhArqM.png"
+      ]
+    },
+    {
+      "role": "product.illustration-still",
+      "kind": "image",
+      "generationPolicy": "may-generate-new",
+      "allowedAssetSources": [
+        "generate-new",
+        "placeholder"
+      ],
+      "generationGuidance": "Dark stage/panel stills behind the A1 / RI product demos and the intelligence-card mock photos. Generate new abstract or mock-UI imagery; mock data must be invented, not real customer data.",
+      "licensingGuidance": "Owner-made product artwork; reuse only for the owner.",
+      "usageEvidence": [
+        "src/components/how/A1Loop.jsx:102",
+        "public/assets/MANIFEST.md:45"
+      ],
+      "realFiles": [
+        "public/assets/6SGxSZ97zxsJhQI7QRmEcVF3QE.jpg",
+        "public/assets/U0tJJ7Y3amMDQd4StUat5cOK8uk.png",
+        "public/assets/pages/realestate-intelligence/BStpgcNqGi2wH3pDgwuVOsCemOs.jpg"
+      ]
+    },
+    {
+      "role": "customer.logo",
+      "kind": "image",
+      "generationPolicy": "must-not-fabricate",
+      "allowedAssetSources": [
+        "placeholder"
+      ],
+      "generationGuidance": "NEVER reproduce a real customer logo and never invent a look-alike of a real company. Use a clearly neutral placeholder wordmark box (e.g. grey rectangle labelled 'Customer logo').",
+      "licensingGuidance": "Real third-party trademarks: webedia, fischerAppelt, SportScheck, SPORTFIVE, Maggiore Suites, ECE, NAS Real Investments, Vickii, t3n, SirPlus (ticker) plus DIRTS, Gainback, NAS Invest and a fourth customer (testimonials/outcomes/case studies). Reproduction needs the trademark owner's permission.",
+      "usageEvidence": [
+        "src/components/HowItWorks.jsx:8",
+        "src/components/Outcomes.jsx:6"
+      ],
+      "realFiles": [
+        "public/assets/ZsKdZVlAf876Rrwiwazp9C1blE.svg",
+        "public/assets/mlevCnZoqAApeTSZWClq74jYCg.png",
+        "public/assets/vBdLAfXU5G3G8FMre5KLbUkCzWc.svg",
+        "public/assets/0I7dW2NSk2zVnHLMvfACsc1BIr8.png"
+      ]
+    },
+    {
+      "role": "customer.imagery",
+      "kind": "image",
+      "generationPolicy": "must-not-fabricate",
+      "allowedAssetSources": [
+        "placeholder"
+      ],
+      "generationGuidance": "Photography supplied by or depicting named customers (testimonial/outcome backdrops, case-study banners and about images). Use neutral placeholders; do not recreate real customer premises, products or staff.",
+      "licensingGuidance": "Real customer imagery; checked images include an identifiable person in a field and a building carrying real third-party signage. Requires customer permission.",
+      "usageEvidence": [
+        "src/components/Testimonials.jsx:10",
+        "public/assets/MANIFEST.md:311"
+      ],
+      "realFiles": [
+        "public/assets/9Yky6fB1AoenMkNm8rzRwLJxM8.jpg",
+        "public/assets/07ZMtQS80wekxrvQAxnTtIZWXc.jpeg",
+        "public/assets/qkL7CkFhbnE5G6A9rxHv5zbgxz8.jpg",
+        "public/assets/cms/UtK1ZeSLwMR3E06ch8kV2FcSJO8.jpg"
+      ]
+    },
+    {
+      "role": "person.team-photo",
+      "kind": "image",
+      "generationPolicy": "must-not-fabricate",
+      "allowedAssetSources": [
+        "placeholder"
+      ],
+      "generationGuidance": "Never reproduce real employee photos; never fabricate a photo-real person presented as a real employee. Use neutral avatar placeholders.",
+      "licensingGuidance": "Real people's likenesses (12 team members on /company). Personality rights / GDPR apply.",
+      "usageEvidence": [
+        "src/pages/company/Team.jsx:8"
+      ],
+      "realFiles": [
+        "public/assets/pages/company/3zbWLtUigaimRPvHa17qjHrSo.jpg",
+        "public/assets/pages/company/A7Zab1F86r1LurCg6qIYp3yuDfk.png"
+      ]
+    },
+    {
+      "role": "person.author-avatar",
+      "kind": "image",
+      "generationPolicy": "must-not-fabricate",
+      "allowedAssetSources": [
+        "placeholder"
+      ],
+      "generationGuidance": "Blog/post author avatars: neutral placeholder circle only.",
+      "licensingGuidance": "Real people's likenesses (blog authors). One original is a 9.6 MB 4160x6240 portrait per MANIFEST.",
+      "usageEvidence": [
+        "src/pages/cms/data.js:34"
+      ],
+      "realFiles": [
+        "public/assets/cms/U4h1tpH3vCNYO7BOdYlJ9L3BA0.jpg",
+        "public/assets/cms/rokZfBK9H7oApxqpJ81csjy0d7c.png"
+      ]
+    },
+    {
+      "role": "cms.post-image",
+      "kind": "image",
+      "generationPolicy": "may-generate-new",
+      "allowedAssetSources": [
+        "generate-new",
+        "placeholder"
+      ],
+      "generationGuidance": "Editorial cover/banner/body images for posts and case-study cards. Generate new original editorial art/screens; do not depict real people or real customer data.",
+      "licensingGuidance": "Company editorial art (some covers contain product screenshots of real accounts). Do not reuse the originals for other owners.",
+      "usageEvidence": [
+        "src/pages/Blog.jsx:34",
+        "public/assets/MANIFEST.md:298"
+      ],
+      "realFiles": [
+        "public/assets/cms/G2mXSV53ReSNVR0sJjtcOpcTCxU.png",
+        "public/assets/cms/GPlMI47GV2EFJYFciU7Ir3rio.png"
+      ]
+    },
+    {
+      "role": "motion.lottie",
+      "kind": "animation",
+      "generationPolicy": "may-generate-new",
+      "allowedAssetSources": [
+        "generate-new",
+        "placeholder"
+      ],
+      "generationGuidance": "Lottie JSON panels. Author new animations; do not copy the originals.",
+      "licensingGuidance": "WARNING: public/assets/pages/experience-intelligence/0wnxkqSd8yM0mNqNViIMBD53E.json embeds third-party brand logos as images (specs/product-pages.md section 7.3) and must never be reused.",
+      "usageEvidence": [
+        "src/components/Trust.jsx:10",
+        "specs/product-pages.md:479"
+      ],
+      "realFiles": [
+        "public/assets/lottie/HY16h57JG9iHUXsmkr9vgGV0A.json",
+        "public/assets/lottie/xNm1ok67qiSXrtlhAImlRlSghE.json"
+      ]
+    },
+    {
+      "role": "embed.video-facade",
+      "kind": "embed",
+      "generationPolicy": "must-not-fabricate",
+      "allowedAssetSources": [
+        "placeholder"
+      ],
+      "generationGuidance": "Click-to-play facade for third-party video (YouTube). Use a neutral dark 16:9 placeholder; never embed or mimic a real video.",
+      "licensingGuidance": "Third-party hosted video (3 YouTube embeds); thumbnails not downloaded (i.ytimg.com).",
+      "usageEvidence": [
+        "specs/blog-case-studies.md:42"
+      ],
+      "realFiles": []
+    }
+  ],
+  "destinationRoles": [
+    {
+      "role": "dest:booking",
+      "kind": "destination",
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "allowedAssetSources": [],
+      "liveTargetKind": "scheduling page",
+      "generationGuidance": "Point to the new project's own booking page.",
+      "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
+      "usageEvidence": [
+        "src/components/Navbar.jsx:6"
+      ]
+    },
+    {
+      "role": "dest:app-signin",
+      "kind": "destination",
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "allowedAssetSources": [],
+      "liveTargetKind": "product sign-in",
+      "generationGuidance": "Point to the new project's own app sign-in.",
+      "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
+      "usageEvidence": [
+        "src/components/Navbar.jsx:148"
+      ]
+    },
+    {
+      "role": "dest:app-trial",
+      "kind": "destination",
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "allowedAssetSources": [],
+      "liveTargetKind": "trial sign-up deep link",
+      "generationGuidance": "Point to the new project's own trial flow.",
+      "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
+      "usageEvidence": [
+        "src/components/CTA.jsx:34"
+      ]
+    },
+    {
+      "role": "dest:app-home",
+      "kind": "destination",
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "allowedAssetSources": [],
+      "liveTargetKind": "product app root",
+      "generationGuidance": "Point to the new project's own app.",
+      "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
+      "usageEvidence": [
+        "src/pages/plans/data.js:3"
+      ]
+    },
+    {
+      "role": "dest:help-center-xi",
+      "kind": "destination",
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "allowedAssetSources": [],
+      "liveTargetKind": "help centre",
+      "generationGuidance": "Point to the new project's own help centre.",
+      "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
+      "usageEvidence": [
+        "src/components/Footer.jsx:8"
+      ]
+    },
+    {
+      "role": "dest:help-center-ri",
+      "kind": "destination",
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "allowedAssetSources": [],
+      "liveTargetKind": "help centre",
+      "generationGuidance": "Point to the new project's own help centre.",
+      "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
+      "usageEvidence": [
+        "src/components/Footer.jsx:8"
+      ]
+    },
+    {
+      "role": "dest:job-posting",
+      "kind": "destination",
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "allowedAssetSources": [],
+      "liveTargetKind": "applicant-tracking job page",
+      "generationGuidance": "Point to the new project's own job posting or /contact.",
+      "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
+      "usageEvidence": [
+        "src/pages/careers/OpenRoles.jsx:6"
+      ]
+    },
+    {
+      "role": "dest:social-x",
+      "kind": "destination",
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "allowedAssetSources": [],
+      "liveTargetKind": "company social profile",
+      "generationGuidance": "Point to the new project's own profile.",
+      "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
+      "usageEvidence": [
+        "src/components/Footer.jsx:15"
+      ]
+    },
+    {
+      "role": "dest:social-linkedin",
+      "kind": "destination",
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "allowedAssetSources": [],
+      "liveTargetKind": "company social profile",
+      "generationGuidance": "Point to the new project's own profile.",
+      "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
+      "usageEvidence": [
+        "src/components/Footer.jsx:16"
+      ]
+    },
+    {
+      "role": "dest:support-mailto",
+      "kind": "destination",
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "allowedAssetSources": [],
+      "liveTargetKind": "support mailbox",
+      "generationGuidance": "Use the new project's own mailbox.",
+      "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
+      "usageEvidence": [
+        "src/pages/contact/ContactIntro.jsx:9"
+      ]
+    },
+    {
+      "role": "dest:client-website",
+      "kind": "destination",
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "allowedAssetSources": [],
+      "liveTargetKind": "customer website",
+      "generationGuidance": "Use a placeholder or omit; never link a real customer's site.",
+      "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
+      "usageEvidence": [
+        "specs/blog-case-studies.md:236"
+      ]
+    }
+  ],
+  "formEndpointRoles": [
+    {
+      "role": "endpoint.contact-form",
+      "kind": "form-endpoint",
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "allowedAssetSources": [],
+      "generationGuidance": "The source forms are INERT: submit is preventDefault'ed and nothing is sent anywhere, so there is no endpoint value to copy. A PageSpec form carries endpoint='project-owned-placeholder'; the implementing project wires its own backend.",
+      "licensingGuidance": "The live primefold.ai forms are real Framer-hosted submit endpoints that were never cloned; never add or guess them. Collecting real personal data (name, work email, phone, message) to someone else's endpoint is a privacy risk.",
+      "usageEvidence": [
+        "src/pages/contact/ContactForm.jsx:32"
+      ]
+    },
+    {
+      "role": "endpoint.newsletter-form",
+      "kind": "form-endpoint",
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "allowedAssetSources": [],
+      "generationGuidance": "The source forms are INERT: submit is preventDefault'ed and nothing is sent anywhere, so there is no endpoint value to copy. A PageSpec form carries endpoint='project-owned-placeholder'; the implementing project wires its own backend.",
+      "licensingGuidance": "The live primefold.ai forms are real Framer-hosted submit endpoints that were never cloned; never add or guess them. Collecting real personal data (name, work email, phone, message) to someone else's endpoint is a privacy risk.",
+      "usageEvidence": [
+        "src/components/Footer.jsx:67",
+        "src/pages/Blog.jsx:11"
+      ]
+    }
+  ],
+  "fontFaces": [
+    {
+      "family": "Stack Sans Headline",
+      "weights": [
+        400,
+        700
+      ],
+      "files": [
+        "public/fonts/StackSansHeadline-400.woff2",
+        "public/fonts/StackSansHeadline-700.woff2"
+      ],
+      "licensing": "MANIFEST: 'Google Fonts v1, latin'. Confirm the licence before redistributing.",
+      "evidence": "public/assets/MANIFEST.md:134"
+    },
+    {
+      "family": "Stack Sans Text",
+      "weights": [
+        400
+      ],
+      "files": [
+        "public/fonts/StackSansText-400.woff2"
+      ],
+      "licensing": "MANIFEST: Google Fonts v1 latin. Confirm the licence.",
+      "evidence": "public/assets/MANIFEST.md:252"
+    },
+    {
+      "family": "Inter",
+      "weights": [
+        400,
+        500,
+        600,
+        700
+      ],
+      "styles": [
+        "normal",
+        "italic (400/500/700)"
+      ],
+      "files": [
+        "public/fonts/Inter-400-latin.woff2"
+      ],
+      "licensing": "Widely distributed open-source family; confirm the licence text before redistributing.",
+      "evidence": "public/assets/MANIFEST.md:137"
+    },
+    {
+      "family": "ABC Favorit Trial Book",
+      "weights": [
+        350
+      ],
+      "files": [
+        "public/fonts/ABCFavoritTrial-Book-350.woff2"
+      ],
+      "licensing": "TRIAL licence ('Trial' in the family name). A trial font is for evaluation only: it must not be shipped in production or in a redistributed package; purchase the commercial licence or replace it with a licensed face. Used for outcome digits, intelligence-card titles and phone hero/testimonial titles.",
+      "evidence": "public/assets/MANIFEST.md:136"
+    }
+  ],
+  "realIdentities": {
+    "$description": "Deny-list for fields flagged placeholderOnly in section contracts. Generated PageSpecs must not contain any of these strings (whole-word, case-insensitive) in those fields.",
+    "customers": [
+      "webedia",
+      "fischerAppelt",
+      "SportScheck",
+      "SPORTFIVE",
+      "Maggiore Suites",
+      "ECE",
+      "NAS Real Investments",
+      "NAS Invest",
+      "Vickii",
+      "t3n",
+      "SirPlus",
+      "DIRTS",
+      "Gainback",
+      "Funke"
+    ],
+    "people": [
+      "Janek Strobel",
+      "Ammar Tahirovic",
+      "Jakob Hebenstreit",
+      "Nicole Bilecki",
+      "Leon Sperber",
+      "Sina Holzerland",
+      "Vlatko",
+      "Sascha",
+      "Karin",
+      "Leon",
+      "Kolja",
+      "Sören",
+      "Bonnie",
+      "Sina",
+      "Dominik",
+      "Hasnain",
+      "Oxana",
+      "Sarah"
+    ],
+    "evidence": [
+      "src/components/Testimonials.jsx:10",
+      "src/pages/company/Team.jsx:8"
+    ]
+  },
+  "realProprietaryCopyRule": "Third-party-attributed copy (customer quotes, outcome claims such as '5x', '150 customers', '1 hour', named testimonials) must be replaced by clearly generic placeholder text in generated output. Primefold's own marketing copy is documented in the example only because the home example reproduces the owner's own page."
+}

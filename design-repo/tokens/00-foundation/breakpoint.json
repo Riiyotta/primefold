@@ -1,0 +1,34 @@
+{
+  "breakpoint": {
+    "md": {
+      "$type": "dimension",
+      "$value": "810px",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:5"
+        ]
+      },
+      "$description": "tablet starts (Framer 'Tablet')"
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "1200px",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:5"
+        ]
+      },
+      "$description": "desktop starts (Framer 'Desktop')"
+    },
+    "phone-max": {
+      "$type": "dimension",
+      "$value": "809.98px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:20"
+        ]
+      },
+      "$description": "Framer phone media query"
+    }
+  }
+}

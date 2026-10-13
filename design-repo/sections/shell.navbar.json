@@ -1,0 +1,147 @@
+{
+  "id": "shell.navbar",
+  "kind": "section",
+  "category": "SHELL",
+  "purpose": "Fixed site navigation: logo, Products/Resources/Company dropdowns, Plans and Security links, Sign in and Book a call pills. Gives every page one consistent way to move between products and to convert.",
+  "tags": [
+    "navigation",
+    "chrome",
+    "fixed",
+    "dropdown",
+    "mobile-menu"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/components/Navbar.jsx",
+    "src/layout/Layout.jsx"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": [
+      "Resources and Company dropdown panel styles (CLONE_SPEC 14.3: only the Products dropdown was captured)",
+      "hamburger-open state (CLONE_SPEC 14.6)"
+    ]
+  },
+  "allowedTemplates": "any",
+  "variants": [
+    "overlay",
+    "white"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "mustBeFirst": true
+  },
+  "content": {
+    "fields": {
+      "items": {
+        "type": "list",
+        "required": true,
+        "minItems": 5,
+        "maxItems": 5,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "label": {
+              "type": "text",
+              "required": true,
+              "maxWords": 3,
+              "maxWordsBasis": "longest real instance: 3 words"
+            },
+            "to": {
+              "type": "target",
+              "required": false
+            },
+            "menu": {
+              "type": "list",
+              "required": false,
+              "minItems": 1,
+              "maxItems": 4,
+              "item": {
+                "type": "object",
+                "required": true,
+                "fields": {
+                  "label": {
+                    "type": "text",
+                    "required": true,
+                    "maxWords": 3,
+                    "maxWordsBasis": "longest real instance: 3 words"
+                  },
+                  "to": {
+                    "type": "target",
+                    "required": false
+                  }
+                }
+              }
+            }
+          }
+        },
+        "countBasis": "NAV array in Navbar.jsx has exactly 5 items (Products, Plans, Security, Resources, Company)"
+      },
+      "signIn": {
+        "type": "link",
+        "required": true,
+        "labelMaxWords": 2,
+        "maxWordsBasis": "longest real label: 2 words"
+      },
+      "bookCall": {
+        "type": "link",
+        "required": true,
+        "labelMaxWords": 3,
+        "maxWordsBasis": "longest real label: 3 words"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "nav-state-swap",
+        "trigger": "scroll",
+        "reducedMotionFallback": "instant-swap",
+        "note": "overlay variant: transparent bar -> blurred white bar once scrollY >= 100 (Nav-Trigger); tween .3s ease [.44,0,.56,1]",
+        "measuredFrom": [
+          "CLONE_SPEC.md:142"
+        ]
+      },
+      {
+        "pattern": "hover-color",
+        "trigger": "hover",
+        "reducedMotionFallback": "instant-swap",
+        "note": "nav label opacity 1 -> .7 on hover",
+        "measuredFrom": [
+          "CLONE_SPEC.md:145"
+        ]
+      },
+      {
+        "pattern": "none",
+        "trigger": "load",
+        "reducedMotionFallback": "no-animation",
+        "note": "white variant is a solid bar from load with no scroll change (Layout.jsx navVariant)",
+        "measuredFrom": [
+          "src/layout/Layout.jsx:35"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "absent in Navbar.jsx and nav.css (the nav tween and scroll swap ignore prefers-reduced-motion)"
+  },
+  "responsive": {
+    "desktop": "row at >=1200: logo left; items + buttons right; two scroll states (overlay variant)",
+    "tablet": "<1200: hamburger 32x32; bar 100%x80 (Navbar.jsx matchMedia 1200)",
+    "phone": "same as tablet; menu accordions independent"
+  },
+  "notes": [
+    "Layout.jsx navVariant: overlay for /, /company, /security, /experience-intelligence, /realestate-intelligence; white for every other route (including blog, case studies and not-found)."
+  ],
+  "measuredFrom": [
+    "CLONE_SPEC.md:129",
+    "src/components/Navbar.jsx:9",
+    "src/layout/Layout.jsx:36",
+    "specs/plans-security-contact-404.md:23"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [],
+  "version": "1.0.0"
+}

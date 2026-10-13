@@ -1,0 +1,416 @@
+{
+  "version": "1.0.0",
+  "$description": "Every real route bound to exactly one template. 29 routes = the sitemap count in ia.json; verified 1:1 against src/App.jsx route patterns and specs/cms-data.json slugs.",
+  "routes": [
+    {
+      "path": "/",
+      "template": "template.home",
+      "appRoutePattern": "/",
+      "kind": "static",
+      "implementationStatus": "mounted",
+      "variantOverrides": {
+        "conversion.cta-band": "main"
+      },
+      "measuredFrom": [
+        "src/App.jsx:27"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/experience-intelligence",
+      "template": "template.product",
+      "appRoutePattern": "experience-intelligence",
+      "kind": "static",
+      "implementationStatus": "placeholder-page-mounted",
+      "variantOverrides": {
+        "conversion.cta-band": "xi"
+      },
+      "measuredFrom": [
+        "src/App.jsx:28"
+      ],
+      "notes": [
+        "src page is a 'building…' placeholder; src/pages/product/ProductPage.jsx is unmounted and incomplete"
+      ],
+      "retrievalEligible": false
+    },
+    {
+      "path": "/realestate-intelligence",
+      "template": "template.product",
+      "appRoutePattern": "realestate-intelligence",
+      "kind": "static",
+      "implementationStatus": "placeholder-page-mounted",
+      "variantOverrides": {
+        "conversion.cta-band": "main"
+      },
+      "measuredFrom": [
+        "src/App.jsx:29"
+      ],
+      "notes": [
+        "src page is a 'building…' placeholder; src/pages/product/ProductPage.jsx is unmounted and incomplete"
+      ],
+      "retrievalEligible": false
+    },
+    {
+      "path": "/plans",
+      "template": "template.plans",
+      "appRoutePattern": "plans",
+      "kind": "static",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:30"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/security",
+      "template": "template.security",
+      "appRoutePattern": "security",
+      "kind": "static",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:31"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/contact",
+      "template": "template.contact",
+      "appRoutePattern": "contact",
+      "kind": "static",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:32"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/company",
+      "template": "template.company",
+      "appRoutePattern": "company",
+      "kind": "static",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:33"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/careers",
+      "template": "template.careers",
+      "appRoutePattern": "careers",
+      "kind": "static",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:34"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/imprint",
+      "template": "template.legal",
+      "appRoutePattern": "imprint",
+      "kind": "static",
+      "implementationStatus": "mounted",
+      "variantOverrides": {
+        "content.legal-prose": "imprint"
+      },
+      "measuredFrom": [
+        "src/App.jsx:35"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/data-privacy",
+      "template": "template.legal",
+      "appRoutePattern": "data-privacy",
+      "kind": "static",
+      "implementationStatus": "mounted",
+      "variantOverrides": {
+        "content.legal-prose": "data-privacy"
+      },
+      "measuredFrom": [
+        "src/App.jsx:36"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/terms-of-service",
+      "template": "template.legal",
+      "appRoutePattern": "terms-of-service",
+      "kind": "static",
+      "implementationStatus": "mounted",
+      "variantOverrides": {
+        "content.legal-prose": "terms-of-service"
+      },
+      "measuredFrom": [
+        "src/App.jsx:37"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/blog",
+      "template": "template.blog-index",
+      "appRoutePattern": "blog",
+      "kind": "static",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:38"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/blog/we-re-taking-real-estate-intelligence-to-expo-real-2026.-come-and-talk-to-your-portfolio",
+      "template": "template.blog-post",
+      "appRoutePattern": "blog/:slug",
+      "kind": "dynamic-instance",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:39",
+        "specs/cms-data.json:12"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/blog/primefold-xi-speaks-german-now",
+      "template": "template.blog-post",
+      "appRoutePattern": "blog/:slug",
+      "kind": "dynamic-instance",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:39",
+        "specs/cms-data.json:211"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/blog/we-rebuilt-our-website-primefold-ai",
+      "template": "template.blog-post",
+      "appRoutePattern": "blog/:slug",
+      "kind": "dynamic-instance",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:39",
+        "specs/cms-data.json:361"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/blog/primefold-ri-is-here-real-estate-intelligence",
+      "template": "template.blog-post",
+      "appRoutePattern": "blog/:slug",
+      "kind": "dynamic-instance",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:39",
+        "specs/cms-data.json:529"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/blog/nobody-asks-their-customers-anything-right-after-they-buy.-now-you-can-right-on-shopify.",
+      "template": "template.blog-post",
+      "appRoutePattern": "blog/:slug",
+      "kind": "dynamic-instance",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:39",
+        "specs/cms-data.json:773"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/blog/how-we-built-sunday-s-survey-design-agent",
+      "template": "template.blog-post",
+      "appRoutePattern": "blog/:slug",
+      "kind": "dynamic-instance",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:39",
+        "specs/cms-data.json:937"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/blog/meet-sunday-the-intelligence-layer-built-into-primefold-xi",
+      "template": "template.blog-post",
+      "appRoutePattern": "blog/:slug",
+      "kind": "dynamic-instance",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:39",
+        "specs/cms-data.json:1126"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/blog/design-and-reports-get-their-moment",
+      "template": "template.blog-post",
+      "appRoutePattern": "blog/:slug",
+      "kind": "dynamic-instance",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:39",
+        "specs/cms-data.json:1400"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/blog/the-insight-hub-is-about-to-get-sharper",
+      "template": "template.blog-post",
+      "appRoutePattern": "blog/:slug",
+      "kind": "dynamic-instance",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:39",
+        "specs/cms-data.json:1606"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/blog/primefold-xi-is-here",
+      "template": "template.blog-post",
+      "appRoutePattern": "blog/:slug",
+      "kind": "dynamic-instance",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:39",
+        "specs/cms-data.json:1815"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/blog/introducing-primefold---saypien-is-becoming-primefold",
+      "template": "template.blog-post",
+      "appRoutePattern": "blog/:slug",
+      "kind": "dynamic-instance",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:39",
+        "specs/cms-data.json:2044"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/blog/nas-invest-turned-tenant-insight-into-tenant-strength",
+      "template": "template.blog-post",
+      "appRoutePattern": "blog/:slug",
+      "kind": "dynamic-instance",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:39",
+        "specs/cms-data.json:2198"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/case-studies",
+      "template": "template.case-studies-index",
+      "appRoutePattern": "case-studies",
+      "kind": "static",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:40"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/case-studies/gainback-primefold-xi",
+      "template": "template.case-study",
+      "appRoutePattern": "case-studies/:slug",
+      "kind": "dynamic-instance",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:41",
+        "specs/cms-data.json:2367"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/case-studies/nas-primefold-xi-ri",
+      "template": "template.case-study",
+      "appRoutePattern": "case-studies/:slug",
+      "kind": "dynamic-instance",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:41",
+        "specs/cms-data.json:2600"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/case-studies/dirts-primefold-xi",
+      "template": "template.case-study",
+      "appRoutePattern": "case-studies/:slug",
+      "kind": "dynamic-instance",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:41",
+        "specs/cms-data.json:2822"
+      ],
+      "notes": [],
+      "retrievalEligible": true
+    },
+    {
+      "path": "/404",
+      "template": "template.not-found",
+      "appRoutePattern": "*",
+      "kind": "catch-all",
+      "implementationStatus": "mounted",
+      "variantOverrides": {},
+      "measuredFrom": [
+        "src/App.jsx:42"
+      ],
+      "notes": [
+        "App.jsx has no '/404' route: the '*' catch-all renders NotFound. '/404' is the representative path measured on the live site and listed in ia.json; unknown blog/case-study slugs also render NotFound."
+      ],
+      "retrievalEligible": true
+    }
+  ]
+}

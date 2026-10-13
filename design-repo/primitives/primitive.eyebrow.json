@@ -1,0 +1,37 @@
+{
+  "id": "primitive.eyebrow",
+  "kind": "primitive",
+  "purpose": "Section eyebrow: braille spinner (10 frames, 80ms) plus 14/20 500 label; colour overridable on dark heroes.",
+  "props": {
+    "label": "text",
+    "color": "optional colour token"
+  },
+  "variants": [
+    "default"
+  ],
+  "usesTokens": [
+    "fontSize.14",
+    "color.grey-500",
+    "motion.duration-spinner-frame"
+  ],
+  "implementedBy": [
+    "src/components/shared/Eyebrow.jsx"
+  ],
+  "usedBySections": [
+    "features.how-it-works",
+    "proof.trust",
+    "hero.pricing",
+    "hero.security-comet",
+    "content.not-found"
+  ],
+  "measuredFrom": [
+    "src/components/shared/Eyebrow.jsx:3",
+    "src/components/shared/Eyebrow.jsx:9",
+    "CLONE_SPEC.md:121"
+  ],
+  "notes": [
+    "The spinner animates continuously and ignores prefers-reduced-motion (no matchMedia in Eyebrow.jsx)."
+  ],
+  "status": "mounted",
+  "version": "1.0.0"
+}

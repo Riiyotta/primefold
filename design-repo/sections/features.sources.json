@@ -1,0 +1,135 @@
+{
+  "id": "features.sources",
+  "kind": "section",
+  "category": "FEATURES",
+  "purpose": "'Sources' block: left list of three trust points (connects in minutes, traceable, hosted in Germany) beside a Lottie (XI) or dark 'A3 Sources' loop (RI).",
+  "tags": [
+    "sources",
+    "traceability",
+    "lottie",
+    "product"
+  ],
+  "status": "spec-only-source-in-progress",
+  "implementedBy": [
+    "src/pages/product/Sources.jsx"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": [
+      "XI Lottie embeds third-party logos as images (spec 7.3)"
+    ]
+  },
+  "allowedTemplates": [
+    "template.product"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {},
+  "content": {
+    "fields": {
+      "eyebrow": {
+        "type": "text",
+        "required": true,
+        "maxWords": 1,
+        "maxWordsBasis": "longest real instance: 1 words"
+      },
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 7,
+        "maxWordsBasis": "longest real instance: 7 words"
+      },
+      "lead": {
+        "type": "text",
+        "required": true,
+        "maxWords": 30,
+        "maxWordsBasis": "spec 2c: one paragraph of 2-3 sentences (~25 words)"
+      },
+      "items": {
+        "type": "list",
+        "required": true,
+        "minItems": 3,
+        "maxItems": 3,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "icon": {
+              "type": "asset",
+              "required": true,
+              "roles": [
+                "ui.icon-mask"
+              ]
+            },
+            "title": {
+              "type": "text",
+              "required": true,
+              "maxWords": 4,
+              "maxWordsBasis": "longest real instance: 4 words"
+            },
+            "body": {
+              "type": "text",
+              "required": true,
+              "maxWords": 22,
+              "maxWordsBasis": "longest real instance: 22 words"
+            }
+          }
+        }
+      },
+      "visual": {
+        "type": "asset",
+        "required": true,
+        "roles": [
+          "motion.lottie",
+          "product.illustration-still"
+        ]
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "lottie-loop",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-first-frame",
+        "note": "XI: DotLottie autoplay loop",
+        "measuredFrom": [
+          "specs/product-pages.md:340"
+        ]
+      },
+      {
+        "pattern": "loop-demo",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-final-frame",
+        "note": "RI A3 Sources 12.0s loop (7 states)",
+        "measuredFrom": [
+          "specs/product-pages.md:358"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "partial",
+    "reducedMotionSource": "src/pages/product/Sources.jsx:38"
+  },
+  "responsive": {
+    "desktop": "left 612 / right 612x652 (RI panel 620x587)",
+    "tablet": "columns side by side 357/349",
+    "phone": "stack; visual 350x373 (RI 334x556)"
+  },
+  "notes": [
+    "Source status at build time: src/pages/ExperienceIntelligence.jsx and RealEstateIntelligence.jsx are still the placeholder 'building…' pages, and App.jsx does not import ProductPage. src/pages/product/* is an in-progress, unmounted implementation (ProductPage.jsx imports ./SolutionsTabs and ./product.css, which do not exist on disk). The contract is grounded in the measured spec specs/product-pages.md, not in running source."
+  ],
+  "measuredFrom": [
+    "specs/product-pages.md:327",
+    "src/pages/product/Sources.jsx:38"
+  ],
+  "retrievalEligible": false,
+  "rules": [],
+  "assetRoles": [
+    "motion.lottie",
+    "product.illustration-still",
+    "ui.icon-mask"
+  ],
+  "version": "1.0.0"
+}

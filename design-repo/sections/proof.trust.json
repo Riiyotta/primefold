@@ -1,0 +1,128 @@
+{
+  "id": "proof.trust",
+  "kind": "section",
+  "category": "PROOF",
+  "purpose": "Trust block: three security/compliance points with a 10s teal progress line beside an animated Lottie panel.",
+  "tags": [
+    "trust",
+    "gdpr",
+    "lottie",
+    "progress-line",
+    "home-only"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/components/Trust.jsx"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": [
+      "Trust Lottie never painted in headless capture (CLONE_SPEC 14.1)"
+    ]
+  },
+  "allowedTemplates": [
+    "template.home"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "homeRouteOnly": true,
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "eyebrow": {
+        "type": "text",
+        "required": true,
+        "maxWords": 1,
+        "maxWordsBasis": "longest real instance: 1 words"
+      },
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 5,
+        "maxWordsBasis": "longest real instance: 5 words"
+      },
+      "lead": {
+        "type": "text",
+        "required": true,
+        "maxWords": 13,
+        "maxWordsBasis": "longest real instance: 13 words"
+      },
+      "items": {
+        "type": "list",
+        "required": true,
+        "minItems": 3,
+        "maxItems": 3,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "title": {
+              "type": "text",
+              "required": true,
+              "maxWords": 6,
+              "maxWordsBasis": "longest real instance: 6 words"
+            },
+            "body": {
+              "type": "text",
+              "required": true,
+              "maxWords": 20,
+              "maxWordsBasis": "longest real instance: 20 words"
+            }
+          }
+        },
+        "countBasis": "ITEMS in Trust.jsx = 3"
+      },
+      "panel": {
+        "type": "asset",
+        "required": true,
+        "roles": [
+          "motion.lottie"
+        ]
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "progress-line",
+        "trigger": "in-view",
+        "reducedMotionFallback": "static-final-frame",
+        "note": "1px -> full height fill over 10s linear when the eyebrow is fully in view; re-triggers",
+        "measuredFrom": [
+          "CLONE_SPEC.md:308"
+        ]
+      },
+      {
+        "pattern": "lottie-loop",
+        "trigger": "in-view",
+        "reducedMotionFallback": "static-first-frame",
+        "note": "Lottie autoplay+loop when the eyebrow is fully in view",
+        "measuredFrom": [
+          "CLONE_SPEC.md:312"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "absent in Trust.jsx"
+  },
+  "responsive": {
+    "desktop": "two 612x588 columns",
+    "tablet": "columns 357 each",
+    "phone": "stacked 350 wide, padding 44/20"
+  },
+  "notes": [],
+  "measuredFrom": [
+    "CLONE_SPEC.md:303",
+    "src/components/Trust.jsx:5"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [
+    "motion.lottie"
+  ],
+  "version": "1.0.0"
+}

@@ -1,0 +1,816 @@
+{
+  "version": "1.0.0",
+  "templates": [
+    {
+      "id": "template.home",
+      "name": "Home",
+      "chrome": "full",
+      "evidence": {
+        "level": "measured",
+        "specs": [
+          "CLONE_SPEC.md"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.navbar",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "overlay"
+          ]
+        },
+        {
+          "section": "hero.home-carousel",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "proof.logo-ticker",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.how-it-works",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.intelligence-cards",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "proof.testimonials",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.solutions-carousel",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "proof.trust",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "proof.outcomes",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.cta-band",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "main"
+          ]
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "measuredFrom": [
+        "src/pages/Home.jsx:13",
+        "CLONE_SPEC.md:3"
+      ],
+      "notes": [
+        "Order verified against src/pages/Home.jsx (Hero, then HowItWorks which contains the logo ticker, Intelligence, Testimonials, Solutions, Trust, Outcomes, CTA)."
+      ],
+      "routes": [
+        "/"
+      ],
+      "routeCount": 1,
+      "retrievalEligible": true
+    },
+    {
+      "id": "template.product",
+      "name": "Product (Intelligence)",
+      "chrome": "full",
+      "evidence": {
+        "level": "measured",
+        "specs": [
+          "specs/product-pages.md"
+        ],
+        "implementation": "not-mounted"
+      },
+      "nodes": [
+        {
+          "section": "shell.navbar",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "overlay"
+          ]
+        },
+        {
+          "section": "hero.product-live-chat",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.step-cards",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.use-cases",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.sources",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.solutions-tabs",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.loop-cards",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.cta-band",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "main",
+            "xi"
+          ]
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "measuredFrom": [
+        "specs/product-pages.md:15",
+        "src/App.jsx:28",
+        "src/pages/ExperienceIntelligence.jsx:1"
+      ],
+      "notes": [
+        "Measured in the spec, but at build time the source routes are still 'building…' placeholders and the ProductPage implementation is unmounted and incomplete.",
+        "XI uses CTA variant 'xi' (adds Start free trial at >=1200); RI uses 'main' (routes.json variantOverrides)."
+      ],
+      "routes": [
+        "/experience-intelligence",
+        "/realestate-intelligence"
+      ],
+      "routeCount": 2,
+      "retrievalEligible": false
+    },
+    {
+      "id": "template.plans",
+      "name": "Plans",
+      "chrome": "full",
+      "evidence": {
+        "level": "measured",
+        "specs": [
+          "specs/plans-security-contact-404.md"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.navbar",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "white"
+          ]
+        },
+        {
+          "section": "hero.pricing",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.comparison-table",
+          "required": false,
+          "repeatable": false
+        },
+        {
+          "section": "features.info-card-grid",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "four-up"
+          ]
+        },
+        {
+          "section": "features.faq-accordion",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.cta-band",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "main"
+          ]
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "measuredFrom": [
+        "src/pages/Plans.jsx:20",
+        "specs/plans-security-contact-404.md:58"
+      ],
+      "notes": [
+        "Comparison table exists only in the XI state (PLANS_COMPARISON_TABLE_XI_ONLY)."
+      ],
+      "routes": [
+        "/plans"
+      ],
+      "routeCount": 1,
+      "retrievalEligible": true
+    },
+    {
+      "id": "template.security",
+      "name": "Security",
+      "chrome": "full",
+      "evidence": {
+        "level": "measured",
+        "specs": [
+          "specs/plans-security-contact-404.md"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.navbar",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "overlay"
+          ]
+        },
+        {
+          "section": "hero.security-comet",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.info-card-grid",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "three-up"
+          ]
+        },
+        {
+          "section": "proof.trust-image-cards",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.cta-band",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "security"
+          ]
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "measuredFrom": [
+        "src/pages/Security.jsx:16",
+        "specs/plans-security-contact-404.md:230"
+      ],
+      "notes": [],
+      "routes": [
+        "/security"
+      ],
+      "routeCount": 1,
+      "retrievalEligible": true
+    },
+    {
+      "id": "template.contact",
+      "name": "Contact",
+      "chrome": "full",
+      "evidence": {
+        "level": "measured",
+        "specs": [
+          "specs/plans-security-contact-404.md"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.navbar",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "white"
+          ]
+        },
+        {
+          "section": "conversion.contact-form",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.cta-band",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "roles"
+          ]
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "measuredFrom": [
+        "src/pages/Contact.jsx:18",
+        "specs/plans-security-contact-404.md:298"
+      ],
+      "notes": [],
+      "routes": [
+        "/contact"
+      ],
+      "routeCount": 1,
+      "retrievalEligible": true
+    },
+    {
+      "id": "template.company",
+      "name": "Company",
+      "chrome": "full",
+      "evidence": {
+        "level": "measured",
+        "specs": [
+          "specs/company-careers-legal.md"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.navbar",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "overlay"
+          ]
+        },
+        {
+          "section": "hero.company-stats",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "features.info-card-grid",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "four-up"
+          ]
+        },
+        {
+          "section": "features.team-ticker",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.cta-band",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "roles"
+          ]
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "measuredFrom": [
+        "src/pages/Company.jsx:17",
+        "specs/company-careers-legal.md:24"
+      ],
+      "notes": [],
+      "routes": [
+        "/company"
+      ],
+      "routeCount": 1,
+      "retrievalEligible": true
+    },
+    {
+      "id": "template.careers",
+      "name": "Careers",
+      "chrome": "full",
+      "evidence": {
+        "level": "measured",
+        "specs": [
+          "specs/company-careers-legal.md"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.navbar",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "white"
+          ]
+        },
+        {
+          "section": "hero.careers",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "content.open-roles",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.cta-band",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "roles"
+          ]
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "measuredFrom": [
+        "src/pages/Careers.jsx:31",
+        "specs/company-careers-legal.md:96"
+      ],
+      "notes": [],
+      "routes": [
+        "/careers"
+      ],
+      "routeCount": 1,
+      "retrievalEligible": true
+    },
+    {
+      "id": "template.legal",
+      "name": "Legal document",
+      "chrome": "full",
+      "evidence": {
+        "level": "measured",
+        "specs": [
+          "specs/company-careers-legal.md"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.navbar",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "white"
+          ]
+        },
+        {
+          "section": "content.legal-prose",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "imprint",
+            "data-privacy",
+            "terms-of-service"
+          ]
+        },
+        {
+          "section": "conversion.cta-band",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "main"
+          ]
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "measuredFrom": [
+        "src/pages/Legal.jsx:40",
+        "specs/company-careers-legal.md:144"
+      ],
+      "notes": [
+        "Prose is not transcribed in the specs: structure and word counts only."
+      ],
+      "routes": [
+        "/imprint",
+        "/data-privacy",
+        "/terms-of-service"
+      ],
+      "routeCount": 3,
+      "retrievalEligible": true
+    },
+    {
+      "id": "template.blog-index",
+      "name": "Blog index",
+      "chrome": "full",
+      "evidence": {
+        "level": "measured",
+        "specs": [
+          "specs/blog-case-studies.md",
+          "specs/cms-data.json"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.navbar",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "white"
+          ]
+        },
+        {
+          "section": "hero.index-intro",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "newsletter"
+          ]
+        },
+        {
+          "section": "content.card-grid",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "blog"
+          ]
+        },
+        {
+          "section": "conversion.cta-band",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "main"
+          ]
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "measuredFrom": [
+        "src/pages/Blog.jsx:56",
+        "specs/blog-case-studies.md:67"
+      ],
+      "notes": [],
+      "routes": [
+        "/blog"
+      ],
+      "routeCount": 1,
+      "retrievalEligible": true
+    },
+    {
+      "id": "template.blog-post",
+      "name": "Blog post",
+      "chrome": "full",
+      "evidence": {
+        "level": "measured",
+        "specs": [
+          "specs/blog-case-studies.md",
+          "specs/cms-data.json"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.navbar",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "white"
+          ]
+        },
+        {
+          "section": "content.article",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.cta-band",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "main"
+          ]
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "measuredFrom": [
+        "src/pages/BlogPost.jsx:29",
+        "specs/blog-case-studies.md:123"
+      ],
+      "notes": [
+        "Spec sampled all 12 posts; body prose not transcribed."
+      ],
+      "routes": [
+        "/blog/we-re-taking-real-estate-intelligence-to-expo-real-2026.-come-and-talk-to-your-portfolio",
+        "/blog/primefold-xi-speaks-german-now",
+        "/blog/we-rebuilt-our-website-primefold-ai",
+        "/blog/primefold-ri-is-here-real-estate-intelligence",
+        "/blog/nobody-asks-their-customers-anything-right-after-they-buy.-now-you-can-right-on-shopify.",
+        "/blog/how-we-built-sunday-s-survey-design-agent",
+        "/blog/meet-sunday-the-intelligence-layer-built-into-primefold-xi",
+        "/blog/design-and-reports-get-their-moment",
+        "/blog/the-insight-hub-is-about-to-get-sharper",
+        "/blog/primefold-xi-is-here",
+        "/blog/introducing-primefold---saypien-is-becoming-primefold",
+        "/blog/nas-invest-turned-tenant-insight-into-tenant-strength"
+      ],
+      "routeCount": 12,
+      "retrievalEligible": true
+    },
+    {
+      "id": "template.case-studies-index",
+      "name": "Case studies index",
+      "chrome": "full",
+      "evidence": {
+        "level": "measured",
+        "specs": [
+          "specs/blog-case-studies.md",
+          "specs/cms-data.json"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.navbar",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "white"
+          ]
+        },
+        {
+          "section": "hero.index-intro",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "booking"
+          ]
+        },
+        {
+          "section": "content.card-grid",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "case-study"
+          ]
+        },
+        {
+          "section": "conversion.cta-band",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "main"
+          ]
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "measuredFrom": [
+        "src/pages/CaseStudies.jsx:28",
+        "specs/blog-case-studies.md:102"
+      ],
+      "notes": [
+        "Same page shape as the blog index but a different hero action and card variant; kept as its own template because the hero variant and grid variant differ and the blog/case-study routes map to different measured specs."
+      ],
+      "routes": [
+        "/case-studies"
+      ],
+      "routeCount": 1,
+      "retrievalEligible": true
+    },
+    {
+      "id": "template.case-study",
+      "name": "Case study",
+      "chrome": "full",
+      "evidence": {
+        "level": "measured",
+        "specs": [
+          "specs/blog-case-studies.md",
+          "specs/cms-data.json"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.navbar",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "white"
+          ]
+        },
+        {
+          "section": "content.case-study",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.cta-band",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "main"
+          ]
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "measuredFrom": [
+        "src/pages/CaseStudy.jsx:100",
+        "specs/blog-case-studies.md:181"
+      ],
+      "notes": [
+        "All 3 studies measured and structurally identical (spec 4)."
+      ],
+      "routes": [
+        "/case-studies/gainback-primefold-xi",
+        "/case-studies/nas-primefold-xi-ri",
+        "/case-studies/dirts-primefold-xi"
+      ],
+      "routeCount": 3,
+      "retrievalEligible": true
+    },
+    {
+      "id": "template.not-found",
+      "name": "404",
+      "chrome": "full",
+      "evidence": {
+        "level": "measured",
+        "specs": [
+          "specs/plans-security-contact-404.md"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.navbar",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "white"
+          ]
+        },
+        {
+          "section": "content.not-found",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "conversion.cta-band",
+          "required": true,
+          "repeatable": false,
+          "variants": [
+            "main"
+          ]
+        },
+        {
+          "section": "shell.footer",
+          "required": true,
+          "repeatable": false
+        }
+      ],
+      "measuredFrom": [
+        "src/App.jsx:42",
+        "specs/plans-security-contact-404.md:371"
+      ],
+      "notes": [],
+      "routes": [
+        "/404"
+      ],
+      "routeCount": 1,
+      "retrievalEligible": true
+    }
+  ]
+}

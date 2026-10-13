@@ -1,0 +1,210 @@
+{
+  "id": "shell.footer",
+  "kind": "section",
+  "category": "SHELL",
+  "purpose": "Footer card with brand blurb + newsletter form, four link columns, legal/social row, hosted-in-Germany line and the sticky ghost wordmark revealed as the page bottoms out.",
+  "tags": [
+    "footer",
+    "chrome",
+    "newsletter",
+    "ghost-wordmark"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/components/Footer.jsx",
+    "src/components/footer/footer.css"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": [
+      "footer link hover transition duration (CLONE_SPEC 14.5)"
+    ]
+  },
+  "allowedTemplates": "any",
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "mustBeLast": true
+  },
+  "content": {
+    "fields": {
+      "blurb": {
+        "type": "text",
+        "required": true,
+        "maxWords": 14,
+        "maxWordsBasis": "two real paragraphs: 'One intelligence. Built for every field.' (6 words) + 'Stay in the loop. Update on what's new.' (8 words)"
+      },
+      "newsletter": {
+        "type": "form",
+        "required": true,
+        "endpointRole": "endpoint.newsletter-form"
+      },
+      "columns": {
+        "type": "list",
+        "required": true,
+        "minItems": 4,
+        "maxItems": 4,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "head": {
+              "type": "text",
+              "required": true,
+              "maxWords": 1,
+              "maxWordsBasis": "longest real instance: 1 words"
+            },
+            "links": {
+              "type": "list",
+              "required": true,
+              "minItems": 2,
+              "maxItems": 3,
+              "item": {
+                "type": "object",
+                "required": true,
+                "fields": {
+                  "label": {
+                    "type": "text",
+                    "required": true,
+                    "maxWords": 3,
+                    "maxWordsBasis": "longest real instance: 3 words"
+                  },
+                  "to": {
+                    "type": "target",
+                    "required": true
+                  }
+                }
+              }
+            }
+          }
+        },
+        "countBasis": "COLUMNS in Footer.jsx has 4 columns"
+      },
+      "legalLinks": {
+        "type": "list",
+        "required": true,
+        "minItems": 3,
+        "maxItems": 3,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "label": {
+              "type": "text",
+              "required": true,
+              "maxWords": 3,
+              "maxWordsBasis": "longest real instance: 3 words"
+            },
+            "to": {
+              "type": "target",
+              "required": true
+            }
+          }
+        }
+      },
+      "cookieSettingsLabel": {
+        "type": "text",
+        "required": true,
+        "maxWords": 2,
+        "maxWordsBasis": "longest real instance: 2 words"
+      },
+      "copyright": {
+        "type": "text",
+        "required": true,
+        "maxWords": 8,
+        "maxWordsBasis": "real line is 8 whitespace tokens; the legal entity name is real company data and must be replaced for other owners"
+      },
+      "socials": {
+        "type": "list",
+        "required": true,
+        "minItems": 3,
+        "maxItems": 3,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "label": {
+              "type": "text",
+              "required": true,
+              "maxWords": 1,
+              "maxWordsBasis": "longest real instance: 1 words"
+            },
+            "to": {
+              "type": "target",
+              "required": true
+            }
+          }
+        }
+      },
+      "hostedNote": {
+        "type": "text",
+        "required": true,
+        "maxWords": 8,
+        "maxWordsBasis": "longest real instance: 8 words"
+      },
+      "logo": {
+        "type": "asset",
+        "required": true,
+        "roles": [
+          "brand.logo-mark"
+        ]
+      },
+      "wordmark": {
+        "type": "asset",
+        "required": true,
+        "roles": [
+          "brand.wordmark-ghost"
+        ]
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "scroll-linked-offset",
+        "trigger": "scroll",
+        "reducedMotionFallback": "no-animation",
+        "note": "ghost wordmark opacity .2 -> 1 as the 200px Footer Trigger scrolls into view",
+        "measuredFrom": [
+          "src/components/Footer.jsx:19"
+        ]
+      },
+      {
+        "pattern": "hover-color",
+        "trigger": "hover",
+        "reducedMotionFallback": "instant-swap",
+        "note": "link and social colour change on hover (~.2s)",
+        "measuredFrom": [
+          "CLONE_SPEC.md:396"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "absent in Footer.jsx and footer.css"
+  },
+  "responsive": {
+    "desktop": "brand column 320px + link columns; wordmark 200px tall",
+    "tablet": "link columns grid repeat(auto-fill,minmax(120px,1fr)); wordmark 140px",
+    "phone": "columns stack; legal links stack above copyright; wordmark 64px"
+  },
+  "notes": [
+    "The footer 'Cookie Settings' button dispatches window event pf:cookie-settings; the only listener is CookieBanner.jsx, which is NOT mounted anywhere, so the button currently does nothing.",
+    "Newsletter form is inert: onSubmit preventDefault, no network call."
+  ],
+  "measuredFrom": [
+    "CLONE_SPEC.md:343",
+    "src/components/Footer.jsx:5",
+    "src/components/Footer.jsx:135",
+    "src/components/Footer.jsx:64"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [
+    "brand.logo-mark",
+    "brand.wordmark-ghost"
+  ],
+  "version": "1.0.0"
+}

@@ -1,0 +1,115 @@
+{
+  "id": "features.team-ticker",
+  "kind": "section",
+  "category": "FEATURES",
+  "purpose": "Team section: title row over an edge-to-edge auto-scrolling ticker of team cards (square photo, name, role).",
+  "tags": [
+    "team",
+    "ticker",
+    "marquee",
+    "people"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/company/Team.jsx",
+    "src/pages/company/team.css"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": [
+      "live drift measured 30-36 px/s vs velocity 40 in source (spec E)"
+    ]
+  },
+  "allowedTemplates": [
+    "template.company"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "eyebrow": {
+        "type": "text",
+        "required": true,
+        "maxWords": 1,
+        "maxWordsBasis": "longest real instance: 1 words"
+      },
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 5,
+        "maxWordsBasis": "longest real instance: 5 words"
+      },
+      "members": {
+        "type": "list",
+        "required": true,
+        "minItems": 4,
+        "maxItems": 24,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "photo": {
+              "type": "asset",
+              "required": true,
+              "roles": [
+                "person.team-photo"
+              ]
+            },
+            "name": {
+              "type": "text",
+              "required": true,
+              "maxWords": 2,
+              "maxWordsBasis": "real first names are 1 word; budget 2",
+              "placeholderOnly": true
+            },
+            "role": {
+              "type": "text",
+              "required": true,
+              "maxWords": 3,
+              "maxWordsBasis": "longest real instance: 3 words"
+            }
+          }
+        },
+        "countBasis": "real ticker has 12 members, duplicated for the loop"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "marquee",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-first-frame",
+        "note": "40px/s leftward, gap 20, no hover slow-down, no edge fade; CSS 78s/66s lap",
+        "measuredFrom": [
+          "src/pages/company/team.css:2"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "absent in Team.jsx and team.css"
+  },
+  "responsive": {
+    "desktop": "image 240x240, card height 296",
+    "tablet": "240x240",
+    "phone": "200x200, card 256"
+  },
+  "notes": [
+    "Names and photos are real people: person.team-photo is must-not-fabricate and name is placeholderOnly."
+  ],
+  "measuredFrom": [
+    "specs/company-careers-legal.md:63",
+    "src/pages/company/team.css:3"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [
+    "person.team-photo"
+  ],
+  "version": "1.0.0"
+}

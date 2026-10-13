@@ -1,0 +1,91 @@
+{
+  "layout": {
+    "container-max": {
+      "$type": "dimension",
+      "$value": "1320px",
+      "$extensions": {
+        "measuredFrom": [
+          "tailwind.config.js:42"
+        ]
+      },
+      "$description": "page wrapper max width"
+    },
+    "container-gutter": {
+      "$type": "dimension",
+      "$value": "20px",
+      "$extensions": {
+        "measuredFrom": [
+          "src/index.css:37"
+        ]
+      }
+    },
+    "content-max": {
+      "$type": "dimension",
+      "$value": "1280px",
+      "$extensions": {
+        "measuredFrom": [
+          "CLONE_SPEC.md:27"
+        ]
+      },
+      "$description": "content width inside 1320 container"
+    },
+    "section-pad-top-hero": {
+      "$type": "dimension",
+      "$value": "156px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:69"
+        ]
+      },
+      "$description": "page hero top padding under fixed nav"
+    },
+    "section-pad-title": {
+      "$type": "dimension",
+      "$value": "88px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:53"
+        ]
+      },
+      "$description": "section title row top padding (phone 80px)"
+    },
+    "reading-column": {
+      "$type": "dimension",
+      "$value": "768px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/company-careers-legal.md:157"
+        ]
+      },
+      "$description": "legal reading column"
+    },
+    "article-column": {
+      "$type": "dimension",
+      "$value": "840px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/blog-case-studies.md:128"
+        ]
+      },
+      "$description": "blog post container (800px content)"
+    },
+    "nav-height-desktop": {
+      "$type": "dimension",
+      "$value": "72px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:24"
+        ]
+      }
+    },
+    "nav-height-mobile": {
+      "$type": "dimension",
+      "$value": "80px",
+      "$extensions": {
+        "measuredFrom": [
+          "specs/plans-security-contact-404.md:30"
+        ]
+      }
+    }
+  }
+}

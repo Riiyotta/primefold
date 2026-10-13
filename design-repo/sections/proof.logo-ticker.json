@@ -1,0 +1,106 @@
+{
+  "id": "proof.logo-ticker",
+  "kind": "section",
+  "category": "PROOF",
+  "purpose": "Infinite horizontal marquee of customer wordmarks at the top of the How-it-works block; establishes credibility before the product demo.",
+  "tags": [
+    "logos",
+    "marquee",
+    "social-proof",
+    "home-only"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/components/HowItWorks.jsx",
+    "src/components/how/how.css"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": []
+  },
+  "allowedTemplates": [
+    "template.home"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "homeRouteOnly": true,
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "logos": {
+        "type": "list",
+        "required": true,
+        "minItems": 6,
+        "maxItems": 12,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "logo": {
+              "type": "asset",
+              "required": true,
+              "roles": [
+                "customer.logo"
+              ]
+            },
+            "alt": {
+              "type": "text",
+              "required": true,
+              "maxWords": 3,
+              "maxWordsBasis": "real alt text is '<company> logo', max 5 words for 't3n digital pioneers logo'; budget 3 for generic placeholders",
+              "placeholderOnly": true
+            }
+          }
+        },
+        "countBasis": "real ticker shows 10 logos (LOGOS in HowItWorks.jsx)"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "marquee",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-first-frame",
+        "note": "leftward 50px/s, duplicated list; per-logo in-view appear opacity+y20 stagger .08s",
+        "measuredFrom": [
+          "CLONE_SPEC.md:192"
+        ]
+      },
+      {
+        "pattern": "stagger-appear",
+        "trigger": "in-view",
+        "reducedMotionFallback": "instant-swap",
+        "note": "opacity 0->1 / y 20->0, .3s [.44,0,.56,1], threshold .5, re-triggers",
+        "measuredFrom": [
+          "CLONE_SPEC.md:193"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "yes",
+    "reducedMotionSource": "src/components/how/how.css:32"
+  },
+  "responsive": {
+    "desktop": "logos 246x120 in a 1280x120 clipped track, gap 12",
+    "tablet": "same as desktop",
+    "phone": "logos 164x80, gap 0"
+  },
+  "notes": [
+    "Real ticker logos are third-party trademarks: see assets/asset-roles.json customer.logo (must-not-fabricate, pinned)."
+  ],
+  "measuredFrom": [
+    "CLONE_SPEC.md:189",
+    "src/components/HowItWorks.jsx:7",
+    "src/components/how/how.css:32"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [
+    "customer.logo"
+  ],
+  "version": "1.0.0"
+}

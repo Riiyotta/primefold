@@ -1,0 +1,3335 @@
+{
+  "$description": "Evidence ledger. Every measuredFrom citation in the repo is listed here with the exact quote that must appear inside the cited line range. extraction/verify_all.py resolves them against the sibling source tree; with no sibling tree it degrades to WARN (never fails).",
+  "citationFormat": "<path relative to the source project root>:<first line>[-<last line>]",
+  "snapshot": {
+    "sourceUrl": "https://primefold.ai/",
+    "measuredAt": "2026-10-13 (per CLONE_SPEC.md / specs/*.md headers)",
+    "note": "A design-repo is a snapshot of a moving project; src/pages/product was still being edited while this repo was built."
+  },
+  "citations": [
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "8",
+      "quote": "ink: 'rgb(26,24,20)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "9",
+      "quote": "'ink-2': 'rgb(33,33,33)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "10",
+      "quote": "'ink-cta': 'rgb(33,30,28)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "11",
+      "quote": "'grey-600': 'rgb(84,84,84)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "12",
+      "quote": "'grey-550': 'rgb(84,82,78)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "13",
+      "quote": "'grey-500': 'rgb(97,97,97)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "14",
+      "quote": "social: 'rgb(68,66,62)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "15",
+      "quote": "'page-alt': 'rgb(250,249,248)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "16",
+      "quote": "'card-tint': 'rgba(0,0,0,0.04)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "17",
+      "quote": "'card-tint-solid': 'rgb(240,239,238)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "18",
+      "quote": "divider: 'rgb(226,226,226)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "19",
+      "quote": "'nav-border': 'rgb(235,235,235)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "20",
+      "quote": "track: 'rgb(237,237,237)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "21",
+      "quote": "teal: 'rgb(39,168,150)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "22",
+      "quote": "'teal-2': 'rgb(63,209,188)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "23",
+      "quote": "'teal-xi': 'rgb(32,131,116)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "24",
+      "quote": "orange: 'rgb(202,123,87)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "25",
+      "quote": "'orange-2': 'rgb(249,157,114)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "26",
+      "quote": "'glow-teal': '#16FFDE',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "27",
+      "quote": "purple: 'rgb(89,74,255)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "28",
+      "quote": "'dark-window': 'rgb(22,21,19)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "29",
+      "quote": "'dark-stage': 'rgb(11,11,12)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "30",
+      "quote": "'panel-1': 'rgb(40,38,34)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "31",
+      "quote": "'panel-2': 'rgb(68,66,62)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "32",
+      "quote": "'panel-3': 'rgb(53,51,46)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "33",
+      "quote": "cream: 'rgb(254,250,243)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "34",
+      "quote": "'a1-text': 'rgb(240,238,234)',"
+    },
+    {
+      "owner": "tokens.color",
+      "path": "tailwind.config.js",
+      "lines": "35",
+      "quote": "'a1-text-2': 'rgb(203,199,192)',"
+    },
+    {
+      "owner": "tokens.color.white",
+      "path": "src/index.css",
+      "lines": "24",
+      "quote": "background: #fff"
+    },
+    {
+      "owner": "tokens.color.surface-soft",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "392",
+      "quote": "| rgb(250,250,249) #FAFAF9 |"
+    },
+    {
+      "owner": "tokens.color.hairline-table",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "393",
+      "quote": "| rgb(234,234,234) #EAEAEA |"
+    },
+    {
+      "owner": "tokens.color.divider-plan-card",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "394",
+      "quote": "| #E1E1D4 |"
+    },
+    {
+      "owner": "tokens.color.tick-bg",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "395",
+      "quote": "| rgba(39,168,150,.24) |"
+    },
+    {
+      "owner": "tokens.color.cross-grey",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "396",
+      "quote": "| rgb(162,158,152) #A29E98 |"
+    },
+    {
+      "owner": "tokens.color.table-value",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "397",
+      "quote": "| rgb(53,51,46) #35332E |"
+    },
+    {
+      "owner": "tokens.color.table-sublabel",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "398",
+      "quote": "| rgb(102,102,102) #666 |"
+    },
+    {
+      "owner": "tokens.color.badge-ri",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "399",
+      "quote": "rgb(233,116,0) #E97400 | XI / RI badge squares"
+    },
+    {
+      "owner": "tokens.color.form-label",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "401",
+      "quote": "| rgb(44,44,44) #2C2C2C |"
+    },
+    {
+      "owner": "tokens.color.link-linkedin",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "404",
+      "quote": "| rgb(9,102,194) |"
+    },
+    {
+      "owner": "tokens.color.tag-pill",
+      "path": "specs/blog-case-studies.md",
+      "lines": "54",
+      "quote": "| tag pill bg |"
+    },
+    {
+      "owner": "tokens.color.stat-card",
+      "path": "specs/blog-case-studies.md",
+      "lines": "55",
+      "quote": "| stat & quote card bg |"
+    },
+    {
+      "owner": "tokens.color.hairline-cms",
+      "path": "specs/blog-case-studies.md",
+      "lines": "53",
+      "quote": "| hairlines, image borders, info card border |"
+    },
+    {
+      "owner": "tokens.color.link-body",
+      "path": "specs/blog-case-studies.md",
+      "lines": "58",
+      "quote": "| body link |"
+    },
+    {
+      "owner": "tokens.color.stat-green",
+      "path": "specs/blog-case-studies.md",
+      "lines": "62",
+      "quote": "rgb(20,169,0)"
+    },
+    {
+      "owner": "tokens.color.stat-orange",
+      "path": "specs/blog-case-studies.md",
+      "lines": "62",
+      "quote": "rgb(255,123,0)"
+    },
+    {
+      "owner": "tokens.color.security-glow",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "406",
+      "quote": "| rgba(171,160,136,.5) |"
+    },
+    {
+      "owner": "tokens.color.security-pill",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "405",
+      "quote": "| rgba(23,21,18,.8) |"
+    },
+    {
+      "owner": "tokens.color.field-bg",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "402",
+      "quote": "| #FBF9F60D, #2222221F, #54524E, #616161 |"
+    },
+    {
+      "owner": "tokens.color.field-ring",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "402",
+      "quote": "| #FBF9F60D, #2222221F, #54524E, #616161 |"
+    },
+    {
+      "owner": "tokens.color.field-focus",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "402",
+      "quote": "| #FBF9F60D, #2222221F, #54524E, #616161 |"
+    },
+    {
+      "owner": "tokens.color.field-placeholder",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "402",
+      "quote": "| #FBF9F60D, #2222221F, #54524E, #616161 |"
+    },
+    {
+      "owner": "tokens.color.focus-ring",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "403",
+      "quote": "| #09f |"
+    },
+    {
+      "owner": "tokens.font",
+      "path": "tailwind.config.js",
+      "lines": "38",
+      "quote": "headline:"
+    },
+    {
+      "owner": "tokens.font",
+      "path": "tailwind.config.js",
+      "lines": "39",
+      "quote": "inter:"
+    },
+    {
+      "owner": "tokens.font",
+      "path": "tailwind.config.js",
+      "lines": "40",
+      "quote": "favorit:"
+    },
+    {
+      "owner": "tokens.font",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "302",
+      "quote": "with the fallback stack `\"Stack Sans Text\""
+    },
+    {
+      "owner": "tokens.fontSize",
+      "path": "specs/product-pages.md",
+      "lines": "247",
+      "quote": "Inter 10/12"
+    },
+    {
+      "owner": "tokens.fontSize",
+      "path": "CLONE_SPEC.md",
+      "lines": "91",
+      "quote": "Small button label"
+    },
+    {
+      "owner": "tokens.fontSize",
+      "path": "CLONE_SPEC.md",
+      "lines": "104",
+      "quote": "Subscribe | Inter | 13/16"
+    },
+    {
+      "owner": "tokens.fontSize",
+      "path": "CLONE_SPEC.md",
+      "lines": "78",
+      "quote": "| Eyebrow | Inter | 14/20"
+    },
+    {
+      "owner": "tokens.fontSize",
+      "path": "CLONE_SPEC.md",
+      "lines": "77",
+      "quote": "| Nav link / nav button | Inter | 16/24"
+    },
+    {
+      "owner": "tokens.fontSize",
+      "path": "CLONE_SPEC.md",
+      "lines": "74",
+      "quote": "| Hero body | Inter | 18/24"
+    },
+    {
+      "owner": "tokens.fontSize",
+      "path": "CLONE_SPEC.md",
+      "lines": "89",
+      "quote": "| Solutions card h3 | Stack Sans Headline | 20/28"
+    },
+    {
+      "owner": "tokens.fontSize",
+      "path": "specs/product-pages.md",
+      "lines": "314",
+      "quote": "**24/32 500"
+    },
+    {
+      "owner": "tokens.fontSize",
+      "path": "CLONE_SPEC.md",
+      "lines": "95",
+      "quote": "26/30"
+    },
+    {
+      "owner": "tokens.fontSize",
+      "path": "CLONE_SPEC.md",
+      "lines": "95",
+      "quote": "28/32"
+    },
+    {
+      "owner": "tokens.fontSize",
+      "path": "CLONE_SPEC.md",
+      "lines": "95",
+      "quote": "| Outcome h3 | Stack Sans Headline | 32/40"
+    },
+    {
+      "owner": "tokens.fontSize",
+      "path": "specs/blog-case-studies.md",
+      "lines": "155",
+      "quote": "**40/48 → 36/40 → 32/36**"
+    },
+    {
+      "owner": "tokens.fontSize",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "74",
+      "quote": "42/50.4"
+    },
+    {
+      "owner": "tokens.fontSize",
+      "path": "CLONE_SPEC.md",
+      "lines": "79",
+      "quote": "44/48"
+    },
+    {
+      "owner": "tokens.fontSize",
+      "path": "CLONE_SPEC.md",
+      "lines": "79",
+      "quote": "| Section H2 | Stack Sans Headline | 48/56"
+    },
+    {
+      "owner": "tokens.fontSize",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "74",
+      "quote": "56/67.2"
+    },
+    {
+      "owner": "tokens.fontSize",
+      "path": "CLONE_SPEC.md",
+      "lines": "73",
+      "quote": "| Hero title (h1 / div) | Stack Sans Headline | 64/72"
+    },
+    {
+      "owner": "tokens.fontSize",
+      "path": "CLONE_SPEC.md",
+      "lines": "94",
+      "quote": "| Outcome digits | ABC Favorit | 80/88"
+    },
+    {
+      "owner": "tokens.fontWeight",
+      "path": "specs/blog-case-studies.md",
+      "lines": "217",
+      "quote": "weight 300"
+    },
+    {
+      "owner": "tokens.fontWeight",
+      "path": "src/index.css",
+      "lines": "8",
+      "quote": "ABCFavoritTrial-Book-350"
+    },
+    {
+      "owner": "tokens.fontWeight",
+      "path": "src/index.css",
+      "lines": "6",
+      "quote": "font-weight:400;font-display:swap}"
+    },
+    {
+      "owner": "tokens.fontWeight",
+      "path": "src/index.css",
+      "lines": "32",
+      "quote": "font: 500 14px/20px"
+    },
+    {
+      "owner": "tokens.fontWeight",
+      "path": "src/index.css",
+      "lines": "14",
+      "quote": "Inter-600-latin.woff2"
+    },
+    {
+      "owner": "tokens.fontWeight",
+      "path": "src/index.css",
+      "lines": "7",
+      "quote": "StackSansHeadline-700"
+    },
+    {
+      "owner": "tokens.radius",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "54",
+      "quote": "radius 4, bg **rgb(32,131,116)**"
+    },
+    {
+      "owner": "tokens.radius",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "137",
+      "quote": "radius **8**, bg #fff"
+    },
+    {
+      "owner": "tokens.radius",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "352",
+      "quote": "radius 10, padding 12"
+    },
+    {
+      "owner": "tokens.radius",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "49",
+      "quote": "radius **12**, `box-shadow"
+    },
+    {
+      "owner": "tokens.radius",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "101",
+      "quote": "radius **16**, `box-shadow:0 0 0 1px rgba(0,0,0,.08)`, padding **32**"
+    },
+    {
+      "owner": "tokens.radius",
+      "path": "CLONE_SPEC.md",
+      "lines": "249",
+      "quote": "radius **18**, padding **2px**"
+    },
+    {
+      "owner": "tokens.radius",
+      "path": "CLONE_SPEC.md",
+      "lines": "335",
+      "quote": "radius **24**, `box-shadow 0 0 0 1px rgba(0,0,0,.08)"
+    },
+    {
+      "owner": "tokens.radius",
+      "path": "specs/blog-case-studies.md",
+      "lines": "216",
+      "quote": "radius 25.6px"
+    },
+    {
+      "owner": "tokens.radius",
+      "path": "CLONE_SPEC.md",
+      "lines": "109",
+      "quote": "height 40, padding `8px 14px`, radius 999"
+    },
+    {
+      "owner": "tokens.spacing",
+      "path": "CLONE_SPEC.md",
+      "lines": "121",
+      "quote": "row, gap 4: spinner box"
+    },
+    {
+      "owner": "tokens.spacing",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "341",
+      "quote": "gap 8, padding 12px 16px"
+    },
+    {
+      "owner": "tokens.spacing",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "109",
+      "quote": "column gap **12**"
+    },
+    {
+      "owner": "tokens.spacing",
+      "path": "CLONE_SPEC.md",
+      "lines": "248",
+      "quote": "gap:16px; padding:0 20px"
+    },
+    {
+      "owner": "tokens.spacing",
+      "path": "specs/blog-case-studies.md",
+      "lines": "82",
+      "quote": "column-gap:20px"
+    },
+    {
+      "owner": "tokens.spacing",
+      "path": "CLONE_SPEC.md",
+      "lines": "133",
+      "quote": "Right group (gap 24)"
+    },
+    {
+      "owner": "tokens.spacing",
+      "path": "CLONE_SPEC.md",
+      "lines": "292",
+      "quote": "content padding 32, gap 16"
+    },
+    {
+      "owner": "tokens.spacing",
+      "path": "CLONE_SPEC.md",
+      "lines": "320",
+      "quote": "padding 40, column `justify-between`"
+    },
+    {
+      "owner": "tokens.spacing",
+      "path": "CLONE_SPEC.md",
+      "lines": "245",
+      "quote": "Gap to cards: 56"
+    },
+    {
+      "owner": "tokens.spacing",
+      "path": "CLONE_SPEC.md",
+      "lines": "273",
+      "quote": "padding **64**"
+    },
+    {
+      "owner": "tokens.spacing",
+      "path": "CLONE_SPEC.md",
+      "lines": "305",
+      "quote": "padding `88px 20px` (phone"
+    },
+    {
+      "owner": "tokens.spacing",
+      "path": "CLONE_SPEC.md",
+      "lines": "196",
+      "quote": "padding `120px 20px 0`"
+    },
+    {
+      "owner": "tokens.spacing",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "69",
+      "quote": "padding **156px 20px 88px**"
+    },
+    {
+      "owner": "tokens.spacing",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "305",
+      "quote": "padding 168px 20px 88px"
+    },
+    {
+      "owner": "tokens.breakpoint",
+      "path": "tailwind.config.js",
+      "lines": "5",
+      "quote": "screens: { md: '810px', lg: '1200px' }"
+    },
+    {
+      "owner": "tokens.breakpoint",
+      "path": "CLONE_SPEC.md",
+      "lines": "20",
+      "quote": "(max-width: 809.98px)"
+    },
+    {
+      "owner": "tokens.elevation",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "101",
+      "quote": "`box-shadow:0 0 0 1px rgba(0,0,0,.08)`, padding **32**"
+    },
+    {
+      "owner": "tokens.elevation",
+      "path": "src/components/CTA.jsx",
+      "lines": "70",
+      "quote": "boxShadow: '0 0 0 1px rgba(0,0,0,.08), 0 1px 2px 0 rgba(36,36,36,.04)'"
+    },
+    {
+      "owner": "tokens.elevation",
+      "path": "src/index.css",
+      "lines": "42",
+      "quote": "box-shadow: 0 0 0 1px rgba(38,57,90,.16), 0 1px 1px 0 rgba(38,57,91,.1); transition: box-shadow .3s linear;"
+    },
+    {
+      "owner": "tokens.elevation",
+      "path": "src/index.css",
+      "lines": "47",
+      "quote": ".pf-btn:hover { box-shadow:"
+    },
+    {
+      "owner": "tokens.elevation",
+      "path": "src/components/Footer.jsx",
+      "lines": "52",
+      "quote": "boxShadow: '0 0 0 1px rgb(226,226,226)'"
+    },
+    {
+      "owner": "tokens.elevation",
+      "path": "specs/blog-case-studies.md",
+      "lines": "56",
+      "quote": "| card ring |"
+    },
+    {
+      "owner": "tokens.elevation",
+      "path": "CLONE_SPEC.md",
+      "lines": "208",
+      "quote": "box-shadow: 0 24px 60px rgba(0,0,0,.45)"
+    },
+    {
+      "owner": "tokens.elevation",
+      "path": "src/pages/security/SecurityHero.jsx",
+      "lines": "7",
+      "quote": "const PILL_SHADOW"
+    },
+    {
+      "owner": "tokens.elevation",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "339",
+      "quote": "box-shadow 0 4px 8px rgba(43,43,43,.35)"
+    },
+    {
+      "owner": "tokens.iconSize",
+      "path": "CLONE_SPEC.md",
+      "lines": "250",
+      "quote": "badge 20x20"
+    },
+    {
+      "owner": "tokens.iconSize",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "49",
+      "quote": "**24x24 mask icon**"
+    },
+    {
+      "owner": "tokens.iconSize",
+      "path": "CLONE_SPEC.md",
+      "lines": "134",
+      "quote": "caret 16x16"
+    },
+    {
+      "owner": "tokens.iconSize",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "318",
+      "quote": "20x20 mask icon + title"
+    },
+    {
+      "owner": "tokens.iconSize",
+      "path": "specs/product-pages.md",
+      "lines": "124",
+      "quote": "icon 16"
+    },
+    {
+      "owner": "tokens.motion",
+      "path": "CLONE_SPEC.md",
+      "lines": "117",
+      "quote": "Hover transition: tween **0.3s linear**"
+    },
+    {
+      "owner": "tokens.motion",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "92",
+      "quote": "tween 0.2s ease"
+    },
+    {
+      "owner": "tokens.motion",
+      "path": "specs/blog-case-studies.md",
+      "lines": "38",
+      "quote": "spring\", bounce: 0.2, duration: 0.4"
+    },
+    {
+      "owner": "tokens.motion",
+      "path": "CLONE_SPEC.md",
+      "lines": "270",
+      "quote": "Change: **0.5s tween ease [.42,0,0,1]**"
+    },
+    {
+      "owner": "tokens.motion",
+      "path": "CLONE_SPEC.md",
+      "lines": "171",
+      "quote": "6s linear forwards"
+    },
+    {
+      "owner": "tokens.motion",
+      "path": "CLONE_SPEC.md",
+      "lines": "177",
+      "quote": "over **1000ms** same easing"
+    },
+    {
+      "owner": "tokens.motion",
+      "path": "CLONE_SPEC.md",
+      "lines": "121",
+      "quote": "every **80ms**"
+    },
+    {
+      "owner": "tokens.motion",
+      "path": "CLONE_SPEC.md",
+      "lines": "142",
+      "quote": "tween **0.3s, ease [0.44,0,0.56,1]**"
+    },
+    {
+      "owner": "tokens.motion",
+      "path": "CLONE_SPEC.md",
+      "lines": "176",
+      "quote": "cubic-bezier(.42,0,0,1)"
+    },
+    {
+      "owner": "tokens.motion",
+      "path": "CLONE_SPEC.md",
+      "lines": "329",
+      "quote": "ease [.25,.46,.45,.94]"
+    },
+    {
+      "owner": "tokens.motion",
+      "path": "CLONE_SPEC.md",
+      "lines": "257",
+      "quote": "**spring stiffness 210, damping 30, mass 1**"
+    },
+    {
+      "owner": "tokens.motion",
+      "path": "CLONE_SPEC.md",
+      "lines": "187",
+      "quote": "spring `stiffness 500, damping 60, mass 1"
+    },
+    {
+      "owner": "tokens.motion",
+      "path": "CLONE_SPEC.md",
+      "lines": "290",
+      "quote": "stiffness 500, damping 83"
+    },
+    {
+      "owner": "tokens.motion",
+      "path": "CLONE_SPEC.md",
+      "lines": "291",
+      "quote": "spring (stiffness 110, damping 28, mass .6)"
+    },
+    {
+      "owner": "tokens.motion",
+      "path": "src/hooks/useLenis.js",
+      "lines": "7",
+      "quote": "new Lenis("
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "src/index.css",
+      "lines": "24",
+      "quote": "color: rgb(26,24,20); font-family: Inter"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "src/index.css",
+      "lines": "33",
+      "quote": ".t-h2 { font-family"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "src/index.css",
+      "lines": "36",
+      "quote": ".t-lead {"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "CLONE_SPEC.md",
+      "lines": "38",
+      "quote": "| grey-550 |"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "src/index.css",
+      "lines": "32",
+      "quote": ".t-eyebrow {"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "CLONE_SPEC.md",
+      "lines": "73",
+      "quote": "| Hero title (h1 / div)"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "src/pages/security/SecurityHero.jsx",
+      "lines": "55",
+      "quote": "text-a1-text-2"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "src/index.css",
+      "lines": "53",
+      "quote": "--btn-bg: rgb(26,24,20); color: rgb(254,250,243)"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "90",
+      "quote": "teal rgb(39,168,150)"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "specs/blog-case-studies.md",
+      "lines": "58",
+      "quote": "| body link |"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "src/index.css",
+      "lines": "24",
+      "quote": "background: #fff"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "CLONE_SPEC.md",
+      "lines": "41",
+      "quote": "| page-alt |"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "392",
+      "quote": "| rgb(250,250,249) #FAFAF9 |"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "CLONE_SPEC.md",
+      "lines": "34",
+      "quote": "| ink | `rgb(26,24,20)`"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "CLONE_SPEC.md",
+      "lines": "53",
+      "quote": "| dark-window |"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "CLONE_SPEC.md",
+      "lines": "54",
+      "quote": "| dark-stage |"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "specs/blog-case-studies.md",
+      "lines": "55",
+      "quote": "| stat & quote card bg |"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "specs/blog-case-studies.md",
+      "lines": "57",
+      "quote": "| numbered (dark) card bg |"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "101",
+      "quote": "`box-shadow:0 0 0 1px rgba(0,0,0,.08)`, padding **32**"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "CLONE_SPEC.md",
+      "lines": "43",
+      "quote": "| divider |"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "CLONE_SPEC.md",
+      "lines": "44",
+      "quote": "| nav-border |"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "CLONE_SPEC.md",
+      "lines": "48",
+      "quote": "| teal-xi |"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "CLONE_SPEC.md",
+      "lines": "49",
+      "quote": "| orange |"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "399",
+      "quote": "rgb(233,116,0) #E97400 | XI / RI badge squares"
+    },
+    {
+      "owner": "tokens.semantic",
+      "path": "CLONE_SPEC.md",
+      "lines": "52",
+      "quote": "| purple |"
+    },
+    {
+      "owner": "tokens.component",
+      "path": "src/index.css",
+      "lines": "41",
+      "quote": "height: 40px; padding: 8px 14px"
+    },
+    {
+      "owner": "tokens.component",
+      "path": "src/index.css",
+      "lines": "41",
+      "quote": "border-radius: 999px"
+    },
+    {
+      "owner": "tokens.component",
+      "path": "src/index.css",
+      "lines": "59",
+      "quote": ".pf-btn--arrow { --btn-bg"
+    },
+    {
+      "owner": "tokens.component",
+      "path": "src/pages/shared-info/InfoCard.jsx",
+      "lines": "7",
+      "quote": "rounded-[12px]"
+    },
+    {
+      "owner": "tokens.component",
+      "path": "src/pages/shared-info/InfoCard.jsx",
+      "lines": "7",
+      "quote": "bg-[rgb(250,250,249)] p-6"
+    },
+    {
+      "owner": "tokens.component",
+      "path": "src/pages/shared-info/InfoCard.jsx",
+      "lines": "7",
+      "quote": "bg-[rgb(250,250,249)]"
+    },
+    {
+      "owner": "tokens.component",
+      "path": "src/pages/plans/PlansHero.jsx",
+      "lines": "14",
+      "quote": "rounded-[16px] p-8"
+    },
+    {
+      "owner": "tokens.component",
+      "path": "src/components/CTA.jsx",
+      "lines": "69",
+      "quote": "rounded-[24px] bg-ink"
+    },
+    {
+      "owner": "tokens.component",
+      "path": "src/components/CTA.jsx",
+      "lines": "69",
+      "quote": "bg-ink px-5"
+    },
+    {
+      "owner": "tokens.component",
+      "path": "specs/blog-case-studies.md",
+      "lines": "88",
+      "quote": "`border-radius:16px`, `object-fit:cover`, center"
+    },
+    {
+      "owner": "tokens.layout",
+      "path": "tailwind.config.js",
+      "lines": "42",
+      "quote": "maxWidth: { container: '1320px' }"
+    },
+    {
+      "owner": "tokens.layout",
+      "path": "src/index.css",
+      "lines": "37",
+      "quote": ".container-pf { max-width: 1320px; padding: 0 20px"
+    },
+    {
+      "owner": "tokens.layout",
+      "path": "CLONE_SPEC.md",
+      "lines": "27",
+      "quote": "1280px content at"
+    },
+    {
+      "owner": "tokens.layout",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "69",
+      "quote": "padding **156px 20px 88px**"
+    },
+    {
+      "owner": "tokens.layout",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "53",
+      "quote": "padding `88px 20px 0`"
+    },
+    {
+      "owner": "tokens.layout",
+      "path": "specs/company-careers-legal.md",
+      "lines": "157",
+      "quote": "`max-width:768px; width:100%`"
+    },
+    {
+      "owner": "tokens.layout",
+      "path": "specs/blog-case-studies.md",
+      "lines": "128",
+      "quote": "`max-width: 840px; padding: 156px 20px 0"
+    },
+    {
+      "owner": "tokens.layout",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "24",
+      "quote": "Outer wrapper 1440x72"
+    },
+    {
+      "owner": "tokens.layout",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "30",
+      "quote": "bar 100%x80"
+    },
+    {
+      "owner": "tokens.theme",
+      "path": "src/index.css",
+      "lines": "23",
+      "quote": "html { background: rgb(250,249,248); }"
+    },
+    {
+      "owner": "roles.brand.logo-mark",
+      "path": "src/components/Navbar.jsx",
+      "lines": "137",
+      "quote": "logo-white.svg"
+    },
+    {
+      "owner": "roles.brand.logo-mark",
+      "path": "src/components/Footer.jsx",
+      "lines": "59",
+      "quote": "logo-dark.svg"
+    },
+    {
+      "owner": "roles.brand.wordmark-ghost",
+      "path": "src/components/Footer.jsx",
+      "lines": "138",
+      "quote": "L5IVS7Cn2X7mzYJB2j1MVEECRKk.svg"
+    },
+    {
+      "owner": "roles.brand.product-badge",
+      "path": "src/components/Hero.jsx",
+      "lines": "41",
+      "quote": "8Xe3QbAF8z173WRaVrPeURWrGc.svg"
+    },
+    {
+      "owner": "roles.brand.product-badge",
+      "path": "src/pages/plans/ProductBadge.jsx",
+      "lines": "2",
+      "quote": "const BG"
+    },
+    {
+      "owner": "roles.brand.site-icons",
+      "path": "index.html",
+      "lines": "6",
+      "quote": "rel=\"icon\""
+    },
+    {
+      "owner": "roles.brand.site-icons",
+      "path": "src/pages/cms/shared.jsx",
+      "lines": "6",
+      "quote": "const OG_IMAGE"
+    },
+    {
+      "owner": "roles.ui.icon-mask",
+      "path": "src/pages/shared-info/MaskIcon.jsx",
+      "lines": "8",
+      "quote": "WebkitMask"
+    },
+    {
+      "owner": "roles.ui.icon-mask",
+      "path": "public/assets/MANIFEST.md",
+      "lines": "222",
+      "quote": "Feature/table tick glyph"
+    },
+    {
+      "owner": "roles.ui.illustration-svg",
+      "path": "src/pages/security/SecurityHero.jsx",
+      "lines": "32",
+      "quote": "7ERMi7fk0ghkwyi7viAZS06g6w.svg"
+    },
+    {
+      "owner": "roles.fx.shader-fallback",
+      "path": "src/components/CTA.jsx",
+      "lines": "73",
+      "quote": "5V8gmDlH6VshGL3t6Yw2BakE8M.png"
+    },
+    {
+      "owner": "roles.fx.shader-fallback",
+      "path": "src/pages/careers/CareersHero.jsx",
+      "lines": "33",
+      "quote": "DLxHDgiuFQf9DQC0sTFOvpSlftU.png"
+    },
+    {
+      "owner": "roles.hero.backdrop-photo",
+      "path": "src/components/Hero.jsx",
+      "lines": "8",
+      "quote": "RAjs2AsxMPYWQK7qgQzwPegjUEI.webp"
+    },
+    {
+      "owner": "roles.hero.backdrop-photo",
+      "path": "src/pages/company/CompanyHero.jsx",
+      "lines": "67",
+      "quote": "cThFoE5iLieFxYjJ383g6O72ETg.webp"
+    },
+    {
+      "owner": "roles.photo.scene-card",
+      "path": "src/components/Solutions.jsx",
+      "lines": "8",
+      "quote": "RIjH19JJ8DvQamX9HDKg7VWbBM.webp"
+    },
+    {
+      "owner": "roles.photo.scene-card",
+      "path": "public/assets/MANIFEST.md",
+      "lines": "158",
+      "quote": "Solutions tab 1 \"CX manager\" image card"
+    },
+    {
+      "owner": "roles.product.illustration-still",
+      "path": "src/components/how/A1Loop.jsx",
+      "lines": "102",
+      "quote": "6SGxSZ97zxsJhQI7QRmEcVF3QE.jpg"
+    },
+    {
+      "owner": "roles.product.illustration-still",
+      "path": "public/assets/MANIFEST.md",
+      "lines": "45",
+      "quote": "Card 1 (XI) survey mock photo"
+    },
+    {
+      "owner": "roles.customer.logo",
+      "path": "src/components/HowItWorks.jsx",
+      "lines": "8",
+      "quote": "ZsKdZVlAf876Rrwiwazp9C1blE.svg"
+    },
+    {
+      "owner": "roles.customer.logo",
+      "path": "src/components/Outcomes.jsx",
+      "lines": "6",
+      "quote": "logoAlt: 'DIRTS logo'"
+    },
+    {
+      "owner": "roles.customer.imagery",
+      "path": "src/components/Testimonials.jsx",
+      "lines": "10",
+      "quote": "9Yky6fB1AoenMkNm8rzRwLJxM8.jpg"
+    },
+    {
+      "owner": "roles.customer.imagery",
+      "path": "public/assets/MANIFEST.md",
+      "lines": "311",
+      "quote": "nas-primefold-xi-ri About card background"
+    },
+    {
+      "owner": "roles.person.team-photo",
+      "path": "src/pages/company/Team.jsx",
+      "lines": "8",
+      "quote": "3zbWLtUigaimRPvHa17qjHrSo.jpg"
+    },
+    {
+      "owner": "roles.person.author-avatar",
+      "path": "src/pages/cms/data.js",
+      "lines": "34",
+      "quote": "\"avatar\": \"/assets/cms/U4h1tpH3vCNYO7BOdYlJ9L3BA0.jpg\""
+    },
+    {
+      "owner": "roles.cms.post-image",
+      "path": "src/pages/Blog.jsx",
+      "lines": "34",
+      "quote": "post.cover"
+    },
+    {
+      "owner": "roles.cms.post-image",
+      "path": "public/assets/MANIFEST.md",
+      "lines": "298",
+      "quote": "/blog index card cover: primefold-xi-is-here"
+    },
+    {
+      "owner": "roles.motion.lottie",
+      "path": "src/components/Trust.jsx",
+      "lines": "10",
+      "quote": "const LOTTIE_SRC"
+    },
+    {
+      "owner": "roles.motion.lottie",
+      "path": "specs/product-pages.md",
+      "lines": "479",
+      "quote": "brand logos inside the JSON are embedded images"
+    },
+    {
+      "owner": "roles.embed.video-facade",
+      "path": "specs/blog-case-studies.md",
+      "lines": "42",
+      "quote": "YouTube embeds are click-to-play facades"
+    },
+    {
+      "owner": "roles.dest",
+      "path": "src/components/Navbar.jsx",
+      "lines": "6",
+      "quote": "const CALENDLY"
+    },
+    {
+      "owner": "roles.dest",
+      "path": "src/components/Navbar.jsx",
+      "lines": "148",
+      "quote": "href=\"https://xi.primefold.ai\""
+    },
+    {
+      "owner": "roles.dest",
+      "path": "src/components/CTA.jsx",
+      "lines": "34",
+      "quote": "xi.primefold.ai/auth/sign-in"
+    },
+    {
+      "owner": "roles.dest",
+      "path": "src/pages/plans/data.js",
+      "lines": "3",
+      "quote": "XI_APP"
+    },
+    {
+      "owner": "roles.dest",
+      "path": "src/components/Footer.jsx",
+      "lines": "8",
+      "quote": "help.primefold.ai/xi"
+    },
+    {
+      "owner": "roles.dest",
+      "path": "src/components/Footer.jsx",
+      "lines": "8",
+      "quote": "help.primefold.ai/ri"
+    },
+    {
+      "owner": "roles.dest",
+      "path": "src/pages/careers/OpenRoles.jsx",
+      "lines": "6",
+      "quote": "personio.com/job/2801519"
+    },
+    {
+      "owner": "roles.dest",
+      "path": "src/components/Footer.jsx",
+      "lines": "15",
+      "quote": "x.com/primefoldai"
+    },
+    {
+      "owner": "roles.dest",
+      "path": "src/components/Footer.jsx",
+      "lines": "16",
+      "quote": "linkedin.com/company/primefold"
+    },
+    {
+      "owner": "roles.dest",
+      "path": "src/pages/contact/ContactIntro.jsx",
+      "lines": "9",
+      "quote": "mailto:support@primefold.ai"
+    },
+    {
+      "owner": "roles.dest",
+      "path": "specs/blog-case-studies.md",
+      "lines": "236",
+      "quote": "Visit Website"
+    },
+    {
+      "owner": "roles.endpoint",
+      "path": "src/pages/contact/ContactForm.jsx",
+      "lines": "32",
+      "quote": "onSubmit={(e) => e.preventDefault()}"
+    },
+    {
+      "owner": "roles.endpoint",
+      "path": "src/components/Footer.jsx",
+      "lines": "67",
+      "quote": "onSubmit={(e) => e.preventDefault()}"
+    },
+    {
+      "owner": "roles.endpoint",
+      "path": "src/pages/Blog.jsx",
+      "lines": "11",
+      "quote": "onSubmit={(e) => e.preventDefault()}"
+    },
+    {
+      "owner": "roles.fonts",
+      "path": "public/assets/MANIFEST.md",
+      "lines": "134",
+      "quote": "StackSansHeadline-400.woff2 | \"Stack Sans Headline\" 400"
+    },
+    {
+      "owner": "roles.fonts",
+      "path": "public/assets/MANIFEST.md",
+      "lines": "252",
+      "quote": "\"Stack Sans Text\" 400 (Google Fonts v1, latin)"
+    },
+    {
+      "owner": "roles.fonts",
+      "path": "public/assets/MANIFEST.md",
+      "lines": "137",
+      "quote": "fonts/Inter-400-latin.woff2 / Inter-400-latin-ext.woff2"
+    },
+    {
+      "owner": "roles.fonts",
+      "path": "public/assets/MANIFEST.md",
+      "lines": "136",
+      "quote": "fonts/ABCFavoritTrial-Book-350.woff2"
+    },
+    {
+      "owner": "roles.identities",
+      "path": "src/components/Testimonials.jsx",
+      "lines": "10",
+      "quote": "name: 'Janek Strobel'"
+    },
+    {
+      "owner": "roles.identities",
+      "path": "src/pages/company/Team.jsx",
+      "lines": "8",
+      "quote": "['Vlatko', 'Head of GTM'"
+    },
+    {
+      "owner": "shell.navbar",
+      "path": "CLONE_SPEC.md",
+      "lines": "142",
+      "quote": "Transition: tween **0.3s, ease [0.44,0,0.56,1]**"
+    },
+    {
+      "owner": "shell.navbar",
+      "path": "CLONE_SPEC.md",
+      "lines": "145",
+      "quote": "Hover: nav link label opacity 1"
+    },
+    {
+      "owner": "shell.navbar",
+      "path": "src/layout/Layout.jsx",
+      "lines": "35",
+      "quote": "const WHITE_NAV"
+    },
+    {
+      "owner": "shell.navbar",
+      "path": "CLONE_SPEC.md",
+      "lines": "129",
+      "quote": "## 1. Navbar (fixed, two desktop states)"
+    },
+    {
+      "owner": "shell.navbar",
+      "path": "src/components/Navbar.jsx",
+      "lines": "9",
+      "quote": "const NAV = ["
+    },
+    {
+      "owner": "shell.navbar",
+      "path": "src/layout/Layout.jsx",
+      "lines": "36",
+      "quote": "const OVERLAY_NAV"
+    },
+    {
+      "owner": "shell.navbar",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "23",
+      "quote": "**\"Desktop White\"**"
+    },
+    {
+      "owner": "shell.footer",
+      "path": "src/components/Footer.jsx",
+      "lines": "19",
+      "quote": "const TRIGGER_H"
+    },
+    {
+      "owner": "shell.footer",
+      "path": "CLONE_SPEC.md",
+      "lines": "396",
+      "quote": "Footer link/social hover"
+    },
+    {
+      "owner": "shell.footer",
+      "path": "CLONE_SPEC.md",
+      "lines": "343",
+      "quote": "## 10. Footer (Desktop / Tablet / Phone variants)"
+    },
+    {
+      "owner": "shell.footer",
+      "path": "src/components/Footer.jsx",
+      "lines": "5",
+      "quote": "const COLUMNS = ["
+    },
+    {
+      "owner": "shell.footer",
+      "path": "src/components/Footer.jsx",
+      "lines": "135",
+      "quote": "Ghost Wordmark: sticky"
+    },
+    {
+      "owner": "shell.footer",
+      "path": "src/components/Footer.jsx",
+      "lines": "64",
+      "quote": "<form"
+    },
+    {
+      "owner": "hero.home-carousel",
+      "path": "CLONE_SPEC.md",
+      "lines": "171",
+      "quote": "6s linear forwards"
+    },
+    {
+      "owner": "hero.home-carousel",
+      "path": "src/components/Hero.jsx",
+      "lines": "82",
+      "quote": "Parallax: translateY = 0.6"
+    },
+    {
+      "owner": "hero.home-carousel",
+      "path": "CLONE_SPEC.md",
+      "lines": "119",
+      "quote": "**Hero CTA glow**"
+    },
+    {
+      "owner": "hero.home-carousel",
+      "path": "CLONE_SPEC.md",
+      "lines": "152",
+      "quote": "## 2. Hero — autoplay slide carousel"
+    },
+    {
+      "owner": "hero.home-carousel",
+      "path": "src/components/Hero.jsx",
+      "lines": "6",
+      "quote": "const SLIDES = ["
+    },
+    {
+      "owner": "hero.home-carousel",
+      "path": "src/components/hero/hero.css",
+      "lines": "91",
+      "quote": "prefers-reduced-motion"
+    },
+    {
+      "owner": "hero.home-carousel",
+      "path": "src/components/hero/hero.css",
+      "lines": "91-93",
+      "quote": "prefers-reduced-motion"
+    },
+    {
+      "owner": "proof.logo-ticker",
+      "path": "CLONE_SPEC.md",
+      "lines": "192",
+      "quote": "continuous leftward marquee at **50 px/s**"
+    },
+    {
+      "owner": "proof.logo-ticker",
+      "path": "CLONE_SPEC.md",
+      "lines": "193",
+      "quote": "Per-logo appear"
+    },
+    {
+      "owner": "proof.logo-ticker",
+      "path": "CLONE_SPEC.md",
+      "lines": "189",
+      "quote": "### 3.1 Logo ticker"
+    },
+    {
+      "owner": "proof.logo-ticker",
+      "path": "src/components/HowItWorks.jsx",
+      "lines": "7",
+      "quote": "const LOGOS = ["
+    },
+    {
+      "owner": "proof.logo-ticker",
+      "path": "src/components/how/how.css",
+      "lines": "32",
+      "quote": "prefers-reduced-motion"
+    },
+    {
+      "owner": "features.how-it-works",
+      "path": "CLONE_SPEC.md",
+      "lines": "226",
+      "quote": "| 01 Rest | 1000 |"
+    },
+    {
+      "owner": "features.how-it-works",
+      "path": "CLONE_SPEC.md",
+      "lines": "187",
+      "quote": "**Scroll-linked offset**"
+    },
+    {
+      "owner": "features.how-it-works",
+      "path": "CLONE_SPEC.md",
+      "lines": "201",
+      "quote": "### 3.3 A1 Loop demo (dark animated product demo)"
+    },
+    {
+      "owner": "features.how-it-works",
+      "path": "src/components/how/A1Loop.jsx",
+      "lines": "22",
+      "quote": "const PHASES = ["
+    },
+    {
+      "owner": "features.how-it-works",
+      "path": "src/components/how/a1.css",
+      "lines": "214",
+      "quote": "prefers-reduced-motion"
+    },
+    {
+      "owner": "features.how-it-works",
+      "path": "src/components/how/A1Loop.jsx",
+      "lines": "62",
+      "quote": "prefersReducedMotion()"
+    },
+    {
+      "owner": "features.intelligence-cards",
+      "path": "CLONE_SPEC.md",
+      "lines": "257",
+      "quote": "**spring stiffness 210, damping 30, mass 1**"
+    },
+    {
+      "owner": "features.intelligence-cards",
+      "path": "CLONE_SPEC.md",
+      "lines": "259",
+      "quote": "### 4.2 Tablet & phone: sticky stacked cards"
+    },
+    {
+      "owner": "features.intelligence-cards",
+      "path": "CLONE_SPEC.md",
+      "lines": "257",
+      "quote": "Lottie overlay (`assets/lottie/xNm1ok67qiSXrtlhAImlRlSghE.json`"
+    },
+    {
+      "owner": "features.intelligence-cards",
+      "path": "CLONE_SPEC.md",
+      "lines": "239",
+      "quote": "## 4. \"One Engine\" — intelligence cards"
+    },
+    {
+      "owner": "features.intelligence-cards",
+      "path": "src/components/Intelligence.jsx",
+      "lines": "69",
+      "quote": "function DesktopCards"
+    },
+    {
+      "owner": "features.intelligence-cards",
+      "path": "src/components/Intelligence.jsx",
+      "lines": "126",
+      "quote": "function MobileStack"
+    },
+    {
+      "owner": "proof.testimonials",
+      "path": "CLONE_SPEC.md",
+      "lines": "270",
+      "quote": "Change: **0.5s tween ease [.42,0,0,1]**"
+    },
+    {
+      "owner": "proof.testimonials",
+      "path": "CLONE_SPEC.md",
+      "lines": "268",
+      "quote": "## 5. Testimonials carousel"
+    },
+    {
+      "owner": "proof.testimonials",
+      "path": "src/components/Testimonials.jsx",
+      "lines": "9",
+      "quote": "const SLIDES = ["
+    },
+    {
+      "owner": "features.solutions-carousel",
+      "path": "CLONE_SPEC.md",
+      "lines": "291",
+      "quote": "arrow → snap to next multiple of 489px"
+    },
+    {
+      "owner": "features.solutions-carousel",
+      "path": "CLONE_SPEC.md",
+      "lines": "291",
+      "quote": "**Scroll drift**"
+    },
+    {
+      "owner": "features.solutions-carousel",
+      "path": "CLONE_SPEC.md",
+      "lines": "286",
+      "quote": "## 6. Solutions — \"Built for every team.\" (drag/drift card carousel)"
+    },
+    {
+      "owner": "features.solutions-carousel",
+      "path": "src/components/Solutions.jsx",
+      "lines": "18",
+      "quote": "const SPEED = 0.4"
+    },
+    {
+      "owner": "proof.trust",
+      "path": "CLONE_SPEC.md",
+      "lines": "308",
+      "quote": "grows to full height over **10s linear**"
+    },
+    {
+      "owner": "proof.trust",
+      "path": "CLONE_SPEC.md",
+      "lines": "312",
+      "quote": "DotLottie player"
+    },
+    {
+      "owner": "proof.trust",
+      "path": "CLONE_SPEC.md",
+      "lines": "303",
+      "quote": "## 7. Trust"
+    },
+    {
+      "owner": "proof.trust",
+      "path": "src/components/Trust.jsx",
+      "lines": "5",
+      "quote": "const ITEMS = ["
+    },
+    {
+      "owner": "proof.outcomes",
+      "path": "CLONE_SPEC.md",
+      "lines": "329",
+      "quote": "**Digit roll**"
+    },
+    {
+      "owner": "proof.outcomes",
+      "path": "CLONE_SPEC.md",
+      "lines": "316",
+      "quote": "## 8. Outcomes"
+    },
+    {
+      "owner": "proof.outcomes",
+      "path": "src/components/outcomes/RollingNumber.jsx",
+      "lines": "9",
+      "quote": "const DURATION = 500"
+    },
+    {
+      "owner": "proof.outcomes",
+      "path": "src/components/Outcomes.jsx",
+      "lines": "5",
+      "quote": "const CARDS = ["
+    },
+    {
+      "owner": "hero.product-live-chat",
+      "path": "specs/product-pages.md",
+      "lines": "137",
+      "quote": "`setInterval(24ms)`"
+    },
+    {
+      "owner": "hero.product-live-chat",
+      "path": "specs/product-pages.md",
+      "lines": "165",
+      "quote": "### 1.3 Hero background — \"rays\" WebGL shader"
+    },
+    {
+      "owner": "hero.product-live-chat",
+      "path": "specs/product-pages.md",
+      "lines": "127",
+      "quote": "Pills: padding 8 12"
+    },
+    {
+      "owner": "hero.product-live-chat",
+      "path": "specs/product-pages.md",
+      "lines": "49",
+      "quote": "## 1. Hero"
+    },
+    {
+      "owner": "hero.product-live-chat",
+      "path": "specs/product-pages.md",
+      "lines": "88",
+      "quote": "### 1.2 Live Conversation chat"
+    },
+    {
+      "owner": "hero.product-live-chat",
+      "path": "src/pages/product/LiveConversation.jsx",
+      "lines": "118",
+      "quote": "prefers-reduced-motion"
+    },
+    {
+      "owner": "hero.product-live-chat",
+      "path": "src/pages/product/Rays.jsx",
+      "lines": "106",
+      "quote": "prefers-reduced-motion"
+    },
+    {
+      "owner": "features.step-cards",
+      "path": "specs/product-pages.md",
+      "lines": "236",
+      "quote": "Variant timeline (source, starts when"
+    },
+    {
+      "owner": "features.step-cards",
+      "path": "specs/product-pages.md",
+      "lines": "233",
+      "quote": "Rings rotate continuously"
+    },
+    {
+      "owner": "features.step-cards",
+      "path": "specs/product-pages.md",
+      "lines": "227",
+      "quote": "Appear (source): whole box"
+    },
+    {
+      "owner": "features.step-cards",
+      "path": "specs/product-pages.md",
+      "lines": "192",
+      "quote": "### 2a. \"Ask. Understand. Act.\" step cards"
+    },
+    {
+      "owner": "features.step-cards",
+      "path": "src/pages/product/XiIllustrations.jsx",
+      "lines": "75",
+      "quote": "prefers-reduced-motion"
+    },
+    {
+      "owner": "features.use-cases",
+      "path": "specs/product-pages.md",
+      "lines": "320",
+      "quote": "**Scroll highlight**"
+    },
+    {
+      "owner": "features.use-cases",
+      "path": "specs/product-pages.md",
+      "lines": "311",
+      "quote": "**Sticky panel**"
+    },
+    {
+      "owner": "features.use-cases",
+      "path": "specs/product-pages.md",
+      "lines": "309",
+      "quote": "### 2b. Use cases (sticky list)"
+    },
+    {
+      "owner": "features.sources",
+      "path": "specs/product-pages.md",
+      "lines": "340",
+      "quote": "File `assets/pages/experience-intelligence/0wnxkqSd8yM0mNqNViIMBD53E.json`"
+    },
+    {
+      "owner": "features.sources",
+      "path": "specs/product-pages.md",
+      "lines": "358",
+      "quote": "States (source): `01 Rest →0.8s→ 02 Connect"
+    },
+    {
+      "owner": "features.sources",
+      "path": "specs/product-pages.md",
+      "lines": "327",
+      "quote": "### 2c. Sources (\"Trust Section\")"
+    },
+    {
+      "owner": "features.sources",
+      "path": "src/pages/product/Sources.jsx",
+      "lines": "38",
+      "quote": "A3_REDUCED"
+    },
+    {
+      "owner": "features.solutions-tabs",
+      "path": "specs/product-pages.md",
+      "lines": "391",
+      "quote": "**Motion: continuous marquee, measured 40.6 px/s**"
+    },
+    {
+      "owner": "features.solutions-tabs",
+      "path": "specs/product-pages.md",
+      "lines": "376",
+      "quote": "Switching tabs animates the pill via **spring bounce .2, duration .4**"
+    },
+    {
+      "owner": "features.solutions-tabs",
+      "path": "specs/product-pages.md",
+      "lines": "367",
+      "quote": "### 2d. Solutions — \"Built for every team.\" (tabbed"
+    },
+    {
+      "owner": "features.loop-cards",
+      "path": "specs/product-pages.md",
+      "lines": "431",
+      "quote": "No hover or appear motion on these cards."
+    },
+    {
+      "owner": "features.loop-cards",
+      "path": "specs/product-pages.md",
+      "lines": "410",
+      "quote": "### 2e. The loop"
+    },
+    {
+      "owner": "hero.pricing",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "92",
+      "quote": "**Toggle motion (measured):**"
+    },
+    {
+      "owner": "hero.pricing",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "86",
+      "quote": "Hovering an inactive segment raises the label opacity to 1."
+    },
+    {
+      "owner": "hero.pricing",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "68",
+      "quote": "### 1.1 Hero & Pricing: header + toggles"
+    },
+    {
+      "owner": "hero.pricing",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "96",
+      "quote": "### 1.2 Pricing cards (XI state)"
+    },
+    {
+      "owner": "hero.pricing",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "121",
+      "quote": "### 1.2b RI state"
+    },
+    {
+      "owner": "hero.pricing",
+      "path": "src/pages/plans/PlansHero.jsx",
+      "lines": "12",
+      "quote": "function PlanCard"
+    },
+    {
+      "owner": "features.comparison-table",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "133",
+      "quote": "**Sticky header `[Main Row]`**"
+    },
+    {
+      "owner": "features.comparison-table",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "130",
+      "quote": "### 1.3 Comparison Table (XI state only)"
+    },
+    {
+      "owner": "features.comparison-table",
+      "path": "src/pages/plans/ComparisonTable.jsx",
+      "lines": "8",
+      "quote": "const COLS ="
+    },
+    {
+      "owner": "features.info-card-grid",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "52",
+      "quote": "The card has no hover state."
+    },
+    {
+      "owner": "features.info-card-grid",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "49",
+      "quote": "- **Info card** (\"Variant 1\""
+    },
+    {
+      "owner": "features.info-card-grid",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "180",
+      "quote": "### 1.4 Trust: \"In every plan\""
+    },
+    {
+      "owner": "features.info-card-grid",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "266",
+      "quote": "### 2.2 Four Facts"
+    },
+    {
+      "owner": "features.info-card-grid",
+      "path": "specs/company-careers-legal.md",
+      "lines": "50",
+      "quote": "## A2. Commitments"
+    },
+    {
+      "owner": "features.info-card-grid",
+      "path": "src/pages/shared-info/InfoCard.jsx",
+      "lines": "7",
+      "quote": "rounded-[12px]"
+    },
+    {
+      "owner": "features.faq-accordion",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "211",
+      "quote": "Use a Framer-style tween of **0.2s, ease [0.44,0,0.56,1]**"
+    },
+    {
+      "owner": "features.faq-accordion",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "197",
+      "quote": "### 1.5 FAQ accordion"
+    },
+    {
+      "owner": "features.faq-accordion",
+      "path": "src/pages/plans/PlansFaq.jsx",
+      "lines": "6",
+      "quote": "const T = "
+    },
+    {
+      "owner": "hero.security-comet",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "260",
+      "quote": "The head offset **decreases linearly at 25 units/s**"
+    },
+    {
+      "owner": "hero.security-comet",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "236",
+      "quote": "### 2.1 Hero (NEW)"
+    },
+    {
+      "owner": "hero.security-comet",
+      "path": "src/pages/security/CometRing.jsx",
+      "lines": "7",
+      "quote": "const LAP = 4"
+    },
+    {
+      "owner": "proof.trust-image-cards",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "280",
+      "quote": "full-bleed Framer **WebGL \"Shader\" canvas**"
+    },
+    {
+      "owner": "proof.trust-image-cards",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "277",
+      "quote": "### 2.3 Trust image cards (NEW)"
+    },
+    {
+      "owner": "proof.trust-image-cards",
+      "path": "src/pages/security/TrustCards.jsx",
+      "lines": "3",
+      "quote": "const SHADER_FALLBACK"
+    },
+    {
+      "owner": "conversion.contact-form",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "320",
+      "quote": "**Hover:** bg goes to **rgb(250,249,248)**"
+    },
+    {
+      "owner": "conversion.contact-form",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "304",
+      "quote": "### 3.1 Contact Form section (NEW)"
+    },
+    {
+      "owner": "conversion.contact-form",
+      "path": "src/pages/contact/ContactForm.jsx",
+      "lines": "4",
+      "quote": "The form never submits anywhere"
+    },
+    {
+      "owner": "conversion.contact-form",
+      "path": "src/pages/contact/ContactForm.jsx",
+      "lines": "32",
+      "quote": "onSubmit={(e) => e.preventDefault()}"
+    },
+    {
+      "owner": "hero.company-stats",
+      "path": "specs/company-careers-legal.md",
+      "lines": "11",
+      "quote": "Appear animations:** none"
+    },
+    {
+      "owner": "hero.company-stats",
+      "path": "specs/company-careers-legal.md",
+      "lines": "31",
+      "quote": "## A1. Hero (NEW)"
+    },
+    {
+      "owner": "hero.company-stats",
+      "path": "src/pages/company/CompanyHero.jsx",
+      "lines": "20",
+      "quote": "const STATS = ["
+    },
+    {
+      "owner": "features.team-ticker",
+      "path": "src/pages/company/team.css",
+      "lines": "2",
+      "quote": "@keyframes pf-team-ticker"
+    },
+    {
+      "owner": "features.team-ticker",
+      "path": "specs/company-careers-legal.md",
+      "lines": "63",
+      "quote": "## A3. Team — auto-scrolling ticker (NEW, inside Content)"
+    },
+    {
+      "owner": "features.team-ticker",
+      "path": "src/pages/company/team.css",
+      "lines": "3",
+      "quote": ".pf-team-ticker {"
+    },
+    {
+      "owner": "hero.careers",
+      "path": "specs/company-careers-legal.md",
+      "lines": "111",
+      "quote": "**Background = WebGL GradientWave shader**"
+    },
+    {
+      "owner": "hero.careers",
+      "path": "specs/company-careers-legal.md",
+      "lines": "102",
+      "quote": "## B1. Hero (NEW, light)"
+    },
+    {
+      "owner": "hero.careers",
+      "path": "src/pages/careers/CareersHero.jsx",
+      "lines": "7",
+      "quote": "const CARDS = ["
+    },
+    {
+      "owner": "content.open-roles",
+      "path": "specs/company-careers-legal.md",
+      "lines": "136",
+      "quote": "Row hover: none"
+    },
+    {
+      "owner": "content.open-roles",
+      "path": "specs/company-careers-legal.md",
+      "lines": "117",
+      "quote": "## B2. Open Roles (`section#roles`, NEW)"
+    },
+    {
+      "owner": "content.open-roles",
+      "path": "src/pages/careers/OpenRoles.jsx",
+      "lines": "5",
+      "quote": "const ROLES = ["
+    },
+    {
+      "owner": "hero.index-intro",
+      "path": "specs/blog-case-studies.md",
+      "lines": "36",
+      "quote": "**No load/appear animations and no scroll-reveal.**"
+    },
+    {
+      "owner": "hero.index-intro",
+      "path": "specs/blog-case-studies.md",
+      "lines": "71",
+      "quote": "### 1.1 Hero (`section[Blog Hero]`)"
+    },
+    {
+      "owner": "hero.index-intro",
+      "path": "specs/blog-case-studies.md",
+      "lines": "102",
+      "quote": "## 2. `/case-studies` index"
+    },
+    {
+      "owner": "hero.index-intro",
+      "path": "src/pages/cms/shared.jsx",
+      "lines": "91",
+      "quote": "export function IndexHero"
+    },
+    {
+      "owner": "content.card-grid",
+      "path": "specs/blog-case-studies.md",
+      "lines": "38",
+      "quote": "Framer transition for the card component (from source)"
+    },
+    {
+      "owner": "content.card-grid",
+      "path": "specs/blog-case-studies.md",
+      "lines": "80",
+      "quote": "### 1.2 Grid (`section[Blog Grid]`)"
+    },
+    {
+      "owner": "content.card-grid",
+      "path": "specs/blog-case-studies.md",
+      "lines": "86",
+      "quote": "### 1.3 Blog card"
+    },
+    {
+      "owner": "content.card-grid",
+      "path": "specs/blog-case-studies.md",
+      "lines": "112",
+      "quote": "### 2.2 Grid + case card"
+    },
+    {
+      "owner": "content.card-grid",
+      "path": "src/pages/Blog.jsx",
+      "lines": "30",
+      "quote": "function BlogCard"
+    },
+    {
+      "owner": "content.article",
+      "path": "specs/blog-case-studies.md",
+      "lines": "153",
+      "quote": "| `a` in p (body link)"
+    },
+    {
+      "owner": "content.article",
+      "path": "specs/blog-case-studies.md",
+      "lines": "123",
+      "quote": "## 3. Blog post template `/blog/:slug`"
+    },
+    {
+      "owner": "content.article",
+      "path": "specs/blog-case-studies.md",
+      "lines": "145",
+      "quote": "### 3.4 Body: rich-text styles"
+    },
+    {
+      "owner": "content.article",
+      "path": "src/pages/BlogPost.jsx",
+      "lines": "9",
+      "quote": "function Post"
+    },
+    {
+      "owner": "content.article",
+      "path": "specs/cms-data.json",
+      "lines": "1815",
+      "quote": "\"slug\": \"primefold-xi-is-here\""
+    },
+    {
+      "owner": "content.case-study",
+      "path": "specs/blog-case-studies.md",
+      "lines": "190",
+      "quote": "Breadcrumb** (flex row, gap 4"
+    },
+    {
+      "owner": "content.case-study",
+      "path": "specs/blog-case-studies.md",
+      "lines": "181",
+      "quote": "## 4. Case-study template `/case-studies/:slug`"
+    },
+    {
+      "owner": "content.case-study",
+      "path": "specs/blog-case-studies.md",
+      "lines": "220",
+      "quote": "**Numbered cards**"
+    },
+    {
+      "owner": "content.case-study",
+      "path": "src/pages/CaseStudy.jsx",
+      "lines": "75",
+      "quote": "function Study"
+    },
+    {
+      "owner": "content.legal-prose",
+      "path": "specs/company-careers-legal.md",
+      "lines": "168",
+      "quote": "| `a` (DP preset)"
+    },
+    {
+      "owner": "content.legal-prose",
+      "path": "specs/company-careers-legal.md",
+      "lines": "144",
+      "quote": "# C. Legal template (/imprint, /data-privacy, /terms-of-service)"
+    },
+    {
+      "owner": "content.legal-prose",
+      "path": "specs/company-careers-legal.md",
+      "lines": "161",
+      "quote": "## C2. Rich-text styles"
+    },
+    {
+      "owner": "content.legal-prose",
+      "path": "src/pages/Legal.jsx",
+      "lines": "6",
+      "quote": "const PRESET"
+    },
+    {
+      "owner": "content.not-found",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "14",
+      "quote": "### 0.1 Appear / scroll animations"
+    },
+    {
+      "owner": "content.not-found",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "371",
+      "quote": "## 4. `/404` (Framer \"not found\" page)"
+    },
+    {
+      "owner": "content.not-found",
+      "path": "src/pages/NotFound.jsx",
+      "lines": "16",
+      "quote": "OOOPPS!"
+    },
+    {
+      "owner": "conversion.cta-band",
+      "path": "src/components/CTA.jsx",
+      "lines": "10",
+      "quote": "@keyframes pf-cta-drift"
+    },
+    {
+      "owner": "conversion.cta-band",
+      "path": "CLONE_SPEC.md",
+      "lines": "333",
+      "quote": "## 9. CTA (\"Main\" wrapper, outside Content)"
+    },
+    {
+      "owner": "conversion.cta-band",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "35",
+      "quote": "### 0.4 CTA block"
+    },
+    {
+      "owner": "conversion.cta-band",
+      "path": "src/components/CTA.jsx",
+      "lines": "23",
+      "quote": "const VARIANTS = {"
+    },
+    {
+      "owner": "conversion.cta-band",
+      "path": "src/components/CTA.jsx",
+      "lines": "12",
+      "quote": "prefers-reduced-motion"
+    },
+    {
+      "owner": "primitive.button",
+      "path": "src/index.css",
+      "lines": "41",
+      "quote": ".pf-btn { position: relative"
+    },
+    {
+      "owner": "primitive.button",
+      "path": "src/index.css",
+      "lines": "59",
+      "quote": ".pf-btn--arrow {"
+    },
+    {
+      "owner": "primitive.button",
+      "path": "CLONE_SPEC.md",
+      "lines": "109",
+      "quote": "**Pill button (Framer \"Button\" component)**"
+    },
+    {
+      "owner": "primitive.eyebrow",
+      "path": "src/components/shared/Eyebrow.jsx",
+      "lines": "3",
+      "quote": "const FRAMES = ["
+    },
+    {
+      "owner": "primitive.eyebrow",
+      "path": "src/components/shared/Eyebrow.jsx",
+      "lines": "9",
+      "quote": "setInterval"
+    },
+    {
+      "owner": "primitive.eyebrow",
+      "path": "CLONE_SPEC.md",
+      "lines": "121",
+      "quote": "**Section eyebrow**"
+    },
+    {
+      "owner": "primitive.product-badge",
+      "path": "src/pages/plans/ProductBadge.jsx",
+      "lines": "2",
+      "quote": "const BG"
+    },
+    {
+      "owner": "primitive.product-badge",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "54",
+      "quote": "**XI/RI product badge**"
+    },
+    {
+      "owner": "primitive.tag-pill",
+      "path": "src/pages/plans/Tick.jsx",
+      "lines": "20",
+      "quote": "export function Pill"
+    },
+    {
+      "owner": "primitive.tag-pill",
+      "path": "src/pages/cms/shared.jsx",
+      "lines": "79",
+      "quote": "export function Pill"
+    },
+    {
+      "owner": "primitive.tag-pill",
+      "path": "specs/blog-case-studies.md",
+      "lines": "194",
+      "quote": "Pills** row"
+    },
+    {
+      "owner": "primitive.mask-icon",
+      "path": "src/pages/shared-info/MaskIcon.jsx",
+      "lines": "8",
+      "quote": "WebkitMask: mask"
+    },
+    {
+      "owner": "primitive.mask-icon",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "410",
+      "quote": "use them as `mask: url(...) center/contain no-repeat`"
+    },
+    {
+      "owner": "primitive.text-field",
+      "path": "src/pages/contact/ContactForm.jsx",
+      "lines": "9",
+      "quote": "const FIELD ="
+    },
+    {
+      "owner": "primitive.text-field",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "349",
+      "quote": "**Field states (computed from Framer's form CSS variables):**"
+    },
+    {
+      "owner": "primitive.checkbox",
+      "path": "src/pages/contact/ContactForm.jsx",
+      "lines": "56",
+      "quote": "type=\"checkbox\""
+    },
+    {
+      "owner": "primitive.checkbox",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "355",
+      "quote": "**Checked**: bg **#FAF9F8**"
+    },
+    {
+      "owner": "primitive.avatar",
+      "path": "src/pages/cms/shared.jsx",
+      "lines": "60",
+      "quote": "export function Author"
+    },
+    {
+      "owner": "primitive.avatar",
+      "path": "specs/blog-case-studies.md",
+      "lines": "96",
+      "quote": "**Posts with no author**"
+    },
+    {
+      "owner": "primitive.tick-icon",
+      "path": "src/pages/plans/Tick.jsx",
+      "lines": "6",
+      "quote": "export function Tick"
+    },
+    {
+      "owner": "primitive.tick-icon",
+      "path": "src/pages/plans/Tick.jsx",
+      "lines": "15",
+      "quote": "export function Cross"
+    },
+    {
+      "owner": "primitive.divider",
+      "path": "src/pages/BlogPost.jsx",
+      "lines": "16",
+      "quote": "className=\"h-px w-full bg-[rgb(235,235,235)]\""
+    },
+    {
+      "owner": "primitive.divider",
+      "path": "src/components/Footer.jsx",
+      "lines": "99",
+      "quote": "className=\"h-px w-full bg-divider\""
+    },
+    {
+      "owner": "component.info-card",
+      "path": "src/pages/shared-info/InfoCard.jsx",
+      "lines": "4",
+      "quote": "export default function InfoCard"
+    },
+    {
+      "owner": "component.info-card",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "49",
+      "quote": "- **Info card** (\"Variant 1\""
+    },
+    {
+      "owner": "component.section-title-row",
+      "path": "src/pages/shared-info/SectionTitle.jsx",
+      "lines": "6",
+      "quote": "export default function SectionTitle"
+    },
+    {
+      "owner": "component.section-title-row",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "53",
+      "quote": "- **Section title row**"
+    },
+    {
+      "owner": "component.segmented-toggle",
+      "path": "src/pages/plans/Segmented.jsx",
+      "lines": "5",
+      "quote": "export function Track"
+    },
+    {
+      "owner": "component.segmented-toggle",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "84",
+      "quote": "- **Product toggle**"
+    },
+    {
+      "owner": "component.plan-card",
+      "path": "src/pages/plans/PlansHero.jsx",
+      "lines": "12",
+      "quote": "function PlanCard"
+    },
+    {
+      "owner": "component.plan-card",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "101",
+      "quote": "Card: radius **16**"
+    },
+    {
+      "owner": "component.newsletter-form",
+      "path": "src/components/Footer.jsx",
+      "lines": "73",
+      "quote": "placeholder=\"you@company.com\""
+    },
+    {
+      "owner": "component.newsletter-form",
+      "path": "src/pages/Blog.jsx",
+      "lines": "6",
+      "quote": "function NewsletterForm"
+    },
+    {
+      "owner": "component.link-card",
+      "path": "src/pages/contact/ContactIntro.jsx",
+      "lines": "8",
+      "quote": "const LINKS = ["
+    },
+    {
+      "owner": "component.link-card",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "316",
+      "quote": "Link cards stack"
+    },
+    {
+      "owner": "component.phone-field",
+      "path": "src/pages/contact/PhoneField.jsx",
+      "lines": "5",
+      "quote": "const DEFAULT = COUNTRIES.find"
+    },
+    {
+      "owner": "component.phone-field",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "339",
+      "quote": "**Dropdown (open on click):**"
+    },
+    {
+      "owner": "component.faq-item",
+      "path": "src/pages/plans/PlansFaq.jsx",
+      "lines": "9",
+      "quote": "function Item"
+    },
+    {
+      "owner": "component.faq-item",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "207",
+      "quote": "**Default:** item 1 expanded"
+    },
+    {
+      "owner": "component.job-row",
+      "path": "src/pages/careers/OpenRoles.jsx",
+      "lines": "23",
+      "quote": "{ROLES.map"
+    },
+    {
+      "owner": "component.job-row",
+      "path": "specs/company-careers-legal.md",
+      "lines": "125",
+      "quote": "Row card: bg #fff, radius **12**"
+    },
+    {
+      "owner": "component.team-card",
+      "path": "src/pages/company/Team.jsx",
+      "lines": "22",
+      "quote": "function Card"
+    },
+    {
+      "owner": "component.team-card",
+      "path": "specs/company-careers-legal.md",
+      "lines": "67",
+      "quote": "- Card (\"Variant 2\")"
+    },
+    {
+      "owner": "component.stat-card-glass",
+      "path": "src/pages/company/CompanyHero.jsx",
+      "lines": "61",
+      "quote": "const CARD_SHADOW"
+    },
+    {
+      "owner": "component.stat-card-glass",
+      "path": "specs/company-careers-legal.md",
+      "lines": "41",
+      "quote": "- Card (glass):"
+    },
+    {
+      "owner": "component.blog-card",
+      "path": "src/pages/Blog.jsx",
+      "lines": "30",
+      "quote": "function BlogCard"
+    },
+    {
+      "owner": "component.blog-card",
+      "path": "specs/blog-case-studies.md",
+      "lines": "86",
+      "quote": "### 1.3 Blog card"
+    },
+    {
+      "owner": "component.case-card",
+      "path": "src/pages/CaseStudies.jsx",
+      "lines": "7",
+      "quote": "function CaseCard"
+    },
+    {
+      "owner": "component.case-card",
+      "path": "specs/blog-case-studies.md",
+      "lines": "112",
+      "quote": "### 2.2 Grid + case card"
+    },
+    {
+      "owner": "component.stat-card-cms",
+      "path": "src/pages/CaseStudy.jsx",
+      "lines": "12",
+      "quote": "function Stats"
+    },
+    {
+      "owner": "component.stat-card-cms",
+      "path": "specs/blog-case-studies.md",
+      "lines": "199",
+      "quote": "### 4.4 Stats"
+    },
+    {
+      "owner": "component.quote-card",
+      "path": "src/pages/cms/RichText.jsx",
+      "lines": "27",
+      "quote": "function QuoteCard"
+    },
+    {
+      "owner": "component.quote-card",
+      "path": "specs/blog-case-studies.md",
+      "lines": "216",
+      "quote": "**Quote card**"
+    },
+    {
+      "owner": "component.numbered-card",
+      "path": "src/pages/cms/RichText.jsx",
+      "lines": "41",
+      "quote": "function NumberedCards"
+    },
+    {
+      "owner": "component.numbered-card",
+      "path": "specs/blog-case-studies.md",
+      "lines": "220",
+      "quote": "**Numbered cards**"
+    },
+    {
+      "owner": "component.rolling-number",
+      "path": "src/components/outcomes/RollingNumber.jsx",
+      "lines": "7",
+      "quote": "const ROW = 88"
+    },
+    {
+      "owner": "component.rolling-number",
+      "path": "CLONE_SPEC.md",
+      "lines": "329",
+      "quote": "**Digit roll**"
+    },
+    {
+      "owner": "component.logo-ticker-track",
+      "path": "src/components/HowItWorks.jsx",
+      "lines": "20",
+      "quote": "function LogoTicker"
+    },
+    {
+      "owner": "component.logo-ticker-track",
+      "path": "src/components/how/how.css",
+      "lines": "11",
+      "quote": "pf-ticker__track"
+    },
+    {
+      "owner": "templates",
+      "path": "src/pages/Home.jsx",
+      "lines": "13",
+      "quote": "<Hero />"
+    },
+    {
+      "owner": "templates",
+      "path": "CLONE_SPEC.md",
+      "lines": "3",
+      "quote": "# Primefold — Home (`/`) clone spec"
+    },
+    {
+      "owner": "templates",
+      "path": "specs/product-pages.md",
+      "lines": "15",
+      "quote": "**Both pages use ONE template.**"
+    },
+    {
+      "owner": "templates",
+      "path": "src/App.jsx",
+      "lines": "28",
+      "quote": "path=\"experience-intelligence\""
+    },
+    {
+      "owner": "templates",
+      "path": "src/pages/ExperienceIntelligence.jsx",
+      "lines": "1",
+      "quote": "Placeholder"
+    },
+    {
+      "owner": "templates",
+      "path": "src/pages/Plans.jsx",
+      "lines": "20",
+      "quote": "<PlansHero"
+    },
+    {
+      "owner": "templates",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "58",
+      "quote": "## 1. `/plans`"
+    },
+    {
+      "owner": "templates",
+      "path": "src/pages/Security.jsx",
+      "lines": "16",
+      "quote": "<SecurityHero"
+    },
+    {
+      "owner": "templates",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "230",
+      "quote": "## 2. `/security`"
+    },
+    {
+      "owner": "templates",
+      "path": "src/pages/Contact.jsx",
+      "lines": "18",
+      "quote": "<ContactIntro />"
+    },
+    {
+      "owner": "templates",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "298",
+      "quote": "## 3. `/contact`"
+    },
+    {
+      "owner": "templates",
+      "path": "src/pages/Company.jsx",
+      "lines": "17",
+      "quote": "<Commitments />"
+    },
+    {
+      "owner": "templates",
+      "path": "specs/company-careers-legal.md",
+      "lines": "24",
+      "quote": "# A. /company"
+    },
+    {
+      "owner": "templates",
+      "path": "src/pages/Careers.jsx",
+      "lines": "31",
+      "quote": "<CareersHero />"
+    },
+    {
+      "owner": "templates",
+      "path": "specs/company-careers-legal.md",
+      "lines": "96",
+      "quote": "# B. /careers"
+    },
+    {
+      "owner": "templates",
+      "path": "src/pages/Legal.jsx",
+      "lines": "40",
+      "quote": "export default function Legal"
+    },
+    {
+      "owner": "templates",
+      "path": "specs/company-careers-legal.md",
+      "lines": "144",
+      "quote": "# C. Legal template"
+    },
+    {
+      "owner": "templates",
+      "path": "src/pages/Blog.jsx",
+      "lines": "56",
+      "quote": "<NewsletterForm />"
+    },
+    {
+      "owner": "templates",
+      "path": "specs/blog-case-studies.md",
+      "lines": "67",
+      "quote": "## 1. `/blog` index"
+    },
+    {
+      "owner": "templates",
+      "path": "src/pages/BlogPost.jsx",
+      "lines": "29",
+      "quote": "<RichText"
+    },
+    {
+      "owner": "templates",
+      "path": "specs/blog-case-studies.md",
+      "lines": "123",
+      "quote": "## 3. Blog post template `/blog/:slug`"
+    },
+    {
+      "owner": "templates",
+      "path": "src/pages/CaseStudies.jsx",
+      "lines": "28",
+      "quote": "<IndexHero"
+    },
+    {
+      "owner": "templates",
+      "path": "specs/blog-case-studies.md",
+      "lines": "102",
+      "quote": "## 2. `/case-studies` index"
+    },
+    {
+      "owner": "templates",
+      "path": "src/pages/CaseStudy.jsx",
+      "lines": "100",
+      "quote": "<About cs={cs} />"
+    },
+    {
+      "owner": "templates",
+      "path": "specs/blog-case-studies.md",
+      "lines": "181",
+      "quote": "## 4. Case-study template"
+    },
+    {
+      "owner": "templates",
+      "path": "src/App.jsx",
+      "lines": "42",
+      "quote": "<Route path=\"*\""
+    },
+    {
+      "owner": "templates",
+      "path": "specs/plans-security-contact-404.md",
+      "lines": "371",
+      "quote": "## 4. `/404`"
+    },
+    {
+      "owner": "routes",
+      "path": "src/App.jsx",
+      "lines": "27",
+      "quote": "<Route index element={<Home />} />"
+    },
+    {
+      "owner": "routes",
+      "path": "src/App.jsx",
+      "lines": "28",
+      "quote": "path=\"experience-intelligence\""
+    },
+    {
+      "owner": "routes",
+      "path": "src/App.jsx",
+      "lines": "29",
+      "quote": "path=\"realestate-intelligence\""
+    },
+    {
+      "owner": "routes",
+      "path": "src/App.jsx",
+      "lines": "30",
+      "quote": "path=\"plans\""
+    },
+    {
+      "owner": "routes",
+      "path": "src/App.jsx",
+      "lines": "31",
+      "quote": "path=\"security\""
+    },
+    {
+      "owner": "routes",
+      "path": "src/App.jsx",
+      "lines": "32",
+      "quote": "path=\"contact\""
+    },
+    {
+      "owner": "routes",
+      "path": "src/App.jsx",
+      "lines": "33",
+      "quote": "path=\"company\""
+    },
+    {
+      "owner": "routes",
+      "path": "src/App.jsx",
+      "lines": "34",
+      "quote": "path=\"careers\""
+    },
+    {
+      "owner": "routes",
+      "path": "src/App.jsx",
+      "lines": "35",
+      "quote": "path=\"imprint\""
+    },
+    {
+      "owner": "routes",
+      "path": "src/App.jsx",
+      "lines": "36",
+      "quote": "path=\"data-privacy\""
+    },
+    {
+      "owner": "routes",
+      "path": "src/App.jsx",
+      "lines": "37",
+      "quote": "path=\"terms-of-service\""
+    },
+    {
+      "owner": "routes",
+      "path": "src/App.jsx",
+      "lines": "38",
+      "quote": "path=\"blog\" element"
+    },
+    {
+      "owner": "routes",
+      "path": "src/App.jsx",
+      "lines": "39",
+      "quote": "path=\"blog/:slug\""
+    },
+    {
+      "owner": "routes",
+      "path": "specs/cms-data.json",
+      "lines": "12",
+      "quote": "\"slug\": \"we-re-taking-real-estate-intelligence-to-expo-real-2026.-come-and-talk-to-your-portfolio\""
+    },
+    {
+      "owner": "routes",
+      "path": "specs/cms-data.json",
+      "lines": "211",
+      "quote": "\"slug\": \"primefold-xi-speaks-german-now\""
+    },
+    {
+      "owner": "routes",
+      "path": "specs/cms-data.json",
+      "lines": "361",
+      "quote": "\"slug\": \"we-rebuilt-our-website-primefold-ai\""
+    },
+    {
+      "owner": "routes",
+      "path": "specs/cms-data.json",
+      "lines": "529",
+      "quote": "\"slug\": \"primefold-ri-is-here-real-estate-intelligence\""
+    },
+    {
+      "owner": "routes",
+      "path": "specs/cms-data.json",
+      "lines": "773",
+      "quote": "\"slug\": \"nobody-asks-their-customers-anything-right-after-they-buy.-now-you-can-right-on-shopify.\""
+    },
+    {
+      "owner": "routes",
+      "path": "specs/cms-data.json",
+      "lines": "937",
+      "quote": "\"slug\": \"how-we-built-sunday-s-survey-design-agent\""
+    },
+    {
+      "owner": "routes",
+      "path": "specs/cms-data.json",
+      "lines": "1126",
+      "quote": "\"slug\": \"meet-sunday-the-intelligence-layer-built-into-primefold-xi\""
+    },
+    {
+      "owner": "routes",
+      "path": "specs/cms-data.json",
+      "lines": "1400",
+      "quote": "\"slug\": \"design-and-reports-get-their-moment\""
+    },
+    {
+      "owner": "routes",
+      "path": "specs/cms-data.json",
+      "lines": "1606",
+      "quote": "\"slug\": \"the-insight-hub-is-about-to-get-sharper\""
+    },
+    {
+      "owner": "routes",
+      "path": "specs/cms-data.json",
+      "lines": "1815",
+      "quote": "\"slug\": \"primefold-xi-is-here\""
+    },
+    {
+      "owner": "routes",
+      "path": "specs/cms-data.json",
+      "lines": "2044",
+      "quote": "\"slug\": \"introducing-primefold---saypien-is-becoming-primefold\""
+    },
+    {
+      "owner": "routes",
+      "path": "specs/cms-data.json",
+      "lines": "2198",
+      "quote": "\"slug\": \"nas-invest-turned-tenant-insight-into-tenant-strength\""
+    },
+    {
+      "owner": "routes",
+      "path": "src/App.jsx",
+      "lines": "40",
+      "quote": "path=\"case-studies\" element"
+    },
+    {
+      "owner": "routes",
+      "path": "src/App.jsx",
+      "lines": "41",
+      "quote": "path=\"case-studies/:slug\""
+    },
+    {
+      "owner": "routes",
+      "path": "specs/cms-data.json",
+      "lines": "2367",
+      "quote": "\"slug\": \"gainback-primefold-xi\""
+    },
+    {
+      "owner": "routes",
+      "path": "specs/cms-data.json",
+      "lines": "2600",
+      "quote": "\"slug\": \"nas-primefold-xi-ri\""
+    },
+    {
+      "owner": "routes",
+      "path": "specs/cms-data.json",
+      "lines": "2822",
+      "quote": "\"slug\": \"dirts-primefold-xi\""
+    },
+    {
+      "owner": "routes",
+      "path": "src/App.jsx",
+      "lines": "42",
+      "quote": "<Route path=\"*\""
+    }
+  ],
+  "facts": [
+    {
+      "id": "react-version",
+      "claim": "Source project is React 18.3.1 (package.json)",
+      "citation": "package.json:14",
+      "quote": "\"react\": \"^18.3.1\"",
+      "onMismatch": "fail"
+    },
+    {
+      "id": "vite-version",
+      "claim": "Source project builds with Vite 5",
+      "citation": "package.json:23",
+      "quote": "\"vite\": \"^5.4.11\"",
+      "onMismatch": "fail"
+    },
+    {
+      "id": "tailwind-version",
+      "claim": "Source project uses Tailwind 3.4",
+      "citation": "package.json:22",
+      "quote": "\"tailwindcss\": \"^3.4.17\"",
+      "onMismatch": "fail"
+    },
+    {
+      "id": "readme-not-for-deployment",
+      "claim": "README states the clone is for reference/study only",
+      "citation": "README.md:3",
+      "quote": "Not for public deployment",
+      "onMismatch": "fail"
+    },
+    {
+      "id": "cookie-banner-unmounted",
+      "claim": "CookieBanner.jsx documents itself as not mounted",
+      "citation": "src/components/CookieBanner.jsx:3",
+      "quote": "NOT mounted in App.jsx",
+      "onMismatch": "warn"
+    },
+    {
+      "id": "product-page-placeholder",
+      "claim": "XI route renders a placeholder page",
+      "citation": "src/pages/ExperienceIntelligence.jsx:3",
+      "quote": "building…",
+      "onMismatch": "warn"
+    },
+    {
+      "id": "contact-form-inert",
+      "claim": "Contact form is inert",
+      "citation": "src/pages/contact/ContactForm.jsx:4",
+      "quote": "The form never submits anywhere",
+      "onMismatch": "fail"
+    },
+    {
+      "id": "ia-sitemap-29",
+      "claim": "IA claims 29 routes",
+      "citation": "ia.json:8",
+      "quote": "\"totalRoutes\": 29",
+      "onMismatch": "fail"
+    },
+    {
+      "id": "ia-templates-13",
+      "claim": "IA claims 13 templates",
+      "citation": "ia.json:9",
+      "quote": "\"totalTemplates\": 13",
+      "onMismatch": "fail"
+    },
+    {
+      "id": "ia-draft-status",
+      "claim": "IA status still says non-home templates are pending recon (stale: specs/ exist)",
+      "citation": "ia.json:6",
+      "quote": "other templates pending recon",
+      "onMismatch": "warn"
+    }
+  ],
+  "absences": [
+    {
+      "owner": "shell.navbar",
+      "files": [
+        "src/components/Navbar.jsx",
+        "src/components/nav/nav.css"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "shell.footer",
+      "files": [
+        "src/components/Footer.jsx",
+        "src/components/footer/footer.css"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "features.intelligence-cards",
+      "files": [
+        "src/components/Intelligence.jsx",
+        "src/components/intel/intel.css",
+        "src/components/intel/Lottie.jsx",
+        "src/components/intel/Visuals.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "proof.testimonials",
+      "files": [
+        "src/components/Testimonials.jsx",
+        "src/components/testimonials/testimonials.css"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "features.solutions-carousel",
+      "files": [
+        "src/components/Solutions.jsx",
+        "src/components/solutions/motion.js"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "proof.trust",
+      "files": [
+        "src/components/Trust.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "proof.outcomes",
+      "files": [
+        "src/components/Outcomes.jsx",
+        "src/components/outcomes/RollingNumber.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "features.use-cases",
+      "files": [
+        "src/pages/product/UseCases.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "hero.pricing",
+      "files": [
+        "src/pages/plans/PlansHero.jsx",
+        "src/pages/plans/Segmented.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "features.comparison-table",
+      "files": [
+        "src/pages/plans/ComparisonTable.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "features.info-card-grid",
+      "files": [
+        "src/pages/shared-info/InfoCard.jsx",
+        "src/pages/shared-info/SectionTitle.jsx",
+        "src/pages/company/Commitments.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "features.faq-accordion",
+      "files": [
+        "src/pages/plans/PlansFaq.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "hero.security-comet",
+      "files": [
+        "src/pages/security/SecurityHero.jsx",
+        "src/pages/security/CometRing.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "proof.trust-image-cards",
+      "files": [
+        "src/pages/security/TrustCards.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "conversion.contact-form",
+      "files": [
+        "src/pages/contact/ContactForm.jsx",
+        "src/pages/contact/ContactIntro.jsx",
+        "src/pages/contact/PhoneField.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "hero.company-stats",
+      "files": [
+        "src/pages/company/CompanyHero.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "features.team-ticker",
+      "files": [
+        "src/pages/company/Team.jsx",
+        "src/pages/company/team.css"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "hero.careers",
+      "files": [
+        "src/pages/careers/CareersHero.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "content.open-roles",
+      "files": [
+        "src/pages/careers/OpenRoles.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "hero.index-intro",
+      "files": [
+        "src/pages/Blog.jsx",
+        "src/pages/CaseStudies.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "content.card-grid",
+      "files": [
+        "src/pages/Blog.jsx",
+        "src/pages/CaseStudies.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "content.article",
+      "files": [
+        "src/pages/BlogPost.jsx",
+        "src/pages/cms/RichText.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "content.case-study",
+      "files": [
+        "src/pages/CaseStudy.jsx",
+        "src/pages/cms/RichText.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "content.legal-prose",
+      "files": [
+        "src/pages/Legal.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "content.not-found",
+      "files": [
+        "src/pages/NotFound.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "primitive.eyebrow",
+      "files": [
+        "src/components/shared/Eyebrow.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "component.rolling-number",
+      "files": [
+        "src/components/outcomes/RollingNumber.jsx"
+      ],
+      "pattern": "prefers-reduced-motion",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "facts.cookie-banner-never-imported",
+      "files": [
+        "src/App.jsx",
+        "src/layout/Layout.jsx",
+        "src/main.jsx",
+        "src/pages/Home.jsx"
+      ],
+      "pattern": "CookieBanner",
+      "expect": "absent",
+      "severity": "fail"
+    },
+    {
+      "owner": "facts.product-page-not-imported-by-app",
+      "files": [
+        "src/App.jsx"
+      ],
+      "pattern": "ProductPage",
+      "expect": "absent",
+      "severity": "warn"
+    }
+  ],
+  "fileAbsences": [
+    {
+      "owner": "facts.solutions-tabs-missing",
+      "path": "src/pages/product/SolutionsTabs.jsx",
+      "severity": "warn"
+    },
+    {
+      "owner": "facts.product-css-missing",
+      "path": "src/pages/product/product.css",
+      "severity": "warn"
+    }
+  ],
+  "fileCounts": [
+    {
+      "owner": "facts.assets-file-count",
+      "dir": "public/assets",
+      "expect": 250,
+      "severity": "warn",
+      "note": "recursive file count incl. MANIFEST.md; top-level only is 59"
+    }
+  ]
+}

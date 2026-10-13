@@ -1,0 +1,34 @@
+{
+  "id": "primitive.tag-pill",
+  "kind": "primitive",
+  "purpose": "Small ring pill (24 tall, 12/16 500) for plan tags and quarter markers; larger 36-tall variant for case-study pills with optional badge.",
+  "props": {
+    "label": "text",
+    "badge": "optional asset brand.product-badge"
+  },
+  "variants": [
+    "plan-tag",
+    "case-study-pill"
+  ],
+  "usesTokens": [
+    "color.tag-pill",
+    "radius.pill",
+    "elevation.ring-hairline"
+  ],
+  "implementedBy": [
+    "src/pages/plans/Tick.jsx",
+    "src/pages/cms/shared.jsx"
+  ],
+  "usedBySections": [
+    "hero.pricing",
+    "content.case-study"
+  ],
+  "measuredFrom": [
+    "src/pages/plans/Tick.jsx:20",
+    "src/pages/cms/shared.jsx:79",
+    "specs/blog-case-studies.md:194"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

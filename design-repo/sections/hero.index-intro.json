@@ -1,0 +1,123 @@
+{
+  "id": "hero.index-intro",
+  "kind": "section",
+  "category": "HERO",
+  "purpose": "Index-page hero for the CMS lists: eyebrow, h1, lead and either a newsletter form (blog) or a black Book a call button (case studies).",
+  "tags": [
+    "hero",
+    "cms",
+    "index",
+    "newsletter"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/cms/shared.jsx",
+    "src/pages/Blog.jsx",
+    "src/pages/CaseStudies.jsx"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": []
+  },
+  "allowedTemplates": [
+    "template.blog-index",
+    "template.case-studies-index"
+  ],
+  "variants": [
+    "newsletter",
+    "booking"
+  ],
+  "constraints": {
+    "onePerPage": true,
+    "mustFollowNav": true
+  },
+  "content": {
+    "fields": {
+      "eyebrow": {
+        "type": "text",
+        "required": true,
+        "maxWords": 2,
+        "maxWordsBasis": "longest real instance: 2 words"
+      },
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 3,
+        "maxWordsBasis": "longest real instance: 3 words"
+      },
+      "lead": {
+        "type": "text",
+        "required": true,
+        "maxWords": 15,
+        "maxWordsBasis": "longest real instance: 15 words"
+      },
+      "newsletter": {
+        "type": "form",
+        "required": false,
+        "endpointRole": "endpoint.newsletter-form"
+      },
+      "action": {
+        "type": "link",
+        "required": false,
+        "labelMaxWords": 3,
+        "maxWordsBasis": "longest real label: 3 words"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "none",
+        "trigger": "load",
+        "reducedMotionFallback": "no-animation",
+        "note": "no appear animation on CMS routes",
+        "measuredFrom": [
+          "specs/blog-case-studies.md:36"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "no motion in this section (Eyebrow spinner is global)"
+  },
+  "responsive": {
+    "desktop": "padding 156/20/88; form max 300",
+    "tablet": "same",
+    "phone": "lead wraps to 3 lines"
+  },
+  "notes": [],
+  "measuredFrom": [
+    "specs/blog-case-studies.md:71",
+    "specs/blog-case-studies.md:102",
+    "src/pages/cms/shared.jsx:91"
+  ],
+  "rules": [
+    {
+      "id": "INDEX_NEWSLETTER_VARIANT",
+      "when": {
+        "variant": "newsletter"
+      },
+      "require": [
+        "newsletter"
+      ],
+      "forbid": [
+        "action"
+      ]
+    },
+    {
+      "id": "INDEX_BOOKING_VARIANT",
+      "when": {
+        "variant": "booking"
+      },
+      "require": [
+        "action"
+      ],
+      "forbid": [
+        "newsletter"
+      ]
+    }
+  ],
+  "retrievalEligible": true,
+  "assetRoles": [],
+  "version": "1.0.0"
+}

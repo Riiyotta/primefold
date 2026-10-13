@@ -1,0 +1,58 @@
+{
+  "repositoryId": "primefold-design-repo",
+  "repositoryVersion": "0.1.0",
+  "pageSpecVersion": "1.0.0",
+  "allowlistVersion": "1.0.0",
+  "versionFieldNote": "allowlistVersion is MACHINE-CHECKED: extraction/verify_all.py fails if it differs from tokens/llm/component-allowlist.json 'version'. pageSpecVersion is MACHINE-CHECKED against the const in schema/pagespec.schema.json. repositoryVersion is a hand-maintained documentation marker; nothing checks it.",
+  "status": "design-review-pending",
+  "productionApproved": false,
+  "defaultTheme": "light",
+  "schemaValidatedThemes": [
+    "light"
+  ],
+  "sourceProject": {
+    "name": "primefold-clone",
+    "liveSite": "https://primefold.ai/",
+    "note": "Clone of a LIVE commercial site, built for reference and study (README: 'Not for public deployment'). Treat as a real company: see assets/asset-roles.json.",
+    "framework": {
+      "react": "^18.3.1",
+      "vite": "^5.4.11",
+      "tailwindcss": "^3.4.17"
+    },
+    "frameworkNote": "Compared against package.json by verify_all.py when the sibling source tree is present (WARN-level when it differs: the source moves after the snapshot)."
+  },
+  "counts": {
+    "primitives": 10,
+    "components": 18,
+    "sections": 34,
+    "templates": 13,
+    "routes": 29,
+    "assetRoles": 17,
+    "destinationRoles": 11,
+    "formEndpointRoles": 2,
+    "graphRules": 20,
+    "tokenFiles": 15,
+    "tokens": 181
+  },
+  "entryPoints": [
+    "README.md",
+    "CHANGELOG.md",
+    "registry.manifest.json",
+    "tokens/llm/component-allowlist.json",
+    "tokens/llm/token-catalog.json",
+    "tokens/llm/token-policy.json",
+    "tokens/themes/light.json",
+    "assets/asset-roles.json",
+    "templates/templates.json",
+    "templates/routes.json",
+    "compatibility/graph.json",
+    "schema/pagespec.schema.json",
+    "schema/example.pagespec.json",
+    "schema/semantic_validate.py",
+    "schema/tests/adversarial_test.py",
+    "extraction/measured-values.json",
+    "extraction/verify_all.py",
+    "extraction/prove_drift.py"
+  ],
+  "generatedBy": "design-repo-extraction methodology (BUILD-GUIDE + MASTER-GUIDE lessons); contracts generated from real source/spec citations"
+}

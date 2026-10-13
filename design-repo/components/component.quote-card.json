@@ -1,0 +1,31 @@
+{
+  "id": "component.quote-card",
+  "kind": "component",
+  "purpose": "Rich-text quote card: gap 72, radius 25.6, light surface, Stack Sans weight 300 quote + author block.",
+  "props": {
+    "quote": "text",
+    "author": "text",
+    "role": "text"
+  },
+  "variants": [
+    "default"
+  ],
+  "usesTokens": [
+    "radius.quote-card",
+    "color.stat-card",
+    "elevation.cms-ring"
+  ],
+  "implementedBy": [
+    "src/pages/cms/RichText.jsx"
+  ],
+  "usedBySections": [
+    "content.case-study"
+  ],
+  "measuredFrom": [
+    "src/pages/cms/RichText.jsx:27",
+    "specs/blog-case-studies.md:216"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

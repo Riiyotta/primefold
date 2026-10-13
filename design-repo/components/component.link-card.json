@@ -1,0 +1,31 @@
+{
+  "id": "component.link-card",
+  "kind": "component",
+  "purpose": "350x74 contact link card: 20px mask icon + 14/20 500 title, 12/16 sub line, hover background rgb(250,249,248).",
+  "props": {
+    "icon": "asset",
+    "title": "text",
+    "sub": "text",
+    "to": "target"
+  },
+  "variants": [
+    "default"
+  ],
+  "usesTokens": [
+    "color.form-label",
+    "radius.md"
+  ],
+  "implementedBy": [
+    "src/pages/contact/ContactIntro.jsx"
+  ],
+  "usedBySections": [
+    "conversion.contact-form"
+  ],
+  "measuredFrom": [
+    "src/pages/contact/ContactIntro.jsx:8",
+    "specs/plans-security-contact-404.md:316"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

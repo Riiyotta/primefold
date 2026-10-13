@@ -1,0 +1,105 @@
+{
+  "id": "features.use-cases",
+  "kind": "section",
+  "category": "FEATURES",
+  "purpose": "Sticky 'Used by' label beside a scroll-highlighted list of use cases (only one item at opacity 1 at a time).",
+  "tags": [
+    "sticky",
+    "scroll-highlight",
+    "list",
+    "product"
+  ],
+  "status": "spec-only-source-in-progress",
+  "implementedBy": [
+    "src/pages/product/UseCases.jsx"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": [
+      "opacity transition duration (spec 7.4)"
+    ]
+  },
+  "allowedTemplates": [
+    "template.product"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {},
+  "content": {
+    "fields": {
+      "usedByLabel": {
+        "type": "text",
+        "required": true,
+        "maxWords": 2,
+        "maxWordsBasis": "longest real instance: 2 words"
+      },
+      "usedBy": {
+        "type": "list",
+        "required": true,
+        "minItems": 3,
+        "maxItems": 5,
+        "item": {
+          "type": "text",
+          "required": true,
+          "maxWords": 3,
+          "maxWordsBasis": "longest real instance: 3 words"
+        },
+        "countBasis": "spec 2b: XI lists 4, RI lists 3"
+      },
+      "items": {
+        "type": "list",
+        "required": true,
+        "minItems": 6,
+        "maxItems": 6,
+        "item": {
+          "type": "text",
+          "required": true,
+          "maxWords": 5,
+          "maxWordsBasis": "longest real instance: 5 words"
+        },
+        "countBasis": "spec 2b: six items per product"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "scroll-highlight",
+        "trigger": "scroll",
+        "reducedMotionFallback": "instant-swap",
+        "note": "item n -> opacity 1 when marker n reaches viewport middle, back to .4 at marker n+1; ~.3s ease (unmeasured)",
+        "measuredFrom": [
+          "specs/product-pages.md:320"
+        ]
+      },
+      {
+        "pattern": "none",
+        "trigger": "load",
+        "reducedMotionFallback": "no-animation",
+        "note": "sticky panel top 120 (phone 80); no motion",
+        "measuredFrom": [
+          "specs/product-pages.md:311"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "absent in UseCases.jsx"
+  },
+  "responsive": {
+    "desktop": "section 1500 tall; sticky panel 1280x720 gap 200",
+    "tablet": "gap 50, 770 wide",
+    "phone": "column gap 40, top 80, height 648"
+  },
+  "notes": [
+    "Source status at build time: src/pages/ExperienceIntelligence.jsx and RealEstateIntelligence.jsx are still the placeholder 'building…' pages, and App.jsx does not import ProductPage. src/pages/product/* is an in-progress, unmounted implementation (ProductPage.jsx imports ./SolutionsTabs and ./product.css, which do not exist on disk). The contract is grounded in the measured spec specs/product-pages.md, not in running source."
+  ],
+  "measuredFrom": [
+    "specs/product-pages.md:309"
+  ],
+  "retrievalEligible": false,
+  "rules": [],
+  "assetRoles": [],
+  "version": "1.0.0"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "component.job-row",
+  "kind": "component",
+  "purpose": "Static job card: teal title + grey meta line, 20/28 h5, description, black Apply button.",
+  "props": {
+    "title": "text",
+    "location": "text",
+    "apply": "target"
+  },
+  "variants": [
+    "default"
+  ],
+  "usesTokens": [
+    "radius.md",
+    "color.teal",
+    "color.grey-500"
+  ],
+  "implementedBy": [
+    "src/pages/careers/OpenRoles.jsx"
+  ],
+  "usedBySections": [
+    "content.open-roles"
+  ],
+  "measuredFrom": [
+    "src/pages/careers/OpenRoles.jsx:23",
+    "specs/company-careers-legal.md:125"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

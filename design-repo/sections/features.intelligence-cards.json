@@ -1,0 +1,172 @@
+{
+  "id": "features.intelligence-cards",
+  "kind": "section",
+  "category": "FEATURES",
+  "purpose": "Three product cards (XI live, RI beta, next planned) that widen on hover on desktop and become sticky stacked cards on tablet/phone; routes visitors into a product page.",
+  "tags": [
+    "cards",
+    "hover-grow",
+    "sticky-stack",
+    "products",
+    "home-only"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/components/Intelligence.jsx",
+    "src/components/intel/intel.css",
+    "src/components/intel/Lottie.jsx",
+    "src/components/intel/Visuals.jsx"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": [
+      "card 3 hover growth (measured widths stayed 416)"
+    ]
+  },
+  "allowedTemplates": [
+    "template.home"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "homeRouteOnly": true,
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "eyebrow": {
+        "type": "text",
+        "required": true,
+        "maxWords": 6,
+        "maxWordsBasis": "longest real instance: 6 words"
+      },
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 5,
+        "maxWordsBasis": "longest real instance: 5 words"
+      },
+      "lead": {
+        "type": "text",
+        "required": true,
+        "maxWords": 12,
+        "maxWordsBasis": "longest real instance: 12 words"
+      },
+      "cards": {
+        "type": "list",
+        "required": true,
+        "minItems": 3,
+        "maxItems": 3,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "product": {
+              "type": "enum",
+              "required": true,
+              "values": [
+                "XI",
+                "RI",
+                "CI"
+              ]
+            },
+            "status": {
+              "type": "text",
+              "required": true,
+              "maxWords": 8,
+              "maxWordsBasis": "longest real instance: 8 words"
+            },
+            "title": {
+              "type": "text",
+              "required": true,
+              "maxWords": 4,
+              "maxWordsBasis": "longest real instance: 4 words"
+            },
+            "description": {
+              "type": "text",
+              "required": false,
+              "maxWords": 23,
+              "maxWordsBasis": "longest real instance: 23 words"
+            },
+            "to": {
+              "type": "target",
+              "required": false
+            },
+            "badge": {
+              "type": "asset",
+              "required": true,
+              "roles": [
+                "brand.product-badge"
+              ]
+            },
+            "visual": {
+              "type": "asset",
+              "required": true,
+              "roles": [
+                "product.illustration-still",
+                "motion.lottie",
+                "ui.icon-mask"
+              ]
+            }
+          }
+        },
+        "countBasis": "CARDS in Intelligence.jsx has 3 cards; card 3 is not a link"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "hover-grow",
+        "trigger": "hover",
+        "reducedMotionFallback": "instant-swap",
+        "note": "hovered card flex 1 -> 2.7 (714/267/267), spring k210 c30 m1; card 1 fades in a Lottie overlay",
+        "measuredFrom": [
+          "CLONE_SPEC.md:257"
+        ]
+      },
+      {
+        "pattern": "sticky-stack-scale",
+        "trigger": "scroll",
+        "reducedMotionFallback": "no-animation",
+        "note": "tablet/phone: sticky cards top 40/60/80, scale .86/.91/.96 as the next card arrives, spring k500 c60",
+        "measuredFrom": [
+          "CLONE_SPEC.md:259"
+        ]
+      },
+      {
+        "pattern": "lottie-loop",
+        "trigger": "hover",
+        "reducedMotionFallback": "static-first-frame",
+        "note": "card 1 hover Lottie plays once",
+        "measuredFrom": [
+          "CLONE_SPEC.md:257"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "absent in Intelligence.jsx, intel.css, Lottie.jsx, Visuals.jsx"
+  },
+  "responsive": {
+    "desktop": "3 cards 416x560 in a row, hover widths 714/267/267",
+    "tablet": "sticky stacked column, gap 120, card width capped 500",
+    "phone": "sticky stacked column, width 390-40; mobile copy differs from desktop"
+  },
+  "notes": [],
+  "measuredFrom": [
+    "CLONE_SPEC.md:239",
+    "src/components/Intelligence.jsx:69",
+    "src/components/Intelligence.jsx:126"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [
+    "brand.product-badge",
+    "motion.lottie",
+    "product.illustration-still",
+    "ui.icon-mask"
+  ],
+  "version": "1.0.0"
+}

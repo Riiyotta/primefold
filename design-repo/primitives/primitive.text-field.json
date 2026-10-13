@@ -1,0 +1,32 @@
+{
+  "id": "primitive.text-field",
+  "kind": "primitive",
+  "purpose": "Framer form field: tinted bg + #2222221F ring, radius 10, padding 12, focus-within inset 1px #54524E border, no transitions.",
+  "props": {
+    "type": "text|email|textarea",
+    "placeholder": "text"
+  },
+  "variants": [
+    "default"
+  ],
+  "usesTokens": [
+    "color.field-bg",
+    "color.field-ring",
+    "color.field-focus",
+    "color.field-placeholder",
+    "radius.field"
+  ],
+  "implementedBy": [
+    "src/pages/contact/ContactForm.jsx"
+  ],
+  "usedBySections": [
+    "conversion.contact-form"
+  ],
+  "measuredFrom": [
+    "src/pages/contact/ContactForm.jsx:9",
+    "specs/plans-security-contact-404.md:349"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

@@ -1,0 +1,34 @@
+{
+  "$description": "Only one theme exists: the site has no dark mode. Dark sections (heroes, CTA, A1 demo) are scoped surfaces, not a theme. Semantic roles resolve to foundation values below.",
+  "name": "light",
+  "resolves": {
+    "text.primary": "{color.ink}",
+    "text.heading": "{color.ink-2}",
+    "text.body": "{color.grey-600}",
+    "text.body-warm": "{color.grey-550}",
+    "text.eyebrow": "{color.grey-500}",
+    "text.inverse": "{color.white}",
+    "text.inverse-secondary": "{color.a1-text-2}",
+    "text.on-black-button": "{color.cream}",
+    "text.accent-positive": "{color.teal}",
+    "text.link-article": "{color.link-body}",
+    "surface.page": "{color.white}",
+    "surface.alt": "{color.page-alt}",
+    "surface.soft": "{color.surface-soft}",
+    "surface.inverse": "{color.ink}",
+    "surface.dark-window": "{color.dark-window}",
+    "surface.dark-stage": "{color.dark-stage}",
+    "surface.stat": "{color.stat-card}",
+    "surface.numbered": "{color.panel-1}",
+    "border.hairline": "{elevation.ring-hairline}",
+    "border.divider": "{color.divider}",
+    "border.bar": "{color.nav-border}",
+    "brand.xi": "{color.teal-xi}",
+    "brand.ri": "{color.orange}",
+    "brand.ri-badge": "{color.badge-ri}",
+    "brand.ci": "{color.purple}"
+  },
+  "measuredFrom": [
+    "src/index.css:23"
+  ]
+}

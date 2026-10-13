@@ -1,0 +1,30 @@
+{
+  "id": "component.stat-card-glass",
+  "kind": "component",
+  "purpose": "Company hero glass stat card: rgba(120,120,120,.24) + blur(5px), radius 16, label + 32px icon tile + 48/56 value.",
+  "props": {
+    "label": "text",
+    "value": "text",
+    "icon": "asset"
+  },
+  "variants": [
+    "default"
+  ],
+  "usesTokens": [
+    "radius.lg",
+    "color.white"
+  ],
+  "implementedBy": [
+    "src/pages/company/CompanyHero.jsx"
+  ],
+  "usedBySections": [
+    "hero.company-stats"
+  ],
+  "measuredFrom": [
+    "src/pages/company/CompanyHero.jsx:61",
+    "specs/company-careers-legal.md:41"
+  ],
+  "notes": [],
+  "status": "mounted",
+  "version": "1.0.0"
+}

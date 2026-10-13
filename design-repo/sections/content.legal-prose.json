@@ -1,0 +1,124 @@
+{
+  "id": "content.legal-prose",
+  "kind": "section",
+  "category": "CONTENT",
+  "purpose": "Legal document: h1 and a single 768px reading column of rich text (p, h2/h3/h4/h6, lists, empty spacers). One layout for imprint, data privacy and terms of service.",
+  "tags": [
+    "legal",
+    "prose",
+    "document"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/Legal.jsx",
+    "src/pages/legal/content.js",
+    "src/pages/legal/legal.css"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": [
+      "legal copy itself is deliberately not transcribed in the specs (company address, register number, directors, VAT ID)"
+    ]
+  },
+  "allowedTemplates": [
+    "template.legal"
+  ],
+  "variants": [
+    "imprint",
+    "data-privacy",
+    "terms-of-service"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 3,
+        "maxWordsBasis": "longest real instance: 3 words"
+      },
+      "blocks": {
+        "type": "list",
+        "required": true,
+        "minItems": 1,
+        "maxItems": 300,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "type": {
+              "type": "enum",
+              "required": true,
+              "values": [
+                "p",
+                "h2",
+                "h3",
+                "h4",
+                "h6",
+                "ul",
+                "ol",
+                "spacer",
+                "empty"
+              ]
+            },
+            "text": {
+              "type": "text",
+              "required": false,
+              "maxWords": 400,
+              "maxWordsBasis": "spec C3: largest single paragraph is data-privacy 'Applications' 1 p ~399w"
+            },
+            "items": {
+              "type": "list",
+              "required": false,
+              "minItems": 1,
+              "maxItems": 25,
+              "item": {
+                "type": "text",
+                "required": true,
+                "maxWords": 140,
+                "maxWordsBasis": "spec C3: 'Meta Pixel' ul x3 items ~403w, i.e. ~134w per item"
+              },
+              "countBasis": "spec C3: terms-of-service prohibited-activities list has 23 items"
+            }
+          }
+        },
+        "countBasis": "estimate: upper bound over the C3 heading/paragraph enumeration for data-privacy (largest page); not an exact count"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "hover-color",
+        "trigger": "hover",
+        "reducedMotionFallback": "instant-swap",
+        "note": "rich-text links #594AFF -> #212121 + underline, instant",
+        "measuredFrom": [
+          "specs/company-careers-legal.md:168"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "no motion in this section"
+  },
+  "responsive": {
+    "desktop": "section padding 152/80/120; column 768 centered",
+    "tablet": "column 650",
+    "phone": "padding 24; column 342"
+  },
+  "notes": [
+    "Legal text is the company's own real legal data: never reproduce it for another owner; generate neutral placeholder prose."
+  ],
+  "measuredFrom": [
+    "specs/company-careers-legal.md:144",
+    "specs/company-careers-legal.md:161",
+    "src/pages/Legal.jsx:6"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [],
+  "version": "1.0.0"
+}
