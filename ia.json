@@ -1,9 +1,9 @@
 {
-  "$comment": "Routes from https://primefold.ai/sitemap.xml (fetched 2026-10-13) and src/App.jsx. Home sections measured in CLONE_SPEC.md. Non-home section breakdowns pending recon (specs/*.md).",
+  "$comment": "Routes from https://primefold.ai/sitemap.xml (fetched 2026-10-13) and src/App.jsx. Section lists per template mirror design-repo/templates/templates.json; section contracts live in design-repo/sections/ and cite specs/*.md and CLONE_SPEC.md.",
   "meta": {
     "title": "Primefold (primefold.ai) — information architecture",
     "source": "https://primefold.ai/ (sitemap.xml + clone at src/)",
-    "status": "draft — home measured, other templates pending recon",
+    "status": "draft — all 13 templates mapped to section contracts from design-repo/ (home measured; product pages spec-only, source in progress)",
     "productionApproved": false,
     "totalRoutes": 29,
     "totalTemplates": 13
@@ -14,7 +14,7 @@
     "FEATURES": "Product explanation and capability modules.",
     "PROOF": "Social proof and trust: logos, testimonials, outcomes, security.",
     "CONVERSION": "Call-to-action blocks driving to Book a call.",
-    "CONTENT": "Page body content; used here as a placeholder until a template's sections are measured."
+    "CONTENT": "Page body content: article, prose, cards, forms and other page-specific blocks."
   },
   "sections": {
     "shell.navbar": {
@@ -23,125 +23,197 @@
       "scope": "Present on all 29 routes.",
       "implementedBy": "src/components/Navbar.jsx"
     },
+    "hero.home-carousel": {
+      "category": "HERO",
+      "description": "Full-viewport 3-slide autoplay carousel (Platform / Experience Intelligence / Real Estate Intelligence) with 6s progress tabs, staggered text entrance and 0.6x scroll parallax.",
+      "scope": "1 route.",
+      "implementedBy": "src/components/Hero.jsx"
+    },
+    "proof.logo-ticker": {
+      "category": "PROOF",
+      "description": "Infinite horizontal customer-logo marquee at 50px/s with staggered logo fade-in.",
+      "scope": "1 route.",
+      "implementedBy": "src/components/HowItWorks.jsx > LogoTicker"
+    },
+    "features.how-it-works": {
+      "category": "FEATURES",
+      "description": "'How a question becomes a next move' title stack plus the dark A1 Loop product demo: a 9-state animated loop (ask, read sources, understand, answer, act, trace).",
+      "scope": "1 route.",
+      "implementedBy": "src/components/HowItWorks.jsx + how/A1Loop.jsx"
+    },
+    "features.intelligence-cards": {
+      "category": "FEATURES",
+      "description": "'One engine' row of three intelligence product cards (XI live, RI beta, next planned) that widen on hover on desktop and become sticky stacked cards on tablet/phone.",
+      "scope": "1 route.",
+      "implementedBy": "src/components/Intelligence.jsx"
+    },
+    "proof.testimonials": {
+      "category": "PROOF",
+      "description": "Full-width dark testimonial carousel: large quote, person name/role, client logo, arrow + dot controls, 0.5s slide.",
+      "scope": "1 route.",
+      "implementedBy": "src/components/Testimonials.jsx"
+    },
+    "features.solutions-carousel": {
+      "category": "FEATURES",
+      "description": "'Built for every team' horizontally scrolling team/use-case image cards with scroll-linked sideways drift and Explore arrow buttons.",
+      "scope": "1 route.",
+      "implementedBy": "src/components/Solutions.jsx"
+    },
+    "proof.trust": {
+      "category": "PROOF",
+      "description": "Trust block: list of security/compliance points with a 10s teal progress line next to an animated Lottie panel (hosting, GDPR, source tracing).",
+      "scope": "1 route.",
+      "implementedBy": "src/components/Trust.jsx"
+    },
+    "proof.outcomes": {
+      "category": "PROOF",
+      "description": "'Real impact. Real outcomes.' dark customer outcome cards with rolling 80px numbers, outcome headline, person and client logo.",
+      "scope": "1 route.",
+      "implementedBy": "src/components/Outcomes.jsx"
+    },
+    "conversion.cta-band": {
+      "category": "CONVERSION",
+      "description": "Dark rounded CTA card 'Ask your data. Get the answer.' with animated wave background and a white Book a call pill.",
+      "scope": "Present on all 29 routes.",
+      "implementedBy": "src/components/CTA.jsx"
+    },
     "shell.footer": {
       "category": "SHELL",
       "description": "Footer card: brand blurb + newsletter form, four link columns (Products, Explore, Resources, Company), legal/social row, hosted-in-Germany row, and the sticky ghost 'Primefold' wordmark revealed beneath it.",
       "scope": "Present on all 29 routes.",
       "implementedBy": "src/components/Footer.jsx"
     },
-    "hero.home-carousel": {
+    "hero.product-live-chat": {
       "category": "HERO",
-      "description": "Full-viewport 3-slide autoplay carousel (Platform / Experience Intelligence / Real Estate Intelligence) with 6s progress tabs, staggered text entrance and 0.6x scroll parallax.",
-      "scope": "Home only (1 route).",
-      "implementedBy": "src/components/Hero.jsx"
+      "description": "Dark product hero: eyebrow badge, h1, lead, two CTAs and a typing 'Live Conversation' chat demo over a WebGL rays background; one hero template serves both intelligences via the product enum.",
+      "scope": "2 routes."
     },
-    "proof.logo-ticker": {
-      "category": "PROOF",
-      "description": "Infinite horizontal customer-logo marquee at 50px/s with staggered logo fade-in.",
-      "scope": "Home only (1 route), at the top of the How It Works block.",
-      "implementedBy": "src/components/HowItWorks.jsx > LogoTicker"
-    },
-    "features.how-it-works": {
+    "features.step-cards": {
       "category": "FEATURES",
-      "description": "'How a question becomes a next move' title stack plus the dark A1 Loop product demo: a 9-state animated loop (ask, read sources, understand, answer, act, trace).",
-      "scope": "Home only (1 route).",
-      "implementedBy": "src/components/HowItWorks.jsx + how/A1Loop.jsx"
+      "description": "'Ask. Understand. Act.' three illustrated step cards; XI uses light animated illustrations, RI uses dark A1-style demo panels.",
+      "scope": "2 routes."
     },
-    "features.intelligence-cards": {
+    "features.use-cases": {
       "category": "FEATURES",
-      "description": "'One engine' row of three intelligence product cards (XI live, RI beta, next planned) that widen on hover on desktop and become sticky stacked cards on tablet/phone.",
-      "scope": "Home only (1 route).",
-      "implementedBy": "src/components/Intelligence.jsx"
+      "description": "Sticky 'Used by' label beside a scroll-highlighted list of use cases (only one item at opacity 1 at a time).",
+      "scope": "2 routes."
     },
-    "proof.testimonials": {
-      "category": "PROOF",
-      "description": "Full-width dark testimonial carousel: large quote, person name/role, client logo, arrow + dot controls, 0.5s slide.",
-      "scope": "Home only (1 route).",
-      "implementedBy": "src/components/Testimonials.jsx"
-    },
-    "features.solutions-carousel": {
+    "features.sources": {
       "category": "FEATURES",
-      "description": "'Built for every team' horizontally scrolling team/use-case image cards with scroll-linked sideways drift and Explore arrow buttons.",
-      "scope": "Home only (1 route).",
-      "implementedBy": "src/components/Solutions.jsx"
+      "description": "'Sources' block: left list of three trust points (connects in minutes, traceable, hosted in Germany) beside a Lottie (XI) or dark 'A3 Sources' loop (RI).",
+      "scope": "2 routes."
     },
-    "proof.trust": {
+    "features.solutions-tabs": {
+      "category": "FEATURES",
+      "description": "'Built for every team' tabbed panel (persona tabs) with an image card and a dark card showing marquee quote pills plus 'What you get'. Not the home carousel.",
+      "scope": "2 routes."
+    },
+    "features.loop-cards": {
+      "category": "FEATURES",
+      "description": "'The loop' four small cards explaining how the product learns a customer's vocabulary, definitions, judgment and workspace.",
+      "scope": "2 routes."
+    },
+    "hero.pricing": {
+      "category": "HERO",
+      "description": "Plans hero: eyebrow, h1, lead, two CTAs, product and billing toggles and the three pricing cards (XI state) or one 'Explore Primefold RI' card (RI state).",
+      "implementedBy": "src/pages/plans/PlansHero.jsx + src/pages/plans/Segmented.jsx + src/pages/plans/ProductBadge.jsx + src/pages/plans/Tick.jsx + src/pages/plans/data.js",
+      "scope": "1 route."
+    },
+    "features.comparison-table": {
+      "category": "FEATURES",
+      "description": "Plan comparison table with sticky plan header and sticky category rows; shown only in the XI state of /plans.",
+      "implementedBy": "src/pages/plans/ComparisonTable.jsx + src/pages/plans/data.js",
+      "scope": "1 route."
+    },
+    "features.info-card-grid": {
+      "category": "FEATURES",
+      "description": "Section title row (eyebrow, H2, optional lead) over a grid of small icon+title+description info cards; used for plan trust ('In every plan'), security facts and company commitments. Variant selects the column count.",
+      "implementedBy": "src/pages/shared-info/InfoCard.jsx + src/pages/shared-info/SectionTitle.jsx + src/pages/shared-info/MaskIcon.jsx + src/pages/plans/PlansTrust.jsx + src/pages/security/FourFacts.jsx + src/pages/company/Commitments.jsx",
+      "scope": "3 routes."
+    },
+    "features.faq-accordion": {
+      "category": "FEATURES",
+      "description": "FAQ accordion: independent expandable cards (first open by default) under a title row with a lead.",
+      "implementedBy": "src/pages/plans/PlansFaq.jsx + src/pages/plans/data.js",
+      "scope": "1 route."
+    },
+    "hero.security-comet": {
+      "category": "HERO",
+      "description": "Dark security hero with warm glow, eyebrow, h1, lead, Book a call and an animated three-ring comet graphic around a GDPR/fingerprint pill.",
+      "implementedBy": "src/pages/security/SecurityHero.jsx + src/pages/security/CometRing.jsx",
+      "scope": "1 route."
+    },
+    "proof.trust-image-cards": {
       "category": "PROOF",
-      "description": "Trust block: list of security/compliance points with a 10s teal progress line next to an animated Lottie panel (hosting, GDPR, source tracing).",
-      "scope": "Home only (1 route).",
-      "implementedBy": "src/components/Trust.jsx"
+      "description": "Two shader-backed image cards with a dark bottom overlay and white headline + body (security trust statements).",
+      "implementedBy": "src/pages/security/TrustCards.jsx",
+      "scope": "1 route."
     },
-    "proof.outcomes": {
-      "category": "PROOF",
-      "description": "'Real impact. Real outcomes.' dark customer outcome cards with rolling 80px numbers, outcome headline, person and client logo.",
-      "scope": "Home only (1 route).",
-      "implementedBy": "src/components/Outcomes.jsx"
-    },
-    "conversion.cta-band": {
+    "conversion.contact-form": {
       "category": "CONVERSION",
-      "description": "Dark rounded CTA card 'Ask your data. Get the answer.' with animated wave background and a white Book a call pill.",
-      "scope": "Home only (1 route) confirmed; reuse on other templates pending recon.",
-      "implementedBy": "src/components/CTA.jsx"
+      "description": "Two-column contact section: intro with three link cards (email, booking, LinkedIn) and a 'Send us a message' form card (name, work mail, company, optional phone with country picker, message, consent, submit).",
+      "implementedBy": "src/pages/contact/ContactIntro.jsx + src/pages/contact/ContactForm.jsx + src/pages/contact/PhoneField.jsx + src/pages/contact/countries.js",
+      "scope": "1 route."
     },
-    "content.product-body": {
-      "category": "CONTENT",
-      "description": "Product (Intelligence) page body — section-level breakdown pending recon; spec will land in specs/product-pages.md.",
-      "scope": "Product (Intelligence) template only (2 routes)."
+    "hero.company-stats": {
+      "category": "HERO",
+      "description": "Company hero over a full-bleed photo: eyebrow, h1, lead with a bold clause, two CTAs and four glass stat cards.",
+      "implementedBy": "src/pages/company/CompanyHero.jsx",
+      "scope": "1 route."
     },
-    "content.plans-body": {
-      "category": "CONTENT",
-      "description": "Plans page body — section-level breakdown pending recon; spec will land in specs/plans-security-contact-404.md.",
-      "scope": "Plans template only (1 route)."
+    "features.team-ticker": {
+      "category": "FEATURES",
+      "description": "Team section: title row over an edge-to-edge auto-scrolling ticker of team cards (square photo, name, role).",
+      "implementedBy": "src/pages/company/Team.jsx + src/pages/company/team.css",
+      "scope": "1 route."
     },
-    "content.security-body": {
-      "category": "CONTENT",
-      "description": "Security page body — section-level breakdown pending recon; spec will land in specs/plans-security-contact-404.md.",
-      "scope": "Security template only (1 route)."
+    "hero.careers": {
+      "category": "HERO",
+      "description": "Light careers hero: eyebrow, h1, lead, black 'See open roles' anchor button, and two shader-backed cards ('How you work', 'How we hire').",
+      "implementedBy": "src/pages/careers/CareersHero.jsx",
+      "scope": "1 route."
     },
-    "content.contact-body": {
+    "content.open-roles": {
       "category": "CONTENT",
-      "description": "Contact page body — section-level breakdown pending recon; spec will land in specs/plans-security-contact-404.md.",
-      "scope": "Contact template only (1 route)."
+      "description": "Open roles list (#roles): title block and static job rows with meta line, h5, description and a black Apply button.",
+      "implementedBy": "src/pages/careers/OpenRoles.jsx",
+      "scope": "1 route."
     },
-    "content.company-body": {
+    "content.legal-prose": {
       "category": "CONTENT",
-      "description": "Company page body — section-level breakdown pending recon; spec will land in specs/company-careers-legal.md.",
-      "scope": "Company template only (1 route)."
+      "description": "Legal document: h1 and a single 768px reading column of rich text (p, h2/h3/h4/h6, lists, empty spacers). One layout for imprint, data privacy and terms of service.",
+      "implementedBy": "src/pages/Legal.jsx + src/pages/legal/content.js + src/pages/legal/legal.css",
+      "scope": "3 routes."
     },
-    "content.careers-body": {
-      "category": "CONTENT",
-      "description": "Careers page body — section-level breakdown pending recon; spec will land in specs/company-careers-legal.md.",
-      "scope": "Careers template only (1 route)."
+    "hero.index-intro": {
+      "category": "HERO",
+      "description": "Index-page hero for the CMS lists: eyebrow, h1, lead and either a newsletter form (blog) or a black Book a call button (case studies).",
+      "implementedBy": "src/pages/cms/shared.jsx + src/pages/Blog.jsx + src/pages/CaseStudies.jsx",
+      "scope": "2 routes."
     },
-    "content.legal-body": {
+    "content.card-grid": {
       "category": "CONTENT",
-      "description": "Legal document page body — section-level breakdown pending recon; spec will land in specs/company-careers-legal.md.",
-      "scope": "Legal document template only (3 routes)."
+      "description": "Responsive grid of linked cards (16:9 image, then title and meta); blog variant shows date + author, case-study variant shows a 'Read story' row.",
+      "implementedBy": "src/pages/Blog.jsx + src/pages/CaseStudies.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css",
+      "scope": "2 routes."
     },
-    "content.blog-index-body": {
+    "content.article": {
       "category": "CONTENT",
-      "description": "Blog index page body — section-level breakdown pending recon; spec will land in specs/blog-case-studies.md.",
-      "scope": "Blog index template only (1 route)."
+      "description": "Blog post: h1, divider, author + 'Last updated' meta row, 16:9 banner and a rich-text body (headings with anchors, lists, quote, images, YouTube facade, in-body buttons). Ends directly into the CTA.",
+      "implementedBy": "src/pages/BlogPost.jsx + src/pages/cms/RichText.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css",
+      "scope": "12 routes."
     },
-    "content.blog-post-body": {
+    "content.case-study": {
       "category": "CONTENT",
-      "description": "Blog post page body — section-level breakdown pending recon; spec will land in specs/blog-case-studies.md.",
-      "scope": "Blog post template only (12 routes)."
+      "description": "Customer case study: breadcrumb, h1, subtitle, pills, banner, three stat cards, rich-text body (eyebrow h6, h3, quote cards, numbered cards, video) and an About block (image card + information card).",
+      "implementedBy": "src/pages/CaseStudy.jsx + src/pages/cms/RichText.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css",
+      "scope": "3 routes."
     },
-    "content.case-studies-index-body": {
+    "content.not-found": {
       "category": "CONTENT",
-      "description": "Case studies index page body — section-level breakdown pending recon; spec will land in specs/blog-case-studies.md.",
-      "scope": "Case studies index template only (1 route)."
-    },
-    "content.case-study-body": {
-      "category": "CONTENT",
-      "description": "Case study page body — section-level breakdown pending recon; spec will land in specs/blog-case-studies.md.",
-      "scope": "Case study template only (3 routes)."
-    },
-    "content.not-found-body": {
-      "category": "CONTENT",
-      "description": "404 page body — section-level breakdown pending recon; spec will land in specs/plans-security-contact-404.md.",
-      "scope": "Not-found template only (1 route)."
+      "description": "404 block: eyebrow, 404 h1, 'Nothing to see here.' h2, one line of copy and a black Back to homepage button.",
+      "implementedBy": "src/pages/NotFound.jsx",
+      "scope": "1 route."
     }
   },
   "templates": [
@@ -178,7 +250,13 @@
       "chrome": "full",
       "sections": [
         "shell.navbar",
-        "content.product-body",
+        "hero.product-live-chat",
+        "features.step-cards",
+        "features.use-cases",
+        "features.sources",
+        "features.solutions-tabs",
+        "features.loop-cards",
+        "conversion.cta-band",
         "shell.footer"
       ]
     },
@@ -192,7 +270,11 @@
       "chrome": "full",
       "sections": [
         "shell.navbar",
-        "content.plans-body",
+        "hero.pricing",
+        "features.comparison-table",
+        "features.info-card-grid",
+        "features.faq-accordion",
+        "conversion.cta-band",
         "shell.footer"
       ]
     },
@@ -206,7 +288,10 @@
       "chrome": "full",
       "sections": [
         "shell.navbar",
-        "content.security-body",
+        "hero.security-comet",
+        "features.info-card-grid",
+        "proof.trust-image-cards",
+        "conversion.cta-band",
         "shell.footer"
       ]
     },
@@ -220,7 +305,8 @@
       "chrome": "full",
       "sections": [
         "shell.navbar",
-        "content.contact-body",
+        "conversion.contact-form",
+        "conversion.cta-band",
         "shell.footer"
       ]
     },
@@ -234,7 +320,10 @@
       "chrome": "full",
       "sections": [
         "shell.navbar",
-        "content.company-body",
+        "hero.company-stats",
+        "features.info-card-grid",
+        "features.team-ticker",
+        "conversion.cta-band",
         "shell.footer"
       ]
     },
@@ -248,7 +337,9 @@
       "chrome": "full",
       "sections": [
         "shell.navbar",
-        "content.careers-body",
+        "hero.careers",
+        "content.open-roles",
+        "conversion.cta-band",
         "shell.footer"
       ]
     },
@@ -264,7 +355,8 @@
       "chrome": "full",
       "sections": [
         "shell.navbar",
-        "content.legal-body",
+        "content.legal-prose",
+        "conversion.cta-band",
         "shell.footer"
       ]
     },
@@ -278,7 +370,9 @@
       "chrome": "full",
       "sections": [
         "shell.navbar",
-        "content.blog-index-body",
+        "hero.index-intro",
+        "content.card-grid",
+        "conversion.cta-band",
         "shell.footer"
       ]
     },
@@ -303,7 +397,8 @@
       "chrome": "full",
       "sections": [
         "shell.navbar",
-        "content.blog-post-body",
+        "content.article",
+        "conversion.cta-band",
         "shell.footer"
       ]
     },
@@ -317,7 +412,9 @@
       "chrome": "full",
       "sections": [
         "shell.navbar",
-        "content.case-studies-index-body",
+        "hero.index-intro",
+        "content.card-grid",
+        "conversion.cta-band",
         "shell.footer"
       ]
     },
@@ -333,7 +430,8 @@
       "chrome": "full",
       "sections": [
         "shell.navbar",
-        "content.case-study-body",
+        "content.case-study",
+        "conversion.cta-band",
         "shell.footer"
       ]
     },
@@ -347,7 +445,8 @@
       "chrome": "full",
       "sections": [
         "shell.navbar",
-        "content.not-found-body",
+        "content.not-found",
+        "conversion.cta-band",
         "shell.footer"
       ]
     }

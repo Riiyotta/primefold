@@ -1,8 +1,8 @@
 # Primefold (primefold.ai) — information architecture
 
 Source: https://primefold.ai/ (sitemap.xml + clone at src/)
-Status: **draft — home measured, other templates pending recon** · production approved: **false**
-29 routes · 13 templates · 23 unique sections
+Status: **draft — all 13 templates mapped to section contracts from design-repo/ (home measured; product pages spec-only, source in progress)** · production approved: **false**
+29 routes · 13 templates · 34 unique sections
 
 > Generated from `ia.json` by `build.mjs`. Edit the JSON, not this file.
 
@@ -38,36 +38,47 @@ component library or stays local to its page.
 | section | category | templates | routes | implementation | scope |
 |---|---|---:|---:|---|---|
 | `shell.navbar` | SHELL | 13 | 29 | `src/components/Navbar.jsx` | Present on all 29 routes. |
+| `conversion.cta-band` | CONVERSION | 13 | 29 | `src/components/CTA.jsx` | Present on all 29 routes. |
 | `shell.footer` | SHELL | 13 | 29 | `src/components/Footer.jsx` | Present on all 29 routes. |
-| `content.blog-post-body` | CONTENT | 1 | 12 | _not yet built_ | Blog post template only (12 routes). |
-| `content.legal-body` | CONTENT | 1 | 3 | _not yet built_ | Legal document template only (3 routes). |
-| `content.case-study-body` | CONTENT | 1 | 3 | _not yet built_ | Case study template only (3 routes). |
-| `content.product-body` | CONTENT | 1 | 2 | _not yet built_ | Product (Intelligence) template only (2 routes). |
-| `hero.home-carousel` | HERO | 1 | 1 | `src/components/Hero.jsx` | Home only (1 route). |
-| `proof.logo-ticker` | PROOF | 1 | 1 | `src/components/HowItWorks.jsx > LogoTicker` | Home only (1 route), at the top of the How It Works block. |
-| `features.how-it-works` | FEATURES | 1 | 1 | `src/components/HowItWorks.jsx + how/A1Loop.jsx` | Home only (1 route). |
-| `features.intelligence-cards` | FEATURES | 1 | 1 | `src/components/Intelligence.jsx` | Home only (1 route). |
-| `proof.testimonials` | PROOF | 1 | 1 | `src/components/Testimonials.jsx` | Home only (1 route). |
-| `features.solutions-carousel` | FEATURES | 1 | 1 | `src/components/Solutions.jsx` | Home only (1 route). |
-| `proof.trust` | PROOF | 1 | 1 | `src/components/Trust.jsx` | Home only (1 route). |
-| `proof.outcomes` | PROOF | 1 | 1 | `src/components/Outcomes.jsx` | Home only (1 route). |
-| `conversion.cta-band` | CONVERSION | 1 | 1 | `src/components/CTA.jsx` | Home only (1 route) confirmed; reuse on other templates pending recon. |
-| `content.plans-body` | CONTENT | 1 | 1 | _not yet built_ | Plans template only (1 route). |
-| `content.security-body` | CONTENT | 1 | 1 | _not yet built_ | Security template only (1 route). |
-| `content.contact-body` | CONTENT | 1 | 1 | _not yet built_ | Contact template only (1 route). |
-| `content.company-body` | CONTENT | 1 | 1 | _not yet built_ | Company template only (1 route). |
-| `content.careers-body` | CONTENT | 1 | 1 | _not yet built_ | Careers template only (1 route). |
-| `content.blog-index-body` | CONTENT | 1 | 1 | _not yet built_ | Blog index template only (1 route). |
-| `content.case-studies-index-body` | CONTENT | 1 | 1 | _not yet built_ | Case studies index template only (1 route). |
-| `content.not-found-body` | CONTENT | 1 | 1 | _not yet built_ | Not-found template only (1 route). |
+| `content.article` | CONTENT | 1 | 12 | `src/pages/BlogPost.jsx + src/pages/cms/RichText.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css` | 12 routes. |
+| `features.info-card-grid` | FEATURES | 3 | 3 | `src/pages/shared-info/InfoCard.jsx + src/pages/shared-info/SectionTitle.jsx + src/pages/shared-info/MaskIcon.jsx + src/pages/plans/PlansTrust.jsx + src/pages/security/FourFacts.jsx + src/pages/company/Commitments.jsx` | 3 routes. |
+| `content.legal-prose` | CONTENT | 1 | 3 | `src/pages/Legal.jsx + src/pages/legal/content.js + src/pages/legal/legal.css` | 3 routes. |
+| `content.case-study` | CONTENT | 1 | 3 | `src/pages/CaseStudy.jsx + src/pages/cms/RichText.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css` | 3 routes. |
+| `hero.index-intro` | HERO | 2 | 2 | `src/pages/cms/shared.jsx + src/pages/Blog.jsx + src/pages/CaseStudies.jsx` | 2 routes. |
+| `content.card-grid` | CONTENT | 2 | 2 | `src/pages/Blog.jsx + src/pages/CaseStudies.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css` | 2 routes. |
+| `hero.product-live-chat` | HERO | 1 | 2 | _not yet built_ | 2 routes. |
+| `features.step-cards` | FEATURES | 1 | 2 | _not yet built_ | 2 routes. |
+| `features.use-cases` | FEATURES | 1 | 2 | _not yet built_ | 2 routes. |
+| `features.sources` | FEATURES | 1 | 2 | _not yet built_ | 2 routes. |
+| `features.solutions-tabs` | FEATURES | 1 | 2 | _not yet built_ | 2 routes. |
+| `features.loop-cards` | FEATURES | 1 | 2 | _not yet built_ | 2 routes. |
+| `hero.home-carousel` | HERO | 1 | 1 | `src/components/Hero.jsx` | 1 route. |
+| `proof.logo-ticker` | PROOF | 1 | 1 | `src/components/HowItWorks.jsx > LogoTicker` | 1 route. |
+| `features.how-it-works` | FEATURES | 1 | 1 | `src/components/HowItWorks.jsx + how/A1Loop.jsx` | 1 route. |
+| `features.intelligence-cards` | FEATURES | 1 | 1 | `src/components/Intelligence.jsx` | 1 route. |
+| `proof.testimonials` | PROOF | 1 | 1 | `src/components/Testimonials.jsx` | 1 route. |
+| `features.solutions-carousel` | FEATURES | 1 | 1 | `src/components/Solutions.jsx` | 1 route. |
+| `proof.trust` | PROOF | 1 | 1 | `src/components/Trust.jsx` | 1 route. |
+| `proof.outcomes` | PROOF | 1 | 1 | `src/components/Outcomes.jsx` | 1 route. |
+| `hero.pricing` | HERO | 1 | 1 | `src/pages/plans/PlansHero.jsx + src/pages/plans/Segmented.jsx + src/pages/plans/ProductBadge.jsx + src/pages/plans/Tick.jsx + src/pages/plans/data.js` | 1 route. |
+| `features.comparison-table` | FEATURES | 1 | 1 | `src/pages/plans/ComparisonTable.jsx + src/pages/plans/data.js` | 1 route. |
+| `features.faq-accordion` | FEATURES | 1 | 1 | `src/pages/plans/PlansFaq.jsx + src/pages/plans/data.js` | 1 route. |
+| `hero.security-comet` | HERO | 1 | 1 | `src/pages/security/SecurityHero.jsx + src/pages/security/CometRing.jsx` | 1 route. |
+| `proof.trust-image-cards` | PROOF | 1 | 1 | `src/pages/security/TrustCards.jsx` | 1 route. |
+| `conversion.contact-form` | CONVERSION | 1 | 1 | `src/pages/contact/ContactIntro.jsx + src/pages/contact/ContactForm.jsx + src/pages/contact/PhoneField.jsx + src/pages/contact/countries.js` | 1 route. |
+| `hero.company-stats` | HERO | 1 | 1 | `src/pages/company/CompanyHero.jsx` | 1 route. |
+| `features.team-ticker` | FEATURES | 1 | 1 | `src/pages/company/Team.jsx + src/pages/company/team.css` | 1 route. |
+| `hero.careers` | HERO | 1 | 1 | `src/pages/careers/CareersHero.jsx` | 1 route. |
+| `content.open-roles` | CONTENT | 1 | 1 | `src/pages/careers/OpenRoles.jsx` | 1 route. |
+| `content.not-found` | CONTENT | 1 | 1 | `src/pages/NotFound.jsx` | 1 route. |
 
-**2 shared sections** appear in more than one template and belong in a component library.
+**6 shared sections** appear in more than one template and belong in a component library.
 
-**21 single-use sections** appear in exactly one template. Building these
+**28 single-use sections** appear in exactly one template. Building these
 as "reusable" components up front would be speculative — keep them page-local
 until a second caller actually appears.
 
-**12 sections have no `implementedBy` yet** — not necessarily missing, just not linked to a component in this pass: `content.blog-post-body`, `content.legal-body`, `content.case-study-body`, `content.product-body`, `content.plans-body`, `content.security-body`, `content.contact-body`, `content.company-body`, `content.careers-body`, `content.blog-index-body`, `content.case-studies-index-body`, `content.not-found-body`.
+**6 sections have no `implementedBy` yet** — not necessarily missing, just not linked to a component in this pass: `hero.product-live-chat`, `features.step-cards`, `features.use-cases`, `features.sources`, `features.solutions-tabs`, `features.loop-cards`.
 
 ## Templates
 
@@ -86,7 +97,7 @@ until a second caller actually appears.
 | 7 | FEATURES | `features.solutions-carousel` | page-local |
 | 8 | PROOF | `proof.trust` | page-local |
 | 9 | PROOF | `proof.outcomes` | page-local |
-| 10 | CONVERSION | `conversion.cta-band` | page-local |
+| 10 | CONVERSION | `conversion.cta-band` | shared ×13 |
 | 11 | SHELL | `shell.footer` | shared ×13 |
 
 ### Product (Intelligence) — `template.product`
@@ -96,8 +107,14 @@ until a second caller actually appears.
 | # | category | section | |
 |---:|---|---|---|
 | 1 | SHELL | `shell.navbar` | shared ×13 |
-| 2 | CONTENT | `content.product-body` | page-local |
-| 3 | SHELL | `shell.footer` | shared ×13 |
+| 2 | HERO | `hero.product-live-chat` | page-local |
+| 3 | FEATURES | `features.step-cards` | page-local |
+| 4 | FEATURES | `features.use-cases` | page-local |
+| 5 | FEATURES | `features.sources` | page-local |
+| 6 | FEATURES | `features.solutions-tabs` | page-local |
+| 7 | FEATURES | `features.loop-cards` | page-local |
+| 8 | CONVERSION | `conversion.cta-band` | shared ×13 |
+| 9 | SHELL | `shell.footer` | shared ×13 |
 
 ### Plans — `template.plans`
 
@@ -106,8 +123,12 @@ until a second caller actually appears.
 | # | category | section | |
 |---:|---|---|---|
 | 1 | SHELL | `shell.navbar` | shared ×13 |
-| 2 | CONTENT | `content.plans-body` | page-local |
-| 3 | SHELL | `shell.footer` | shared ×13 |
+| 2 | HERO | `hero.pricing` | page-local |
+| 3 | FEATURES | `features.comparison-table` | page-local |
+| 4 | FEATURES | `features.info-card-grid` | shared ×3 |
+| 5 | FEATURES | `features.faq-accordion` | page-local |
+| 6 | CONVERSION | `conversion.cta-band` | shared ×13 |
+| 7 | SHELL | `shell.footer` | shared ×13 |
 
 ### Security — `template.security`
 
@@ -116,8 +137,11 @@ until a second caller actually appears.
 | # | category | section | |
 |---:|---|---|---|
 | 1 | SHELL | `shell.navbar` | shared ×13 |
-| 2 | CONTENT | `content.security-body` | page-local |
-| 3 | SHELL | `shell.footer` | shared ×13 |
+| 2 | HERO | `hero.security-comet` | page-local |
+| 3 | FEATURES | `features.info-card-grid` | shared ×3 |
+| 4 | PROOF | `proof.trust-image-cards` | page-local |
+| 5 | CONVERSION | `conversion.cta-band` | shared ×13 |
+| 6 | SHELL | `shell.footer` | shared ×13 |
 
 ### Contact — `template.contact`
 
@@ -126,8 +150,9 @@ until a second caller actually appears.
 | # | category | section | |
 |---:|---|---|---|
 | 1 | SHELL | `shell.navbar` | shared ×13 |
-| 2 | CONTENT | `content.contact-body` | page-local |
-| 3 | SHELL | `shell.footer` | shared ×13 |
+| 2 | CONVERSION | `conversion.contact-form` | page-local |
+| 3 | CONVERSION | `conversion.cta-band` | shared ×13 |
+| 4 | SHELL | `shell.footer` | shared ×13 |
 
 ### Company — `template.company`
 
@@ -136,8 +161,11 @@ until a second caller actually appears.
 | # | category | section | |
 |---:|---|---|---|
 | 1 | SHELL | `shell.navbar` | shared ×13 |
-| 2 | CONTENT | `content.company-body` | page-local |
-| 3 | SHELL | `shell.footer` | shared ×13 |
+| 2 | HERO | `hero.company-stats` | page-local |
+| 3 | FEATURES | `features.info-card-grid` | shared ×3 |
+| 4 | FEATURES | `features.team-ticker` | page-local |
+| 5 | CONVERSION | `conversion.cta-band` | shared ×13 |
+| 6 | SHELL | `shell.footer` | shared ×13 |
 
 ### Careers — `template.careers`
 
@@ -146,8 +174,10 @@ until a second caller actually appears.
 | # | category | section | |
 |---:|---|---|---|
 | 1 | SHELL | `shell.navbar` | shared ×13 |
-| 2 | CONTENT | `content.careers-body` | page-local |
-| 3 | SHELL | `shell.footer` | shared ×13 |
+| 2 | HERO | `hero.careers` | page-local |
+| 3 | CONTENT | `content.open-roles` | page-local |
+| 4 | CONVERSION | `conversion.cta-band` | shared ×13 |
+| 5 | SHELL | `shell.footer` | shared ×13 |
 
 ### Legal document — `template.legal`
 
@@ -156,8 +186,9 @@ until a second caller actually appears.
 | # | category | section | |
 |---:|---|---|---|
 | 1 | SHELL | `shell.navbar` | shared ×13 |
-| 2 | CONTENT | `content.legal-body` | page-local |
-| 3 | SHELL | `shell.footer` | shared ×13 |
+| 2 | CONTENT | `content.legal-prose` | page-local |
+| 3 | CONVERSION | `conversion.cta-band` | shared ×13 |
+| 4 | SHELL | `shell.footer` | shared ×13 |
 
 ### Blog index — `template.blog-index`
 
@@ -166,8 +197,10 @@ until a second caller actually appears.
 | # | category | section | |
 |---:|---|---|---|
 | 1 | SHELL | `shell.navbar` | shared ×13 |
-| 2 | CONTENT | `content.blog-index-body` | page-local |
-| 3 | SHELL | `shell.footer` | shared ×13 |
+| 2 | HERO | `hero.index-intro` | shared ×2 |
+| 3 | CONTENT | `content.card-grid` | shared ×2 |
+| 4 | CONVERSION | `conversion.cta-band` | shared ×13 |
+| 5 | SHELL | `shell.footer` | shared ×13 |
 
 ### Blog post — `template.blog-post`
 
@@ -176,8 +209,9 @@ until a second caller actually appears.
 | # | category | section | |
 |---:|---|---|---|
 | 1 | SHELL | `shell.navbar` | shared ×13 |
-| 2 | CONTENT | `content.blog-post-body` | page-local |
-| 3 | SHELL | `shell.footer` | shared ×13 |
+| 2 | CONTENT | `content.article` | page-local |
+| 3 | CONVERSION | `conversion.cta-band` | shared ×13 |
+| 4 | SHELL | `shell.footer` | shared ×13 |
 
 ### Case studies index — `template.case-studies-index`
 
@@ -186,8 +220,10 @@ until a second caller actually appears.
 | # | category | section | |
 |---:|---|---|---|
 | 1 | SHELL | `shell.navbar` | shared ×13 |
-| 2 | CONTENT | `content.case-studies-index-body` | page-local |
-| 3 | SHELL | `shell.footer` | shared ×13 |
+| 2 | HERO | `hero.index-intro` | shared ×2 |
+| 3 | CONTENT | `content.card-grid` | shared ×2 |
+| 4 | CONVERSION | `conversion.cta-band` | shared ×13 |
+| 5 | SHELL | `shell.footer` | shared ×13 |
 
 ### Case study — `template.case-study`
 
@@ -196,8 +232,9 @@ until a second caller actually appears.
 | # | category | section | |
 |---:|---|---|---|
 | 1 | SHELL | `shell.navbar` | shared ×13 |
-| 2 | CONTENT | `content.case-study-body` | page-local |
-| 3 | SHELL | `shell.footer` | shared ×13 |
+| 2 | CONTENT | `content.case-study` | page-local |
+| 3 | CONVERSION | `conversion.cta-band` | shared ×13 |
+| 4 | SHELL | `shell.footer` | shared ×13 |
 
 ### 404 — `template.not-found`
 
@@ -206,8 +243,9 @@ until a second caller actually appears.
 | # | category | section | |
 |---:|---|---|---|
 | 1 | SHELL | `shell.navbar` | shared ×13 |
-| 2 | CONTENT | `content.not-found-body` | page-local |
-| 3 | SHELL | `shell.footer` | shared ×13 |
+| 2 | CONTENT | `content.not-found` | page-local |
+| 3 | CONVERSION | `conversion.cta-band` | shared ×13 |
+| 4 | SHELL | `shell.footer` | shared ×13 |
 
 ## Section reference
 
@@ -229,7 +267,31 @@ _Page-opening, above-the-fold block._
 
 **`hero.home-carousel`** — Full-viewport 3-slide autoplay carousel (Platform / Experience Intelligence / Real Estate Intelligence) with 6s progress tabs, staggered text entrance and 0.6x scroll parallax.
 
-· Home only (1 route). · appears on 1 routes · implemented by `src/components/Hero.jsx`
+· 1 route. · appears on 1 routes · implemented by `src/components/Hero.jsx`
+
+**`hero.product-live-chat`** — Dark product hero: eyebrow badge, h1, lead, two CTAs and a typing 'Live Conversation' chat demo over a WebGL rays background; one hero template serves both intelligences via the product enum.
+
+· 2 routes. · appears on 2 routes
+
+**`hero.pricing`** — Plans hero: eyebrow, h1, lead, two CTAs, product and billing toggles and the three pricing cards (XI state) or one 'Explore Primefold RI' card (RI state).
+
+· 1 route. · appears on 1 routes · implemented by `src/pages/plans/PlansHero.jsx + src/pages/plans/Segmented.jsx + src/pages/plans/ProductBadge.jsx + src/pages/plans/Tick.jsx + src/pages/plans/data.js`
+
+**`hero.security-comet`** — Dark security hero with warm glow, eyebrow, h1, lead, Book a call and an animated three-ring comet graphic around a GDPR/fingerprint pill.
+
+· 1 route. · appears on 1 routes · implemented by `src/pages/security/SecurityHero.jsx + src/pages/security/CometRing.jsx`
+
+**`hero.company-stats`** — Company hero over a full-bleed photo: eyebrow, h1, lead with a bold clause, two CTAs and four glass stat cards.
+
+· 1 route. · appears on 1 routes · implemented by `src/pages/company/CompanyHero.jsx`
+
+**`hero.careers`** — Light careers hero: eyebrow, h1, lead, black 'See open roles' anchor button, and two shader-backed cards ('How you work', 'How we hire').
+
+· 1 route. · appears on 1 routes · implemented by `src/pages/careers/CareersHero.jsx`
+
+**`hero.index-intro`** — Index-page hero for the CMS lists: eyebrow, h1, lead and either a newsletter form (blog) or a black Book a call button (case studies).
+
+· 2 routes. · appears on 2 routes · implemented by `src/pages/cms/shared.jsx + src/pages/Blog.jsx + src/pages/CaseStudies.jsx`
 
 ### FEATURES
 
@@ -237,15 +299,51 @@ _Product explanation and capability modules._
 
 **`features.how-it-works`** — 'How a question becomes a next move' title stack plus the dark A1 Loop product demo: a 9-state animated loop (ask, read sources, understand, answer, act, trace).
 
-· Home only (1 route). · appears on 1 routes · implemented by `src/components/HowItWorks.jsx + how/A1Loop.jsx`
+· 1 route. · appears on 1 routes · implemented by `src/components/HowItWorks.jsx + how/A1Loop.jsx`
 
 **`features.intelligence-cards`** — 'One engine' row of three intelligence product cards (XI live, RI beta, next planned) that widen on hover on desktop and become sticky stacked cards on tablet/phone.
 
-· Home only (1 route). · appears on 1 routes · implemented by `src/components/Intelligence.jsx`
+· 1 route. · appears on 1 routes · implemented by `src/components/Intelligence.jsx`
 
 **`features.solutions-carousel`** — 'Built for every team' horizontally scrolling team/use-case image cards with scroll-linked sideways drift and Explore arrow buttons.
 
-· Home only (1 route). · appears on 1 routes · implemented by `src/components/Solutions.jsx`
+· 1 route. · appears on 1 routes · implemented by `src/components/Solutions.jsx`
+
+**`features.step-cards`** — 'Ask. Understand. Act.' three illustrated step cards; XI uses light animated illustrations, RI uses dark A1-style demo panels.
+
+· 2 routes. · appears on 2 routes
+
+**`features.use-cases`** — Sticky 'Used by' label beside a scroll-highlighted list of use cases (only one item at opacity 1 at a time).
+
+· 2 routes. · appears on 2 routes
+
+**`features.sources`** — 'Sources' block: left list of three trust points (connects in minutes, traceable, hosted in Germany) beside a Lottie (XI) or dark 'A3 Sources' loop (RI).
+
+· 2 routes. · appears on 2 routes
+
+**`features.solutions-tabs`** — 'Built for every team' tabbed panel (persona tabs) with an image card and a dark card showing marquee quote pills plus 'What you get'. Not the home carousel.
+
+· 2 routes. · appears on 2 routes
+
+**`features.loop-cards`** — 'The loop' four small cards explaining how the product learns a customer's vocabulary, definitions, judgment and workspace.
+
+· 2 routes. · appears on 2 routes
+
+**`features.comparison-table`** — Plan comparison table with sticky plan header and sticky category rows; shown only in the XI state of /plans.
+
+· 1 route. · appears on 1 routes · implemented by `src/pages/plans/ComparisonTable.jsx + src/pages/plans/data.js`
+
+**`features.info-card-grid`** — Section title row (eyebrow, H2, optional lead) over a grid of small icon+title+description info cards; used for plan trust ('In every plan'), security facts and company commitments. Variant selects the column count.
+
+· 3 routes. · appears on 3 routes · implemented by `src/pages/shared-info/InfoCard.jsx + src/pages/shared-info/SectionTitle.jsx + src/pages/shared-info/MaskIcon.jsx + src/pages/plans/PlansTrust.jsx + src/pages/security/FourFacts.jsx + src/pages/company/Commitments.jsx`
+
+**`features.faq-accordion`** — FAQ accordion: independent expandable cards (first open by default) under a title row with a lead.
+
+· 1 route. · appears on 1 routes · implemented by `src/pages/plans/PlansFaq.jsx + src/pages/plans/data.js`
+
+**`features.team-ticker`** — Team section: title row over an edge-to-edge auto-scrolling ticker of team cards (square photo, name, role).
+
+· 1 route. · appears on 1 routes · implemented by `src/pages/company/Team.jsx + src/pages/company/team.css`
 
 ### PROOF
 
@@ -253,19 +351,23 @@ _Social proof and trust: logos, testimonials, outcomes, security._
 
 **`proof.logo-ticker`** — Infinite horizontal customer-logo marquee at 50px/s with staggered logo fade-in.
 
-· Home only (1 route), at the top of the How It Works block. · appears on 1 routes · implemented by `src/components/HowItWorks.jsx > LogoTicker`
+· 1 route. · appears on 1 routes · implemented by `src/components/HowItWorks.jsx > LogoTicker`
 
 **`proof.testimonials`** — Full-width dark testimonial carousel: large quote, person name/role, client logo, arrow + dot controls, 0.5s slide.
 
-· Home only (1 route). · appears on 1 routes · implemented by `src/components/Testimonials.jsx`
+· 1 route. · appears on 1 routes · implemented by `src/components/Testimonials.jsx`
 
 **`proof.trust`** — Trust block: list of security/compliance points with a 10s teal progress line next to an animated Lottie panel (hosting, GDPR, source tracing).
 
-· Home only (1 route). · appears on 1 routes · implemented by `src/components/Trust.jsx`
+· 1 route. · appears on 1 routes · implemented by `src/components/Trust.jsx`
 
 **`proof.outcomes`** — 'Real impact. Real outcomes.' dark customer outcome cards with rolling 80px numbers, outcome headline, person and client logo.
 
-· Home only (1 route). · appears on 1 routes · implemented by `src/components/Outcomes.jsx`
+· 1 route. · appears on 1 routes · implemented by `src/components/Outcomes.jsx`
+
+**`proof.trust-image-cards`** — Two shader-backed image cards with a dark bottom overlay and white headline + body (security trust statements).
+
+· 1 route. · appears on 1 routes · implemented by `src/pages/security/TrustCards.jsx`
 
 ### CONVERSION
 
@@ -273,56 +375,36 @@ _Call-to-action blocks driving to Book a call._
 
 **`conversion.cta-band`** — Dark rounded CTA card 'Ask your data. Get the answer.' with animated wave background and a white Book a call pill.
 
-· Home only (1 route) confirmed; reuse on other templates pending recon. · appears on 1 routes · implemented by `src/components/CTA.jsx`
+· Present on all 29 routes. · appears on 29 routes · implemented by `src/components/CTA.jsx`
+
+**`conversion.contact-form`** — Two-column contact section: intro with three link cards (email, booking, LinkedIn) and a 'Send us a message' form card (name, work mail, company, optional phone with country picker, message, consent, submit).
+
+· 1 route. · appears on 1 routes · implemented by `src/pages/contact/ContactIntro.jsx + src/pages/contact/ContactForm.jsx + src/pages/contact/PhoneField.jsx + src/pages/contact/countries.js`
 
 ### CONTENT
 
-_Page body content; used here as a placeholder until a template's sections are measured._
+_Page body content: article, prose, cards, forms and other page-specific blocks._
 
-**`content.product-body`** — Product (Intelligence) page body — section-level breakdown pending recon; spec will land in specs/product-pages.md.
+**`content.open-roles`** — Open roles list (#roles): title block and static job rows with meta line, h5, description and a black Apply button.
 
-· Product (Intelligence) template only (2 routes). · appears on 2 routes
+· 1 route. · appears on 1 routes · implemented by `src/pages/careers/OpenRoles.jsx`
 
-**`content.plans-body`** — Plans page body — section-level breakdown pending recon; spec will land in specs/plans-security-contact-404.md.
+**`content.legal-prose`** — Legal document: h1 and a single 768px reading column of rich text (p, h2/h3/h4/h6, lists, empty spacers). One layout for imprint, data privacy and terms of service.
 
-· Plans template only (1 route). · appears on 1 routes
+· 3 routes. · appears on 3 routes · implemented by `src/pages/Legal.jsx + src/pages/legal/content.js + src/pages/legal/legal.css`
 
-**`content.security-body`** — Security page body — section-level breakdown pending recon; spec will land in specs/plans-security-contact-404.md.
+**`content.card-grid`** — Responsive grid of linked cards (16:9 image, then title and meta); blog variant shows date + author, case-study variant shows a 'Read story' row.
 
-· Security template only (1 route). · appears on 1 routes
+· 2 routes. · appears on 2 routes · implemented by `src/pages/Blog.jsx + src/pages/CaseStudies.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css`
 
-**`content.contact-body`** — Contact page body — section-level breakdown pending recon; spec will land in specs/plans-security-contact-404.md.
+**`content.article`** — Blog post: h1, divider, author + 'Last updated' meta row, 16:9 banner and a rich-text body (headings with anchors, lists, quote, images, YouTube facade, in-body buttons). Ends directly into the CTA.
 
-· Contact template only (1 route). · appears on 1 routes
+· 12 routes. · appears on 12 routes · implemented by `src/pages/BlogPost.jsx + src/pages/cms/RichText.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css`
 
-**`content.company-body`** — Company page body — section-level breakdown pending recon; spec will land in specs/company-careers-legal.md.
+**`content.case-study`** — Customer case study: breadcrumb, h1, subtitle, pills, banner, three stat cards, rich-text body (eyebrow h6, h3, quote cards, numbered cards, video) and an About block (image card + information card).
 
-· Company template only (1 route). · appears on 1 routes
+· 3 routes. · appears on 3 routes · implemented by `src/pages/CaseStudy.jsx + src/pages/cms/RichText.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css`
 
-**`content.careers-body`** — Careers page body — section-level breakdown pending recon; spec will land in specs/company-careers-legal.md.
+**`content.not-found`** — 404 block: eyebrow, 404 h1, 'Nothing to see here.' h2, one line of copy and a black Back to homepage button.
 
-· Careers template only (1 route). · appears on 1 routes
-
-**`content.legal-body`** — Legal document page body — section-level breakdown pending recon; spec will land in specs/company-careers-legal.md.
-
-· Legal document template only (3 routes). · appears on 3 routes
-
-**`content.blog-index-body`** — Blog index page body — section-level breakdown pending recon; spec will land in specs/blog-case-studies.md.
-
-· Blog index template only (1 route). · appears on 1 routes
-
-**`content.blog-post-body`** — Blog post page body — section-level breakdown pending recon; spec will land in specs/blog-case-studies.md.
-
-· Blog post template only (12 routes). · appears on 12 routes
-
-**`content.case-studies-index-body`** — Case studies index page body — section-level breakdown pending recon; spec will land in specs/blog-case-studies.md.
-
-· Case studies index template only (1 route). · appears on 1 routes
-
-**`content.case-study-body`** — Case study page body — section-level breakdown pending recon; spec will land in specs/blog-case-studies.md.
-
-· Case study template only (3 routes). · appears on 3 routes
-
-**`content.not-found-body`** — 404 page body — section-level breakdown pending recon; spec will land in specs/plans-security-contact-404.md.
-
-· Not-found template only (1 route). · appears on 1 routes
+· 1 route. · appears on 1 routes · implemented by `src/pages/NotFound.jsx`

@@ -3020,9 +3020,9 @@
     },
     {
       "id": "ia-draft-status",
-      "claim": "IA status still says non-home templates are pending recon (stale: specs/ exist)",
+      "claim": "IA status says all 13 templates are mapped to design-repo section contracts (synced; no longer pending recon)",
       "citation": "ia.json:6",
-      "quote": "other templates pending recon",
+      "quote": "all 13 templates mapped to section contracts from design-repo/",
       "onMismatch": "warn"
     }
   ],

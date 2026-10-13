@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2 - IA synced
+
+The project's `ia.json`, `IA.md`, `matrix.csv` and README were updated to mirror this repo's 13 templates and 34 sections (the 12 `content.*-body` placeholders are gone). Item 1 and 2 under "Source-vs-IA discrepancies" below describe the state before that sync. No design-repo contract changed.
+
 ## 0.1.1 - deny-list false positives
 
 `assets/asset-roles.json` `realIdentities.people` listed bare first names (e.g. "Sarah", "Leon"), which rejected any placeholder text containing them. Full names stay whole-word matches anywhere; bare first names moved to `peopleFirstNamesOnly` and are rejected only when the entire field equals the name. Added one control and one mutation to the adversarial suite (98 checks).
