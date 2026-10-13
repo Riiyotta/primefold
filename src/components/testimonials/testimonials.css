@@ -1,0 +1,17 @@
+/* Testimonials carousel (CLONE_SPEC 5) */
+.tm-track { transition: transform .5s cubic-bezier(.42, 0, 0, 1); will-change: transform; }
+.tm-track.is-instant { transition: none; }
+
+/* Card hover: only the White button reacts (glow .6 + BG shadow), spec 5 / 0.6 */
+.tm-card:hover .pf-btn::before { opacity: .6; }
+.tm-card:hover .pf-btn, .tm-card:hover .pf-btn::after { box-shadow: 0 0 0 1px rgba(38,57,90,.16), 0 5px 5px 0 rgba(38,57,91,.15); }
+
+.tm-quote { font-family: "ABC Favorit Trial Book", "ABC Favorit Trial Book Placeholder", sans-serif; font-weight: 350; font-size: 32px; line-height: 40px; letter-spacing: -0.64px; color: #fff; font-feature-settings: 'ss04' on; margin: 0; }
+@media (min-width: 810px) { .tm-quote { font-family: "Stack Sans Headline", "Stack Sans Headline Placeholder", sans-serif; font-weight: 400; font-size: 44px; line-height: 48px; letter-spacing: 0.02em; } }
+@media (min-width: 1200px) { .tm-quote { font-size: 48px; line-height: 56px; } }
+
+.tm-arrow { position: absolute; top: 50%; translate: 0 -20px; width: 40px; height: 40px; border-radius: 999px; background: #fff; color: rgb(19,19,19); display: flex; align-items: center; justify-content: center; border: 0; padding: 0; cursor: pointer; z-index: 2; transition: opacity .2s ease, scale .15s ease; }
+.tm-arrow:active { scale: .9; }
+
+.tm-dot { width: 8px; height: 8px; border-radius: 999px; border: 0; padding: 0; cursor: pointer; background: rgba(255,255,255,.35); }
+.tm-dot.is-active { background: #fff; }

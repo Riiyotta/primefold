@@ -1,0 +1,71 @@
+@font-face{font-family:"Inter";src:url(/fonts/Inter-400italic-latin.woff2) format("woff2");font-weight:400;font-style:italic;font-display:swap;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Inter";src:url(/fonts/Inter-500italic-latin.woff2) format("woff2");font-weight:500;font-style:italic;font-display:swap;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Inter";src:url(/fonts/Inter-700italic-latin.woff2) format("woff2");font-weight:700;font-style:italic;font-display:swap;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Stack Sans Text";src:url(/fonts/StackSansText-400-latin-ext.woff2) format("woff2");font-weight:400;font-display:swap;unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"Stack Sans Text";src:url(/fonts/StackSansText-400.woff2) format("woff2");font-weight:400;font-display:swap;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Stack Sans Headline";src:url(/fonts/StackSansHeadline-400.woff2) format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Stack Sans Headline";src:url(/fonts/StackSansHeadline-700.woff2) format("woff2");font-weight:700;font-display:swap}
+@font-face{font-family:"ABC Favorit Trial Book";src:url(/fonts/ABCFavoritTrial-Book-350.woff2) format("woff2");font-weight:350;font-display:swap}
+@font-face{font-family:"Inter";src:url(/fonts/Inter-400-latin-ext.woff2) format("woff2");font-weight:400;font-display:swap;unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"Inter";src:url(/fonts/Inter-400-latin.woff2) format("woff2");font-weight:400;font-display:swap;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Inter";src:url(/fonts/Inter-500-latin-ext.woff2) format("woff2");font-weight:500;font-display:swap;unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"Inter";src:url(/fonts/Inter-500-latin.woff2) format("woff2");font-weight:500;font-display:swap;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Inter";src:url(/fonts/Inter-600-latin-ext.woff2) format("woff2");font-weight:600;font-display:swap;unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"Inter";src:url(/fonts/Inter-600-latin.woff2) format("woff2");font-weight:600;font-display:swap;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:"Inter";src:url(/fonts/Inter-700-latin-ext.woff2) format("woff2");font-weight:700;font-display:swap;unicode-range:U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF}
+@font-face{font-family:"Inter";src:url(/fonts/Inter-700-latin.woff2) format("woff2");font-weight:700;font-display:swap;unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2070, U+2074-207E, U+2080-208E, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- base ---------- */
+html { background: rgb(250,249,248); }
+body { margin: 0; background: #fff; color: rgb(26,24,20); font-family: Inter, "Inter Placeholder", sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }
+img { display: block; }
+
+/* ---------- shared text styles (spec 0.5) ---------- */
+@layer components {
+  .t-eyebrow { font: 500 14px/20px Inter, "Inter Placeholder", sans-serif; letter-spacing: -0.084px; color: rgb(97,97,97); }
+  .t-h2 { font-family: "Stack Sans Headline", "Stack Sans Headline Placeholder", sans-serif; font-weight: 400; font-size: 32px; line-height: 40px; letter-spacing: 0.02em; color: rgb(33,33,33); }
+  @media (min-width: 810px) { .t-h2 { font-size: 44px; line-height: 48px; } }
+  @media (min-width: 1200px) { .t-h2 { font-size: 48px; line-height: 56px; } }
+  .t-lead { font: 400 14px/20px Inter, "Inter Placeholder", sans-serif; letter-spacing: -0.084px; color: rgb(84,84,84); }
+  .container-pf { max-width: 1320px; padding: 0 20px; margin: 0 auto; width: 100%; box-sizing: border-box; }
+}
+
+/* ---------- pill button (spec 0.6) ---------- */
+.pf-btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 40px; padding: 8px 14px; border-radius: 999px; font: 500 16px/24px Inter, "Inter Placeholder", sans-serif; letter-spacing: -0.16px; text-decoration: none; white-space: nowrap; cursor: pointer; isolation: isolate;
+  box-shadow: 0 0 0 1px rgba(38,57,90,.16), 0 1px 1px 0 rgba(38,57,91,.1); transition: box-shadow .3s linear; }
+.pf-btn::before { content: ""; position: absolute; left: -2px; right: -2px; top: 5px; bottom: -7px; border-radius: 44px; z-index: -2; pointer-events: none;
+  background: radial-gradient(35% 95% at 8% 42%,#F99D72 0%,rgba(249,157,114,0) 72%), radial-gradient(35% 95% at 30% 60%,#16FFDE 0%,rgba(22,255,222,0) 72%), radial-gradient(35% 95% at 52% 44%,#F99D72 0%,rgba(249,157,114,0) 72%), radial-gradient(35% 95% at 74% 58%,#16FFDE 0%,rgba(22,255,222,0) 72%), radial-gradient(38% 95% at 96% 46%,#F99D72 0%,rgba(249,157,114,0) 72%), linear-gradient(90deg,#16FFDE,#F99D72,#16FFDE);
+  filter: blur(7px); opacity: 0; transition: opacity .3s linear; }
+.pf-btn::after { content: ""; position: absolute; inset: 0; border-radius: 999px; z-index: -1; background: var(--btn-bg); transition: background-color .3s linear; backdrop-filter: var(--btn-blur, none); -webkit-backdrop-filter: var(--btn-blur, none); }
+.pf-btn:hover { box-shadow: 0 0 0 1px rgba(38,57,90,.16), 0 5px 5px 0 rgba(38,57,91,.15); }
+.pf-btn--white { --btn-bg: #fff; color: rgb(26,24,20); }
+.pf-btn--white:hover::before { opacity: .6; }
+.pf-btn--white::after { box-shadow: 0 0 0 1px rgba(38,57,90,.16), 0 1px 1px 0 rgba(38,57,91,.1); transition: background-color .3s linear, box-shadow .3s linear; }
+.pf-btn--white:hover::after { box-shadow: 0 0 0 1px rgba(38,57,90,.16), 0 5px 5px 0 rgba(38,57,91,.15); }
+.pf-btn--arrow::after { box-shadow: 0 0 0 1px rgba(38,57,90,.16); }
+.pf-btn--black { --btn-bg: rgb(26,24,20); color: rgb(254,250,243); }
+.pf-btn--black:hover::before { opacity: .7; }
+.pf-btn--glass { --btn-bg: rgba(255,255,255,.12); --btn-blur: blur(10px); color: #fff; }
+.pf-btn--glass-dark { --btn-bg: rgba(255,255,255,.12); color: rgb(26,24,20); }
+.pf-btn--glass:hover, .pf-btn--glass-dark:hover { --btn-bg: rgba(255,255,255,.4); }
+.pf-btn--glass:hover::before, .pf-btn--glass-dark:hover::before { opacity: .3; }
+.pf-btn--arrow { --btn-bg: rgba(255,255,255,.2); height: 32px; padding: 8px 14px; font-size: 12px; line-height: 16px; letter-spacing: 0; color: #fff; }
+.pf-btn--arrow:hover { --btn-bg: rgba(255,255,255,.4); }
+.pf-btn--arrow:hover::before { opacity: .3; }
+.pf-btn--arrow .pf-arrow { width: 16px; height: 16px; background: #fff; -webkit-mask: url(/assets/svg/icon-caret-right-mask.svg) center/contain no-repeat; mask: url(/assets/svg/icon-caret-right-mask.svg) center/contain no-repeat; }
+
+/* ---------- OpenType features (measured on live site) ----------
+   Framer rich-text applies Inter's alternates everywhere; custom-code components
+   (hero, pill buttons, product mockups) render with `normal`. Elements that use the
+   `font` shorthand reset features, so the text-style classes restate them. */
+:root { --pf-ff-inter: "blwf", "cv03", "cv04", "cv09", "cv11"; --pf-ff-headline: "blwf", "cv03", "cv04", "cv09", "cv11", "ss04", "ss11"; }
+body, .t-eyebrow, .t-lead { font-feature-settings: var(--pf-ff-inter); }
+.t-h2, .font-headline { font-feature-settings: var(--pf-ff-headline); }
+.pf-btn, .pf-hero { font-feature-settings: normal; }

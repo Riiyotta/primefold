@@ -1,0 +1,3061 @@
+{
+  "source": "https://primefold.ai",
+  "measuredAt": "2026-10-13",
+  "notes": [
+    "Paragraph/list/quote body text intentionally NOT transcribed (copyright). Use placeholder copy of ~`words` words.",
+    "type \"spacer\" = an empty <p>/<h6> (just a <br>) in the original rich text; it occupies one line box (p: 24px, h6: 14px) plus its top margin (20px p / 14px h6) — keep for faithful rhythm.",
+    "h5 role \"caption\" = image caption convention used by the editor (text starts with \"*\").",
+    "External links/embeds are recorded by label only."
+  ],
+  "blog": [
+    {
+      "slug": "we-re-taking-real-estate-intelligence-to-expo-real-2026.-come-and-talk-to-your-portfolio",
+      "url": "/blog/we-re-taking-real-estate-intelligence-to-expo-real-2026.-come-and-talk-to-your-portfolio",
+      "title": "We're taking Real Estate Intelligence to Expo Real 2026. Come and talk to your portfolio.",
+      "date": "Oct 1, 2026",
+      "lastUpdated": "Oct 1, 2026",
+      "category": null,
+      "tags": [],
+      "excerpt": null,
+      "author": {
+        "name": "Leon Sperber",
+        "role": "Co-CEO",
+        "avatar": "/assets/cms/U4h1tpH3vCNYO7BOdYlJ9L3BA0.jpg"
+      },
+      "cover": "/assets/cms/dVpPZQRNELib5u5qhpHLv8Slsys.jpg",
+      "banner": "/assets/cms/dVpPZQRNELib5u5qhpHLv8Slsys.jpg",
+      "bannerIntrinsic": [
+        3840,
+        2160
+      ],
+      "metaDescription": "Read the full story on the Primefold blog — product news, releases and thinking on AI-native business intelligence.",
+      "docTitle": "We're taking Real Estate Intelligence to Expo Real 2026. Come and talk to your portfolio. — Primefold",
+      "h1": "We're taking Real Estate Intelligence to Expo Real 2026. Come and talk to your portfolio.",
+      "blocks": [
+        {
+          "type": "p",
+          "words": 27
+        },
+        {
+          "type": "p",
+          "words": 26
+        },
+        {
+          "type": "p",
+          "words": 9
+        },
+        {
+          "type": "p",
+          "words": 38
+        },
+        {
+          "type": "h2",
+          "text": "More transactions mean more decisions"
+        },
+        {
+          "type": "p",
+          "words": 47,
+          "links": [
+            {
+              "label": "according to CBRE",
+              "external": true
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "words": 37
+        },
+        {
+          "type": "p",
+          "words": 39
+        },
+        {
+          "type": "p",
+          "words": 40,
+          "links": [
+            {
+              "label": "Real Estate Intelligence (RI)",
+              "href": "../realestate-intelligence"
+            }
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "What changes when you can talk to your portfolio?"
+        },
+        {
+          "type": "p",
+          "words": 19
+        },
+        {
+          "type": "p",
+          "words": 32
+        },
+        {
+          "type": "p",
+          "words": 42
+        },
+        {
+          "type": "p",
+          "words": 53
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/S45w3eCDJqCmaJMR4uX0uBVPM.jpg",
+          "alt": "",
+          "intrinsic": [
+            1024,
+            576
+          ],
+          "renderedAt1440": [
+            800,
+            450
+          ]
+        },
+        {
+          "type": "p",
+          "words": 51
+        },
+        {
+          "type": "p",
+          "words": 73
+        },
+        {
+          "type": "h2",
+          "text": "A 300-page lease puts the difference into perspective"
+        },
+        {
+          "type": "p",
+          "words": 16,
+          "links": [
+            {
+              "label": "NAS Invest",
+              "href": "../case-studies/nas-primefold-xi-ri"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "words": 28
+        },
+        {
+          "type": "p",
+          "words": 47
+        },
+        {
+          "type": "h2",
+          "text": "What would you ask first?"
+        },
+        {
+          "type": "p",
+          "words": 38
+        },
+        {
+          "type": "p",
+          "words": 49
+        },
+        {
+          "type": "p",
+          "words": 15
+        },
+        {
+          "type": "p",
+          "words": 44,
+          "hasBold": true
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/r537o8AiSa83umbqqNUI6sELZsc.jpg",
+          "alt": "",
+          "intrinsic": [
+            1024,
+            576
+          ],
+          "renderedAt1440": [
+            800,
+            450
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "Bring us your hardest question"
+        },
+        {
+          "type": "p",
+          "words": 21
+        },
+        {
+          "type": "p",
+          "words": 36
+        },
+        {
+          "type": "p",
+          "words": 6,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 8,
+          "links": [
+            {
+              "label": "Book a meeting with us at Expo Real",
+              "external": true
+            }
+          ]
+        }
+      ],
+      "bannerSameAsCover": true
+    },
+    {
+      "slug": "primefold-xi-speaks-german-now",
+      "url": "/blog/primefold-xi-speaks-german-now",
+      "title": "Primefold XI now speaks German, so does Sunday.",
+      "date": "Aug 28, 2026",
+      "lastUpdated": "Sep 24, 2026",
+      "category": null,
+      "tags": [],
+      "excerpt": null,
+      "author": null,
+      "cover": "/assets/cms/8e0oc8DrCmhLvcfFES5UTKtrV4.jpg",
+      "banner": "/assets/cms/8e0oc8DrCmhLvcfFES5UTKtrV4.jpg",
+      "bannerIntrinsic": [
+        2560,
+        1440
+      ],
+      "metaDescription": "Read the full story on the Primefold blog — product news, releases and thinking on AI-native business intelligence.",
+      "docTitle": "Primefold XI now speaks German, so does Sunday. — Primefold",
+      "h1": "Primefold XI now speaks German, so does Sunday.",
+      "blocks": [
+        {
+          "type": "p",
+          "words": 22
+        },
+        {
+          "type": "p",
+          "words": 71
+        },
+        {
+          "type": "p",
+          "words": 12
+        },
+        {
+          "type": "p",
+          "words": 9
+        },
+        {
+          "type": "h2",
+          "text": "Switching it on"
+        },
+        {
+          "type": "p",
+          "words": 55,
+          "hasItalic": true
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/MVxuT7JbCwJb7ml3bbCLM8XhI.jpg",
+          "alt": "",
+          "intrinsic": [
+            1024,
+            576
+          ],
+          "renderedAt1440": [
+            800,
+            450
+          ]
+        },
+        {
+          "type": "p",
+          "words": 98,
+          "hasBold": true,
+          "hasItalic": true
+        },
+        {
+          "type": "p",
+          "words": 37
+        },
+        {
+          "type": "h2",
+          "text": "Ask in German, about answers in English"
+        },
+        {
+          "type": "p",
+          "words": 9
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/Cg4VuUgQxAo16K4TZWTSeONwdl4.jpg",
+          "alt": "",
+          "intrinsic": [
+            1024,
+            576
+          ],
+          "renderedAt1440": [
+            800,
+            450
+          ]
+        },
+        {
+          "type": "p",
+          "words": 56,
+          "hasBold": true,
+          "hasItalic": true
+        },
+        {
+          "type": "p",
+          "words": 34
+        },
+        {
+          "type": "p",
+          "words": 48
+        },
+        {
+          "type": "h2",
+          "text": "Your survey can be German too"
+        },
+        {
+          "type": "p",
+          "words": 42
+        },
+        {
+          "type": "p",
+          "words": 52
+        },
+        {
+          "type": "p",
+          "words": 22
+        },
+        {
+          "type": "h2",
+          "text": "Try it yourself"
+        },
+        {
+          "type": "p",
+          "words": 62
+        },
+        {
+          "type": "p",
+          "words": 23
+        },
+        {
+          "type": "button",
+          "label": "Log in and try it out",
+          "variant": "Black",
+          "external": true
+        },
+        {
+          "type": "p",
+          "words": 5
+        },
+        {
+          "type": "button",
+          "label": "Start 30 days free",
+          "variant": "Black",
+          "href": "../plans"
+        }
+      ],
+      "bannerSameAsCover": true
+    },
+    {
+      "slug": "we-rebuilt-our-website-primefold-ai",
+      "url": "/blog/we-rebuilt-our-website-primefold-ai",
+      "title": "We rebuilt our website primefold.ai. Here’s what changed when RI went live.",
+      "date": "Aug 28, 2026",
+      "lastUpdated": "Sep 21, 2026",
+      "category": null,
+      "tags": [],
+      "excerpt": null,
+      "author": null,
+      "cover": "/assets/cms/SNoHG7fXqbPELq72Q6NeFfbJ1s.jpg",
+      "banner": "/assets/cms/SNoHG7fXqbPELq72Q6NeFfbJ1s.jpg",
+      "bannerIntrinsic": [
+        2560,
+        1440
+      ],
+      "metaDescription": "Read the full story on the Primefold blog — product news, releases and thinking on AI-native business intelligence.",
+      "docTitle": "We rebuilt our website primefold.ai. Here’s what changed when RI went live. — Primefold",
+      "h1": "We rebuilt our website primefold.ai. Here’s what changed when RI went live.",
+      "blocks": [
+        {
+          "type": "p",
+          "words": 16
+        },
+        {
+          "type": "p",
+          "words": 40
+        },
+        {
+          "type": "h2",
+          "text": "Two readers, two different needs"
+        },
+        {
+          "type": "p",
+          "words": 48
+        },
+        {
+          "type": "p",
+          "words": 56
+        },
+        {
+          "type": "p",
+          "words": 40,
+          "links": [
+            {
+              "label": "NAS Invest runs XI and RI",
+              "href": "../case-studies/nas-primefold-xi-ri"
+            }
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "What we decided"
+        },
+        {
+          "type": "p",
+          "words": 14,
+          "hasBold": true
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/nNfM8gje06Qx7inz1BUd4qIr9w.jpg",
+          "alt": "",
+          "intrinsic": [
+            1024,
+            576
+          ],
+          "renderedAt1440": [
+            800,
+            450
+          ]
+        },
+        {
+          "type": "p",
+          "words": 54
+        },
+        {
+          "type": "p",
+          "words": 97,
+          "links": [
+            {
+              "label": "business or enterprise plan",
+              "href": "../plans"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "words": 50
+        },
+        {
+          "type": "h2",
+          "text": "The part that was harder than it looks"
+        },
+        {
+          "type": "p",
+          "words": 26
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/TvZQqqGzC3fLEskBAksuK4YIJs.jpg",
+          "alt": "",
+          "intrinsic": [
+            1024,
+            576
+          ],
+          "renderedAt1440": [
+            800,
+            450
+          ]
+        },
+        {
+          "type": "p",
+          "words": 47
+        },
+        {
+          "type": "p",
+          "words": 65
+        },
+        {
+          "type": "h2",
+          "text": "The second reader is an LLM"
+        },
+        {
+          "type": "p",
+          "words": 109
+        },
+        {
+          "type": "p",
+          "words": 49
+        },
+        {
+          "type": "p",
+          "words": 36
+        },
+        {
+          "type": "h2",
+          "text": "What is new"
+        },
+        {
+          "type": "p",
+          "words": 63
+        },
+        {
+          "type": "h2",
+          "text": "Have a look"
+        },
+        {
+          "type": "p",
+          "words": 19
+        },
+        {
+          "type": "p",
+          "words": 33
+        },
+        {
+          "type": "button",
+          "label": "Get in touch",
+          "variant": "Black",
+          "href": "../plans"
+        },
+        {
+          "type": "p",
+          "words": 17
+        }
+      ],
+      "bannerSameAsCover": true
+    },
+    {
+      "slug": "primefold-ri-is-here-real-estate-intelligence",
+      "url": "/blog/primefold-ri-is-here-real-estate-intelligence",
+      "title": "Primefold RI is here: Real Estate Intelligence, built to grow asset value",
+      "date": "Aug 28, 2026",
+      "lastUpdated": "Sep 16, 2026",
+      "category": null,
+      "tags": [],
+      "excerpt": null,
+      "author": null,
+      "cover": "/assets/cms/NwizvVDQAHeDHkeOOok3wn55CXM.jpg",
+      "banner": "/assets/cms/NwizvVDQAHeDHkeOOok3wn55CXM.jpg",
+      "bannerIntrinsic": [
+        2560,
+        1440
+      ],
+      "metaDescription": "Read the full story on the Primefold blog — product news, releases and thinking on AI-native business intelligence.",
+      "docTitle": "Primefold RI is here: Real Estate Intelligence, built to grow asset value — Primefold",
+      "h1": "Primefold RI is here: Real Estate Intelligence, built to grow asset value",
+      "blocks": [
+        {
+          "type": "p",
+          "words": 33
+        },
+        {
+          "type": "p",
+          "words": 24
+        },
+        {
+          "type": "p",
+          "words": 12,
+          "hasItalic": true
+        },
+        {
+          "type": "p",
+          "words": 65,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 24
+        },
+        {
+          "type": "h2",
+          "text": "The cost of it"
+        },
+        {
+          "type": "p",
+          "words": 84
+        },
+        {
+          "type": "p",
+          "words": 24,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 8,
+          "allBold": true
+        },
+        {
+          "type": "p",
+          "words": 11
+        },
+        {
+          "type": "h2",
+          "text": "Real Estate Intelligence"
+        },
+        {
+          "type": "p",
+          "words": 61
+        },
+        {
+          "type": "p",
+          "words": 29,
+          "hasBold": true
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/2DxFLUSG2GJLNI7mBFkbzacNso.jpg",
+          "alt": "",
+          "intrinsic": [
+            1280,
+            720
+          ],
+          "renderedAt1440": [
+            800,
+            450
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "What you can do with it"
+        },
+        {
+          "type": "p",
+          "words": 10,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 68,
+          "hasBold": true
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/cCK11H8g6yKjtPLffC13NAT4c.jpg",
+          "alt": "",
+          "intrinsic": [
+            1280,
+            720
+          ],
+          "renderedAt1440": [
+            800,
+            450
+          ]
+        },
+        {
+          "type": "p",
+          "words": 7,
+          "allBold": true
+        },
+        {
+          "type": "p",
+          "words": 6,
+          "arrowLead": true
+        },
+        {
+          "type": "p",
+          "words": 5,
+          "arrowLead": true
+        },
+        {
+          "type": "p",
+          "words": 5,
+          "arrowLead": true
+        },
+        {
+          "type": "p",
+          "words": 6,
+          "arrowLead": true
+        },
+        {
+          "type": "p",
+          "words": 11,
+          "arrowLead": true
+        },
+        {
+          "type": "p",
+          "words": 5,
+          "arrowLead": true
+        },
+        {
+          "type": "p",
+          "words": 3,
+          "arrowLead": true
+        },
+        {
+          "type": "p",
+          "words": 9,
+          "arrowLead": true
+        },
+        {
+          "type": "h2",
+          "text": "The hard part"
+        },
+        {
+          "type": "p",
+          "words": 65,
+          "hasBold": true
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/dLT513jMH0mRf9eVy5HYtey1XgI.png",
+          "alt": "",
+          "intrinsic": [
+            772,
+            391
+          ],
+          "renderedAt1440": [
+            772,
+            391
+          ]
+        },
+        {
+          "type": "p",
+          "words": 42
+        },
+        {
+          "type": "h2",
+          "text": "What it looked like at NAS Invest"
+        },
+        {
+          "type": "p",
+          "words": 14,
+          "links": [
+            {
+              "label": "put RI on a live portfolio",
+              "href": "../case-studies/nas-primefold-xi-ri"
+            }
+          ]
+        },
+        {
+          "type": "p",
+          "words": 71
+        },
+        {
+          "type": "h2",
+          "text": "One platform, two intelligences"
+        },
+        {
+          "type": "p",
+          "words": 29,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 29
+        },
+        {
+          "type": "p",
+          "words": 16
+        },
+        {
+          "type": "h2",
+          "text": "Bring one portfolio"
+        },
+        {
+          "type": "p",
+          "words": 26
+        },
+        {
+          "type": "button",
+          "label": "Book a call",
+          "variant": "Black",
+          "href": "https://primefold.ai/plans"
+        },
+        {
+          "type": "p",
+          "words": 20
+        }
+      ],
+      "bannerSameAsCover": true
+    },
+    {
+      "slug": "nobody-asks-their-customers-anything-right-after-they-buy.-now-you-can-right-on-shopify.",
+      "url": "/blog/nobody-asks-their-customers-anything-right-after-they-buy.-now-you-can-right-on-shopify.",
+      "title": "Nobody asks their customers anything right after they buy. Now you can, on Shopify.",
+      "date": "Aug 28, 2026",
+      "lastUpdated": "Aug 31, 2026",
+      "category": null,
+      "tags": [],
+      "excerpt": null,
+      "author": null,
+      "cover": "/assets/cms/nb4D76ErsoknFfbzX57fCjgpBQ.jpg",
+      "banner": "/assets/cms/nb4D76ErsoknFfbzX57fCjgpBQ.jpg",
+      "bannerIntrinsic": [
+        2560,
+        1440
+      ],
+      "metaDescription": "Read the full story on the Primefold blog — product news, releases and thinking on AI-native business intelligence.",
+      "docTitle": "Nobody asks their customers anything right after they buy. Now you can, on Shopify. — Primefold",
+      "h1": "Nobody asks their customers anything right after they buy. Now you can, on Shopify.",
+      "blocks": [
+        {
+          "type": "p",
+          "words": 12,
+          "hasItalic": true
+        },
+        {
+          "type": "h3",
+          "text": "A question with nowhere to go"
+        },
+        {
+          "type": "p",
+          "words": 47
+        },
+        {
+          "type": "p",
+          "words": 37,
+          "hasItalic": true
+        },
+        {
+          "type": "p",
+          "words": 80,
+          "hasBold": true,
+          "links": [
+            {
+              "label": "Primefold XI · Checkout Survey",
+              "external": true
+            }
+          ]
+        },
+        {
+          "type": "h3",
+          "text": "Switching it on"
+        },
+        {
+          "type": "p",
+          "words": 14
+        },
+        {
+          "type": "ol",
+          "items": 3,
+          "words": 87,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 21
+        },
+        {
+          "type": "h3",
+          "text": "Working inside someone else's checkout"
+        },
+        {
+          "type": "p",
+          "words": 7
+        },
+        {
+          "type": "p",
+          "words": 40
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/W8sKB8pcMLJglT7RGQTC1cLnyM.png",
+          "alt": "",
+          "intrinsic": [
+            465,
+            86
+          ],
+          "renderedAt1440": [
+            465,
+            86
+          ]
+        },
+        {
+          "type": "p",
+          "words": 51
+        },
+        {
+          "type": "h3",
+          "text": "The color nobody planned to make"
+        },
+        {
+          "type": "p",
+          "words": 13
+        },
+        {
+          "type": "p",
+          "words": 41
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/dS9k2db6dOQpFjlbw2CeAbEXdE.jpg",
+          "alt": "DIRTS Case Study",
+          "intrinsic": [
+            1280,
+            720
+          ],
+          "renderedAt1440": [
+            800,
+            450
+          ]
+        },
+        {
+          "type": "p",
+          "words": 45
+        },
+        {
+          "type": "p",
+          "words": 48
+        },
+        {
+          "type": "h3",
+          "text": "Put it on your Thank you-page"
+        },
+        {
+          "type": "p",
+          "words": 24,
+          "links": [
+            {
+              "label": "Primefold XI · Checkout Survey",
+              "external": true
+            }
+          ]
+        },
+        {
+          "type": "button",
+          "label": "Start 30 days free",
+          "variant": "primary",
+          "href": "https://primefold.ai/plans"
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "p",
+          "words": 4
+        },
+        {
+          "type": "p",
+          "words": 7
+        }
+      ],
+      "bannerSameAsCover": true
+    },
+    {
+      "slug": "how-we-built-sunday-s-survey-design-agent",
+      "url": "/blog/how-we-built-sunday-s-survey-design-agent",
+      "title": "How we built Sunday's survey design agent",
+      "date": "Aug 28, 2026",
+      "lastUpdated": "Aug 28, 2026",
+      "category": null,
+      "tags": [],
+      "excerpt": null,
+      "author": null,
+      "cover": "/assets/cms/HuzuuIYVqx1whnqVvsdS6llJ4.jpg",
+      "banner": "/assets/cms/HuzuuIYVqx1whnqVvsdS6llJ4.jpg",
+      "bannerIntrinsic": [
+        2560,
+        1440
+      ],
+      "metaDescription": "Read the full story on the Primefold blog — product news, releases and thinking on AI-native business intelligence.",
+      "docTitle": "How we built Sunday's survey design agent — Primefold",
+      "h1": "How we built Sunday's survey design agent",
+      "blocks": [
+        {
+          "type": "p",
+          "words": 11,
+          "allBold": true,
+          "hasItalic": true
+        },
+        {
+          "type": "p",
+          "words": 73
+        },
+        {
+          "type": "p",
+          "words": 12
+        },
+        {
+          "type": "h2",
+          "text": "Where the time was going"
+        },
+        {
+          "type": "p",
+          "words": 16,
+          "hasItalic": true
+        },
+        {
+          "type": "p",
+          "words": 28,
+          "hasItalic": true
+        },
+        {
+          "type": "p",
+          "words": 65,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 90
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/Srp87zpZU9fPON0sjGVVHznOug.png",
+          "alt": "",
+          "intrinsic": [
+            465,
+            86
+          ],
+          "renderedAt1440": [
+            465,
+            86
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "What Sunday’s design agent actually does"
+        },
+        {
+          "type": "p",
+          "words": 14,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 30,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 34,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 29,
+          "hasBold": true
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/HuzuuIYVqx1whnqVvsdS6llJ4.jpg",
+          "alt": "",
+          "intrinsic": [
+            1280,
+            720
+          ],
+          "renderedAt1440": [
+            800,
+            450
+          ]
+        },
+        {
+          "type": "p",
+          "words": 66
+        },
+        {
+          "type": "h2",
+          "text": "The hard part"
+        },
+        {
+          "type": "p",
+          "words": 27,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 84
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/fQytehEpFMVVyKvazEFyPBqBg.jpg",
+          "alt": "",
+          "intrinsic": [
+            1280,
+            720
+          ],
+          "renderedAt1440": [
+            800,
+            450
+          ]
+        },
+        {
+          "type": "p",
+          "words": 67
+        },
+        {
+          "type": "h2",
+          "text": "Why this matters to us"
+        },
+        {
+          "type": "p",
+          "words": 83,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 29
+        },
+        {
+          "type": "button",
+          "label": "Design your survey",
+          "variant": "primary",
+          "external": true
+        },
+        {
+          "type": "p",
+          "words": 29,
+          "hasBold": true
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "p",
+          "words": 11
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "p",
+          "words": 8,
+          "hasItalic": true
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        }
+      ],
+      "bannerSameAsCover": true
+    },
+    {
+      "slug": "meet-sunday-the-intelligence-layer-built-into-primefold-xi",
+      "url": "/blog/meet-sunday-the-intelligence-layer-built-into-primefold-xi",
+      "title": "Meet Sunday: The Intelligence Layer Built Into Primefold XI",
+      "date": "Aug 12, 2026",
+      "lastUpdated": "Aug 16, 2026",
+      "category": null,
+      "tags": [],
+      "excerpt": null,
+      "author": {
+        "name": "Sina Holzerland",
+        "role": "Head of Customer Experience",
+        "avatar": "/assets/cms/rokZfBK9H7oApxqpJ81csjy0d7c.png"
+      },
+      "cover": "/assets/cms/4DWTiN61G8WhXtWgHNgp4Aj77w.jpg",
+      "banner": "/assets/cms/4DWTiN61G8WhXtWgHNgp4Aj77w.jpg",
+      "bannerIntrinsic": [
+        2560,
+        1440
+      ],
+      "metaDescription": "Read the full story on the Primefold blog — product news, releases and thinking on AI-native business intelligence.",
+      "docTitle": "Meet Sunday: The Intelligence Layer Built Into Primefold XI — Primefold",
+      "h1": "Meet Sunday: The Intelligence Layer Built Into Primefold XI",
+      "blocks": [
+        {
+          "type": "spacer",
+          "tag": "h2"
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/fydrztHg2jTvxTYH6VbAfvifwc.jpg",
+          "alt": "",
+          "intrinsic": [
+            1024,
+            576
+          ],
+          "renderedAt1440": [
+            800,
+            450
+          ]
+        },
+        {
+          "type": "p",
+          "words": 51
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "p",
+          "words": 16,
+          "hasBold": true
+        },
+        {
+          "type": "spacer",
+          "tag": "h2"
+        },
+        {
+          "type": "h2",
+          "text": "Who is Sunday?"
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/aEoXUio20ViifYlDtl0sWJeBYPY.jpg",
+          "alt": "",
+          "intrinsic": [
+            1024,
+            576
+          ],
+          "renderedAt1440": [
+            800,
+            450
+          ]
+        },
+        {
+          "type": "p",
+          "words": 53
+        },
+        {
+          "type": "p",
+          "words": 44,
+          "hasBold": true
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "p",
+          "words": 13
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "h2",
+          "text": "1 Sunday builds your survey with you"
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/5HWvvKkjr3uW5rQ1MRbnC39Op0.jpg",
+          "alt": "",
+          "intrinsic": [
+            1024,
+            576
+          ],
+          "renderedAt1440": [
+            800,
+            450
+          ]
+        },
+        {
+          "type": "p",
+          "words": 20
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "p",
+          "words": 52
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "h2",
+          "text": "2 Sunday designs it to look like you"
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/2oOuU6e7QimvqoukF2My79HY1Wc.png",
+          "alt": "",
+          "intrinsic": [
+            1024,
+            665
+          ],
+          "renderedAt1440": [
+            800,
+            520
+          ]
+        },
+        {
+          "type": "p",
+          "words": 34
+        },
+        {
+          "type": "p",
+          "words": 59,
+          "hasBold": true
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "p",
+          "words": 22
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "h2",
+          "text": "3 Sunday reads every response, so you don't have to"
+        },
+        {
+          "type": "p",
+          "words": 25
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "p",
+          "words": 51
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/LuOVHfq9qrz7EPMF7ht3cbniLVY.jpg",
+          "alt": "",
+          "intrinsic": [
+            1024,
+            576
+          ],
+          "renderedAt1440": [
+            800,
+            450
+          ]
+        },
+        {
+          "type": "spacer",
+          "tag": "h2"
+        },
+        {
+          "type": "h2",
+          "text": "Why one intelligence instead of multiple tools"
+        },
+        {
+          "type": "p",
+          "words": 60,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 29,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 44
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "p",
+          "words": 33
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "h2",
+          "text": "Built for trust, not just speed"
+        },
+        {
+          "type": "p",
+          "words": 40
+        },
+        {
+          "type": "spacer",
+          "tag": "h2"
+        },
+        {
+          "type": "h2",
+          "text": "Try it with your first real question"
+        },
+        {
+          "type": "p",
+          "words": 49
+        },
+        {
+          "type": "p",
+          "words": 24
+        },
+        {
+          "type": "p",
+          "words": 4
+        },
+        {
+          "type": "p",
+          "words": 13,
+          "hasItalic": true
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        }
+      ],
+      "bannerSameAsCover": true
+    },
+    {
+      "slug": "design-and-reports-get-their-moment",
+      "url": "/blog/design-and-reports-get-their-moment",
+      "title": "Design and Reports get their moment",
+      "date": "Jul 6, 2026",
+      "lastUpdated": "Aug 16, 2026",
+      "category": null,
+      "tags": [],
+      "excerpt": null,
+      "author": {
+        "name": "Sina Holzerland",
+        "role": "Head of Customer Experience",
+        "avatar": "/assets/cms/rokZfBK9H7oApxqpJ81csjy0d7c.png"
+      },
+      "cover": "/assets/cms/KvFAHXeYBt8G4v0hLluAE34pYo.jpg",
+      "banner": "/assets/cms/KvFAHXeYBt8G4v0hLluAE34pYo.jpg",
+      "bannerIntrinsic": [
+        2560,
+        1440
+      ],
+      "metaDescription": "Read the full story on the Primefold blog — product news, releases and thinking on AI-native business intelligence.",
+      "docTitle": "Design and Reports get their moment — Primefold",
+      "h1": "Design and Reports get their moment",
+      "blocks": [
+        {
+          "type": "h1",
+          "text": "Design and Reports get their moment"
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "p",
+          "words": 11
+        },
+        {
+          "type": "p",
+          "words": 47
+        },
+        {
+          "type": "p",
+          "words": 16
+        },
+        {
+          "type": "spacer",
+          "tag": "h2"
+        },
+        {
+          "type": "h2",
+          "text": "Design, with a safety net"
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/jllYoifNIevIstPtJ8nDAcYj4P0.jpg",
+          "alt": "",
+          "intrinsic": [
+            1280,
+            720
+          ],
+          "renderedAt1440": [
+            800,
+            450
+          ]
+        },
+        {
+          "type": "p",
+          "words": 26
+        },
+        {
+          "type": "p",
+          "words": 15
+        },
+        {
+          "type": "ul",
+          "items": 3,
+          "words": 20,
+          "hasBold": false
+        },
+        {
+          "type": "p",
+          "words": 30
+        },
+        {
+          "type": "p",
+          "words": 7
+        },
+        {
+          "type": "ul",
+          "items": 3,
+          "words": 30,
+          "hasBold": false
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/NI2HKX95QNGAlVXwSbAfzeTunug.png",
+          "alt": "",
+          "intrinsic": [
+            1024,
+            573
+          ],
+          "renderedAt1440": [
+            800,
+            448
+          ]
+        },
+        {
+          "type": "quote",
+          "words": 29,
+          "italic": true,
+          "bold": true
+        },
+        {
+          "type": "spacer",
+          "tag": "h2"
+        },
+        {
+          "type": "h2",
+          "text": "Reports that tell you what to do next"
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/imwh2pNww2okR6nh1KwiIq9n158.png",
+          "alt": "",
+          "intrinsic": [
+            1024,
+            566
+          ],
+          "renderedAt1440": [
+            800,
+            443
+          ]
+        },
+        {
+          "type": "p",
+          "words": 26
+        },
+        {
+          "type": "p",
+          "words": 23,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 73
+        },
+        {
+          "type": "p",
+          "words": 63,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 36
+        },
+        {
+          "type": "spacer",
+          "tag": "h2"
+        },
+        {
+          "type": "h2",
+          "text": "Now, it's yours"
+        },
+        {
+          "type": "p",
+          "words": 53
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "p",
+          "words": 9,
+          "links": [
+            {
+              "label": "xi.primefold.ai",
+              "external": true
+            },
+            {
+              "label": "cal.com/sinaholzerland/15min",
+              "external": true
+            }
+          ],
+          "arrowLead": true
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "p",
+          "words": 4
+        },
+        {
+          "type": "p",
+          "words": 13,
+          "hasItalic": true
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        }
+      ],
+      "bannerSameAsCover": true
+    },
+    {
+      "slug": "the-insight-hub-is-about-to-get-sharper",
+      "url": "/blog/the-insight-hub-is-about-to-get-sharper",
+      "title": "The Insight Hub is about to get sharper",
+      "date": "May 18, 2026",
+      "lastUpdated": "Aug 16, 2026",
+      "category": null,
+      "tags": [],
+      "excerpt": null,
+      "author": {
+        "name": "Sina Holzerland",
+        "role": "Head of Customer Experience",
+        "avatar": "/assets/cms/rokZfBK9H7oApxqpJ81csjy0d7c.png"
+      },
+      "cover": "/assets/cms/TgxV1s8inJ9u5MoRch5gnqTFM8s.png",
+      "banner": "/assets/cms/9H4gbw5NOZzabmD2m77TBSEGhB8.png",
+      "bannerIntrinsic": [
+        2560,
+        1440
+      ],
+      "metaDescription": "Read the full story on the Primefold blog — product news, releases and thinking on AI-native business intelligence.",
+      "docTitle": "The Insight Hub is about to get sharper — Primefold",
+      "h1": "The Insight Hub is about to get sharper",
+      "blocks": [
+        {
+          "type": "p",
+          "words": 4,
+          "allBold": true
+        },
+        {
+          "type": "p",
+          "words": 24
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "h2",
+          "text": "The platform should work for you. Not the other way around."
+        },
+        {
+          "type": "p",
+          "words": 48
+        },
+        {
+          "type": "h5",
+          "role": "subheading",
+          "text": "That's about to change."
+        },
+        {
+          "type": "spacer",
+          "tag": "h1"
+        },
+        {
+          "type": "h2",
+          "text": "Sunday gets proactive."
+        },
+        {
+          "type": "p",
+          "words": 14
+        },
+        {
+          "type": "p",
+          "words": 38
+        },
+        {
+          "type": "p",
+          "words": 18
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "h5",
+          "role": "caption",
+          "text": "*The new Insight Hub visualizing survey responses and key findings at a glance"
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/gCRZTgBFLVfC7xwkNzrGIIw.png",
+          "alt": "",
+          "intrinsic": [
+            1708,
+            1064
+          ],
+          "renderedAt1440": [
+            800,
+            498
+          ]
+        },
+        {
+          "type": "spacer",
+          "tag": "h1"
+        },
+        {
+          "type": "h2",
+          "text": "Chat and data, together."
+        },
+        {
+          "type": "p",
+          "words": 48
+        },
+        {
+          "type": "h5",
+          "role": "caption",
+          "text": "*The renewed Insight Hub keeping your data and AI-generated charts in view while you explore and chat"
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/Pwl5BZInwBjlRvPMXtgCbPANVw.png",
+          "alt": "",
+          "intrinsic": [
+            1728,
+            1076
+          ],
+          "renderedAt1440": [
+            800,
+            498
+          ]
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "h2",
+          "text": "Survey to insights. One continuous flow."
+        },
+        {
+          "type": "p",
+          "words": 20,
+          "hasBold": true
+        },
+        {
+          "type": "spacer",
+          "tag": "h1"
+        },
+        {
+          "type": "h2",
+          "text": "What's coming after"
+        },
+        {
+          "type": "p",
+          "words": 40
+        },
+        {
+          "type": "p",
+          "words": 4,
+          "allBold": true
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "h2",
+          "text": "What's next"
+        },
+        {
+          "type": "p",
+          "words": 19
+        },
+        {
+          "type": "p",
+          "words": 15
+        },
+        {
+          "type": "p",
+          "words": 2,
+          "links": [
+            {
+              "label": "xi.primefold.ai",
+              "external": true
+            }
+          ],
+          "arrowLead": true
+        },
+        {
+          "type": "p",
+          "words": 7,
+          "links": [
+            {
+              "label": "cal.com/sinaholzerland/15min",
+              "external": true
+            }
+          ]
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "p",
+          "words": 18,
+          "hasItalic": true
+        },
+        {
+          "type": "p",
+          "words": 3
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        }
+      ],
+      "bannerSameAsCover": false
+    },
+    {
+      "slug": "primefold-xi-is-here",
+      "url": "/blog/primefold-xi-is-here",
+      "title": "Primefold XI is here",
+      "date": "Apr 22, 2026",
+      "lastUpdated": "Aug 16, 2026",
+      "category": null,
+      "tags": [],
+      "excerpt": null,
+      "author": {
+        "name": "Sina Holzerland",
+        "role": "Head of Customer Experience",
+        "avatar": "/assets/cms/rokZfBK9H7oApxqpJ81csjy0d7c.png"
+      },
+      "cover": "/assets/cms/G2mXSV53ReSNVR0sJjtcOpcTCxU.png",
+      "banner": "/assets/cms/GPlMI47GV2EFJYFciU7Ir3rio.png",
+      "bannerIntrinsic": [
+        2560,
+        1440
+      ],
+      "metaDescription": "Read the full story on the Primefold blog — product news, releases and thinking on AI-native business intelligence.",
+      "docTitle": "Primefold XI is here — Primefold",
+      "h1": "Primefold XI is here",
+      "blocks": [
+        {
+          "type": "p",
+          "words": 10
+        },
+        {
+          "type": "p",
+          "words": 13,
+          "hasBold": true
+        },
+        {
+          "type": "h2",
+          "text": "What is Primefold XI?"
+        },
+        {
+          "type": "p",
+          "words": 38,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 9
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/N1wVNKgtKthc4pgRfeIXFO5lWY.jpg",
+          "alt": "",
+          "intrinsic": [
+            854,
+            532
+          ],
+          "renderedAt1440": [
+            800,
+            498
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "Explore the platform: start with Synthetic Responses"
+        },
+        {
+          "type": "p",
+          "words": 20
+        },
+        {
+          "type": "p",
+          "words": 24,
+          "hasBold": true
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/5DBH4w6LGfBZrFjMAjJ2IxvXC0.jpg",
+          "alt": "",
+          "intrinsic": [
+            854,
+            532
+          ],
+          "renderedAt1440": [
+            800,
+            498
+          ]
+        },
+        {
+          "type": "p",
+          "words": 56,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 14
+        },
+        {
+          "type": "p",
+          "words": 16,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 3,
+          "allBold": true
+        },
+        {
+          "type": "ol",
+          "items": 2,
+          "words": 11,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 11
+        },
+        {
+          "type": "video",
+          "label": "YouTube embed (external, not downloaded)",
+          "aspect": "16/9",
+          "renderedAt1440": [
+            800,
+            450
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "Your home: xi.primefold.ai"
+        },
+        {
+          "type": "p",
+          "words": 12
+        },
+        {
+          "type": "p",
+          "words": 12,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 2,
+          "links": [
+            {
+              "label": "xi.primefold.ai/auth/sign-in",
+              "external": true
+            }
+          ],
+          "arrowLead": true
+        },
+        {
+          "type": "h2",
+          "text": "If you get stuck: help.primefold.ai"
+        },
+        {
+          "type": "p",
+          "words": 15
+        },
+        {
+          "type": "p",
+          "words": 2,
+          "links": [
+            {
+              "label": "help.primefold.ai",
+              "external": true
+            }
+          ],
+          "arrowLead": true
+        },
+        {
+          "type": "h2",
+          "text": "What's next"
+        },
+        {
+          "type": "p",
+          "words": 12
+        },
+        {
+          "type": "p",
+          "words": 10,
+          "links": [
+            {
+              "label": "cal.com/sinaholzerland/15min",
+              "external": true
+            }
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "Let curiosity do the rest"
+        },
+        {
+          "type": "p",
+          "words": 33
+        },
+        {
+          "type": "p",
+          "words": 8
+        },
+        {
+          "type": "p",
+          "words": 11,
+          "hasBold": true,
+          "links": [
+            {
+              "label": "Create your account",
+              "external": true
+            }
+          ],
+          "arrowLead": true
+        },
+        {
+          "type": "p",
+          "words": 4
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "p",
+          "words": 16,
+          "hasBold": true,
+          "hasItalic": true
+        },
+        {
+          "type": "p",
+          "words": 3
+        }
+      ],
+      "bannerSameAsCover": false
+    },
+    {
+      "slug": "introducing-primefold---saypien-is-becoming-primefold",
+      "url": "/blog/introducing-primefold---saypien-is-becoming-primefold",
+      "title": "Introducing Primefold - Saypien is becoming Primefold",
+      "date": "Mar 16, 2026",
+      "lastUpdated": "Aug 16, 2026",
+      "category": null,
+      "tags": [],
+      "excerpt": null,
+      "author": {
+        "name": "Sina Holzerland",
+        "role": "Head of Customer Experience",
+        "avatar": "/assets/cms/rokZfBK9H7oApxqpJ81csjy0d7c.png"
+      },
+      "cover": "/assets/cms/JWgQCPUnfV6dx6z809TPOUSaBo.png",
+      "banner": "/assets/cms/Yf1iC9IxEcYr0ESS7revRsbuE8.png",
+      "bannerIntrinsic": [
+        2560,
+        1440
+      ],
+      "metaDescription": "Read the full story on the Primefold blog — product news, releases and thinking on AI-native business intelligence.",
+      "docTitle": "Introducing Primefold - Saypien is becoming Primefold — Primefold",
+      "h1": "Introducing Primefold - Saypien is becoming Primefold",
+      "blocks": [
+        {
+          "type": "p",
+          "words": 61
+        },
+        {
+          "type": "p",
+          "words": 46
+        },
+        {
+          "type": "p",
+          "words": 9,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 25
+        },
+        {
+          "type": "h2",
+          "text": "What’s changing"
+        },
+        {
+          "type": "h4",
+          "text": "Why we changed: clarity, consistency, and a stronger narrative"
+        },
+        {
+          "type": "p",
+          "words": 39
+        },
+        {
+          "type": "p",
+          "words": 32
+        },
+        {
+          "type": "h2",
+          "text": "Primefold: turning layers into meaning"
+        },
+        {
+          "type": "h4",
+          "text": "Our name isn’t arbitrary. It’s geological, strategic, and a bit poetic."
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/d1JU3Bj633BvbLa8JjTxlOgoiGA.png",
+          "alt": "",
+          "intrinsic": [
+            1920,
+            1080
+          ],
+          "renderedAt1440": [
+            800,
+            450
+          ]
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "p",
+          "words": 43
+        },
+        {
+          "type": "p",
+          "words": 28
+        },
+        {
+          "type": "p",
+          "words": 51
+        },
+        {
+          "type": "h2",
+          "text": "Primefold XI: Experience Intelligence"
+        },
+        {
+          "type": "h4",
+          "text": "Primefold XI unlocks experience intelligence: Chat in. Survey out. Decisions on."
+        },
+        {
+          "type": "p",
+          "words": 19
+        },
+        {
+          "type": "p",
+          "words": 49
+        },
+        {
+          "type": "p",
+          "words": 44
+        },
+        {
+          "type": "p",
+          "words": 10
+        },
+        {
+          "type": "h2",
+          "text": "Under the Primefold umbrella"
+        },
+        {
+          "type": "p",
+          "words": 26
+        },
+        {
+          "type": "p",
+          "words": 30,
+          "hasBold": true
+        },
+        {
+          "type": "h2",
+          "text": "Stay close"
+        },
+        {
+          "type": "p",
+          "words": 35
+        },
+        {
+          "type": "p",
+          "words": 26
+        },
+        {
+          "type": "p",
+          "words": 4
+        },
+        {
+          "type": "p",
+          "words": 19
+        }
+      ],
+      "bannerSameAsCover": false
+    },
+    {
+      "slug": "nas-invest-turned-tenant-insight-into-tenant-strength",
+      "url": "/blog/nas-invest-turned-tenant-insight-into-tenant-strength",
+      "title": "NAS Invest Turned Tenant Insight Into Tenant Strength",
+      "date": "Mar 12, 2026",
+      "lastUpdated": "Aug 16, 2026",
+      "category": null,
+      "tags": [],
+      "excerpt": null,
+      "author": {
+        "name": "Sina Holzerland",
+        "role": "Head of Customer Experience",
+        "avatar": "/assets/cms/rokZfBK9H7oApxqpJ81csjy0d7c.png"
+      },
+      "cover": "/assets/cms/zHD9ieYWY3v1Pm5QAbxrgvrHAU.png",
+      "banner": "/assets/cms/3SMVCwHkmM5Ka0jFOG2NSIltCsQ.png",
+      "bannerIntrinsic": [
+        2560,
+        1440
+      ],
+      "metaDescription": "Read the full story on the Primefold blog — product news, releases and thinking on AI-native business intelligence.",
+      "docTitle": "NAS Invest Turned Tenant Insight Into Tenant Strength — Primefold",
+      "h1": "NAS Invest Turned Tenant Insight Into Tenant Strength",
+      "blocks": [
+        {
+          "type": "p",
+          "words": 11,
+          "hasItalic": true
+        },
+        {
+          "type": "p",
+          "words": 49
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/cHqm30Z20hs2VFSaL3nf34IeRog.png",
+          "alt": "",
+          "intrinsic": [
+            500,
+            272
+          ],
+          "renderedAt1440": [
+            500,
+            273
+          ]
+        },
+        {
+          "type": "p",
+          "words": 33
+        },
+        {
+          "type": "p",
+          "words": 58
+        },
+        {
+          "type": "h2",
+          "text": "It Felt Too Easy to Be True"
+        },
+        {
+          "type": "p",
+          "words": 31
+        },
+        {
+          "type": "p",
+          "words": 25
+        },
+        {
+          "type": "p",
+          "words": 27
+        },
+        {
+          "type": "p",
+          "words": 4
+        },
+        {
+          "type": "h2",
+          "text": "What Happened Next Surprised Everyone"
+        },
+        {
+          "type": "p",
+          "words": 53
+        },
+        {
+          "type": "p",
+          "words": 41
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/G8xi131GSpnlARpgYtDoBdDi2k.png",
+          "alt": "",
+          "intrinsic": [
+            2560,
+            1440
+          ],
+          "renderedAt1440": [
+            800,
+            450
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "Experience Intelligence in Practice"
+        },
+        {
+          "type": "p",
+          "words": 16
+        },
+        {
+          "type": "p",
+          "words": 44
+        },
+        {
+          "type": "ul",
+          "items": 3,
+          "words": 36,
+          "hasBold": false
+        },
+        {
+          "type": "p",
+          "words": 17
+        },
+        {
+          "type": "h2",
+          "text": "The Insights That Transformed Operations"
+        },
+        {
+          "type": "p",
+          "words": 39
+        },
+        {
+          "type": "ul",
+          "items": 2,
+          "words": 18,
+          "hasBold": false
+        },
+        {
+          "type": "p",
+          "words": 36
+        },
+        {
+          "type": "img",
+          "src": "/assets/cms/tDjtOl7TOyj75ribF5KoG59QXPY.png",
+          "alt": "",
+          "intrinsic": [
+            951,
+            408
+          ],
+          "renderedAt1440": [
+            800,
+            343
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "Outcome: From Feedback Collection to Tenant Strength"
+        },
+        {
+          "type": "p",
+          "words": 41
+        },
+        {
+          "type": "p",
+          "words": 26
+        }
+      ],
+      "bannerSameAsCover": false
+    }
+  ],
+  "caseStudies": [
+    {
+      "slug": "gainback-primefold-xi",
+      "url": "/case-studies/gainback-primefold-xi",
+      "title": "Gainback + Primefold XI",
+      "cardCta": "Read story",
+      "date": null,
+      "client": {
+        "name": "Gainback",
+        "aboutHeading": "About Gainback",
+        "logo": "/assets/vBdLAfXU5G3G8FMre5KLbUkCzWc.svg",
+        "logoIntrinsic": [
+          353,
+          353
+        ],
+        "logoRenderedAt1440": [
+          40,
+          40
+        ],
+        "aboutImage": "/assets/qkL7CkFhbnE5G6A9rxHv5zbgxz8.jpg",
+        "description": "Gainback gives restaurants, hotels and cafés the marketing tools of a large chain. Digital stamp cards, loyalty programs, giveaways, surveys: all aimed at the next visit.",
+        "descriptionWords": 26,
+        "websiteButton": {
+          "label": "Visit Website",
+          "external": true
+        }
+      },
+      "breadcrumb": [
+        "Case Studies",
+        "Gainback"
+      ],
+      "subtitle": "Every answer they needed was already in the inbox.",
+      "pills": [
+        {
+          "label": "Loyalty & Local Marketing",
+          "icon": null
+        },
+        {
+          "label": "Early-stage startup",
+          "icon": null
+        },
+        {
+          "label": "Primefold XI",
+          "icon": "/assets/cms/badge-xi.svg"
+        },
+        {
+          "label": "Shopify check-out integration",
+          "icon": null
+        }
+      ],
+      "stats": [
+        {
+          "value": "0 → 150",
+          "label": "Customers in the first year, with Primefold XI making an impact. ",
+          "valueColor": "rgb(32, 131, 116)"
+        },
+        {
+          "value": "+76%",
+          "label": "More customer responses collected across all touchpoints.",
+          "valueColor": "rgb(20, 169, 0)"
+        },
+        {
+          "value": "7",
+          "label": "Moments a customer can answer, from the first demo to support, all landing in one view.",
+          "valueColor": "rgb(255, 123, 0)"
+        }
+      ],
+      "info": [
+        {
+          "label": "Employees",
+          "values": [
+            "<10"
+          ]
+        },
+        {
+          "label": "Clients",
+          "values": [
+            "150"
+          ]
+        },
+        {
+          "label": "Industry",
+          "values": [
+            "Loyalty & Local Marketing"
+          ]
+        },
+        {
+          "label": "Products in use",
+          "values": [
+            "Primefold XI Surveys",
+            "Shopify Checkout",
+            "Klaviyo"
+          ],
+          "icons": [
+            "/assets/cms/badge-xi.svg",
+            "/assets/cms/badge-xi.svg",
+            "/assets/cms/badge-xi.svg"
+          ]
+        }
+      ],
+      "cover": "/assets/cms/dxRn8w4y8sVmHkcC4dynEDvp0.jpg",
+      "banner": "/assets/cms/dxRn8w4y8sVmHkcC4dynEDvp0.jpg",
+      "bannerIntrinsic": [
+        1024,
+        648
+      ],
+      "metaDescription": "How teams go from questions to decisions with Primefold — a customer story with the evidence behind it.",
+      "docTitle": "Gainback + Primefold XI — Primefold",
+      "blocks": [
+        {
+          "type": "h6",
+          "role": "eyebrow",
+          "text": "The Challenge"
+        },
+        {
+          "type": "h3",
+          "text": "Signals everywhere. Clarity nowhere."
+        },
+        {
+          "type": "p",
+          "words": 49,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 61,
+          "hasBold": true
+        },
+        {
+          "type": "quoteCard",
+          "author": "Jakob Hebenstreit",
+          "role": "Co-Founder, Gainback",
+          "quoteWords": 14
+        },
+        {
+          "type": "p",
+          "words": 114,
+          "hasBold": true
+        },
+        {
+          "type": "spacer",
+          "tag": "h6"
+        },
+        {
+          "type": "h6",
+          "role": "eyebrow",
+          "text": "The Solution"
+        },
+        {
+          "type": "h3",
+          "text": "The system went live while the company was still selling."
+        },
+        {
+          "type": "p",
+          "words": 58,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 42,
+          "hasBold": true
+        },
+        {
+          "type": "spacer",
+          "tag": "h6"
+        },
+        {
+          "type": "h3",
+          "text": "One straight line from a customer's voice to the roadmap."
+        },
+        {
+          "type": "p",
+          "words": 68,
+          "hasBold": true
+        },
+        {
+          "type": "p",
+          "words": 59,
+          "hasBold": true
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "h6",
+          "role": "eyebrow",
+          "text": "What surprised Gainback"
+        },
+        {
+          "type": "h3",
+          "text": "Three things the pipeline never said."
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "numberedCards",
+          "cards": [
+            {
+              "n": "1",
+              "title": "Who the ideal customer actually was.",
+              "bodyWords": 63
+            },
+            {
+              "n": "2",
+              "title": "Products the whiteboard never proposed.",
+              "bodyWords": 63
+            },
+            {
+              "n": "3",
+              "title": "Proof, not a pitch.",
+              "bodyWords": 48
+            }
+          ]
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "quoteCard",
+          "author": "Jakob Hebenstreit",
+          "role": "Co-Founder, Gainback",
+          "quoteWords": 39
+        },
+        {
+          "type": "spacer",
+          "tag": "h6"
+        }
+      ],
+      "bannerSameAsCover": true
+    },
+    {
+      "slug": "nas-primefold-xi-ri",
+      "url": "/case-studies/nas-primefold-xi-ri",
+      "title": "NAS Invest + Primefold XI/RI",
+      "cardCta": "Read story",
+      "date": null,
+      "client": {
+        "name": "NAS",
+        "aboutHeading": "About NAS",
+        "logo": "/assets/0I7dW2NSk2zVnHLMvfACsc1BIr8.png",
+        "logoIntrinsic": [
+          288,
+          123
+        ],
+        "logoRenderedAt1440": [
+          93,
+          40
+        ],
+        "aboutImage": "/assets/cms/UtK1ZeSLwMR3E06ch8kV2FcSJO8.jpg",
+        "description": "NAS Invest is an independent real estate investment platform, based in Frankfurt. Over €4.5 bn in assets: sourced, structured, financed and managed in-house.",
+        "descriptionWords": 23,
+        "websiteButton": {
+          "label": "Visit Website",
+          "external": true
+        }
+      },
+      "breadcrumb": [
+        "Case Studies",
+        "NAS"
+      ],
+      "subtitle": "Bracing for complaints. Then getting a 4/5 rating.",
+      "pills": [
+        {
+          "label": "Commercial Real Estate",
+          "icon": null
+        },
+        {
+          "label": "55+ employees",
+          "icon": null
+        },
+        {
+          "label": "Primefold XI",
+          "icon": "/assets/cms/badge-xi.svg"
+        },
+        {
+          "label": "Primefold RI",
+          "icon": "/assets/cms/badge-ri.svg"
+        }
+      ],
+      "stats": [
+        {
+          "value": "1 in 4",
+          "label": "Tenants answered the survey: 150 of roughly 600 people, in three weeks",
+          "valueColor": "rgb(32, 131, 116)"
+        },
+        {
+          "value": "1 hour",
+          "label": "To read a 300-page commercial lease, against 2-3 days by hand",
+          "valueColor": "rgb(20, 169, 0)"
+        },
+        {
+          "value": "2",
+          "label": "Inconsistencies caught before the letting strategy reached the bank",
+          "valueColor": "rgb(255, 123, 0)"
+        }
+      ],
+      "info": [
+        {
+          "label": "Employees",
+          "values": [
+            "55+"
+          ]
+        },
+        {
+          "label": "Clients",
+          "values": [
+            "AUM €4.5bn in 2026"
+          ]
+        },
+        {
+          "label": "Industry",
+          "values": [
+            "Commercial Real Estate"
+          ]
+        },
+        {
+          "label": "Products in use",
+          "values": [
+            "Real Estate Intelligence",
+            "Primefold XI Surveys"
+          ],
+          "icons": [
+            "/assets/cms/badge-ri.svg",
+            "/assets/cms/badge-xi.svg"
+          ]
+        }
+      ],
+      "cover": "/assets/cms/GOjBIvvvMTXggTUzKwQHc0n5o.jpg",
+      "banner": "/assets/cms/GOjBIvvvMTXggTUzKwQHc0n5o.jpg",
+      "bannerIntrinsic": [
+        1600,
+        1012
+      ],
+      "metaDescription": "How teams go from questions to decisions with Primefold — a customer story with the evidence behind it.",
+      "docTitle": "NAS Invest + Primefold XI/RI — Primefold",
+      "blocks": [
+        {
+          "type": "h6",
+          "role": "eyebrow",
+          "text": "The Challenge"
+        },
+        {
+          "type": "h3",
+          "text": "Nobody calls to say the building is fine."
+        },
+        {
+          "type": "p",
+          "words": 88,
+          "hasBold": true
+        },
+        {
+          "type": "quoteCard",
+          "author": "Ammar Tahirovic",
+          "role": "Intelligence Analyst, NAS Invest",
+          "quoteWords": 53
+        },
+        {
+          "type": "p",
+          "words": 82
+        },
+        {
+          "type": "spacer",
+          "tag": "h6"
+        },
+        {
+          "type": "h6",
+          "role": "eyebrow",
+          "text": "The Solution"
+        },
+        {
+          "type": "h3",
+          "text": "The first answers rolled in before he got back to his desk."
+        },
+        {
+          "type": "p",
+          "words": 99
+        },
+        {
+          "type": "spacer",
+          "tag": "h6"
+        },
+        {
+          "type": "h3",
+          "text": "One straight line from a tenant answer to a work order."
+        },
+        {
+          "type": "p",
+          "words": 139
+        },
+        {
+          "type": "video",
+          "label": "YouTube embed (external, not downloaded)",
+          "aspect": "16/9",
+          "renderedAt1440": [
+            1280,
+            720
+          ]
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "h6",
+          "role": "eyebrow",
+          "text": "What surprised NAS"
+        },
+        {
+          "type": "h3",
+          "text": "Three things the complaints never said."
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "numberedCards",
+          "cards": [
+            {
+              "n": "1",
+              "title": "Four out of five stars.",
+              "bodyWords": 47
+            },
+            {
+              "n": "2",
+              "title": "A card reader nobody reported.",
+              "bodyWords": 48
+            },
+            {
+              "n": "3",
+              "title": "The document that went out right.",
+              "bodyWords": 60
+            }
+          ]
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "quoteCard",
+          "author": "Ammar Tahirovic",
+          "role": "Intelligence Analyst, NAS Invest",
+          "quoteWords": 53
+        },
+        {
+          "type": "spacer",
+          "tag": "h6"
+        }
+      ],
+      "bannerSameAsCover": true
+    },
+    {
+      "slug": "dirts-primefold-xi",
+      "url": "/case-studies/dirts-primefold-xi",
+      "title": "DIRTS + Primefold XI",
+      "cardCta": "Read story",
+      "date": null,
+      "client": {
+        "name": "DIRTS",
+        "aboutHeading": "About DIRTS",
+        "logo": "/assets/mlevCnZoqAApeTSZWClq74jYCg.png",
+        "logoIntrinsic": [
+          512,
+          218
+        ],
+        "logoRenderedAt1440": [
+          94,
+          40
+        ],
+        "aboutImage": "/assets/9Yky6fB1AoenMkNm8rzRwLJxM8.jpg",
+        "description": "DIRTS crafts GOTS-certified organic apparel in Portugal. No fast fashion: Designed in Germany, reusable packaging, in-house upcycling, close partner relationships.",
+        "descriptionWords": 20,
+        "websiteButton": {
+          "label": "Visit Website",
+          "external": true
+        }
+      },
+      "breadcrumb": [
+        "Case Studies",
+        "DIRTS"
+      ],
+      "subtitle": "The next bestselling color was never on the list.",
+      "pills": [
+        {
+          "label": "Apparel & DTC",
+          "icon": null
+        },
+        {
+          "label": "10 employees",
+          "icon": null
+        },
+        {
+          "label": "Primefold XI",
+          "icon": "/assets/cms/badge-xi.svg"
+        },
+        {
+          "label": "Shopify",
+          "icon": null
+        },
+        {
+          "label": "Klaviyo",
+          "icon": null
+        },
+        {
+          "label": "Notion",
+          "icon": null
+        },
+        {
+          "label": "Toern",
+          "icon": null
+        }
+      ],
+      "stats": [
+        {
+          "value": "+500%",
+          "label": "Revenue increase vs intuitively chosen color, same period and category",
+          "valueColor": "rgb(32, 131, 116)"
+        },
+        {
+          "value": "5x",
+          "label": "More units sold with data-driven color selection vs the gut decision, identical availability",
+          "valueColor": "rgb(20, 169, 0)"
+        },
+        {
+          "value": "3x",
+          "label": "More new customers on Primefold-validated colors vs the gut-picked comparison",
+          "valueColor": "rgb(255, 123, 0)"
+        }
+      ],
+      "info": [
+        {
+          "label": "Employees",
+          "values": [
+            "10"
+          ]
+        },
+        {
+          "label": "Clients",
+          "values": [
+            "€1.5–2M"
+          ]
+        },
+        {
+          "label": "Industry",
+          "values": [
+            "Apparel & DTC"
+          ]
+        },
+        {
+          "label": "Products in use",
+          "values": [
+            "Primefold XI Surveys",
+            "Shopify Checkout",
+            "Klaviyo",
+            "Notion",
+            "Toern"
+          ],
+          "icons": [
+            "/assets/cms/badge-xi.svg",
+            "/assets/cms/badge-xi.svg",
+            "/assets/cms/badge-xi.svg",
+            "/assets/cms/badge-xi.svg",
+            "/assets/cms/badge-xi.svg"
+          ]
+        }
+      ],
+      "cover": "/assets/cms/CbPH2aa5gvdK3vbEDJDEYZPc0.jpg",
+      "banner": "/assets/cms/CbPH2aa5gvdK3vbEDJDEYZPc0.jpg",
+      "bannerIntrinsic": [
+        1299,
+        867
+      ],
+      "metaDescription": "How teams go from questions to decisions with Primefold — a customer story with the evidence behind it.",
+      "docTitle": "DIRTS + Primefold XI — Primefold",
+      "blocks": [
+        {
+          "type": "h6",
+          "role": "eyebrow",
+          "text": "The Challenge"
+        },
+        {
+          "type": "h3",
+          "text": "Complaints were loud. Happy customers were invisible."
+        },
+        {
+          "type": "p",
+          "words": 45
+        },
+        {
+          "type": "quoteCard",
+          "author": "Janek Strobel",
+          "role": "Head of Operations, DIRTS",
+          "quoteWords": 30
+        },
+        {
+          "type": "p",
+          "words": 87
+        },
+        {
+          "type": "spacer",
+          "tag": "h6"
+        },
+        {
+          "type": "h6",
+          "role": "eyebrow",
+          "text": "The Solution"
+        },
+        {
+          "type": "h3",
+          "text": "Live in days, not months."
+        },
+        {
+          "type": "p",
+          "words": 47
+        },
+        {
+          "type": "spacer",
+          "tag": "h6"
+        },
+        {
+          "type": "h3",
+          "text": "One straight line from customer voice to purchase order."
+        },
+        {
+          "type": "p",
+          "words": 90
+        },
+        {
+          "type": "video",
+          "label": "YouTube embed (external, not downloaded)",
+          "aspect": "16/9",
+          "renderedAt1440": [
+            1280,
+            720
+          ]
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "h6",
+          "role": "eyebrow",
+          "text": "What surprised them"
+        },
+        {
+          "type": "h3",
+          "text": "Three things the sales report never said."
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "numberedCards",
+          "cards": [
+            {
+              "n": "1",
+              "title": "Sage Green beat the basics.",
+              "bodyWords": 49
+            },
+            {
+              "n": "2",
+              "title": "Lavender wasn't even on the list.",
+              "bodyWords": 43
+            },
+            {
+              "n": "3",
+              "title": "The decision they did not make.",
+              "bodyWords": 52
+            }
+          ]
+        },
+        {
+          "type": "spacer",
+          "tag": "p"
+        },
+        {
+          "type": "quoteCard",
+          "author": "Janek Strobel",
+          "role": "Head of Operations, DIRTS",
+          "quoteWords": 52
+        },
+        {
+          "type": "spacer",
+          "tag": "h6"
+        }
+      ],
+      "bannerSameAsCover": true
+    }
+  ]
+}

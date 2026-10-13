@@ -1,0 +1,4 @@
+/* spec A3: one copy = 12 x (240 + 20) = 3120px at 40px/s = 78s; phone 12 x (200 + 20) = 2640px = 66s */
+@keyframes pf-team-ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.pf-team-ticker { animation: pf-team-ticker 66s linear infinite; will-change: transform; }
+@media (min-width: 810px) { .pf-team-ticker { animation-duration: 78s; } }

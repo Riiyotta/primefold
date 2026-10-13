@@ -1,0 +1,25 @@
+section,category,templates,routes,Home,Product (Intelligence),Plans,Security,Contact,Company,Careers,Legal document,Blog index,Blog post,Case studies index,Case study,404
+shell.navbar,SHELL,13,29,x,x,x,x,x,x,x,x,x,x,x,x,x
+shell.footer,SHELL,13,29,x,x,x,x,x,x,x,x,x,x,x,x,x
+content.blog-post-body,CONTENT,1,12,,,,,,,,,,x,,,
+content.legal-body,CONTENT,1,3,,,,,,,,x,,,,,
+content.case-study-body,CONTENT,1,3,,,,,,,,,,,,x,
+content.product-body,CONTENT,1,2,,x,,,,,,,,,,,
+hero.home-carousel,HERO,1,1,x,,,,,,,,,,,,
+proof.logo-ticker,PROOF,1,1,x,,,,,,,,,,,,
+features.how-it-works,FEATURES,1,1,x,,,,,,,,,,,,
+features.intelligence-cards,FEATURES,1,1,x,,,,,,,,,,,,
+proof.testimonials,PROOF,1,1,x,,,,,,,,,,,,
+features.solutions-carousel,FEATURES,1,1,x,,,,,,,,,,,,
+proof.trust,PROOF,1,1,x,,,,,,,,,,,,
+proof.outcomes,PROOF,1,1,x,,,,,,,,,,,,
+conversion.cta-band,CONVERSION,1,1,x,,,,,,,,,,,,
+content.plans-body,CONTENT,1,1,,,x,,,,,,,,,,
+content.security-body,CONTENT,1,1,,,,x,,,,,,,,,
+content.contact-body,CONTENT,1,1,,,,,x,,,,,,,,
+content.company-body,CONTENT,1,1,,,,,,x,,,,,,,
+content.careers-body,CONTENT,1,1,,,,,,,x,,,,,,
+content.blog-index-body,CONTENT,1,1,,,,,,,,,x,,,,
+content.case-studies-index-body,CONTENT,1,1,,,,,,,,,,,x,,
+content.not-found-body,CONTENT,1,1,,,,,,,,,,,,,x
+ROUTE COUNT,,,29,1,2,1,1,1,1,1,3,1,12,1,3,1

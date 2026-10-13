@@ -1,0 +1,32 @@
+/* How It Works — CLONE_SPEC §3 */
+.pf-how-clip { position: relative; overflow-x: clip; background: rgb(250,249,248); }
+.pf-how { position: relative; display: flex; flex-direction: column; align-items: center; background: rgb(250,249,248); will-change: transform;
+}
+/* live site Inter text style; set on descendants because the `font` shorthand resets font-feature-settings */
+.pf-how.pf-how, .pf-how.pf-how * { font-feature-settings: "blwf", "cv03", "cv04", "cv09", "cv11"; }
+.pf-how.pf-how .t-h2 { font-feature-settings: "blwf", "cv03", "cv04", "cv09", "cv11", "ss04", "ss11"; }
+
+/* 3.1 logo ticker — 50px/s; one set = 10 × (246 + 12) = 2580px → 51.6s (phone 10 × 164 = 1640px → 32.8s) */
+.pf-ticker { width: 100%; max-width: 1280px; height: 120px; overflow: clip; background: rgb(250,249,248); }
+.pf-ticker__track { display: flex; width: max-content; animation: pfTicker 51.6s linear infinite; }
+.pf-ticker__logo { flex: none; width: 246px; height: 120px; margin-right: 12px; aspect-ratio: 2.0583;
+  opacity: 0; transform: translateY(20px); transition: opacity .3s cubic-bezier(.44,0,.56,1) var(--d), transform .3s cubic-bezier(.44,0,.56,1) var(--d); }
+.pf-ticker__logo img { width: 100%; height: 100%; object-fit: contain; }
+.pf-ticker.is-in .pf-ticker__logo { opacity: 1; transform: none; }
+@keyframes pfTicker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (max-width: 809.98px) {
+  .pf-ticker { height: 80px; }
+  .pf-ticker__track { animation-duration: 32.8s; }
+  .pf-ticker__logo { width: 164px; height: 80px; margin-right: 0; }
+}
+
+/* 3.2 title */
+.pf-how__title { width: 100%; max-width: 1320px; box-sizing: border-box; padding: 120px 20px 0; }
+.pf-how__stack { max-width: 548px; display: flex; flex-direction: column; gap: 16px; scroll-margin-top: 80px; }
+.pf-how__stack h2 { margin: 0; }
+.pf-how__row { width: 100%; max-width: 1320px; box-sizing: border-box; padding: 20px; margin-top: 56px; }
+@media (max-width: 809.98px) {
+  .pf-how__title { padding-top: 80px; }
+  .pf-how__row { margin-top: 32px; }
+}
+@media (prefers-reduced-motion: reduce) { .pf-ticker__track { animation: none; } }

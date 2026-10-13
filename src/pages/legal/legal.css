@@ -1,0 +1,52 @@
+/* Legal rich text (specs/company-careers-legal.md §C2). Desktop values first; tablet/phone overrides below. */
+.legal-title { margin: 0; font-family: "Stack Sans Headline", "Stack Sans Headline Placeholder", sans-serif; font-weight: 400;
+  font-size: 56px; line-height: 67.2px; letter-spacing: 1.12px; color: #000; font-feature-settings: var(--pf-ff-headline); }
+
+.legal-prose { white-space: pre-wrap; color: rgb(26,24,20); }
+.legal-prose > * { margin: 0; }
+.legal-prose p, .legal-prose li { font: 500 18px/24px Inter, "Inter Placeholder", sans-serif; letter-spacing: -0.18px; color: rgb(26,24,20); font-feature-settings: var(--pf-ff-inter); }
+.legal-prose > p { margin-top: 20px; }
+.legal-prose > :first-child { margin-top: 0; }
+.legal-prose strong { font-weight: 700; }
+.legal-prose em { font-style: italic; font-weight: 500; }
+.legal-prose a { color: inherit; text-decoration: none; font-weight: 500; font-feature-settings: var(--pf-ff-inter); }
+
+/* lists */
+.legal-prose ul, .legal-prose ol { margin: 0; padding: 0; list-style: none; }
+.legal-prose li { position: relative; padding-left: 23.24px; }
+.legal-prose li > p { margin: 0; }
+.legal-prose li::before { position: absolute; left: 0; top: 0; font: 500 18px/24px Inter, "Inter Placeholder", sans-serif; color: rgb(26,24,20); }
+.legal-prose ul > li::before { content: "•"; }
+.legal-prose ol > li::before { content: counter(list-item, lower-alpha) "."; }
+
+/* headings — shared family */
+.legal-prose h2, .legal-prose h3, .legal-prose h4, .legal-prose h6 { font-family: "Stack Sans Headline", "Stack Sans Headline Placeholder", sans-serif; }
+
+/* ToS h2 / h3 / h6 */
+.legal-prose h2 { font-size: 40px; line-height: 48px; font-weight: 400; letter-spacing: 0.02em; color: #000; margin-top: 40px; font-feature-settings: var(--pf-ff-headline); }
+.legal-prose h3 { font-size: 32px; line-height: 40px; font-weight: 400; letter-spacing: normal; color: rgb(26,24,20); margin-top: 20px; font-feature-settings: "ss04", "ss11"; }
+.legal-prose h6 { font-size: 16px; line-height: 19.2px; font-weight: 400; letter-spacing: normal; color: rgb(26,24,20); font-feature-settings: var(--pf-ff-headline); }
+
+/* DP preset: h3 "Privacy Policy", h4, 72px spacer, links */
+.legal-prose--dp h3 { font-size: 48px; line-height: 56px; letter-spacing: 0.96px; color: #000; margin-top: 40px; font-feature-settings: var(--pf-ff-headline); }
+.legal-prose h4 { font-size: 28px; line-height: 33.6px; font-weight: 700; letter-spacing: normal; color: #000; margin-top: 28px; font-feature-settings: var(--pf-ff-inter); }
+/* weight 900 with only the 700 face loaded — no 900 file on purpose (spec C2/E) */
+.legal-prose h4 strong { font-weight: 900; }
+.legal-prose .legal-spacer { display: block; height: 72px; margin-top: 0; }
+.legal-prose--dp a { color: #594AFF; text-decoration: none; }
+.legal-prose--dp a:hover { color: #212121; text-decoration: underline; }
+
+@media (max-width: 1199.98px) {
+  .legal-title { font-size: 48px; line-height: 57.6px; letter-spacing: 0.96px; }
+  .legal-prose h2 { font-size: 36px; line-height: 40px; }
+  .legal-prose h3 { font-size: 28px; line-height: 32px; margin-top: 28px; }
+  .legal-prose h4 { font-size: 26px; line-height: 31.2px; }
+  .legal-prose--dp h3 { font-size: 48px; line-height: 56px; margin-top: 40px; }
+}
+@media (max-width: 809.98px) {
+  .legal-title { font-size: 42px; line-height: 50.4px; letter-spacing: 0.84px; }
+  .legal-prose h2 { font-size: 32px; line-height: 36px; margin-top: 32px; }
+  .legal-prose h3 { font-size: 26px; line-height: 30px; margin-top: 26px; }
+  .legal-prose h4 { font-size: 24px; line-height: 28.8px; }
+  .legal-prose--dp h3 { font-size: 48px; line-height: 56px; margin-top: 40px; }
+}

@@ -1,0 +1,355 @@
+{
+  "$comment": "Routes from https://primefold.ai/sitemap.xml (fetched 2026-10-13) and src/App.jsx. Home sections measured in CLONE_SPEC.md. Non-home section breakdowns pending recon (specs/*.md).",
+  "meta": {
+    "title": "Primefold (primefold.ai) — information architecture",
+    "source": "https://primefold.ai/ (sitemap.xml + clone at src/)",
+    "status": "draft — home measured, other templates pending recon",
+    "productionApproved": false,
+    "totalRoutes": 29,
+    "totalTemplates": 13
+  },
+  "categories": {
+    "SHELL": "Site chrome on every route: navigation and footer.",
+    "HERO": "Page-opening, above-the-fold block.",
+    "FEATURES": "Product explanation and capability modules.",
+    "PROOF": "Social proof and trust: logos, testimonials, outcomes, security.",
+    "CONVERSION": "Call-to-action blocks driving to Book a call.",
+    "CONTENT": "Page body content; used here as a placeholder until a template's sections are measured."
+  },
+  "sections": {
+    "shell.navbar": {
+      "category": "SHELL",
+      "description": "Fixed top navigation: logo, Products/Resources/Company dropdowns, Plans and Security links, Sign in + Book a call pill buttons; switches from transparent to a blurred white bar after ~100px scroll; hamburger menu below 1200px.",
+      "scope": "Present on all 29 routes.",
+      "implementedBy": "src/components/Navbar.jsx"
+    },
+    "shell.footer": {
+      "category": "SHELL",
+      "description": "Footer card: brand blurb + newsletter form, four link columns (Products, Explore, Resources, Company), legal/social row, hosted-in-Germany row, and the sticky ghost 'Primefold' wordmark revealed beneath it.",
+      "scope": "Present on all 29 routes.",
+      "implementedBy": "src/components/Footer.jsx"
+    },
+    "hero.home-carousel": {
+      "category": "HERO",
+      "description": "Full-viewport 3-slide autoplay carousel (Platform / Experience Intelligence / Real Estate Intelligence) with 6s progress tabs, staggered text entrance and 0.6x scroll parallax.",
+      "scope": "Home only (1 route).",
+      "implementedBy": "src/components/Hero.jsx"
+    },
+    "proof.logo-ticker": {
+      "category": "PROOF",
+      "description": "Infinite horizontal customer-logo marquee at 50px/s with staggered logo fade-in.",
+      "scope": "Home only (1 route), at the top of the How It Works block.",
+      "implementedBy": "src/components/HowItWorks.jsx > LogoTicker"
+    },
+    "features.how-it-works": {
+      "category": "FEATURES",
+      "description": "'How a question becomes a next move' title stack plus the dark A1 Loop product demo: a 9-state animated loop (ask, read sources, understand, answer, act, trace).",
+      "scope": "Home only (1 route).",
+      "implementedBy": "src/components/HowItWorks.jsx + how/A1Loop.jsx"
+    },
+    "features.intelligence-cards": {
+      "category": "FEATURES",
+      "description": "'One engine' row of three intelligence product cards (XI live, RI beta, next planned) that widen on hover on desktop and become sticky stacked cards on tablet/phone.",
+      "scope": "Home only (1 route).",
+      "implementedBy": "src/components/Intelligence.jsx"
+    },
+    "proof.testimonials": {
+      "category": "PROOF",
+      "description": "Full-width dark testimonial carousel: large quote, person name/role, client logo, arrow + dot controls, 0.5s slide.",
+      "scope": "Home only (1 route).",
+      "implementedBy": "src/components/Testimonials.jsx"
+    },
+    "features.solutions-carousel": {
+      "category": "FEATURES",
+      "description": "'Built for every team' horizontally scrolling team/use-case image cards with scroll-linked sideways drift and Explore arrow buttons.",
+      "scope": "Home only (1 route).",
+      "implementedBy": "src/components/Solutions.jsx"
+    },
+    "proof.trust": {
+      "category": "PROOF",
+      "description": "Trust block: list of security/compliance points with a 10s teal progress line next to an animated Lottie panel (hosting, GDPR, source tracing).",
+      "scope": "Home only (1 route).",
+      "implementedBy": "src/components/Trust.jsx"
+    },
+    "proof.outcomes": {
+      "category": "PROOF",
+      "description": "'Real impact. Real outcomes.' dark customer outcome cards with rolling 80px numbers, outcome headline, person and client logo.",
+      "scope": "Home only (1 route).",
+      "implementedBy": "src/components/Outcomes.jsx"
+    },
+    "conversion.cta-band": {
+      "category": "CONVERSION",
+      "description": "Dark rounded CTA card 'Ask your data. Get the answer.' with animated wave background and a white Book a call pill.",
+      "scope": "Home only (1 route) confirmed; reuse on other templates pending recon.",
+      "implementedBy": "src/components/CTA.jsx"
+    },
+    "content.product-body": {
+      "category": "CONTENT",
+      "description": "Product (Intelligence) page body — section-level breakdown pending recon; spec will land in specs/product-pages.md.",
+      "scope": "Product (Intelligence) template only (2 routes)."
+    },
+    "content.plans-body": {
+      "category": "CONTENT",
+      "description": "Plans page body — section-level breakdown pending recon; spec will land in specs/plans-security-contact-404.md.",
+      "scope": "Plans template only (1 route)."
+    },
+    "content.security-body": {
+      "category": "CONTENT",
+      "description": "Security page body — section-level breakdown pending recon; spec will land in specs/plans-security-contact-404.md.",
+      "scope": "Security template only (1 route)."
+    },
+    "content.contact-body": {
+      "category": "CONTENT",
+      "description": "Contact page body — section-level breakdown pending recon; spec will land in specs/plans-security-contact-404.md.",
+      "scope": "Contact template only (1 route)."
+    },
+    "content.company-body": {
+      "category": "CONTENT",
+      "description": "Company page body — section-level breakdown pending recon; spec will land in specs/company-careers-legal.md.",
+      "scope": "Company template only (1 route)."
+    },
+    "content.careers-body": {
+      "category": "CONTENT",
+      "description": "Careers page body — section-level breakdown pending recon; spec will land in specs/company-careers-legal.md.",
+      "scope": "Careers template only (1 route)."
+    },
+    "content.legal-body": {
+      "category": "CONTENT",
+      "description": "Legal document page body — section-level breakdown pending recon; spec will land in specs/company-careers-legal.md.",
+      "scope": "Legal document template only (3 routes)."
+    },
+    "content.blog-index-body": {
+      "category": "CONTENT",
+      "description": "Blog index page body — section-level breakdown pending recon; spec will land in specs/blog-case-studies.md.",
+      "scope": "Blog index template only (1 route)."
+    },
+    "content.blog-post-body": {
+      "category": "CONTENT",
+      "description": "Blog post page body — section-level breakdown pending recon; spec will land in specs/blog-case-studies.md.",
+      "scope": "Blog post template only (12 routes)."
+    },
+    "content.case-studies-index-body": {
+      "category": "CONTENT",
+      "description": "Case studies index page body — section-level breakdown pending recon; spec will land in specs/blog-case-studies.md.",
+      "scope": "Case studies index template only (1 route)."
+    },
+    "content.case-study-body": {
+      "category": "CONTENT",
+      "description": "Case study page body — section-level breakdown pending recon; spec will land in specs/blog-case-studies.md.",
+      "scope": "Case study template only (3 routes)."
+    },
+    "content.not-found-body": {
+      "category": "CONTENT",
+      "description": "404 page body — section-level breakdown pending recon; spec will land in specs/plans-security-contact-404.md.",
+      "scope": "Not-found template only (1 route)."
+    }
+  },
+  "templates": [
+    {
+      "id": "template.home",
+      "name": "Home",
+      "routeCount": 1,
+      "routes": [
+        "/"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.navbar",
+        "hero.home-carousel",
+        "proof.logo-ticker",
+        "features.how-it-works",
+        "features.intelligence-cards",
+        "proof.testimonials",
+        "features.solutions-carousel",
+        "proof.trust",
+        "proof.outcomes",
+        "conversion.cta-band",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.product",
+      "name": "Product (Intelligence)",
+      "routeCount": 2,
+      "routes": [
+        "/experience-intelligence",
+        "/realestate-intelligence"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.navbar",
+        "content.product-body",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.plans",
+      "name": "Plans",
+      "routeCount": 1,
+      "routes": [
+        "/plans"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.navbar",
+        "content.plans-body",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.security",
+      "name": "Security",
+      "routeCount": 1,
+      "routes": [
+        "/security"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.navbar",
+        "content.security-body",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.contact",
+      "name": "Contact",
+      "routeCount": 1,
+      "routes": [
+        "/contact"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.navbar",
+        "content.contact-body",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.company",
+      "name": "Company",
+      "routeCount": 1,
+      "routes": [
+        "/company"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.navbar",
+        "content.company-body",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.careers",
+      "name": "Careers",
+      "routeCount": 1,
+      "routes": [
+        "/careers"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.navbar",
+        "content.careers-body",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.legal",
+      "name": "Legal document",
+      "routeCount": 3,
+      "routes": [
+        "/imprint",
+        "/data-privacy",
+        "/terms-of-service"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.navbar",
+        "content.legal-body",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.blog-index",
+      "name": "Blog index",
+      "routeCount": 1,
+      "routes": [
+        "/blog"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.navbar",
+        "content.blog-index-body",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.blog-post",
+      "name": "Blog post",
+      "routeCount": 12,
+      "routes": [
+        "/blog/we-re-taking-real-estate-intelligence-to-expo-real-2026.-come-and-talk-to-your-portfolio",
+        "/blog/primefold-xi-speaks-german-now",
+        "/blog/we-rebuilt-our-website-primefold-ai",
+        "/blog/primefold-ri-is-here-real-estate-intelligence",
+        "/blog/nobody-asks-their-customers-anything-right-after-they-buy.-now-you-can-right-on-shopify.",
+        "/blog/how-we-built-sunday-s-survey-design-agent",
+        "/blog/meet-sunday-the-intelligence-layer-built-into-primefold-xi",
+        "/blog/design-and-reports-get-their-moment",
+        "/blog/the-insight-hub-is-about-to-get-sharper",
+        "/blog/primefold-xi-is-here",
+        "/blog/introducing-primefold---saypien-is-becoming-primefold",
+        "/blog/nas-invest-turned-tenant-insight-into-tenant-strength"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.navbar",
+        "content.blog-post-body",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.case-studies-index",
+      "name": "Case studies index",
+      "routeCount": 1,
+      "routes": [
+        "/case-studies"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.navbar",
+        "content.case-studies-index-body",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.case-study",
+      "name": "Case study",
+      "routeCount": 3,
+      "routes": [
+        "/case-studies/gainback-primefold-xi",
+        "/case-studies/nas-primefold-xi-ri",
+        "/case-studies/dirts-primefold-xi"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.navbar",
+        "content.case-study-body",
+        "shell.footer"
+      ]
+    },
+    {
+      "id": "template.not-found",
+      "name": "404",
+      "routeCount": 1,
+      "routes": [
+        "/404"
+      ],
+      "chrome": "full",
+      "sections": [
+        "shell.navbar",
+        "content.not-found-body",
+        "shell.footer"
+      ]
+    }
+  ]
+}

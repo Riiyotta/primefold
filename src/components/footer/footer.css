@@ -1,0 +1,7 @@
+/* Footer (CLONE_SPEC 10) */
+.ft-link { color: rgb(84,84,84); text-decoration: none; transition: color .2s ease; }
+.ft-link:hover { color: rgb(33,33,33); }
+.ft-social { display: flex; width: 16px; height: 16px; overflow: clip; color: rgb(68,66,62); transition: color .2s ease; }
+.ft-social:hover { color: rgb(26,24,20); }
+/* placeholder colour sampled from reference/frames-1440/f08.png (spec only says "grey") */
+.ft-input::placeholder { color: rgb(124,120,114); opacity: 1; }

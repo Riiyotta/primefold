@@ -1,0 +1,96 @@
+/* "One Engine" intelligence cards — CLONE_SPEC §4 */
+.ic-section { position: relative; background: rgb(250,249,248); padding-bottom: 88px; --spring: .5s cubic-bezier(.3,.2,.2,1); /* ≈ spring k210 c30 m1 (ζ≈1.03) */ }
+.ic-title { display: flex; justify-content: center; padding: 120px 20px 0; }
+.ic-title__stack { max-width: 600px; display: flex; flex-direction: column; gap: 16px; text-align: center; }
+/* live site Inter text style; set on descendants because the `font` shorthand resets font-feature-settings */
+.ic-title__stack.ic-title__stack * { font-feature-settings: "blwf", "cv03", "cv04", "cv09", "cv11"; }
+.ic-title__stack.ic-title__stack .t-h2 { font-feature-settings: "blwf", "cv03", "cv04", "cv09", "cv11", "ss04", "ss11"; }
+.ic-text__btn.ic-text__btn .pf-btn { font-feature-settings: "blwf", "cv03", "cv04", "cv09", "cv11"; }
+.ic-title__stack h2, .ic-title__stack p { margin: 0; }
+@media (max-width: 809.98px) { .ic-title { padding-top: 80px; } }
+
+/* ---------- desktop row ---------- */
+.ic-row { display: flex; align-items: center; gap: 16px; max-width: 1320px; margin: 56px auto 0; padding: 0 20px; box-sizing: border-box; }
+.ic { position: relative; display: flex; flex-direction: column; flex: 1 0 0; min-width: 0; padding: 2px; border-radius: 18px; background: rgba(0,0,0,.04);
+  color: rgb(26,24,20); text-decoration: none; transition: flex var(--spring); }
+.ic.is-grow { flex: 2.7 0 0; }
+
+.ic-head { position: relative; display: flex; align-items: center; gap: 12px; height: 56px; padding: 16px 24px; box-sizing: border-box; flex: none; }
+.ic-head img { width: 20px; height: 20px; flex: none; }
+.ic-head__title { font: 500 16px/24px Inter, "Inter Placeholder", sans-serif; letter-spacing: -0.16px; color: rgb(26,24,20); white-space: nowrap; }
+.ic-head__eyebrow { position: absolute; right: 24px; top: 50%; transform: translateY(calc(-50% - 10px)); opacity: 0; white-space: nowrap;
+  font: 500 14px/20px Inter, "Inter Placeholder", sans-serif; letter-spacing: -0.14px; color: rgba(26,24,20,.56); transition: opacity var(--spring), transform var(--spring); }
+.ic.is-active .ic-head__eyebrow { opacity: 1; transform: translateY(-50%); }
+
+.ic-content { display: flex; flex-direction: column; height: 500px; border-radius: 16px; background: #fff; overflow: clip;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.08), 0 1px 2px rgba(36,36,36,.04); }
+.ic-visual { position: relative; display: flex; align-items: center; justify-content: center; height: 376px; flex: none; padding: 0 14px; box-sizing: border-box;
+  background: rgb(26,24,20); border-radius: 0 0 16px 16px; overflow: hidden; }
+
+.ic-text { display: flex; align-items: flex-start; padding: 24px; flex: none; min-height: 0; } /* live: Explore bottom aligns with the text column, not the card */
+.ic-text__col { display: flex; flex-direction: column; gap: 8px; flex: 1; min-width: 0; }
+.ic-text__title { font: 350 20px/28px "ABC Favorit Trial Book", "ABC Favorit Trial Book Placeholder", sans-serif; letter-spacing: -0.2px; color: rgb(26,24,20);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ic-text__desc { font: 400 14px/20px Inter, "Inter Placeholder", sans-serif; letter-spacing: -0.14px; color: rgb(84,82,78);
+  display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+.ic-text__btn { flex: none; align-self: flex-end; display: flex; justify-content: flex-end; width: 0; opacity: 0; overflow: clip; overflow-clip-margin: 10px; transition: width var(--spring), opacity var(--spring); }
+.ic.is-active .ic-text__btn { width: 108px; opacity: 1; }
+.ic-text__btn .pf-btn { flex: none; }
+
+/* card 1 — XI survey mock + hover Lottie */
+.ic-xi { width: 100%; max-width: 346px; border-radius: 16px; background: rgb(40,38,34); overflow: hidden; }
+.ic-xi__photo { display: block; width: calc(100% - 2px); height: 169px; margin: 0 1px; border-radius: 12px; object-fit: cover; }
+.ic-xi__text { display: flex; flex-direction: column; gap: 8px; padding: 16px; }
+.ic-xi__q { font: 500 14px/20px Inter, "Inter Placeholder", sans-serif; letter-spacing: -0.14px; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ic-xi__d { font: 400 12px/16px Inter, "Inter Placeholder", sans-serif; color: rgba(255,255,255,.56); display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+.ic-xi__stars { width: 132px; height: 20px; }
+.ic-lottie { position: absolute; left: 50%; top: 0; width: 696px; height: 376px; margin-left: -348px; opacity: 0; pointer-events: none; transition: opacity var(--spring); }
+.ic.is-active .ic-lottie, .ic.is-appear .ic-lottie { opacity: 1; }
+
+/* card 2 — RI photo + PDF card */
+.ic-ri { display: flex; align-items: center; justify-content: center; width: 100%; height: 312px; }
+.ic-ri__photo { flex: 0 1 383px; min-width: 0; height: 312px; border-radius: 12px; overflow: hidden; }
+.ic-ri__photo img { width: 100%; height: 100%; object-fit: cover; }
+.ic-ri__pdfwrap { flex: none; width: 0; opacity: 0; overflow: hidden; transition: width var(--spring), opacity var(--spring); }
+.ic.is-active .ic-ri__pdfwrap, .ic.is-appear .ic-ri__pdfwrap { width: 247px; opacity: 1; }
+.ic-ri__pdf { display: flex; flex-direction: column; gap: 8px; width: 227px; height: 312px; margin-left: 20px; padding: 12px; box-sizing: border-box; border-radius: 12px; background: rgb(40,38,34); }
+.ic-ri__doc { position: relative; flex: none; height: 164px; margin-bottom: 4px; border-radius: 12px; background: rgb(68,66,62); }
+.ic-ri__doc img { position: absolute; left: 12px; top: 12px; width: 20px; height: 24px; }
+.ic-ri__doc span { position: absolute; left: 12px; top: 132px; padding: 2px 4px; border-radius: 4px; background: rgb(250,250,249); font: 500 12px/16px Inter, "Inter Placeholder", sans-serif; color: #000; }
+.ic-ri__row { display: flex; align-items: center; gap: 8px; font: 500 12px/16px Inter, "Inter Placeholder", sans-serif; color: #fff; white-space: nowrap; }
+.ic-ri__row img { width: 16px; height: 16px; flex: none; }
+.ic-ri__end { margin-left: auto; }
+
+/* card 3 — CI icon grid */
+.ic-ci { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; width: 160px; }
+.ic-ci__item { display: flex; align-items: center; justify-content: center; gap: 8px; width: 40px; height: 40px; padding: 10px; box-sizing: border-box; border-radius: 999px; background: rgb(53,51,46);
+  box-shadow: 0 0 0 1px rgba(255,255,255,.18), 0 0 0 2px rgba(0,0,0,.24); }
+.ic-ci__item img { width: 20px; height: 20px; flex: none; }
+.ic-ci__label { display: none; font: 500 14px/20px Inter, "Inter Placeholder", sans-serif; color: #fff; white-space: nowrap; }
+
+/* ---------- tablet / phone sticky stack ---------- */
+.ic-stack { display: flex; flex-direction: column; gap: 120px; width: 100%; max-width: 500px; margin: 56px auto 0; padding: 0 20px; box-sizing: border-box; }
+.ic-stack__end { display: block; height: 0; flex: none; }
+.ic--m { position: sticky; flex: none; background: rgb(240,239,238); transform-origin: 50% 50%; will-change: transform; }
+.ic--m .ic-content { height: auto; }
+.ic--m .ic-text { flex-direction: column; align-items: stretch; gap: 12px; padding: 16px; }
+.ic--m .ic-text__desc { display: block; }
+.ic--m .ic-text__btn { width: auto; opacity: 1; justify-content: flex-end; }
+.ic--m .ic-text__col { flex: none; }
+.ic--m.ic--ri:not(.is-appear) .ic-text__col { gap: 12px; } /* live: RI default variant is 4px taller (620 vs 616) */
+/* RI appear (live @810/@390): photo box narrows to 300 (image stays 383, centre-cropped), PDF card 20px to its right; the row overflows the visual */
+.ic--m .ic-ri { flex: none; width: auto; }
+.ic--m .ic-ri__photo { position: relative; flex: none; width: 383px; max-width: calc(100vw - 72px); transition: width var(--spring); } /* phone: box clipped to the 318px visual (live) */
+.ic--m .ic-ri__photo img { position: absolute; left: 50%; top: 0; width: 383px; max-width: none; margin-left: -191.5px; }
+.ic--m.is-appear .ic-ri__photo { width: 300px; }
+@media (max-width: 809.98px) {
+  .ic-stack { max-width: none; }
+  .ic--m .ic-xi { max-width: none; }
+}
+/* tablet appear variant: CI icons expand into labelled chips (reference/frames-810/f03.png) */
+@media (min-width: 810px) and (max-width: 1199.98px) {
+  /* measured live @810: grid 420w, gap 20, chips 32h padding 6/8/6/10, icon 20, label 14/20 500 -0.084px */
+  .ic--m.is-appear .ic-ci { width: 420px; gap: 20px; }
+  .ic--m.is-appear .ic-ci__item { width: auto; height: 32px; padding: 6px 8px 6px 10px; }
+  .ic--m.is-appear .ic-ci__label { display: inline; letter-spacing: -0.084px; font-feature-settings: "blwf", "cv03", "cv04", "cv09", "cv11"; }
+}
