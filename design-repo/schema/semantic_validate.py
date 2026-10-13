@@ -47,6 +47,7 @@ def load_context(root=None):
         "dests": {r["role"]: r for r in assets["destinationRoles"]},
         "endpoints": {r["role"]: r for r in assets["formEndpointRoles"]},
         "identities": assets["realIdentities"]["customers"] + assets["realIdentities"]["people"],
+        "firstNamesOnly": assets["realIdentities"].get("peopleFirstNamesOnly", []),
     }
 
 
@@ -385,6 +386,9 @@ def r_placeholder_only_denylist(ctx, spec):
                 for name, p in pats:
                     if p.search(t):
                         out.append(f"{node_label(i, n)} {path}: contains real identity {name!r}")
+                for name in ctx["firstNamesOnly"]:
+                    if t.strip().lower() == name.lower():
+                        out.append(f"{node_label(i, n)} {path}: is a real first name {name!r}")
         walk_fields(sec["content"]["fields"], n.get("content", {}), "content", visit)
     return out
 

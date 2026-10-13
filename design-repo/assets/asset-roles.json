@@ -566,7 +566,7 @@
     }
   ],
   "realIdentities": {
-    "$description": "Deny-list for fields flagged placeholderOnly in section contracts. Generated PageSpecs must not contain any of these strings (whole-word, case-insensitive) in those fields.",
+    "$description": "Deny-list for fields flagged placeholderOnly in section contracts. Generated PageSpecs must not contain any of these strings (whole-word, case-insensitive) in those fields. 'people' (full names) match whole-word anywhere in the field; 'peopleFirstNamesOnly' match only when the entire field value equals the name, so common first names do not reject unrelated placeholder text.",
     "customers": [
       "webedia",
       "fischerAppelt",
@@ -589,7 +589,13 @@
       "Jakob Hebenstreit",
       "Nicole Bilecki",
       "Leon Sperber",
-      "Sina Holzerland",
+      "Sina Holzerland"
+    ],
+    "evidence": [
+      "src/components/Testimonials.jsx:10",
+      "src/pages/company/Team.jsx:8"
+    ],
+    "peopleFirstNamesOnly": [
       "Vlatko",
       "Sascha",
       "Karin",
@@ -602,10 +608,6 @@
       "Hasnain",
       "Oxana",
       "Sarah"
-    ],
-    "evidence": [
-      "src/components/Testimonials.jsx:10",
-      "src/pages/company/Team.jsx:8"
     ]
   },
   "realProprietaryCopyRule": "Third-party-attributed copy (customer quotes, outcome claims such as '5x', '150 customers', '1 hour', named testimonials) must be replaced by clearly generic placeholder text in generated output. Primefold's own marketing copy is documented in the example only because the home example reproduces the owner's own page."

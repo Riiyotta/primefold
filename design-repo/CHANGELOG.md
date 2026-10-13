@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1 - deny-list false positives
+
+`assets/asset-roles.json` `realIdentities.people` listed bare first names (e.g. "Sarah", "Leon"), which rejected any placeholder text containing them. Full names stay whole-word matches anywhere; bare first names moved to `peopleFirstNamesOnly` and are rejected only when the entire field equals the name. Added one control and one mutation to the adversarial suite (98 checks).
+
 ## 0.1.0 - initial build (design-review-pending)
 
 Built from: `CLONE_SPEC.md`, `specs/*.md`, `specs/cms-data.json`, `tailwind.config.js`, `src/index.css`, `src/**`, `public/assets/MANIFEST.md`.

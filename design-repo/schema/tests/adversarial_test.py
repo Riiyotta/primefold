@@ -355,6 +355,10 @@ def _(): s = example(); node(s, "proof.logo-ticker")["content"]["logos"][0]["log
 def _(): s = example(); node(s, "proof.testimonials")["content"]["slides"][0]["personName"] = "Janek Strobel"; return s
 
 
+@mut("policy: field that is exactly a real first name", "PLACEHOLDER_ONLY_DENYLIST")
+def _(): s = example(); node(s, "proof.testimonials")["content"]["slides"][0]["personName"] = "Sarah"; return s
+
+
 @mut("policy: real customer name in ticker alt text field", "PLACEHOLDER_ONLY_DENYLIST")
 def _(): s = example(); node(s, "proof.logo-ticker")["content"]["logos"][0]["alt"] = "SirPlus logo"; return s
 
@@ -409,6 +413,10 @@ def main():
     node(s, "hero.pricing")["content"] = synth_content(CTX["sections"]["hero.pricing"], "default", {"product": "RI"})
     errs, _ = run(s)
     report(not errs, "control: /plans in the RI state without comparison table", "; ".join(errs[:3]))
+
+    s = example(); node(s, "proof.testimonials")["content"]["slides"][0]["personName"] = "Sarah Placeholder"
+    errs, _ = run(s)
+    report(not any("real first name" in e or "real identity" in e for e in errs), "control: common first name inside longer placeholder text is not rejected", "; ".join(errs[:3]))
 
     print("== mutations (each must be REJECTED) ==")
     covered = set()
