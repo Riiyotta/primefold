@@ -2,6 +2,16 @@
   "id": "hero.index-intro",
   "kind": "section",
   "category": "HERO",
+  "semantic": {
+    "id": "hero.index-intro",
+    "category": "HERO"
+  },
+  "source": {
+    "id": "src:shared.section@93",
+    "tag": "section",
+    "file": "src/pages/cms/shared.jsx",
+    "lines": "93-104"
+  },
   "purpose": "Index-page hero for the CMS lists: eyebrow, h1, lead and either a newsletter form (blog) or a black Book a call button (case studies).",
   "tags": [
     "hero",
@@ -119,5 +129,6 @@
   ],
   "retrievalEligible": true,
   "assetRoles": [],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": []
 }

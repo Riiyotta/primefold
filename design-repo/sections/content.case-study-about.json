@@ -1,0 +1,152 @@
+{
+  "id": "content.case-study-about",
+  "kind": "section",
+  "category": "CONTENT",
+  "semantic": {
+    "id": "content.case-study-about",
+    "category": "CONTENT"
+  },
+  "source": {
+    "id": "src:CaseStudy.div@35",
+    "tag": "div",
+    "file": "src/pages/CaseStudy.jsx",
+    "lines": "35-72"
+  },
+  "purpose": "About-the-client block closing a case study: heading, image card (client imagery, client logo, description, website button) and an information card (employees / clients / industry / products in use).",
+  "tags": [
+    "case-study",
+    "about",
+    "client"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/CaseStudy.jsx",
+    "src/pages/cms/shared.jsx"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": []
+  },
+  "allowedTemplates": [
+    "template.case-study"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "heading": {
+        "type": "text",
+        "required": true,
+        "maxWords": 3,
+        "maxWordsBasis": "'About <Client>'"
+      },
+      "logo": {
+        "type": "asset",
+        "required": true,
+        "roles": [
+          "customer.logo",
+          "placeholder.company-logo"
+        ]
+      },
+      "image": {
+        "type": "asset",
+        "required": true,
+        "roles": [
+          "customer.imagery",
+          "generated.illustration",
+          "asset.user-supplied"
+        ]
+      },
+      "description": {
+        "type": "text",
+        "required": true,
+        "maxWords": 26,
+        "maxWordsBasis": "longest real client description",
+        "placeholderOnly": true
+      },
+      "website": {
+        "type": "link",
+        "required": false,
+        "labelMaxWords": 2,
+        "maxWordsBasis": "longest real label: 2 words"
+      },
+      "info": {
+        "type": "list",
+        "required": true,
+        "minItems": 3,
+        "maxItems": 4,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "label": {
+              "type": "text",
+              "required": true,
+              "maxWords": 3,
+              "maxWordsBasis": "Employees / Clients / Industry / Products in use"
+            },
+            "values": {
+              "type": "list",
+              "required": true,
+              "minItems": 1,
+              "maxItems": 4,
+              "item": {
+                "type": "text",
+                "required": true,
+                "maxWords": 6,
+                "maxWordsBasis": "real values up to 5 words"
+              }
+            }
+          }
+        }
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "hover-color",
+        "trigger": "hover",
+        "reducedMotionFallback": "instant-swap",
+        "note": "breadcrumb link colour; Visit Website arrow pill glow",
+        "measuredFrom": [
+          "specs/blog-case-studies.md:190"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "absent in CaseStudy.jsx and RichText.jsx"
+  },
+  "responsive": {
+    "desktop": "content 1280; stats 3 x 416; numbered cards 3 x 416",
+    "tablet": "stats 3 x 246; numbered cards: Framer bug renders 3 fixed 300px columns clipped (prefer 1fr)",
+    "phone": "everything single column"
+  },
+  "notes": [
+    "Client identity, imagery and website are real third-party data: placeholder-only.",
+    "R6 decomposition: the measured page showed one section holding most of the page (legal 95%, blog post 81%, case study 81% of page height at 1440px; extraction/measured-values.json sectionHeights), so the former whole-page contract was split at real content boundaries."
+  ],
+  "measuredFrom": [
+    "src/pages/CaseStudy.jsx:30-35"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [
+    "asset.user-supplied",
+    "customer.imagery",
+    "customer.logo",
+    "generated.illustration",
+    "placeholder.company-logo"
+  ],
+  "version": "1.1.0",
+  "generatedAssetRoles": [
+    "asset.user-supplied",
+    "generated.illustration",
+    "placeholder.company-logo"
+  ]
+}

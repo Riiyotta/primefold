@@ -2,6 +2,16 @@
   "id": "conversion.cta-band",
   "kind": "section",
   "category": "CONVERSION",
+  "semantic": {
+    "id": "conversion.cta-band",
+    "category": "CONVERSION"
+  },
+  "source": {
+    "id": "src:CTA.div@66",
+    "tag": "div",
+    "file": "src/components/CTA.jsx",
+    "lines": "66-86"
+  },
   "purpose": "Dark rounded CTA card over the animated wave background. Four variants: main (everywhere), roles (company/careers/contact desktop), xi (adds a glass Start free trial pill) and security (desktop only). Below 1200px every variant renders main.",
   "tags": [
     "cta",
@@ -60,7 +70,8 @@
         "type": "asset",
         "required": true,
         "roles": [
-          "fx.shader-fallback"
+          "fx.shader-fallback",
+          "asset.user-supplied"
         ]
       }
     },
@@ -115,7 +126,12 @@
   ],
   "retrievalEligible": true,
   "assetRoles": [
+    "asset.user-supplied",
     "fx.shader-fallback"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "asset.user-supplied",
+    "fx.shader-fallback"
+  ]
 }

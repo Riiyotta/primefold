@@ -2,6 +2,16 @@
   "id": "proof.trust",
   "kind": "section",
   "category": "PROOF",
+  "semantic": {
+    "id": "proof.trust",
+    "category": "PROOF"
+  },
+  "source": {
+    "id": "src:Trust.section@66",
+    "tag": "section",
+    "file": "src/components/Trust.jsx",
+    "lines": "66-101"
+  },
   "purpose": "Trust block: three security/compliance points with a 10s teal progress line beside an animated Lottie panel.",
   "tags": [
     "trust",
@@ -124,5 +134,8 @@
   "assetRoles": [
     "motion.lottie"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "motion.lottie"
+  ]
 }

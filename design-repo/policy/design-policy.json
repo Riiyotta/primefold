@@ -1,0 +1,101 @@
+{
+  "policyId": "n0-saas-design-constraints-common",
+  "policyVersion": "0.1.0",
+  "commonIrVersion": "0.5",
+  "title": "Binding of the Primefold design-repo to the N0 common SaaS design-constraint policy",
+  "binding": "bound",
+  "enforcementMode": "hard-and-soft",
+  "classification": {
+    "productCategory": "saas",
+    "productDomain": "ai-decision-intelligence (experience intelligence, real-estate intelligence)",
+    "marketModel": "B2B subscription web app with self-serve trial and sales-led Business/Enterprise tiers",
+    "isSaaS": true,
+    "surfaces": [
+      "marketing-site"
+    ],
+    "audiences": [
+      "CX / marketing / HR / product managers",
+      "asset and portfolio managers",
+      "finance and operations leads at B2B customers"
+    ],
+    "evidence": [
+      {
+        "claim": "Tiered subscription pricing (Free Trial / Business / Enterprise)",
+        "citation": "src/pages/plans/data.js:7",
+        "quote": "name: 'Free Trial',"
+      },
+      {
+        "claim": "Tiered subscription pricing (Business, price on request)",
+        "citation": "src/pages/plans/data.js:26",
+        "quote": "name: 'Business',"
+      },
+      {
+        "claim": "Enterprise tier",
+        "citation": "src/pages/plans/data.js:50",
+        "quote": "name: 'Enterprise',"
+      },
+      {
+        "claim": "Seat/workspace-based plan limits (B2B multi-user workspaces)",
+        "citation": "src/pages/plans/data.js:35",
+        "quote": "Up to 3 users in a workspace"
+      },
+      {
+        "claim": "Product app sign-in from the marketing navbar (hosted web app)",
+        "citation": "src/components/Navbar.jsx:148",
+        "quote": "href=\"https://xi.primefold.ai\""
+      },
+      {
+        "claim": "Self-serve free trial into the app",
+        "citation": "src/pages/plans/PlansHero.jsx:81",
+        "quote": "Start free trial"
+      },
+      {
+        "claim": "B2B audience: roles inside customer organisations",
+        "citation": "src/components/Solutions.jsx:8",
+        "quote": "title: 'Asset manager'"
+      },
+      {
+        "claim": "Licensing/workspace model across products",
+        "citation": "src/pages/plans/data.js:126",
+        "quote": "adding the second is a licensing change"
+      }
+    ],
+    "evidenceNote": "Each citation is re-checked against the real source by extraction/verify_all.py (quote must appear at the cited line) when the sibling source tree is present."
+  },
+  "generationRules": [
+    "Pages are composed only from the 13 templates and the section contracts in this repo; PageSpecs declare mode 'clone' or 'generation'.",
+    "mode 'generation' (any brand other than Primefold) may not reuse Primefold identity, assets, copy, people, customers, statistics, URLs or embeds (GENERATION_MODE_* rules).",
+    "Pricing tiers, comparison table and FAQ follow the real plans template (hero.pricing, features.comparison-table XI-only rule).",
+    "Customer logos, customer imagery and real people are placeholder-only in both modes; clone-only brand assets are reusable only in mode 'clone'.",
+    "Style overrides use token paths only (styleTokens + TOKEN_* rules); the trial-licensed ABC Favorit face is unsupported in generation mode."
+  ],
+  "enforcedBy": [
+    "assets/asset-roles.json",
+    "compatibility/graph.json",
+    "policy/design-policy.json",
+    "schema/pagespec.schema.json",
+    "schema/semantic_validate.py",
+    "schema/source-patterns.json",
+    "tokens/llm/token-catalog.json",
+    "tokens/llm/token-policy.json"
+  ],
+  "contentHashNote": "registry.manifest.json designPolicy.contentHash = sha256 over enforcedBy files (sorted path, NUL, bytes, NUL); computed by extraction/policy_hash.py and re-checked by extraction/verify_all.py.",
+  "sourceUsage": {
+    "status": "reference-and-study-only",
+    "statement": "The source is a clone of the live commercial site primefold.ai. This design-repo treats it as reference/study material only: it is not for public deployment, and nothing from it (brand, assets, copy, people, customers, URLs) may be shipped for another owner. Primefold-owned assets are reusable only in PageSpec mode 'clone'.",
+    "recordedBy": "design-repo decision (agent-authored), not a statement by the site owner",
+    "history": "Earlier versions of this repo cited the project README ('built for reference and study. Not for public deployment'). Commit d21a833 emptied README.md, so that citation no longer holds. The constraint is now recorded here instead of being inferred from a file that no longer states it.",
+    "supportingEvidence": [
+      {
+        "citation": "specs/cms-data.json:5",
+        "quote": "intentionally NOT transcribed (copyright)",
+        "claim": "the recon specs deliberately did not transcribe CMS body copy for copyright reasons"
+      }
+    ]
+  },
+  "approval": {
+    "policyDecision": "bound-pending-architecture-review",
+    "architectureDecisionRecorded": false,
+    "note": "The SaaS classification is evidenced above; a human architecture owner has not ratified the binding. Legal/licensing sign-off on assets and the trial font remains open; productionApproved stays false."
+  }
+}

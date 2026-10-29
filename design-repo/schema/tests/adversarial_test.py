@@ -7,6 +7,13 @@ Mutations  : hand-written negatives for schema rules, structure/rhythm rules, ru
              pinned asset policies (including different-but-still-valid values, which a plain enum check
              cannot catch). A coverage check fails if a graph rule has no mutation.
 
+Generation mode: every GENERATION_MODE_* rule has rejecting mutations (Primefold logo / wordmark / badges / site icons in
+another brand's page, unsupported branded roles, source-file assetRefs, brand names incl. zero-width / case disguises,
+CTA, people, customers, copy shingles, claims, URLs, embeds, screenshots); the generation examples are the controls, and
+the clone example with real Primefold assets and copy must still pass (clone mode keeps validating real content).
+Also: TOKEN_* mutations, retrieval-eligibility mutations (contract / generation node), registry-only availability edits
+(pins must still reject), and wrapper-gate cases over the measured heights.
+
 Run:  python3 schema/tests/adversarial_test.py     (repo root derived from __file__; exit 1 on any failure)
 """
 import copy
@@ -20,6 +27,7 @@ sys.path.insert(0, os.path.join(ROOT, "schema"))
 import semantic_validate as sv  # noqa: E402
 
 CTX = sv.load_context(ROOT)
+VERSION = json.load(open(os.path.join(ROOT, "schema", "pagespec.schema.json")))["properties"]["pageSpecVersion"]["const"]
 
 
 # ---------------------------------------------------------------- synthesiser
@@ -33,7 +41,7 @@ def synth_value(f, path=""):
         return {"label": "Go", "to": "/"}
     if t == "asset":
         role = CTX["roles"][f["roles"][0]]
-        return {"assetRole": role["role"], "assetSource": role["allowedAssetSources"][0], "alt": "Alt text"}
+        return {"assetRole": role["role"], "assetSource": role["cloneAssetSources"][0], "alt": "Alt text"}
     if t == "list":
         return [synth_value(f["item"]) for _ in range(f["minItems"])]
     if t == "object":
@@ -84,7 +92,7 @@ def synth_spec(route_path, overrides=None):
         m = sec["motion"]["allowed"][0]
         nodes.append({"section": sec["id"], "variant": variant, "content": synth_content(sec, variant, ov),
                       "motion": {"pattern": m["pattern"], "trigger": m["trigger"], "reducedMotionFallback": m["reducedMotionFallback"]}})
-    return {"pageSpecVersion": "1.0.0", "template": tpl["id"], "route": route_path,
+    return {"pageSpecVersion": VERSION, "mode": "clone", "template": tpl["id"], "route": route_path,
             "meta": {"title": "Synthesised control", "description": "Auto-built from the template node list."}, "nodes": nodes}
 
 
@@ -100,6 +108,34 @@ def node(spec, section):
 def example():
     with open(os.path.join(ROOT, "schema", "example.pagespec.json"), encoding="utf-8") as f:
         return json.load(f)
+
+
+def gen_example(fam="home"):
+    with open(os.path.join(ROOT, "schema", "examples", f"generated.{fam}.pagespec.json"), encoding="utf-8") as f:
+        return json.load(f)
+
+
+def ctx_from_copy(edit):
+    """Load a validator context from a scratch copy of the repo whose files were edited by edit(root)."""
+    import shutil
+    import tempfile
+    d = tempfile.mkdtemp(prefix="adv-ctx-")
+    try:
+        r = os.path.join(d, "design-repo")
+        shutil.copytree(ROOT, r, ignore=shutil.ignore_patterns("__pycache__"))
+        edit(r)
+        c = sv.load_context(r)
+    finally:
+        sv.load_context(ROOT)  # restore the module root
+        shutil.rmtree(d, ignore_errors=True)
+    return c
+
+
+def edit_json(root, rel, fn):
+    p = os.path.join(root, rel)
+    d = json.load(open(p, encoding="utf-8"))
+    fn(d)
+    json.dump(d, open(p, "w", encoding="utf-8"), indent=2, ensure_ascii=False)
 
 
 def ctx_without_exception(rule, template, pair=None):
@@ -123,6 +159,14 @@ def mut(name, expect):
 # ---- schema layer
 @mut("schema: unknown template enum value", "SCHEMA")
 def _(): s = example(); s["template"] = "template.landing"; return s
+
+
+@mut("schema: mode missing", "SCHEMA")
+def _(): s = example(); del s["mode"]; return s
+
+
+@mut("schema: mode outside the closed enum (reference)", "SCHEMA")
+def _(): s = example(); s["mode"] = "reference"; return s
 
 
 @mut("schema: wrong pageSpecVersion", "SCHEMA")
@@ -171,6 +215,18 @@ def _(): s = example(); node(s, "hero.home-carousel")["content"]["slides"][0]["b
 
 @mut("schema: invented assetSource", "SCHEMA")
 def _(): s = example(); node(s, "hero.home-carousel")["content"]["slides"][0]["background"]["assetSource"] = "download-original"; return s
+
+
+@mut("schema: unknown styleTokens slot", "SCHEMA")
+def _(): s = example(); node(s, "proof.trust")["styleTokens"] = {"color": "text.primary"}; return s
+
+
+@mut("schema: theme that does not exist (dark)", "SCHEMA")
+def _(): s = example(); s["theme"] = "dark"; return s
+
+
+@mut("schema: non-placeholder https URL as a link target", "SCHEMA")
+def _(): s = gen_example(); node(s, "conversion.cta-band")["content"]["button"]["to"] = "https://larkspur.com/start"; return s
 
 
 @mut("schema: literal live booking URL as link target", "SCHEMA")
@@ -261,7 +317,7 @@ def _(): s = synth_spec("/experience-intelligence"); node(s, "conversion.cta-ban
 
 
 @mut("structure: legal route using another legal variant", "ROUTE_VARIANT_OVERRIDE")
-def _(): s = synth_spec("/imprint"); node(s, "content.legal-prose")["variant"] = "terms-of-service"; return s
+def _(): s = synth_spec("/imprint"); node(s, "content.legal-header")["variant"] = "terms-of-service"; return s
 
 
 @mut("structure: RI plans page still carrying the comparison table", "PLANS_COMPARISON_TABLE_XI_ONLY")
@@ -371,6 +427,301 @@ def _(): s = example(); node(s, "hero.home-carousel")["content"]["slides"][1]["c
 def _(): s = synth_spec("/contact"); node(s, "conversion.contact-form")["content"]["linkCards"][0]["to"] = "mailto:support@primefold.ai"; return s
 
 
+# ---- generation mode (review items 1-7): Primefold identity in a page for another brand
+def _gen_node(s, section):
+    return node(s, section)
+
+
+@mut("GEN: Primefold logo (brand.logo-mark, reuse-exact) in another brand's footer", "GENERATION_MODE_ASSET")
+def _(): s = gen_example(); node(s, "shell.footer")["content"]["logo"] = {"assetRole": "brand.logo-mark", "assetSource": "reuse-exact", "alt": "Logo"}; return s
+
+
+@mut("GEN: Primefold logo role even with a placeholder source (role is clone-only)", "GENERATION_MODE_ASSET")
+def _(): s = gen_example(); node(s, "shell.footer")["content"]["logo"] = {"assetRole": "brand.logo-mark", "assetSource": "placeholder", "alt": "Logo"}; return s
+
+
+@mut("GEN: Primefold wordmark in another brand's footer", "GENERATION_MODE_ASSET")
+def _(): s = gen_example(); node(s, "shell.footer")["content"]["wordmark"] = {"assetRole": "brand.wordmark-ghost", "assetSource": "reuse-exact", "alt": ""}; return s
+
+
+@mut("GEN: Primefold product badge (XI/RI) on another brand's hero tab", "GENERATION_MODE_ASSET")
+def _(): s = gen_example(); node(s, "hero.home-carousel")["content"]["tabs"][1]["icon"] = {"assetRole": "brand.product-badge", "assetSource": "reuse-exact", "alt": "XI badge"}; return s
+
+
+@mut("GEN: Primefold XI badge selected on another brand's pricing hero (plans)", "GENERATION_MODE_ASSET")
+def _(): s = gen_example("plans"); node(s, "hero.pricing")["content"]["product"] = "XI"; return s
+
+
+@mut("GEN: Primefold RI badge on another brand's testimonial", "GENERATION_MODE_ASSET")
+def _(): s = gen_example(); node(s, "proof.testimonials")["content"]["slides"][0]["product"] = "RI"; return s
+
+
+@mut("GEN: Primefold xi badge pill on another brand's case study", "GENERATION_MODE_ASSET")
+def _(): s = gen_example("case-study"); node(s, "content.case-study-header")["content"]["pills"][0]["badge"] = "xi"; return s
+
+
+@mut("GEN: Primefold site icon as og:image", "GENERATION_MODE_ASSET")
+def _(): s = gen_example(); s["meta"]["ogImage"] = {"assetRole": "brand.site-icons", "assetSource": "reuse-exact", "alt": "Social preview"}; return s
+
+
+@mut("GEN: unsupported branded asset role (invented 'brand.primefold-badge')", "SCHEMA")
+def _(): s = gen_example(); node(s, "hero.home-carousel")["content"]["tabs"][1]["icon"]["assetRole"] = "brand.primefold-badge"; return s
+
+
+@mut("GEN: generation-safe slot but assetRef points at a Primefold source file", "GENERATION_MODE_ASSET")
+def _(): s = gen_example(); node(s, "hero.home-carousel")["content"]["slides"][0]["background"]["assetRef"] = "public/assets/RAjs2AsxMPYWQK7qgQzwPegjUEI.webp"; return s
+
+
+@mut("GEN: Primefold logo file smuggled under a generated: prefix", "GENERATION_MODE_ASSET")
+def _(): s = gen_example(); node(s, "shell.footer")["content"]["logo"]["assetRef"] = "generated:0ngLiiCSe7c81sENFiXDCxUe8Ew.svg"; return s
+
+
+@mut("GEN: Primefold owner artwork reused exactly (hero backdrop reuse-exact)", "GENERATION_MODE_ASSET")
+def _(): s = gen_example(); node(s, "hero.home-carousel")["content"]["slides"][0]["background"]["assetSource"] = "reuse-exact"; return s
+
+
+@mut("GEN: real Primefold product screenshot referenced as a product still", "GENERATION_MODE_SCREENSHOT")
+def _(): s = gen_example(); node(s, "features.how-it-works")["content"]["backdrop"]["assetRef"] = "generated:6SGxSZ97zxsJhQI7QRmEcVF3QE.jpg"; return s
+
+
+@mut("GEN: brand name in a heading", "GENERATION_MODE_BRAND")
+def _(): s = gen_example(); node(s, "hero.home-carousel")["content"]["slides"][0]["title"] = "Primefold for finance teams"; return s
+
+
+@mut("GEN: brand name disguised with a zero-width space", "GENERATION_MODE_BRAND")
+def _(): s = gen_example(); node(s, "hero.home-carousel")["content"]["slides"][0]["title"] = "Prime​fold for finance"; return s
+
+
+@mut("GEN: brand name in capitals inside meta.title", "GENERATION_MODE_BRAND")
+def _(): s = gen_example(); s["meta"]["title"] = "PRIMEFOLD alternative"; return s
+
+
+@mut("GEN: product name (Real Estate Intelligence) in body copy", "GENERATION_MODE_BRAND")
+def _(): s = gen_example(); node(s, "hero.home-carousel")["content"]["slides"][0]["body"] = "Our Real Estate Intelligence for ledgers."; return s
+
+
+@mut("GEN: product short name XI as a tab label", "GENERATION_MODE_BRAND")
+def _(): s = gen_example(); node(s, "hero.home-carousel")["content"]["tabs"][1]["label"] = "XI"; return s
+
+
+@mut("GEN: source CTA string (Try Primefold XI) as a link label", "GENERATION_MODE_BRAND")
+def _(): s = gen_example(); node(s, "conversion.cta-band")["content"]["button"]["label"] = "Try Primefold XI"; return s
+
+
+@mut("GEN: brand.name set to Primefold", "GENERATION_MODE_BRAND")
+def _(): s = gen_example(); s["brand"]["name"] = "Primefold"; return s
+
+
+@mut("GEN: brand object missing", "GENERATION_MODE_BRAND")
+def _(): s = gen_example(); del s["brand"]; return s
+
+
+@mut("GEN: brand leaks through a new post slug", "GENERATION_MODE_BRAND")
+def _(): s = gen_example("blog-post"); s["route"] = "/blog/why-we-left-primefold"; return s
+
+
+@mut("GEN: real testimonial person name", "GENERATION_MODE_PERSON")
+def _(): s = gen_example(); node(s, "proof.testimonials")["content"]["slides"][0]["personName"] = "Janek Strobel"; return s
+
+
+@mut("GEN: real team first name as a member name", "GENERATION_MODE_PERSON")
+def _(): s = gen_example("company"); node(s, "features.team-ticker")["content"]["members"][0]["name"] = "Vlatko"; return s
+
+
+@mut("GEN: real team photo role", "GENERATION_MODE_PERSON")
+def _(): s = gen_example("company"); node(s, "features.team-ticker")["content"]["members"][0]["photo"] = {"assetRole": "person.team-photo", "assetSource": "placeholder", "alt": "Team member"}; return s
+
+
+@mut("GEN: real author avatar role on a post", "GENERATION_MODE_PERSON")
+def _():
+    s = gen_example("blog-post"); h = node(s, "content.article-header")["content"]
+    h["author"] = {"name": "Mara Ellison", "role": "Controller", "avatar": {"assetRole": "person.author-avatar", "assetSource": "placeholder", "alt": "Author"}}; return s
+
+
+@mut("GEN: real customer name in copy", "GENERATION_MODE_CUSTOMER")
+def _(): s = gen_example(); node(s, "proof.outcomes")["content"]["lead"] = "Trusted by SirPlus and others."; return s
+
+
+@mut("GEN: real customer logo role in the ticker", "GENERATION_MODE_CUSTOMER")
+def _(): s = gen_example(); node(s, "proof.logo-ticker")["content"]["logos"][0]["logo"] = {"assetRole": "customer.logo", "assetSource": "placeholder", "alt": "Logo"}; return s
+
+
+@mut("GEN: real customer imagery role behind a testimonial", "GENERATION_MODE_CUSTOMER")
+def _(): s = gen_example(); node(s, "proof.testimonials")["content"]["slides"][0]["backdrop"] = {"assetRole": "customer.imagery", "assetSource": "placeholder", "alt": "Backdrop"}; return s
+
+
+@mut("GEN: Primefold source copy reused verbatim", "GENERATION_MODE_COPY")
+def _(): s = gen_example(); node(s, "features.how-it-works")["content"]["title"] = "How a question becomes a next move."; return s
+
+
+@mut("GEN: source copy disguised with curly quotes, em dash and odd spacing", "GENERATION_MODE_COPY")
+def _(): s = gen_example(); node(s, "features.how-it-works")["content"]["title"] = "How  a question — becomes a next  move"; return s
+
+
+@mut("GEN: source outcome claim reused (150 customers)", "GENERATION_MODE_CLAIM")
+def _(): s = gen_example(); node(s, "proof.outcomes")["content"]["lead"] = "Over 150 customers switched."; return s
+
+
+@mut("GEN: source case-study statistic reused (+76%)", "GENERATION_MODE_CLAIM")
+def _(): s = gen_example("case-study"); node(s, "proof.case-study-stats")["content"]["stats"][0]["value"] = "+76%"; return s
+
+
+@mut("GEN: live booking URL pasted into copy", "GENERATION_MODE_URL")
+def _(): s = gen_example(); node(s, "conversion.cta-band")["content"]["body"] = "Book at calendly.com/d/dv3b-wwt-mfy"; return s
+
+
+@mut("GEN: non-placeholder domain in copy", "GENERATION_MODE_URL")
+def _(): s = gen_example(); node(s, "conversion.cta-band")["content"]["body"] = "Visit larkspur.com today"; return s
+
+
+@mut("GEN: Primefold support e-mail in copy", "GENERATION_MODE_URL")
+def _(): s = gen_example("contact"); node(s, "conversion.contact-form")["content"]["lead"] = "Write to support@primefold.ai"; return s
+
+
+@mut("GEN: link to the Primefold XI help centre (blocked destination role)", "GENERATION_MODE_URL")
+def _(): s = gen_example(); node(s, "conversion.cta-band")["content"]["button"]["to"] = "dest:help-center-xi"; return s
+
+
+@mut("GEN: link to a real client website destination", "GENERATION_MODE_URL")
+def _(): s = gen_example(); node(s, "conversion.cta-band")["content"]["button"]["to"] = "dest:client-website"; return s
+
+
+@mut("GEN: third-party video embed role in a post body", "GENERATION_MODE_EMBED")
+def _():
+    s = gen_example("blog-post"); b = node(s, "content.article-body")["content"]["blocks"]
+    b.append({"type": "video", "image": {"assetRole": "embed.video-facade", "assetSource": "placeholder", "alt": "Video"}}); return s
+
+
+@mut("GEN: YouTube host referenced in copy", "GENERATION_MODE_EMBED")
+def _(): s = gen_example("blog-post"); node(s, "content.article-body")["content"]["blocks"][0]["text"] = "Watch it on youtube.com"; return s
+
+
+@mut("GEN: clone example relabelled as generation (rules key on mode)", "GENERATION_MODE_ASSET")
+def _(): s = example(); s["mode"] = "generation"; s["brand"] = {"name": "Larkspur"}; return s
+
+
+@mut("GEN: spec-only (retrieval-ineligible) section used in generation mode", "RETRIEVAL_ELIGIBILITY")
+def _(): s = synth_spec("/experience-intelligence"); s["mode"] = "generation"; s["brand"] = {"name": "Larkspur"}; return s
+
+
+# ---- style tokens
+def _tokspec(st, mode="clone", theme=None):
+    s = gen_example() if mode == "generation" else example()
+    if theme:
+        s["theme"] = theme
+    node(s, "proof.trust")["styleTokens"] = st
+    return s
+
+
+@mut("TOKEN: unknown token path", "TOKEN_UNKNOWN")
+def _(): return _tokspec({"surface": "surface.neon"})
+
+
+@mut("TOKEN: raw hex colour", "TOKEN_RAW_VALUE")
+def _(): return _tokspec({"surface": "#ff0000"})
+
+
+@mut("TOKEN: raw rgb() colour", "TOKEN_RAW_VALUE")
+def _(): return _tokspec({"text": "rgb(10, 10, 10)"})
+
+
+@mut("TOKEN: arbitrary spacing in px", "TOKEN_ARBITRARY_SPACING")
+def _(): return _tokspec({"spacingTop": "37px"})
+
+
+@mut("TOKEN: arbitrary spacing step that is not on the scale", "TOKEN_ARBITRARY_SPACING")
+def _(): return _tokspec({"gap": "spacing.37"})
+
+
+@mut("TOKEN: unsupported font family literal", "TOKEN_UNSUPPORTED_FONT")
+def _(): return _tokspec({"headingFont": "Comic Sans MS, cursive"})
+
+
+@mut("TOKEN: trial-licensed font in generation mode", "TOKEN_UNSUPPORTED_FONT")
+def _(): return _tokspec({"headingFont": "fontFamily.favorit"}, mode="generation")
+
+
+@mut("TOKEN: valid token in the wrong slot category", "TOKEN_SLOT_CATEGORY")
+def _(): return _tokspec({"surface": "text.primary"})
+
+
+@mut("TOKEN: invalid theme/token combination (inverse text on a light surface)", "TOKEN_THEME_COMBINATION")
+def _(): return _tokspec({"surface": "surface.page", "text": "text.inverse"})
+
+
+@mut("TOKEN: invalid theme/token combination (dark-surface text on the stat card)", "TOKEN_THEME_COMBINATION")
+def _(): return _tokspec({"surface": "surface.stat", "text": "text.on-black-button"})
+
+
+def registry_cases():
+    """Editing the registry alone must not loosen anything: the code pins still reject."""
+    res = []
+    c = ctx_from_copy(lambda r: edit_json(r, "assets/asset-roles.json", lambda d: [x.update({"availability": "generation-safe", "generationAssetSources": ["reuse-exact"]}) for x in d["roles"] if x["role"] == "brand.logo-mark"]))
+    s = gen_example(); node(s, "shell.footer")["content"]["logo"] = {"assetRole": "brand.logo-mark", "assetSource": "reuse-exact", "alt": "Logo"}
+    errs, _ = run(s, c)
+    res.append(("pin: registry flips brand.logo-mark to generation-safe -> still rejected (ASSET_ROLE_POLICY pin violation + GENERATION_MODE_ASSET reuse)",
+                any("pin violation" in e for e in errs) and any(e.startswith("GENERATION_MODE_ASSET") for e in errs)))
+    c = ctx_from_copy(lambda r: edit_json(r, "assets/asset-roles.json", lambda d: [x.update({"clonePolicy": "may-generate-new", "cloneAssetSources": ["generate-new", "placeholder"]}) for x in d["roles"] if x["role"] == "customer.logo"]))
+    errs, _ = run(example(), c)
+    res.append(("pin: registry moves customer.logo to a different-but-valid clone policy -> every validation fails", any("pin violation" in e for e in errs)))
+    c = ctx_from_copy(lambda r: edit_json(r, "sections/features.sources.json", lambda d: d.update({"retrievalEligible": True}) or d.pop("retrievalReason", None)))
+    errs, _ = run(example(), c)
+    res.append(("retrieval: spec-only contract flipped to eligible -> RETRIEVAL_ELIGIBILITY", any(e.startswith("RETRIEVAL_ELIGIBILITY") for e in errs)))
+    c = ctx_from_copy(lambda r: edit_json(r, "sections/proof.trust.json", lambda d: d.update({"retrievalEligible": False, "retrievalReason": "x" * 40})))
+    errs, _ = run(example(), c)
+    res.append(("retrieval: content section marked ineligible -> RETRIEVAL_ELIGIBILITY", any(e.startswith("RETRIEVAL_ELIGIBILITY") for e in errs)))
+    c = ctx_from_copy(lambda r: os.remove(os.path.join(r, "schema", "source-patterns.json")))
+    errs, _ = run(gen_example(), c)
+    res.append(("patterns: generation mode fails closed when schema/source-patterns.json is missing", any("source-patterns.json is missing" in e for e in errs)))
+    return res
+
+
+def gate_cases():
+    sys.path.insert(0, os.path.join(ROOT, "extraction"))
+    import wrapper_gate as wg
+    sh0, T, R, S_ = wg.load_inputs()
+    res = []
+
+    def ev(mut_fn):
+        sh = copy.deepcopy(sh0)
+        mut_fn(sh)
+        return wg.evaluate(sh, T, R, S_)
+
+    def hero(sh, h):
+        n = next(n for n in sh["routes"]["/security"]["nodes"] if n["section"] == "hero.security-comet")
+        n["heightPx"] = h
+        sh["routes"]["/security"]["pageHeight"] = 20000
+    e, w, _ = ev(lambda sh: hero(sh, 1900))
+    res.append(("gate: HERO 1900px warns, does not fail", not e and any("HERO" in x for x in w)))
+    e, w, _ = ev(lambda sh: hero(sh, 3100))
+    res.append(("gate: HERO 3100px fails", any("HERO" in x for x in e)))
+
+    def share(sh):
+        n = next(n for n in sh["routes"]["/plans"]["nodes"] if n["section"] == "features.comparison-table")
+        n["heightPx"] = int(sh["routes"]["/plans"]["pageHeight"] * 0.65)
+    e, w, _ = ev(share)
+    res.append(("gate: one section holding 65% of a page fails", any("holds" in x for x in e)))
+
+    def share_wl(sh, just, who="design-repo agent (agent attestation, not a human sign-off)"):
+        share(sh)
+        sh["whitelist"] = [{"route": "/plans", "section": "features.comparison-table", "maxHeightPx": 999999, "justification": just, "reviewedBy": who}]
+    e, w, _ = ev(lambda sh: share_wl(sh, "Comparison matrix is one table by design; reviewed in this pass."))
+    res.append(("gate: whitelisted majority section passes but still warns", not e and any("whitelisted" in x for x in w)))
+    e, w, _ = ev(lambda sh: share_wl(sh, "ok"))
+    res.append(("gate: whitelist entry without a 30+ char justification fails", any("justification" in x for x in e)))
+    e, w, _ = ev(lambda sh: share_wl(sh, "Comparison matrix is one table by design; reviewed in this pass.", who="review agent"))
+    res.append(("gate: agent reviewer without 'agent attestation, not a human sign-off' fails", any("agent attestation" in x for x in e)))
+    e, w, _ = ev(lambda sh: sh["routes"].pop("/plans"))
+    res.append(("gate: missing measurement fails", any("missing measurement" in x for x in e)))
+    e, w, _ = ev(lambda sh: sh.update({"viewport": 1280}))
+    res.append(("gate: measurement at the wrong viewport fails", any("viewport" in x for x in e)))
+    e, w, _ = ev(lambda sh: sh.update({"whitelist": [{"route": "/", "section": "proof.outcomes", "maxHeightPx": 5000, "justification": "x" * 40, "reviewedBy": "someone"}]}))
+    res.append(("gate: stale whitelist entry fails", any("stale" in x for x in e)))
+    e, w, _ = ev(lambda sh: None)
+    res.append(("gate control: real measurements pass with 0 errors", not e))
+    return res
+
+
 def check_warn_cases():
     """Warn-severity rules must produce warnings, never errors (severity is honoured)."""
     res = []
@@ -418,6 +769,27 @@ def main():
     errs, _ = run(s)
     report(not any("real first name" in e or "real identity" in e for e in errs), "control: common first name inside longer placeholder text is not rejected", "; ".join(errs[:3]))
 
+    import glob
+    gens = sorted(glob.glob(os.path.join(ROOT, "schema", "examples", "generated.*.pagespec.json")))
+    for p in gens:
+        e = json.load(open(p, encoding="utf-8"))
+        errs, warns = run(e)
+        report(not errs and not warns and e["mode"] == "generation", f"control: generation example {os.path.basename(p)}", "; ".join(errs[:3]))
+    report(len(gens) >= 12, f"controls: {len(gens)} generation examples present (one per renderable template)")
+    s = example()
+    real_logo = node(s, "shell.footer")["content"]["logo"]
+    report(s["mode"] == "clone" and real_logo["assetRole"] == "brand.logo-mark" and real_logo["assetSource"] == "reuse-exact" and not run(s)[0],
+           "control: clone example still validates with the REAL Primefold logo (reuse-exact) and real copy")
+    s = example(); node(s, "hero.home-carousel")["content"]["slides"][0]["background"].update({"assetSource": "reuse-exact", "assetRef": "public/assets/RAjs2AsxMPYWQK7qgQzwPegjUEI.webp"})
+    errs, _ = run(s)
+    report(not errs, "control: clone mode may reuse Primefold owner artwork for fidelity (hero backdrop reuse-exact + real assetRef)", "; ".join(errs[:2]))
+    s = example(); node(s, "proof.trust")["styleTokens"] = {"surface": "surface.inverse", "text": "text.inverse", "spacingTop": "layout.section-pad-title", "radius": "radius.lg", "headingFont": "fontFamily.favorit"}
+    errs, _ = run(s)
+    report(not errs, "control: valid styleTokens (incl. the trial font) pass in clone mode", "; ".join(errs[:2]))
+    s = gen_example(); s["route"] = "/"; node(s, "conversion.cta-band")["content"]["button"] = {"label": "Help", "to": "https://help.larkspur.example/start"}
+    errs, _ = run(s)
+    report(not errs, "control: reserved .example placeholder URL passes in generation mode", "; ".join(errs[:2]))
+
     print("== mutations (each must be REJECTED) ==")
     covered = set()
     for name, fn, expect in MUTATIONS:
@@ -425,6 +797,16 @@ def main():
         ok = bool(errs) and any(e.startswith(expect) for e in errs)
         covered.add(expect)
         report(ok, name, f"expected {expect}; got {errs[:2]}" if not ok else "")
+
+    print("== registry-only edits / retrieval ==")
+    for name, ok_ in registry_cases():
+        report(ok_, name)
+        if "RETRIEVAL_ELIGIBILITY" in name:
+            covered.add("RETRIEVAL_ELIGIBILITY")
+
+    print("== wrapper gate ==")
+    for name, ok_ in gate_cases():
+        report(ok_, name)
 
     print("== severity ==")
     for name, ok in check_warn_cases():

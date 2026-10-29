@@ -1,8 +1,18 @@
 {
   "repositoryId": "primefold-design-repo",
-  "repositoryVersion": "0.1.0",
-  "pageSpecVersion": "1.0.0",
-  "allowlistVersion": "1.0.0",
+  "category": "saas",
+  "productDomain": "ai-decision-intelligence",
+  "designPolicy": {
+    "ref": "policy/design-policy.json",
+    "policyId": "n0-saas-design-constraints-common",
+    "policyVersion": "0.1.0",
+    "commonIrVersion": "0.5",
+    "enforcementMode": "hard-and-soft",
+    "contentHash": "sha256:c7683ed9024de5fbcdf91133ed0de342d5d4aef629763d4dae14b446b4d0d90c"
+  },
+  "repositoryVersion": "0.2.0",
+  "pageSpecVersion": "1.1.0",
+  "allowlistVersion": "1.1.0",
   "versionFieldNote": "allowlistVersion is MACHINE-CHECKED: extraction/verify_all.py fails if it differs from tokens/llm/component-allowlist.json 'version'. pageSpecVersion is MACHINE-CHECKED against the const in schema/pagespec.schema.json. repositoryVersion is a hand-maintained documentation marker; nothing checks it.",
   "status": "design-review-pending",
   "productionApproved": false,
@@ -13,7 +23,7 @@
   "sourceProject": {
     "name": "primefold-clone",
     "liveSite": "https://primefold.ai/",
-    "note": "Clone of a LIVE commercial site, built for reference and study (README: 'Not for public deployment'). Treat as a real company: see assets/asset-roles.json.",
+    "note": "Clone of a LIVE commercial site. Treated as reference/study only and not for public deployment: a design-repo decision recorded in policy/design-policy.json sourceUsage (the project README no longer states it since d21a833). Treat as a real company: see assets/asset-roles.json.",
     "framework": {
       "react": "^18.3.1",
       "vite": "^5.4.11",
@@ -24,15 +34,17 @@
   "counts": {
     "primitives": 10,
     "components": 18,
-    "sections": 34,
+    "sections": 39,
     "templates": 13,
     "routes": 29,
-    "assetRoles": 17,
+    "assetRoles": 24,
     "destinationRoles": 11,
     "formEndpointRoles": 2,
-    "graphRules": 20,
+    "graphRules": 36,
     "tokenFiles": 15,
-    "tokens": 181
+    "tokens": 181,
+    "contentRoles": 2,
+    "generationExamples": 12
   },
   "entryPoints": [
     "README.md",
@@ -52,7 +64,28 @@
     "schema/tests/adversarial_test.py",
     "extraction/measured-values.json",
     "extraction/verify_all.py",
-    "extraction/prove_drift.py"
+    "extraction/prove_drift.py",
+    "policy/design-policy.json",
+    "schema/section-contract.schema.json",
+    "schema/source-patterns.json",
+    "schema/examples/generated.home.pagespec.json",
+    "extraction/wrapper_gate.py",
+    "extraction/measure_sections.mjs",
+    "extraction/build_schema.py",
+    "extraction/build_source_patterns.py",
+    "extraction/build_generation_examples.py",
+    "extraction/policy_hash.py"
   ],
-  "generatedBy": "design-repo-extraction methodology (BUILD-GUIDE + MASTER-GUIDE lessons); contracts generated from real source/spec citations"
+  "generatedBy": "design-repo-extraction methodology (BUILD-GUIDE + MASTER-GUIDE lessons); contracts generated from real source/spec citations",
+  "pageSpecModes": {
+    "clone": "faithful Primefold reconstruction; Primefold-owned assets (clone-only roles) may be reused for fidelity",
+    "generation": "a page for another brand; Primefold identity/assets/copy/people/customers/claims/URLs/embeds are rejected (GENERATION_MODE_* rules)"
+  },
+  "approvalFlags": {
+    "productionApproved": false,
+    "architectureDecisionRecorded": false,
+    "assetLicensingReviewed": false,
+    "humanReviewOfPatterns": false,
+    "visualParityMeasured": false
+  }
 }

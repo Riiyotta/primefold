@@ -2,6 +2,16 @@
   "id": "hero.home-carousel",
   "kind": "section",
   "category": "HERO",
+  "semantic": {
+    "id": "hero.home-carousel",
+    "category": "HERO"
+  },
+  "source": {
+    "id": "src:Hero.section@120",
+    "tag": "section",
+    "file": "src/components/Hero.jsx",
+    "lines": "120-228"
+  },
   "purpose": "Full-viewport three-slide autoplay carousel that introduces the platform and each intelligence, with progress tabs; drives to Book a call and product pages.",
   "tags": [
     "hero",
@@ -47,7 +57,8 @@
               "type": "asset",
               "required": true,
               "roles": [
-                "hero.backdrop-photo"
+                "hero.backdrop-photo",
+                "asset.user-supplied"
               ]
             },
             "title": {
@@ -99,7 +110,9 @@
               "required": true,
               "roles": [
                 "brand.logo-mark",
-                "brand.product-badge"
+                "brand.product-badge",
+                "brand.placeholder-mark",
+                "brand.user-supplied-mark"
               ]
             },
             "interactive": {
@@ -162,9 +175,18 @@
   "retrievalEligible": true,
   "rules": [],
   "assetRoles": [
+    "asset.user-supplied",
     "brand.logo-mark",
+    "brand.placeholder-mark",
     "brand.product-badge",
+    "brand.user-supplied-mark",
     "hero.backdrop-photo"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "asset.user-supplied",
+    "brand.placeholder-mark",
+    "brand.user-supplied-mark",
+    "hero.backdrop-photo"
+  ]
 }

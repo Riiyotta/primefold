@@ -1,0 +1,333 @@
+{
+  "pageSpecVersion": "1.1.0",
+  "mode": "generation",
+  "theme": "light",
+  "brand": {
+    "name": "Larkspur",
+    "domain": "larkspur.example"
+  },
+  "template": "template.case-study",
+  "route": "/case-studies/fernhill-foods-month-end",
+  "meta": {
+    "title": "Larkspur - case study (generation example)",
+    "description": "Fictional brand example built from this design-repo's contracts; original copy, placeholder assets and .example URLs only.",
+    "ogImage": {
+      "assetRole": "brand.placeholder-mark",
+      "assetSource": "placeholder",
+      "alt": "Larkspur placeholder mark",
+      "assetRef": "placeholder:larkspur-og"
+    }
+  },
+  "nodes": [
+    {
+      "section": "shell.navbar",
+      "variant": "white",
+      "content": {
+        "items": [
+          {
+            "label": "Approvals"
+          },
+          {
+            "label": "Audit trail"
+          },
+          {
+            "label": "Forecasts"
+          },
+          {
+            "label": "Exports"
+          },
+          {
+            "label": "Alerts"
+          }
+        ],
+        "signIn": {
+          "label": "Start a",
+          "to": "#how-it-works"
+        },
+        "bookCall": {
+          "label": "Read the guide",
+          "to": "dest:app-trial"
+        }
+      },
+      "motion": {
+        "pattern": "nav-state-swap",
+        "trigger": "scroll",
+        "reducedMotionFallback": "instant-swap"
+      }
+    },
+    {
+      "section": "content.case-study-header",
+      "variant": "default",
+      "content": {
+        "title": "Every invoice matched and every",
+        "breadcrumb": "Stories",
+        "subtitle": "How a fictional grocer shortened its month-end close",
+        "pills": [
+          {
+            "label": "Alerts",
+            "badge": "none"
+          }
+        ],
+        "banner": {
+          "assetRole": "generated.illustration",
+          "assetSource": "generate-new",
+          "alt": "Larkspur sample image 12",
+          "assetRef": "generated:larkspur-banner-12"
+        }
+      },
+      "motion": {
+        "pattern": "hover-color",
+        "trigger": "hover",
+        "reducedMotionFallback": "instant-swap"
+      }
+    },
+    {
+      "section": "proof.case-study-stats",
+      "variant": "default",
+      "content": {
+        "stats": [
+          {
+            "value": "4.2x",
+            "label": "Audit trail",
+            "color": "teal"
+          },
+          {
+            "value": "9 of 10",
+            "label": "Exports",
+            "color": "teal"
+          },
+          {
+            "value": "4.2x",
+            "label": "Reconciliation",
+            "color": "teal"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "trigger": "load",
+        "reducedMotionFallback": "no-animation"
+      }
+    },
+    {
+      "section": "content.case-study-body",
+      "variant": "default",
+      "content": {
+        "blocks": [
+          {
+            "type": "h6"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "hover-color",
+        "trigger": "hover",
+        "reducedMotionFallback": "instant-swap"
+      }
+    },
+    {
+      "section": "content.case-study-body",
+      "variant": "default",
+      "content": {
+        "blocks": [
+          {
+            "type": "h6"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "hover-color",
+        "trigger": "hover",
+        "reducedMotionFallback": "instant-swap"
+      }
+    },
+    {
+      "section": "content.case-study-about",
+      "variant": "default",
+      "content": {
+        "heading": "What changes in",
+        "logo": {
+          "assetRole": "placeholder.company-logo",
+          "assetSource": "placeholder",
+          "alt": "Placeholder image",
+          "assetRef": "placeholder:larkspur-logo-20"
+        },
+        "image": {
+          "assetRole": "generated.illustration",
+          "assetSource": "generate-new",
+          "alt": "Larkspur sample image 21",
+          "assetRef": "generated:larkspur-image-21"
+        },
+        "description": "Fernhill Foods is a fictional regional grocer used in Larkspur sample material.",
+        "info": [
+          {
+            "label": "Alerts",
+            "values": [
+              "Larkspur keeps every ledger entry traceable"
+            ]
+          },
+          {
+            "label": "Approvals",
+            "values": [
+              "Larkspur keeps every ledger entry traceable"
+            ]
+          },
+          {
+            "label": "Forecasts",
+            "values": [
+              "Larkspur keeps every ledger entry traceable"
+            ]
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "hover-color",
+        "trigger": "hover",
+        "reducedMotionFallback": "instant-swap"
+      }
+    },
+    {
+      "section": "conversion.cta-band",
+      "variant": "main",
+      "content": {
+        "title": "Built to keep your numbers private",
+        "body": "Bank lines, invoices and receipts land in one queue, already matched where the evidence",
+        "button": {
+          "label": "Read the guide",
+          "to": "https://help.larkspur.example/start"
+        },
+        "background": {
+          "assetRole": "fx.shader-fallback",
+          "assetSource": "generate-new",
+          "alt": "Larkspur sample image 32",
+          "assetRef": "generated:larkspur-background-32"
+        }
+      },
+      "motion": {
+        "pattern": "shader-drift",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-first-frame"
+      },
+      "styleTokens": {
+        "surface": "surface.inverse",
+        "text": "text.inverse",
+        "spacingTop": "spacing.24",
+        "headingFont": "fontFamily.headline",
+        "radius": "radius.lg"
+      }
+    },
+    {
+      "section": "shell.footer",
+      "variant": "default",
+      "content": {
+        "blurb": "Calm books for busy finance teams. Product notes once a month.",
+        "newsletter": {
+          "endpointRole": "endpoint.newsletter-form",
+          "endpoint": "project-owned-placeholder"
+        },
+        "columns": [
+          {
+            "head": "Product",
+            "links": [
+              {
+                "label": "Alerts",
+                "to": "/contact"
+              },
+              {
+                "label": "Reconciliation",
+                "to": "/contact"
+              }
+            ]
+          },
+          {
+            "head": "Product",
+            "links": [
+              {
+                "label": "Audit trail",
+                "to": "/contact"
+              },
+              {
+                "label": "Forecasts",
+                "to": "/contact"
+              }
+            ]
+          },
+          {
+            "head": "Product",
+            "links": [
+              {
+                "label": "Alerts",
+                "to": "/contact"
+              },
+              {
+                "label": "Reconciliation",
+                "to": "/contact"
+              }
+            ]
+          },
+          {
+            "head": "Product",
+            "links": [
+              {
+                "label": "Audit trail",
+                "to": "/contact"
+              },
+              {
+                "label": "Forecasts",
+                "to": "/contact"
+              }
+            ]
+          }
+        ],
+        "legalLinks": [
+          {
+            "label": "Exports",
+            "to": "/contact"
+          },
+          {
+            "label": "Alerts",
+            "to": "/contact"
+          },
+          {
+            "label": "Reconciliation",
+            "to": "/contact"
+          }
+        ],
+        "cookieSettingsLabel": "Larkspur keeps",
+        "copyright": "Larkspur Example Ltd, all rights reserved",
+        "socials": [
+          {
+            "label": "Forecasts",
+            "to": "/contact"
+          },
+          {
+            "label": "Exports",
+            "to": "/contact"
+          },
+          {
+            "label": "Alerts",
+            "to": "/contact"
+          }
+        ],
+        "hostedNote": "Hosted in a sample region for demos",
+        "logo": {
+          "assetRole": "brand.placeholder-mark",
+          "assetSource": "generate-new",
+          "alt": "Larkspur sample image 55",
+          "assetRef": "generated:larkspur-logo-55"
+        },
+        "wordmark": {
+          "assetRole": "brand.placeholder-mark",
+          "assetSource": "generate-new",
+          "alt": "Larkspur sample image 56",
+          "assetRef": "generated:larkspur-wordmark-56"
+        }
+      },
+      "motion": {
+        "pattern": "scroll-linked-offset",
+        "trigger": "scroll",
+        "reducedMotionFallback": "no-animation"
+      }
+    }
+  ]
+}

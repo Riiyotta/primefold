@@ -2,6 +2,16 @@
   "id": "content.not-found",
   "kind": "section",
   "category": "CONTENT",
+  "semantic": {
+    "id": "content.not-found",
+    "category": "CONTENT"
+  },
+  "source": {
+    "id": "src:NotFound.section@14",
+    "tag": "section",
+    "file": "src/pages/NotFound.jsx",
+    "lines": "14-29"
+  },
   "purpose": "404 block: eyebrow, 404 h1, 'Nothing to see here.' h2, one line of copy and a black Back to homepage button.",
   "tags": [
     "404",
@@ -91,5 +101,6 @@
   "retrievalEligible": true,
   "rules": [],
   "assetRoles": [],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": []
 }

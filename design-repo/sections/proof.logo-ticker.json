@@ -2,6 +2,16 @@
   "id": "proof.logo-ticker",
   "kind": "section",
   "category": "PROOF",
+  "semantic": {
+    "id": "proof.logo-ticker",
+    "category": "PROOF"
+  },
+  "source": {
+    "id": "src:HowItWorks.div@30",
+    "tag": "div",
+    "file": "src/components/HowItWorks.jsx",
+    "lines": "30-42"
+  },
   "purpose": "Infinite horizontal marquee of customer wordmarks at the top of the How-it-works block; establishes credibility before the product demo.",
   "tags": [
     "logos",
@@ -43,7 +53,8 @@
               "type": "asset",
               "required": true,
               "roles": [
-                "customer.logo"
+                "customer.logo",
+                "placeholder.company-logo"
               ]
             },
             "alt": {
@@ -100,7 +111,11 @@
   "retrievalEligible": true,
   "rules": [],
   "assetRoles": [
-    "customer.logo"
+    "customer.logo",
+    "placeholder.company-logo"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "placeholder.company-logo"
+  ]
 }

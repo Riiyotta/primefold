@@ -2,6 +2,16 @@
   "id": "hero.product-live-chat",
   "kind": "section",
   "category": "HERO",
+  "semantic": {
+    "id": "hero.product-live-chat",
+    "category": "HERO"
+  },
+  "source": {
+    "id": "src:ProductPage.section@34",
+    "tag": "section",
+    "file": "src/pages/product/ProductPage.jsx",
+    "lines": "34-63"
+  },
   "purpose": "Dark product hero: eyebrow badge, h1, lead, two CTAs and a typing 'Live Conversation' chat demo over a WebGL rays background; one hero template serves both intelligences via the product enum.",
   "tags": [
     "hero",
@@ -41,8 +51,14 @@
         "required": true,
         "values": [
           "XI",
+          "RI",
+          "own"
+        ],
+        "primefoldBadgeValues": [
+          "XI",
           "RI"
-        ]
+        ],
+        "note": "Values in primefoldBadgeValues render a Primefold product badge/label (XI / RI / CI); mode 'generation' must use the neutral value(s), which render the new brand's own mark (brand.placeholder-mark / brand.user-supplied-mark)."
       },
       "eyebrowLabel": {
         "type": "text",
@@ -78,7 +94,9 @@
         "type": "asset",
         "required": true,
         "roles": [
-          "brand.product-badge"
+          "brand.product-badge",
+          "brand.placeholder-mark",
+          "brand.user-supplied-mark"
         ]
       },
       "prompts": {
@@ -202,7 +220,14 @@
   "retrievalEligible": false,
   "rules": [],
   "assetRoles": [
-    "brand.product-badge"
+    "brand.placeholder-mark",
+    "brand.product-badge",
+    "brand.user-supplied-mark"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "brand.placeholder-mark",
+    "brand.user-supplied-mark"
+  ],
+  "retrievalReason": "Spec-only: the product routes render a placeholder page ('building...', src/pages/ExperienceIntelligence.jsx) and this section's source is not mounted by src/App.jsx, so it is not a proven, retrievable pattern."
 }

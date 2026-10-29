@@ -1,27 +1,33 @@
 {
-  "id": "content.article",
+  "id": "content.article-header",
   "kind": "section",
   "category": "CONTENT",
-  "purpose": "Blog post: h1, divider, author + 'Last updated' meta row, 16:9 banner and a rich-text body (headings with anchors, lists, quote, images, YouTube facade, in-body buttons). Ends directly into the CTA.",
+  "semantic": {
+    "id": "content.article-header",
+    "category": "CONTENT"
+  },
+  "source": {
+    "id": "src:BlogPost.header@14",
+    "tag": "header",
+    "file": "src/pages/BlogPost.jsx",
+    "lines": "14-34"
+  },
+  "purpose": "Blog post opening: h1, divider, author + 'Last updated' meta row, 16:9 banner, and any intro blocks before the first chapter heading.",
   "tags": [
     "article",
     "blog",
-    "rich-text",
+    "header",
     "cms"
   ],
   "status": "mounted",
   "implementedBy": [
     "src/pages/BlogPost.jsx",
-    "src/pages/cms/RichText.jsx",
     "src/pages/cms/shared.jsx",
     "src/pages/cms/cms.css"
   ],
   "evidence": {
     "level": "measured",
-    "unmeasured": [
-      "code/pre/table/figure fallbacks (not used in the 12 posts)",
-      "in-body primary button hover (no CSS rule found)"
-    ]
+    "unmeasured": []
   },
   "allowedTemplates": [
     "template.blog-post"
@@ -61,7 +67,8 @@
             "type": "asset",
             "required": true,
             "roles": [
-              "person.author-avatar"
+              "person.author-avatar",
+              "fictional.person-avatar"
             ]
           }
         }
@@ -76,14 +83,15 @@
         "type": "asset",
         "required": true,
         "roles": [
-          "cms.post-image"
+          "cms.post-image",
+          "asset.user-supplied"
         ]
       },
-      "blocks": {
+      "intro": {
         "type": "list",
-        "required": true,
+        "required": false,
         "minItems": 1,
-        "maxItems": 67,
+        "maxItems": 20,
         "item": {
           "type": "object",
           "required": true,
@@ -130,7 +138,9 @@
               "required": false,
               "roles": [
                 "cms.post-image",
-                "embed.video-facade"
+                "embed.video-facade",
+                "asset.user-supplied",
+                "placeholder.screenshot"
               ]
             },
             "button": {
@@ -141,7 +151,7 @@
             }
           }
         },
-        "countBasis": "real posts have up to 49 blocks; +18 headroom is a design choice, not measured"
+        "countBasis": "blocks before the first chapter heading; bound is a design choice"
       }
     },
     "additionalProperties": false
@@ -167,20 +177,28 @@
     "phone": "350 content; meta row stacks"
   },
   "notes": [
-    "Body prose is intentionally not transcribed in the source specs; only block structure and word counts are recorded."
+    "R6 decomposition: the measured page showed one section holding most of the page (legal 95%, blog post 81%, case study 81% of page height at 1440px; extraction/measured-values.json sectionHeights), so the former whole-page contract was split at real content boundaries."
   ],
   "measuredFrom": [
+    "src/pages/BlogPost.jsx:14-28",
     "specs/blog-case-studies.md:123",
-    "specs/blog-case-studies.md:145",
-    "src/pages/BlogPost.jsx:9",
-    "specs/cms-data.json:1815"
+    "src/pages/BlogPost.jsx:9"
   ],
   "retrievalEligible": true,
   "rules": [],
   "assetRoles": [
+    "asset.user-supplied",
     "cms.post-image",
     "embed.video-facade",
-    "person.author-avatar"
+    "fictional.person-avatar",
+    "person.author-avatar",
+    "placeholder.screenshot"
   ],
-  "version": "1.0.0"
+  "version": "1.1.0",
+  "generatedAssetRoles": [
+    "asset.user-supplied",
+    "cms.post-image",
+    "fictional.person-avatar",
+    "placeholder.screenshot"
+  ]
 }

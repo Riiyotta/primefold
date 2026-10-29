@@ -2,6 +2,16 @@
   "id": "features.faq-accordion",
   "kind": "section",
   "category": "FEATURES",
+  "semantic": {
+    "id": "features.faq-accordion",
+    "category": "FEATURES"
+  },
+  "source": {
+    "id": "src:PlansFaq.section@50",
+    "tag": "section",
+    "file": "src/pages/plans/PlansFaq.jsx",
+    "lines": "50-57"
+  },
   "purpose": "FAQ accordion: independent expandable cards (first open by default) under a title row with a lead.",
   "tags": [
     "faq",
@@ -102,5 +112,6 @@
   "retrievalEligible": true,
   "rules": [],
   "assetRoles": [],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": []
 }

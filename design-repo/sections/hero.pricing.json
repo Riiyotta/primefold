@@ -2,6 +2,16 @@
   "id": "hero.pricing",
   "kind": "section",
   "category": "HERO",
+  "semantic": {
+    "id": "hero.pricing",
+    "category": "HERO"
+  },
+  "source": {
+    "id": "src:PlansHero.section@65",
+    "tag": "section",
+    "file": "src/pages/plans/PlansHero.jsx",
+    "lines": "65-126"
+  },
   "purpose": "Plans hero: eyebrow, h1, lead, two CTAs, product and billing toggles and the three pricing cards (XI state) or one 'Explore Primefold RI' card (RI state).",
   "tags": [
     "pricing",
@@ -50,8 +60,15 @@
         "required": true,
         "values": [
           "XI",
+          "RI",
+          "primary",
+          "secondary"
+        ],
+        "primefoldBadgeValues": [
+          "XI",
           "RI"
-        ]
+        ],
+        "note": "Values in primefoldBadgeValues render a Primefold product badge/label (XI / RI / CI); mode 'generation' must use the neutral value(s), which render the new brand's own mark (brand.placeholder-mark / brand.user-supplied-mark). 'primary' has the XI-state structure (plan cards + comparison table), 'secondary' the RI-state structure (single card, no table)."
       },
       "lead": {
         "type": "text",
@@ -247,9 +264,37 @@
         "plans",
         "billingToggle"
       ]
+    },
+    {
+      "id": "PRICING_PRIMARY_REQUIRES_PLANS",
+      "when": {
+        "field": "product",
+        "equals": "primary"
+      },
+      "require": [
+        "plans"
+      ],
+      "forbid": [
+        "riCard"
+      ]
+    },
+    {
+      "id": "PRICING_SECONDARY_REQUIRES_CARD",
+      "when": {
+        "field": "product",
+        "equals": "secondary"
+      },
+      "require": [
+        "riCard"
+      ],
+      "forbid": [
+        "plans",
+        "billingToggle"
+      ]
     }
   ],
   "retrievalEligible": true,
   "assetRoles": [],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": []
 }

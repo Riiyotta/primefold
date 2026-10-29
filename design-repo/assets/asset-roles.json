@@ -1,39 +1,64 @@
 {
-  "$description": "Closed asset-role / destination-role registry. Roles used in PageSpec fields are exactly these names; policies are pinned (extraction/verify_all.py PINNED_POLICIES) so a role cannot silently be moved to a different-but-valid policy.",
-  "legalNotice": "primefold.ai is a live commercial site (README: 'built for reference and study. Not for public deployment'). Nothing in public/assets may be shipped in a generated page for any other owner without verified rights.",
-  "policyEnum": [
-    "may-generate-new",
+  "$description": "Closed asset-role / destination-role registry. Roles used in PageSpec fields are exactly these names; clone policies and generation availability are pinned in code (PINNED_POLICIES + PINNED_AVAILABILITY in extraction/verify_all.py AND schema/semantic_validate.py) so a role cannot silently be moved to a different-but-valid policy. ONE list 'roles' holds every role; 'class' is asset | destination | form-endpoint | content.",
+  "legalNotice": "primefold.ai is a live commercial site. Primefold-owned assets (logo, wordmark, product badges, site icons, artwork) may be reused ONLY in mode 'clone' (a faithful reconstruction of Primefold); in mode 'generation' (a page for any other brand) none of them may be reused (availability clone-only / blocked-for-generation, enforced by GENERATION_MODE_* rules). Third-party customer logos/imagery and real people are placeholder-only in both modes. The clone's reference/study-only status is recorded in policy/design-policy.json sourceUsage (the project README no longer states it).",
+  "availabilityEnum": [
+    "clone-only",
+    "generation-safe",
+    "blocked-for-generation"
+  ],
+  "availabilityMeaning": {
+    "clone-only": "Primefold's own identity assets: reusable verbatim in mode 'clone' only; the role is rejected in mode 'generation'.",
+    "generation-safe": "May appear in mode 'generation' with the role's generationAssetSources (never 'reuse-exact' of a Primefold original).",
+    "blocked-for-generation": "Real third-party identity / live third-party target: rejected in mode 'generation'; placeholder-only in mode 'clone'."
+  },
+  "clonePolicyEnum": [
     "must-reuse-exact",
+    "may-reuse-or-generate",
+    "may-generate-new",
     "must-not-fabricate",
+    "placeholder-only",
+    "user-supplied-only",
     "must-not-reuse-live-endpoint"
   ],
   "assetSourceEnum": [
     "reuse-exact",
     "generate-new",
-    "placeholder"
+    "placeholder",
+    "user-supplied"
   ],
   "assetSourcePolicyMap": {
+    "must-reuse-exact": [
+      "reuse-exact"
+    ],
+    "may-reuse-or-generate": [
+      "reuse-exact",
+      "generate-new",
+      "placeholder"
+    ],
     "may-generate-new": [
       "generate-new",
       "placeholder"
     ],
-    "must-reuse-exact": [
-      "reuse-exact"
-    ],
     "must-not-fabricate": [
       "placeholder"
     ],
+    "placeholder-only": [
+      "placeholder"
+    ],
+    "user-supplied-only": [
+      "user-supplied"
+    ],
     "must-not-reuse-live-endpoint": []
   },
-  "assetRoles": [
+  "roles": [
     {
       "role": "brand.logo-mark",
+      "class": "asset",
       "kind": "image",
-      "generationPolicy": "must-reuse-exact",
-      "allowedAssetSources": [
+      "clonePolicy": "must-reuse-exact",
+      "cloneAssetSources": [
         "reuse-exact"
       ],
-      "generationGuidance": "Use the owner's own exact logo files. Never redraw, recolour or 'improve' the mark.",
       "licensingGuidance": "Primefold's own marks: reuse only on pages owned by the same company. Do not ship them on another brand's page.",
       "usageEvidence": [
         "src/components/Navbar.jsx:137",
@@ -44,32 +69,48 @@
         "public/assets/svg/logo-dark.svg",
         "public/assets/0ngLiiCSe7c81sENFiXDCxUe8Ew.svg",
         "public/assets/Ok2FqoeufFP2awsp0MRNxJXTDA.svg"
-      ]
+      ],
+      "availability": "clone-only",
+      "generationAssetSources": [],
+      "generationSafeSubstitutes": [
+        "brand.placeholder-mark",
+        "brand.user-supplied-mark"
+      ],
+      "cloneModeGuidance": "Use the owner's own exact logo files. Never redraw, recolour or 'improve' the mark.",
+      "generatedModeGuidance": "CLONE MODE ONLY. This is Primefold's own identity artwork (logo / wordmark / product badge / site icon). In mode 'generation' (a page for another brand) the role is rejected outright (GENERATION_MODE_ASSET); use brand.placeholder-mark or brand.user-supplied-mark instead. Never redraw, recolour, trace or 'inspire' a look-alike of the Primefold mark."
     },
     {
       "role": "brand.wordmark-ghost",
+      "class": "asset",
       "kind": "image",
-      "generationPolicy": "must-reuse-exact",
-      "allowedAssetSources": [
+      "clonePolicy": "must-reuse-exact",
+      "cloneAssetSources": [
         "reuse-exact"
       ],
-      "generationGuidance": "Giant footer wordmark; reuse the exact SVG, fill #1A1814 (token color.ink).",
       "licensingGuidance": "Owner's wordmark; same restriction as brand.logo-mark.",
       "usageEvidence": [
         "src/components/Footer.jsx:138"
       ],
       "realFiles": [
         "public/assets/L5IVS7Cn2X7mzYJB2j1MVEECRKk.svg"
-      ]
+      ],
+      "availability": "clone-only",
+      "generationAssetSources": [],
+      "generationSafeSubstitutes": [
+        "brand.placeholder-mark",
+        "brand.user-supplied-mark"
+      ],
+      "cloneModeGuidance": "Giant footer wordmark; reuse the exact SVG, fill #1A1814 (token color.ink).",
+      "generatedModeGuidance": "CLONE MODE ONLY. This is Primefold's own identity artwork (logo / wordmark / product badge / site icon). In mode 'generation' (a page for another brand) the role is rejected outright (GENERATION_MODE_ASSET); use brand.placeholder-mark or brand.user-supplied-mark instead. Never redraw, recolour, trace or 'inspire' a look-alike of the Primefold mark."
     },
     {
       "role": "brand.product-badge",
+      "class": "asset",
       "kind": "image",
-      "generationPolicy": "must-reuse-exact",
-      "allowedAssetSources": [
+      "clonePolicy": "must-reuse-exact",
+      "cloneAssetSources": [
         "reuse-exact"
       ],
-      "generationGuidance": "XI / RI / CI product badges: reuse exact files; do not invent new product badges or colours.",
       "licensingGuidance": "Owner's product marks; reuse only for the owner.",
       "usageEvidence": [
         "src/components/Hero.jsx:41",
@@ -81,16 +122,24 @@
         "public/assets/FKdTY48jmzOKCr6FVHOYD8MSv7s.svg",
         "public/assets/cms/badge-xi.svg",
         "public/assets/cms/badge-ri.svg"
-      ]
+      ],
+      "availability": "clone-only",
+      "generationAssetSources": [],
+      "generationSafeSubstitutes": [
+        "brand.placeholder-mark",
+        "brand.user-supplied-mark"
+      ],
+      "cloneModeGuidance": "XI / RI / CI product badges: reuse exact files; do not invent new product badges or colours.",
+      "generatedModeGuidance": "CLONE MODE ONLY. This is Primefold's own identity artwork (logo / wordmark / product badge / site icon). In mode 'generation' (a page for another brand) the role is rejected outright (GENERATION_MODE_ASSET); use brand.placeholder-mark or brand.user-supplied-mark instead. Never redraw, recolour, trace or 'inspire' a look-alike of the Primefold mark."
     },
     {
       "role": "brand.site-icons",
+      "class": "asset",
       "kind": "image",
-      "generationPolicy": "must-reuse-exact",
-      "allowedAssetSources": [
+      "clonePolicy": "must-reuse-exact",
+      "cloneAssetSources": [
         "reuse-exact"
       ],
-      "generationGuidance": "Favicon, apple-touch icon and og:image: exact files only.",
       "licensingGuidance": "Owner's identity assets; reuse only for the owner.",
       "usageEvidence": [
         "index.html:6",
@@ -101,17 +150,27 @@
         "public/assets/6ZajvfY2Qd7ebNvpcE5rKduPAoo.png",
         "public/assets/3yxlygKzhxi7QeanjmIbfyH244.png",
         "public/assets/kCEvWj6X9M889dINz1Dophu60Y8.png"
-      ]
+      ],
+      "availability": "clone-only",
+      "generationAssetSources": [],
+      "generationSafeSubstitutes": [
+        "brand.placeholder-mark",
+        "brand.user-supplied-mark"
+      ],
+      "cloneModeGuidance": "Favicon, apple-touch icon and og:image: exact files only.",
+      "generatedModeGuidance": "CLONE MODE ONLY. This is Primefold's own identity artwork (logo / wordmark / product badge / site icon). In mode 'generation' (a page for another brand) the role is rejected outright (GENERATION_MODE_ASSET); use brand.placeholder-mark or brand.user-supplied-mark instead. Never redraw, recolour, trace or 'inspire' a look-alike of the Primefold mark.",
+      "ogImageEligible": true
     },
     {
       "role": "ui.icon-mask",
+      "class": "asset",
       "kind": "icon",
-      "generationPolicy": "may-generate-new",
-      "allowedAssetSources": [
+      "clonePolicy": "may-reuse-or-generate",
+      "cloneAssetSources": [
+        "reuse-exact",
         "generate-new",
         "placeholder"
       ],
-      "generationGuidance": "Generic single-colour glyphs rendered as CSS masks (colour from a token). New glyphs may be drawn in the same 16/20-unit style.",
       "licensingGuidance": "Generic UI glyphs; the extracted originals are still the site owner's artwork, so draw new ones rather than copying files for other owners. Third-party brand colour exception: LinkedIn glyph uses rgb(9,102,194).",
       "usageEvidence": [
         "src/pages/shared-info/MaskIcon.jsx:8",
@@ -122,17 +181,26 @@
         "public/assets/pages/security/icon-hosted-germany.svg",
         "public/assets/pages/contact/icon-mail.svg",
         "public/assets/cms/icon-arrow-right-mask.svg"
-      ]
-    },
-    {
-      "role": "ui.illustration-svg",
-      "kind": "image",
-      "generationPolicy": "may-generate-new",
-      "allowedAssetSources": [
+      ],
+      "availability": "generation-safe",
+      "generationAssetSources": [
         "generate-new",
         "placeholder"
       ],
-      "generationGuidance": "Small decorative full-colour SVG tiles (security tiles, orbit source icons, stat tiles). Generate new original artwork in the same duotone style.",
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Generic single-colour glyphs rendered as CSS masks (colour from a token). New glyphs may be drawn in the same 16/20-unit style.",
+      "generatedModeGuidance": "Generation-safe SLOT, not generation-safe FILES: in mode 'generation' only generate-new/placeholder is allowed and assetRef must be generated:/placeholder:/user-supplied:. The Primefold originals listed in realFiles are clone-only (reuse is rejected by GENERATION_MODE_ASSET)."
+    },
+    {
+      "role": "ui.illustration-svg",
+      "class": "asset",
+      "kind": "image",
+      "clonePolicy": "may-reuse-or-generate",
+      "cloneAssetSources": [
+        "reuse-exact",
+        "generate-new",
+        "placeholder"
+      ],
       "licensingGuidance": "Contains no third-party marks except the German flag tile (public-domain national flag).",
       "usageEvidence": [
         "src/pages/security/SecurityHero.jsx:32"
@@ -141,17 +209,26 @@
         "public/assets/pages/security/7ERMi7fk0ghkwyi7viAZS06g6w.svg",
         "public/assets/pages/security/ibbCaDYtLP74SJYvXs8caLQZw.svg",
         "public/assets/pages/company/xHFcroRcWC2fxNduO7fVX1WKWvQ.svg"
-      ]
-    },
-    {
-      "role": "fx.shader-fallback",
-      "kind": "image",
-      "generationPolicy": "may-generate-new",
-      "allowedAssetSources": [
+      ],
+      "availability": "generation-safe",
+      "generationAssetSources": [
         "generate-new",
         "placeholder"
       ],
-      "generationGuidance": "Static stand-ins for WebGL shaders (CTA wave, card waves, glow textures, silk orbs). Generate a new teal/orange-on-black wave or render the shader; prefer original generation.",
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Small decorative full-colour SVG tiles (security tiles, orbit source icons, stat tiles). Generate new original artwork in the same duotone style.",
+      "generatedModeGuidance": "Generation-safe SLOT, not generation-safe FILES: in mode 'generation' only generate-new/placeholder is allowed and assetRef must be generated:/placeholder:/user-supplied:. The Primefold originals listed in realFiles are clone-only (reuse is rejected by GENERATION_MODE_ASSET)."
+    },
+    {
+      "role": "fx.shader-fallback",
+      "class": "asset",
+      "kind": "image",
+      "clonePolicy": "may-reuse-or-generate",
+      "cloneAssetSources": [
+        "reuse-exact",
+        "generate-new",
+        "placeholder"
+      ],
       "licensingGuidance": "Generated by the owner's shader; treat the PNGs as owner artwork - do not reuse for other owners.",
       "usageEvidence": [
         "src/components/CTA.jsx:73",
@@ -161,17 +238,26 @@
         "public/assets/5V8gmDlH6VshGL3t6Yw2BakE8M.png",
         "public/assets/pages/careers/DLxHDgiuFQf9DQC0sTFOvpSlftU.png",
         "public/assets/5Ckt2QR4YEmQXqkie4amifMhcg.png"
-      ]
-    },
-    {
-      "role": "hero.backdrop-photo",
-      "kind": "image",
-      "generationPolicy": "may-generate-new",
-      "allowedAssetSources": [
+      ],
+      "availability": "generation-safe",
+      "generationAssetSources": [
         "generate-new",
         "placeholder"
       ],
-      "generationGuidance": "Full-bleed scenic photography behind a hero (conference room, store interior, skyline). Generate or license new scenic imagery with no identifiable people or readable third-party signage.",
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Static stand-ins for WebGL shaders (CTA wave, card waves, glow textures, silk orbs). Generate a new teal/orange-on-black wave or render the shader; prefer original generation.",
+      "generatedModeGuidance": "Generation-safe SLOT, not generation-safe FILES: in mode 'generation' only generate-new/placeholder is allowed and assetRef must be generated:/placeholder:/user-supplied:. The Primefold originals listed in realFiles are clone-only (reuse is rejected by GENERATION_MODE_ASSET)."
+    },
+    {
+      "role": "hero.backdrop-photo",
+      "class": "asset",
+      "kind": "image",
+      "clonePolicy": "may-reuse-or-generate",
+      "cloneAssetSources": [
+        "reuse-exact",
+        "generate-new",
+        "placeholder"
+      ],
       "licensingGuidance": "Originals were downloaded from Framer-hosted URLs; photographer/stock licence is unknown. Do not ship the originals for other owners.",
       "usageEvidence": [
         "src/components/Hero.jsx:8",
@@ -182,17 +268,26 @@
         "public/assets/whU1ew3cUmTlwn8jZq7aYOjcWOU.webp",
         "public/assets/0ludMTRIYsIsZjBXbYoAOYh09IY.webp",
         "public/assets/pages/company/cThFoE5iLieFxYjJ383g6O72ETg.webp"
-      ]
-    },
-    {
-      "role": "photo.scene-card",
-      "kind": "image",
-      "generationPolicy": "may-generate-new",
-      "allowedAssetSources": [
+      ],
+      "availability": "generation-safe",
+      "generationAssetSources": [
         "generate-new",
         "placeholder"
       ],
-      "generationGuidance": "Role/team scene photos on solutions cards and tabs. Generate new generic workplace imagery; avoid identifiable people.",
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Full-bleed scenic photography behind a hero (conference room, store interior, skyline). Generate or license new scenic imagery with no identifiable people or readable third-party signage.",
+      "generatedModeGuidance": "Generation-safe SLOT, not generation-safe FILES: in mode 'generation' only generate-new/placeholder is allowed and assetRef must be generated:/placeholder:/user-supplied:. The Primefold originals listed in realFiles are clone-only (reuse is rejected by GENERATION_MODE_ASSET)."
+    },
+    {
+      "role": "photo.scene-card",
+      "class": "asset",
+      "kind": "image",
+      "clonePolicy": "may-reuse-or-generate",
+      "cloneAssetSources": [
+        "reuse-exact",
+        "generate-new",
+        "placeholder"
+      ],
       "licensingGuidance": "Framer-hosted originals with unknown licence; do not reuse for other owners.",
       "usageEvidence": [
         "src/components/Solutions.jsx:8",
@@ -202,17 +297,26 @@
         "public/assets/RIjH19JJ8DvQamX9HDKg7VWbBM.webp",
         "public/assets/pages/experience-intelligence/T4r3OA3ib810aHqjuLi9sIekZKM.png",
         "public/assets/pages/realestate-intelligence/fPL5khSQQDMO551QMFXPouhArqM.png"
-      ]
-    },
-    {
-      "role": "product.illustration-still",
-      "kind": "image",
-      "generationPolicy": "may-generate-new",
-      "allowedAssetSources": [
+      ],
+      "availability": "generation-safe",
+      "generationAssetSources": [
         "generate-new",
         "placeholder"
       ],
-      "generationGuidance": "Dark stage/panel stills behind the A1 / RI product demos and the intelligence-card mock photos. Generate new abstract or mock-UI imagery; mock data must be invented, not real customer data.",
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Role/team scene photos on solutions cards and tabs. Generate new generic workplace imagery; avoid identifiable people.",
+      "generatedModeGuidance": "Generation-safe SLOT, not generation-safe FILES: in mode 'generation' only generate-new/placeholder is allowed and assetRef must be generated:/placeholder:/user-supplied:. The Primefold originals listed in realFiles are clone-only (reuse is rejected by GENERATION_MODE_ASSET)."
+    },
+    {
+      "role": "product.illustration-still",
+      "class": "asset",
+      "kind": "image",
+      "clonePolicy": "may-reuse-or-generate",
+      "cloneAssetSources": [
+        "reuse-exact",
+        "generate-new",
+        "placeholder"
+      ],
       "licensingGuidance": "Owner-made product artwork; reuse only for the owner.",
       "usageEvidence": [
         "src/components/how/A1Loop.jsx:102",
@@ -222,16 +326,24 @@
         "public/assets/6SGxSZ97zxsJhQI7QRmEcVF3QE.jpg",
         "public/assets/U0tJJ7Y3amMDQd4StUat5cOK8uk.png",
         "public/assets/pages/realestate-intelligence/BStpgcNqGi2wH3pDgwuVOsCemOs.jpg"
-      ]
+      ],
+      "availability": "generation-safe",
+      "generationAssetSources": [
+        "generate-new",
+        "placeholder"
+      ],
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Dark stage/panel stills behind the A1 / RI product demos and the intelligence-card mock photos. Generate new abstract or mock-UI imagery; mock data must be invented, not real customer data.",
+      "generatedModeGuidance": "Generation-safe SLOT, not generation-safe FILES: in mode 'generation' only generate-new/placeholder is allowed and assetRef must be generated:/placeholder:/user-supplied:. The Primefold originals listed in realFiles are clone-only (reuse is rejected by GENERATION_MODE_ASSET)."
     },
     {
       "role": "customer.logo",
+      "class": "asset",
       "kind": "image",
-      "generationPolicy": "must-not-fabricate",
-      "allowedAssetSources": [
+      "clonePolicy": "must-not-fabricate",
+      "cloneAssetSources": [
         "placeholder"
       ],
-      "generationGuidance": "NEVER reproduce a real customer logo and never invent a look-alike of a real company. Use a clearly neutral placeholder wordmark box (e.g. grey rectangle labelled 'Customer logo').",
       "licensingGuidance": "Real third-party trademarks: webedia, fischerAppelt, SportScheck, SPORTFIVE, Maggiore Suites, ECE, NAS Real Investments, Vickii, t3n, SirPlus (ticker) plus DIRTS, Gainback, NAS Invest and a fourth customer (testimonials/outcomes/case studies). Reproduction needs the trademark owner's permission.",
       "usageEvidence": [
         "src/components/HowItWorks.jsx:8",
@@ -242,16 +354,23 @@
         "public/assets/mlevCnZoqAApeTSZWClq74jYCg.png",
         "public/assets/vBdLAfXU5G3G8FMre5KLbUkCzWc.svg",
         "public/assets/0I7dW2NSk2zVnHLMvfACsc1BIr8.png"
-      ]
+      ],
+      "availability": "blocked-for-generation",
+      "generationAssetSources": [],
+      "generationSafeSubstitutes": [
+        "placeholder.company-logo"
+      ],
+      "cloneModeGuidance": "NEVER reproduce a real customer logo and never invent a look-alike of a real company. Use a clearly neutral placeholder wordmark box (e.g. grey rectangle labelled 'Customer logo').",
+      "generatedModeGuidance": "BLOCKED IN GENERATION MODE. Real third-party identity or live third-party target (customers, real people, real video, Primefold product help centres, client websites). A generation-mode PageSpec may not use this role at all; use placeholder.company-logo. Even in clone mode it is placeholder-only."
     },
     {
       "role": "customer.imagery",
+      "class": "asset",
       "kind": "image",
-      "generationPolicy": "must-not-fabricate",
-      "allowedAssetSources": [
+      "clonePolicy": "must-not-fabricate",
+      "cloneAssetSources": [
         "placeholder"
       ],
-      "generationGuidance": "Photography supplied by or depicting named customers (testimonial/outcome backdrops, case-study banners and about images). Use neutral placeholders; do not recreate real customer premises, products or staff.",
       "licensingGuidance": "Real customer imagery; checked images include an identifiable person in a field and a building carrying real third-party signage. Requires customer permission.",
       "usageEvidence": [
         "src/components/Testimonials.jsx:10",
@@ -262,16 +381,24 @@
         "public/assets/07ZMtQS80wekxrvQAxnTtIZWXc.jpeg",
         "public/assets/qkL7CkFhbnE5G6A9rxHv5zbgxz8.jpg",
         "public/assets/cms/UtK1ZeSLwMR3E06ch8kV2FcSJO8.jpg"
-      ]
+      ],
+      "availability": "blocked-for-generation",
+      "generationAssetSources": [],
+      "generationSafeSubstitutes": [
+        "generated.illustration",
+        "asset.user-supplied"
+      ],
+      "cloneModeGuidance": "Photography supplied by or depicting named customers (testimonial/outcome backdrops, case-study banners and about images). Use neutral placeholders; do not recreate real customer premises, products or staff.",
+      "generatedModeGuidance": "BLOCKED IN GENERATION MODE. Real third-party identity or live third-party target (customers, real people, real video, Primefold product help centres, client websites). A generation-mode PageSpec may not use this role at all; use generated.illustration or asset.user-supplied. Even in clone mode it is placeholder-only."
     },
     {
       "role": "person.team-photo",
+      "class": "asset",
       "kind": "image",
-      "generationPolicy": "must-not-fabricate",
-      "allowedAssetSources": [
+      "clonePolicy": "must-not-fabricate",
+      "cloneAssetSources": [
         "placeholder"
       ],
-      "generationGuidance": "Never reproduce real employee photos; never fabricate a photo-real person presented as a real employee. Use neutral avatar placeholders.",
       "licensingGuidance": "Real people's likenesses (12 team members on /company). Personality rights / GDPR apply.",
       "usageEvidence": [
         "src/pages/company/Team.jsx:8"
@@ -279,16 +406,23 @@
       "realFiles": [
         "public/assets/pages/company/3zbWLtUigaimRPvHa17qjHrSo.jpg",
         "public/assets/pages/company/A7Zab1F86r1LurCg6qIYp3yuDfk.png"
-      ]
+      ],
+      "availability": "blocked-for-generation",
+      "generationAssetSources": [],
+      "generationSafeSubstitutes": [
+        "fictional.person-avatar"
+      ],
+      "cloneModeGuidance": "Never reproduce real employee photos; never fabricate a photo-real person presented as a real employee. Use neutral avatar placeholders.",
+      "generatedModeGuidance": "BLOCKED IN GENERATION MODE. Real third-party identity or live third-party target (customers, real people, real video, Primefold product help centres, client websites). A generation-mode PageSpec may not use this role at all; use fictional.person-avatar. Even in clone mode it is placeholder-only."
     },
     {
       "role": "person.author-avatar",
+      "class": "asset",
       "kind": "image",
-      "generationPolicy": "must-not-fabricate",
-      "allowedAssetSources": [
+      "clonePolicy": "must-not-fabricate",
+      "cloneAssetSources": [
         "placeholder"
       ],
-      "generationGuidance": "Blog/post author avatars: neutral placeholder circle only.",
       "licensingGuidance": "Real people's likenesses (blog authors). One original is a 9.6 MB 4160x6240 portrait per MANIFEST.",
       "usageEvidence": [
         "src/pages/cms/data.js:34"
@@ -296,17 +430,25 @@
       "realFiles": [
         "public/assets/cms/U4h1tpH3vCNYO7BOdYlJ9L3BA0.jpg",
         "public/assets/cms/rokZfBK9H7oApxqpJ81csjy0d7c.png"
-      ]
+      ],
+      "availability": "blocked-for-generation",
+      "generationAssetSources": [],
+      "generationSafeSubstitutes": [
+        "fictional.person-avatar"
+      ],
+      "cloneModeGuidance": "Blog/post author avatars: neutral placeholder circle only.",
+      "generatedModeGuidance": "BLOCKED IN GENERATION MODE. Real third-party identity or live third-party target (customers, real people, real video, Primefold product help centres, client websites). A generation-mode PageSpec may not use this role at all; use fictional.person-avatar. Even in clone mode it is placeholder-only."
     },
     {
       "role": "cms.post-image",
+      "class": "asset",
       "kind": "image",
-      "generationPolicy": "may-generate-new",
-      "allowedAssetSources": [
+      "clonePolicy": "may-reuse-or-generate",
+      "cloneAssetSources": [
+        "reuse-exact",
         "generate-new",
         "placeholder"
       ],
-      "generationGuidance": "Editorial cover/banner/body images for posts and case-study cards. Generate new original editorial art/screens; do not depict real people or real customer data.",
       "licensingGuidance": "Company editorial art (some covers contain product screenshots of real accounts). Do not reuse the originals for other owners.",
       "usageEvidence": [
         "src/pages/Blog.jsx:34",
@@ -315,17 +457,25 @@
       "realFiles": [
         "public/assets/cms/G2mXSV53ReSNVR0sJjtcOpcTCxU.png",
         "public/assets/cms/GPlMI47GV2EFJYFciU7Ir3rio.png"
-      ]
-    },
-    {
-      "role": "motion.lottie",
-      "kind": "animation",
-      "generationPolicy": "may-generate-new",
-      "allowedAssetSources": [
+      ],
+      "availability": "generation-safe",
+      "generationAssetSources": [
         "generate-new",
         "placeholder"
       ],
-      "generationGuidance": "Lottie JSON panels. Author new animations; do not copy the originals.",
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Editorial cover/banner/body images for posts and case-study cards. Generate new original editorial art/screens; do not depict real people or real customer data.",
+      "generatedModeGuidance": "Generation-safe SLOT, not generation-safe FILES: in mode 'generation' only generate-new/placeholder is allowed and assetRef must be generated:/placeholder:/user-supplied:. The Primefold originals listed in realFiles are clone-only (reuse is rejected by GENERATION_MODE_ASSET)."
+    },
+    {
+      "role": "motion.lottie",
+      "class": "asset",
+      "kind": "animation",
+      "clonePolicy": "may-generate-new",
+      "cloneAssetSources": [
+        "generate-new",
+        "placeholder"
+      ],
       "licensingGuidance": "WARNING: public/assets/pages/experience-intelligence/0wnxkqSd8yM0mNqNViIMBD53E.json embeds third-party brand logos as images (specs/product-pages.md section 7.3) and must never be reused.",
       "usageEvidence": [
         "src/components/Trust.jsx:10",
@@ -334,180 +484,412 @@
       "realFiles": [
         "public/assets/lottie/HY16h57JG9iHUXsmkr9vgGV0A.json",
         "public/assets/lottie/xNm1ok67qiSXrtlhAImlRlSghE.json"
-      ]
+      ],
+      "availability": "generation-safe",
+      "generationAssetSources": [
+        "generate-new",
+        "placeholder"
+      ],
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Lottie JSON panels. Author new animations; do not copy the originals.",
+      "generatedModeGuidance": "Generation-safe: allowed sources in generation mode are generate-new/placeholder; never reuse a Primefold original."
     },
     {
       "role": "embed.video-facade",
+      "class": "asset",
       "kind": "embed",
-      "generationPolicy": "must-not-fabricate",
-      "allowedAssetSources": [
+      "clonePolicy": "must-not-fabricate",
+      "cloneAssetSources": [
         "placeholder"
       ],
-      "generationGuidance": "Click-to-play facade for third-party video (YouTube). Use a neutral dark 16:9 placeholder; never embed or mimic a real video.",
       "licensingGuidance": "Third-party hosted video (3 YouTube embeds); thumbnails not downloaded (i.ytimg.com).",
       "usageEvidence": [
         "specs/blog-case-studies.md:42"
       ],
-      "realFiles": []
-    }
-  ],
-  "destinationRoles": [
+      "realFiles": [],
+      "availability": "blocked-for-generation",
+      "generationAssetSources": [],
+      "generationSafeSubstitutes": [
+        "placeholder.screenshot"
+      ],
+      "cloneModeGuidance": "Click-to-play facade for third-party video (YouTube). Use a neutral dark 16:9 placeholder; never embed or mimic a real video.",
+      "generatedModeGuidance": "BLOCKED IN GENERATION MODE. Real third-party identity or live third-party target (customers, real people, real video, Primefold product help centres, client websites). A generation-mode PageSpec may not use this role at all; use placeholder.screenshot. Even in clone mode it is placeholder-only."
+    },
     {
       "role": "dest:booking",
+      "class": "destination",
       "kind": "destination",
-      "generationPolicy": "must-not-reuse-live-endpoint",
-      "allowedAssetSources": [],
+      "clonePolicy": "must-not-reuse-live-endpoint",
+      "cloneAssetSources": [],
       "liveTargetKind": "scheduling page",
-      "generationGuidance": "Point to the new project's own booking page.",
       "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
       "usageEvidence": [
         "src/components/Navbar.jsx:6"
-      ]
+      ],
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Point to the new project's own booking page.",
+      "generatedModeGuidance": "Generation-safe as a ROLE NAME only: dest:<role> resolves to the new brand's own target at build time; the Primefold literal URL must never be emitted."
     },
     {
       "role": "dest:app-signin",
+      "class": "destination",
       "kind": "destination",
-      "generationPolicy": "must-not-reuse-live-endpoint",
-      "allowedAssetSources": [],
+      "clonePolicy": "must-not-reuse-live-endpoint",
+      "cloneAssetSources": [],
       "liveTargetKind": "product sign-in",
-      "generationGuidance": "Point to the new project's own app sign-in.",
       "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
       "usageEvidence": [
         "src/components/Navbar.jsx:148"
-      ]
+      ],
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Point to the new project's own app sign-in.",
+      "generatedModeGuidance": "Generation-safe as a ROLE NAME only: dest:<role> resolves to the new brand's own target at build time; the Primefold literal URL must never be emitted."
     },
     {
       "role": "dest:app-trial",
+      "class": "destination",
       "kind": "destination",
-      "generationPolicy": "must-not-reuse-live-endpoint",
-      "allowedAssetSources": [],
+      "clonePolicy": "must-not-reuse-live-endpoint",
+      "cloneAssetSources": [],
       "liveTargetKind": "trial sign-up deep link",
-      "generationGuidance": "Point to the new project's own trial flow.",
       "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
       "usageEvidence": [
         "src/components/CTA.jsx:34"
-      ]
+      ],
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Point to the new project's own trial flow.",
+      "generatedModeGuidance": "Generation-safe as a ROLE NAME only: dest:<role> resolves to the new brand's own target at build time; the Primefold literal URL must never be emitted."
     },
     {
       "role": "dest:app-home",
+      "class": "destination",
       "kind": "destination",
-      "generationPolicy": "must-not-reuse-live-endpoint",
-      "allowedAssetSources": [],
+      "clonePolicy": "must-not-reuse-live-endpoint",
+      "cloneAssetSources": [],
       "liveTargetKind": "product app root",
-      "generationGuidance": "Point to the new project's own app.",
       "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
       "usageEvidence": [
         "src/pages/plans/data.js:3"
-      ]
+      ],
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Point to the new project's own app.",
+      "generatedModeGuidance": "Generation-safe as a ROLE NAME only: dest:<role> resolves to the new brand's own target at build time; the Primefold literal URL must never be emitted."
     },
     {
       "role": "dest:help-center-xi",
+      "class": "destination",
       "kind": "destination",
-      "generationPolicy": "must-not-reuse-live-endpoint",
-      "allowedAssetSources": [],
+      "clonePolicy": "must-not-reuse-live-endpoint",
+      "cloneAssetSources": [],
       "liveTargetKind": "help centre",
-      "generationGuidance": "Point to the new project's own help centre.",
       "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
       "usageEvidence": [
         "src/components/Footer.jsx:8"
-      ]
+      ],
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "url.placeholder",
+        "dest:support-mailto"
+      ],
+      "cloneModeGuidance": "Point to the new project's own help centre.",
+      "generatedModeGuidance": "BLOCKED IN GENERATION MODE. Real third-party identity or live third-party target (customers, real people, real video, Primefold product help centres, client websites). A generation-mode PageSpec may not use this role at all; use url.placeholder or dest:support-mailto. Even in clone mode it is placeholder-only."
     },
     {
       "role": "dest:help-center-ri",
+      "class": "destination",
       "kind": "destination",
-      "generationPolicy": "must-not-reuse-live-endpoint",
-      "allowedAssetSources": [],
+      "clonePolicy": "must-not-reuse-live-endpoint",
+      "cloneAssetSources": [],
       "liveTargetKind": "help centre",
-      "generationGuidance": "Point to the new project's own help centre.",
       "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
       "usageEvidence": [
         "src/components/Footer.jsx:8"
-      ]
+      ],
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "url.placeholder",
+        "dest:support-mailto"
+      ],
+      "cloneModeGuidance": "Point to the new project's own help centre.",
+      "generatedModeGuidance": "BLOCKED IN GENERATION MODE. Real third-party identity or live third-party target (customers, real people, real video, Primefold product help centres, client websites). A generation-mode PageSpec may not use this role at all; use url.placeholder or dest:support-mailto. Even in clone mode it is placeholder-only."
     },
     {
       "role": "dest:job-posting",
+      "class": "destination",
       "kind": "destination",
-      "generationPolicy": "must-not-reuse-live-endpoint",
-      "allowedAssetSources": [],
+      "clonePolicy": "must-not-reuse-live-endpoint",
+      "cloneAssetSources": [],
       "liveTargetKind": "applicant-tracking job page",
-      "generationGuidance": "Point to the new project's own job posting or /contact.",
       "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
       "usageEvidence": [
         "src/pages/careers/OpenRoles.jsx:6"
-      ]
+      ],
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Point to the new project's own job posting or /contact.",
+      "generatedModeGuidance": "Generation-safe as a ROLE NAME only: dest:<role> resolves to the new brand's own target at build time; the Primefold literal URL must never be emitted."
     },
     {
       "role": "dest:social-x",
+      "class": "destination",
       "kind": "destination",
-      "generationPolicy": "must-not-reuse-live-endpoint",
-      "allowedAssetSources": [],
+      "clonePolicy": "must-not-reuse-live-endpoint",
+      "cloneAssetSources": [],
       "liveTargetKind": "company social profile",
-      "generationGuidance": "Point to the new project's own profile.",
       "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
       "usageEvidence": [
         "src/components/Footer.jsx:15"
-      ]
+      ],
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Point to the new project's own profile.",
+      "generatedModeGuidance": "Generation-safe as a ROLE NAME only: dest:<role> resolves to the new brand's own target at build time; the Primefold literal URL must never be emitted."
     },
     {
       "role": "dest:social-linkedin",
+      "class": "destination",
       "kind": "destination",
-      "generationPolicy": "must-not-reuse-live-endpoint",
-      "allowedAssetSources": [],
+      "clonePolicy": "must-not-reuse-live-endpoint",
+      "cloneAssetSources": [],
       "liveTargetKind": "company social profile",
-      "generationGuidance": "Point to the new project's own profile.",
       "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
       "usageEvidence": [
         "src/components/Footer.jsx:16"
-      ]
+      ],
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Point to the new project's own profile.",
+      "generatedModeGuidance": "Generation-safe as a ROLE NAME only: dest:<role> resolves to the new brand's own target at build time; the Primefold literal URL must never be emitted."
     },
     {
       "role": "dest:support-mailto",
+      "class": "destination",
       "kind": "destination",
-      "generationPolicy": "must-not-reuse-live-endpoint",
-      "allowedAssetSources": [],
+      "clonePolicy": "must-not-reuse-live-endpoint",
+      "cloneAssetSources": [],
       "liveTargetKind": "support mailbox",
-      "generationGuidance": "Use the new project's own mailbox.",
       "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
       "usageEvidence": [
         "src/pages/contact/ContactIntro.jsx:9"
-      ]
+      ],
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Use the new project's own mailbox.",
+      "generatedModeGuidance": "Generation-safe as a ROLE NAME only: dest:<role> resolves to the new brand's own target at build time; the Primefold literal URL must never be emitted."
     },
     {
       "role": "dest:client-website",
+      "class": "destination",
       "kind": "destination",
-      "generationPolicy": "must-not-reuse-live-endpoint",
-      "allowedAssetSources": [],
+      "clonePolicy": "must-not-reuse-live-endpoint",
+      "cloneAssetSources": [],
       "liveTargetKind": "customer website",
-      "generationGuidance": "Use a placeholder or omit; never link a real customer's site.",
       "licensingGuidance": "Real production endpoint/profile of the source company. A PageSpec must reference it only by role name (dest:<name>); the literal URL must never appear in generated output for another owner.",
       "usageEvidence": [
         "specs/blog-case-studies.md:236"
-      ]
-    }
-  ],
-  "formEndpointRoles": [
+      ],
+      "availability": "blocked-for-generation",
+      "generationSafeSubstitutes": [
+        "url.placeholder"
+      ],
+      "cloneModeGuidance": "Use a placeholder or omit; never link a real customer's site.",
+      "generatedModeGuidance": "BLOCKED IN GENERATION MODE. Real third-party identity or live third-party target (customers, real people, real video, Primefold product help centres, client websites). A generation-mode PageSpec may not use this role at all; use url.placeholder. Even in clone mode it is placeholder-only."
+    },
     {
       "role": "endpoint.contact-form",
+      "class": "form-endpoint",
       "kind": "form-endpoint",
-      "generationPolicy": "must-not-reuse-live-endpoint",
-      "allowedAssetSources": [],
-      "generationGuidance": "The source forms are INERT: submit is preventDefault'ed and nothing is sent anywhere, so there is no endpoint value to copy. A PageSpec form carries endpoint='project-owned-placeholder'; the implementing project wires its own backend.",
+      "clonePolicy": "must-not-reuse-live-endpoint",
+      "cloneAssetSources": [],
       "licensingGuidance": "The live primefold.ai forms are real Framer-hosted submit endpoints that were never cloned; never add or guess them. Collecting real personal data (name, work email, phone, message) to someone else's endpoint is a privacy risk.",
       "usageEvidence": [
         "src/pages/contact/ContactForm.jsx:32"
-      ]
+      ],
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "The source forms are INERT: submit is preventDefault'ed and nothing is sent anywhere, so there is no endpoint value to copy. A PageSpec form carries endpoint='project-owned-placeholder'; the implementing project wires its own backend.",
+      "generatedModeGuidance": "Generation-safe: the endpoint stays 'project-owned-placeholder'; the implementing project wires its own backend."
     },
     {
       "role": "endpoint.newsletter-form",
+      "class": "form-endpoint",
       "kind": "form-endpoint",
-      "generationPolicy": "must-not-reuse-live-endpoint",
-      "allowedAssetSources": [],
-      "generationGuidance": "The source forms are INERT: submit is preventDefault'ed and nothing is sent anywhere, so there is no endpoint value to copy. A PageSpec form carries endpoint='project-owned-placeholder'; the implementing project wires its own backend.",
+      "clonePolicy": "must-not-reuse-live-endpoint",
+      "cloneAssetSources": [],
       "licensingGuidance": "The live primefold.ai forms are real Framer-hosted submit endpoints that were never cloned; never add or guess them. Collecting real personal data (name, work email, phone, message) to someone else's endpoint is a privacy risk.",
       "usageEvidence": [
         "src/components/Footer.jsx:67",
         "src/pages/Blog.jsx:11"
-      ]
+      ],
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "The source forms are INERT: submit is preventDefault'ed and nothing is sent anywhere, so there is no endpoint value to copy. A PageSpec form carries endpoint='project-owned-placeholder'; the implementing project wires its own backend.",
+      "generatedModeGuidance": "Generation-safe: the endpoint stays 'project-owned-placeholder'; the implementing project wires its own backend."
+    },
+    {
+      "role": "brand.placeholder-mark",
+      "class": "asset",
+      "kind": "image",
+      "clonePolicy": "may-generate-new",
+      "cloneAssetSources": [
+        "generate-new",
+        "placeholder"
+      ],
+      "licensingGuidance": "Generation-safe by construction: contains no Primefold or third-party material.",
+      "usageEvidence": [],
+      "realFiles": [],
+      "availability": "generation-safe",
+      "generationAssetSources": [
+        "generate-new",
+        "placeholder"
+      ],
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Allowed in clone mode too (e.g. while an owner asset is unavailable), but clone fidelity prefers the real role.",
+      "generatedModeGuidance": "Neutral placeholder brand mark (grey rounded square or monogram of the NEW brand's initials) for logo, wordmark, product-badge and site-icon slots in generation mode.",
+      "ogImageEligible": true
+    },
+    {
+      "role": "brand.user-supplied-mark",
+      "class": "asset",
+      "kind": "image",
+      "clonePolicy": "user-supplied-only",
+      "cloneAssetSources": [
+        "user-supplied"
+      ],
+      "licensingGuidance": "Generation-safe by construction: contains no Primefold or third-party material.",
+      "usageEvidence": [],
+      "realFiles": [],
+      "availability": "generation-safe",
+      "generationAssetSources": [
+        "user-supplied"
+      ],
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Allowed in clone mode too (e.g. while an owner asset is unavailable), but clone fidelity prefers the real role.",
+      "generatedModeGuidance": "The new brand's own logo/wordmark/badge, supplied by the user/operator who owns it (assetSource 'user-supplied', assetRef 'user-supplied:<name>').",
+      "ogImageEligible": true
+    },
+    {
+      "role": "asset.user-supplied",
+      "class": "asset",
+      "kind": "image",
+      "clonePolicy": "user-supplied-only",
+      "cloneAssetSources": [
+        "user-supplied"
+      ],
+      "licensingGuidance": "Generation-safe by construction: contains no Primefold or third-party material.",
+      "usageEvidence": [],
+      "realFiles": [],
+      "availability": "generation-safe",
+      "generationAssetSources": [
+        "user-supplied"
+      ],
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Allowed in clone mode too (e.g. while an owner asset is unavailable), but clone fidelity prefers the real role.",
+      "generatedModeGuidance": "Any image the user/operator supplies and has rights to (photography, screenshots of THEIR product). assetSource 'user-supplied'."
+    },
+    {
+      "role": "generated.illustration",
+      "class": "asset",
+      "kind": "image",
+      "clonePolicy": "may-generate-new",
+      "cloneAssetSources": [
+        "generate-new",
+        "placeholder"
+      ],
+      "licensingGuidance": "Generation-safe by construction: contains no Primefold or third-party material.",
+      "usageEvidence": [],
+      "realFiles": [],
+      "availability": "generation-safe",
+      "generationAssetSources": [
+        "generate-new",
+        "placeholder"
+      ],
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Allowed in clone mode too (e.g. while an owner asset is unavailable), but clone fidelity prefers the real role.",
+      "generatedModeGuidance": "Newly generated original illustration/photo with no real people, no real customer premises, no readable third-party signage.",
+      "ogImageEligible": true
+    },
+    {
+      "role": "placeholder.screenshot",
+      "class": "asset",
+      "kind": "image",
+      "clonePolicy": "may-generate-new",
+      "cloneAssetSources": [
+        "generate-new",
+        "placeholder"
+      ],
+      "licensingGuidance": "Generation-safe by construction: contains no Primefold or third-party material.",
+      "usageEvidence": [],
+      "realFiles": [],
+      "availability": "generation-safe",
+      "generationAssetSources": [
+        "generate-new",
+        "placeholder"
+      ],
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Allowed in clone mode too (e.g. while an owner asset is unavailable), but clone fidelity prefers the real role.",
+      "generatedModeGuidance": "Neutral mock-UI placeholder (grey frame, invented data) standing in for a product screenshot or a video poster."
+    },
+    {
+      "role": "fictional.person-avatar",
+      "class": "asset",
+      "kind": "image",
+      "clonePolicy": "may-generate-new",
+      "cloneAssetSources": [
+        "generate-new",
+        "placeholder"
+      ],
+      "licensingGuidance": "Generation-safe by construction: contains no Primefold or third-party material.",
+      "usageEvidence": [],
+      "realFiles": [],
+      "availability": "generation-safe",
+      "generationAssetSources": [
+        "generate-new",
+        "placeholder"
+      ],
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Allowed in clone mode too (e.g. while an owner asset is unavailable), but clone fidelity prefers the real role.",
+      "generatedModeGuidance": "Neutral avatar circle or a generated face of a FICTIONAL person; never presented as a real employee/customer and never a look-alike of a real person."
+    },
+    {
+      "role": "placeholder.company-logo",
+      "class": "asset",
+      "kind": "image",
+      "clonePolicy": "placeholder-only",
+      "cloneAssetSources": [
+        "placeholder"
+      ],
+      "licensingGuidance": "Generation-safe by construction: contains no Primefold or third-party material.",
+      "usageEvidence": [],
+      "realFiles": [],
+      "availability": "generation-safe",
+      "generationAssetSources": [
+        "placeholder"
+      ],
+      "generationSafeSubstitutes": [],
+      "cloneModeGuidance": "Allowed in clone mode too (e.g. while an owner asset is unavailable), but clone fidelity prefers the real role.",
+      "generatedModeGuidance": "Neutral customer-logo placeholder box labelled with a FICTIONAL company name (e.g. 'Northwind'); never a real company and never a look-alike."
+    },
+    {
+      "role": "url.placeholder",
+      "class": "content",
+      "kind": "url",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "Literal URLs in a PageSpec must use the reserved placeholder domains .example / .invalid (RFC 2606), e.g. https://www.northwind.example/help. Any other domain, and every Primefold/third-party URL from the source, is rejected (GENERATION_MODE_URL).",
+      "allowedPattern": "https://([a-z0-9-]+\\.)*[a-z0-9-]+\\.(example|invalid)(/...)?"
+    },
+    {
+      "role": "copy.original",
+      "class": "content",
+      "kind": "copy",
+      "availability": "generation-safe",
+      "generationSafeSubstitutes": [],
+      "generatedModeGuidance": "All visible text is newly written for the new brand. Any 5-word run that matches Primefold source copy (hashed shingles in schema/source-patterns.json), any Primefold product/brand name, real person, real customer or source statistic is rejected (GENERATION_MODE_COPY / _BRAND / _PERSON / _CUSTOMER / _CLAIM)."
     }
   ],
   "fontFaces": [

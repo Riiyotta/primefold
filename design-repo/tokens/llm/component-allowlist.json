@@ -1,11 +1,12 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "$description": "Closed list of what a generator may instantiate or set. Parity with contract files and the schema is machine-checked by extraction/verify_all.py (both directions).",
   "nodeProperties": [
-    "section",
-    "variant",
     "content",
-    "motion"
+    "motion",
+    "section",
+    "styleTokens",
+    "variant"
   ],
   "motionFields": [
     "pattern",
@@ -45,10 +46,15 @@
     "component.team-card"
   ],
   "sections": [
-    "content.article",
+    "content.article-header",
+    "content.article-body",
     "content.card-grid",
-    "content.case-study",
-    "content.legal-prose",
+    "content.case-study-header",
+    "proof.case-study-stats",
+    "content.case-study-body",
+    "content.case-study-about",
+    "content.legal-header",
+    "content.legal-part",
     "content.not-found",
     "content.open-roles",
     "conversion.contact-form",
@@ -97,38 +103,74 @@
   ],
   "assetRoles": [
     "brand.logo-mark",
+    "brand.wordmark-ghost",
     "brand.product-badge",
     "brand.site-icons",
-    "brand.wordmark-ghost",
-    "cms.post-image",
-    "customer.imagery",
-    "customer.logo",
-    "embed.video-facade",
+    "ui.icon-mask",
+    "ui.illustration-svg",
     "fx.shader-fallback",
     "hero.backdrop-photo",
-    "motion.lottie",
-    "person.author-avatar",
-    "person.team-photo",
     "photo.scene-card",
     "product.illustration-still",
-    "ui.icon-mask",
-    "ui.illustration-svg"
+    "customer.logo",
+    "customer.imagery",
+    "person.team-photo",
+    "person.author-avatar",
+    "cms.post-image",
+    "motion.lottie",
+    "embed.video-facade",
+    "brand.placeholder-mark",
+    "brand.user-supplied-mark",
+    "asset.user-supplied",
+    "generated.illustration",
+    "placeholder.screenshot",
+    "fictional.person-avatar",
+    "placeholder.company-logo"
   ],
   "destinationRoles": [
-    "dest:app-home",
+    "dest:booking",
     "dest:app-signin",
     "dest:app-trial",
-    "dest:booking",
-    "dest:client-website",
-    "dest:help-center-ri",
+    "dest:app-home",
     "dest:help-center-xi",
+    "dest:help-center-ri",
     "dest:job-posting",
-    "dest:social-linkedin",
     "dest:social-x",
-    "dest:support-mailto"
+    "dest:social-linkedin",
+    "dest:support-mailto",
+    "dest:client-website"
   ],
   "formEndpointRoles": [
     "endpoint.contact-form",
     "endpoint.newsletter-form"
+  ],
+  "styleSlots": [
+    "surface",
+    "text",
+    "accent",
+    "border",
+    "spacingTop",
+    "spacingBottom",
+    "gap",
+    "radius",
+    "headingFont",
+    "bodyFont",
+    "elevation"
+  ],
+  "contentRoles": [
+    "url.placeholder",
+    "copy.original"
+  ],
+  "retrievalIneligibleSections": [
+    "features.loop-cards",
+    "features.solutions-tabs",
+    "features.sources",
+    "features.step-cards",
+    "features.use-cases",
+    "hero.product-live-chat"
+  ],
+  "pageSpecModes": [
+    "clone",
+    "generation"
   ]
 }

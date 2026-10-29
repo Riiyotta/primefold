@@ -3,7 +3,7 @@
   "meta": {
     "title": "Primefold (primefold.ai) — information architecture",
     "source": "https://primefold.ai/ (sitemap.xml + clone at src/)",
-    "status": "draft — all 13 templates mapped to section contracts from design-repo/ (home measured; product pages spec-only, source in progress)",
+    "status": "draft — all 13 templates mapped to section contracts from design-repo/ (legal, blog-post and case-study bodies decomposed into semantic units in design-repo 0.2.0) (home measured; product pages spec-only, source in progress)",
     "productionApproved": false,
     "totalRoutes": 29,
     "totalTemplates": 13
@@ -179,9 +179,15 @@
       "implementedBy": "src/pages/careers/OpenRoles.jsx",
       "scope": "1 route."
     },
-    "content.legal-prose": {
+    "content.legal-header": {
       "category": "CONTENT",
-      "description": "Legal document: h1 and a single 768px reading column of rich text (p, h2/h3/h4/h6, lists, empty spacers). One layout for imprint, data privacy and terms of service.",
+      "description": "Legal document opening: h1 title plus any preamble blocks before the first heading-bounded part (the whole imprint, which has no headings; the version line of data privacy).",
+      "implementedBy": "src/pages/Legal.jsx + src/pages/legal/content.js + src/pages/legal/legal.css",
+      "scope": "3 routes."
+    },
+    "content.legal-part": {
+      "category": "CONTENT",
+      "description": "One heading-bounded part of a legal document: a heading of the document's dominant level (h2 in terms of service, h4 in data privacy) and the blocks until the next heading of that level. Repeatable; imprint has none.",
       "implementedBy": "src/pages/Legal.jsx + src/pages/legal/content.js + src/pages/legal/legal.css",
       "scope": "3 routes."
     },
@@ -197,16 +203,40 @@
       "implementedBy": "src/pages/Blog.jsx + src/pages/CaseStudies.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css",
       "scope": "2 routes."
     },
-    "content.article": {
+    "content.article-header": {
       "category": "CONTENT",
-      "description": "Blog post: h1, divider, author + 'Last updated' meta row, 16:9 banner and a rich-text body (headings with anchors, lists, quote, images, YouTube facade, in-body buttons). Ends directly into the CTA.",
-      "implementedBy": "src/pages/BlogPost.jsx + src/pages/cms/RichText.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css",
+      "description": "Blog post opening: h1, divider, author + 'Last updated' meta row, 16:9 banner, and any intro blocks before the first chapter heading.",
+      "implementedBy": "src/pages/BlogPost.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css",
       "scope": "12 routes."
     },
-    "content.case-study": {
+    "content.article-body": {
       "category": "CONTENT",
-      "description": "Customer case study: breadcrumb, h1, subtitle, pills, banner, three stat cards, rich-text body (eyebrow h6, h3, quote cards, numbered cards, video) and an About block (image card + information card).",
-      "implementedBy": "src/pages/CaseStudy.jsx + src/pages/cms/RichText.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css",
+      "description": "One chapter of a blog post body: a chapter heading (h2, or h3 where a post has no h2) and the rich-text blocks until the next chapter heading (paragraphs, lists, quote, images, video facade, in-body buttons). Repeatable.",
+      "implementedBy": "src/pages/cms/RichText.jsx + src/pages/cms/cms.css",
+      "scope": "12 routes."
+    },
+    "content.case-study-header": {
+      "category": "CONTENT",
+      "description": "Case-study opening: breadcrumb, h1, subtitle, divider, product/industry pills and the full-width banner.",
+      "implementedBy": "src/pages/CaseStudy.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css",
+      "scope": "3 routes."
+    },
+    "proof.case-study-stats": {
+      "category": "PROOF",
+      "description": "Three outcome stat cards (value + label) directly under the case-study banner. Values are customer-attributed claims.",
+      "implementedBy": "src/pages/CaseStudy.jsx",
+      "scope": "3 routes."
+    },
+    "content.case-study-body": {
+      "category": "CONTENT",
+      "description": "One chapter of a case-study story: an h6 eyebrow / h3 heading and the blocks until the next one (paragraphs, quote cards, numbered cards, video). Repeatable.",
+      "implementedBy": "src/pages/cms/RichText.jsx + src/pages/cms/cms.css",
+      "scope": "3 routes."
+    },
+    "content.case-study-about": {
+      "category": "CONTENT",
+      "description": "About-the-client block closing a case study: heading, image card (client imagery, client logo, description, website button) and an information card (employees / clients / industry / products in use).",
+      "implementedBy": "src/pages/CaseStudy.jsx + src/pages/cms/shared.jsx",
       "scope": "3 routes."
     },
     "content.not-found": {
@@ -355,7 +385,8 @@
       "chrome": "full",
       "sections": [
         "shell.navbar",
-        "content.legal-prose",
+        "content.legal-header",
+        "content.legal-part",
         "conversion.cta-band",
         "shell.footer"
       ]
@@ -397,7 +428,8 @@
       "chrome": "full",
       "sections": [
         "shell.navbar",
-        "content.article",
+        "content.article-header",
+        "content.article-body",
         "conversion.cta-band",
         "shell.footer"
       ]
@@ -430,7 +462,10 @@
       "chrome": "full",
       "sections": [
         "shell.navbar",
-        "content.case-study",
+        "content.case-study-header",
+        "proof.case-study-stats",
+        "content.case-study-body",
+        "content.case-study-about",
         "conversion.cta-band",
         "shell.footer"
       ]

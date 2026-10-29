@@ -2,6 +2,16 @@
   "id": "features.info-card-grid",
   "kind": "section",
   "category": "FEATURES",
+  "semantic": {
+    "id": "features.info-card-grid",
+    "category": "FEATURES"
+  },
+  "source": {
+    "id": "src:PlansTrust.section@18",
+    "tag": "section",
+    "file": "src/pages/plans/PlansTrust.jsx",
+    "lines": "18-31"
+  },
   "purpose": "Section title row (eyebrow, H2, optional lead) over a grid of small icon+title+description info cards; used for plan trust ('In every plan'), security facts and company commitments. Variant selects the column count.",
   "tags": [
     "info-cards",
@@ -142,5 +152,8 @@
   "assetRoles": [
     "ui.icon-mask"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "ui.icon-mask"
+  ]
 }

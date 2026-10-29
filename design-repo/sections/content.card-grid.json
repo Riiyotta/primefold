@@ -2,6 +2,16 @@
   "id": "content.card-grid",
   "kind": "section",
   "category": "CONTENT",
+  "semantic": {
+    "id": "content.card-grid",
+    "category": "CONTENT"
+  },
+  "source": {
+    "id": "src:Blog.section@58",
+    "tag": "section",
+    "file": "src/pages/Blog.jsx",
+    "lines": "58-66"
+  },
   "purpose": "Responsive grid of linked cards (16:9 image, then title and meta); blog variant shows date + author, case-study variant shows a 'Read story' row.",
   "tags": [
     "cards",
@@ -47,7 +57,8 @@
               "type": "asset",
               "required": true,
               "roles": [
-                "cms.post-image"
+                "cms.post-image",
+                "asset.user-supplied"
               ]
             },
             "title": {
@@ -83,7 +94,8 @@
                   "type": "asset",
                   "required": true,
                   "roles": [
-                    "person.author-avatar"
+                    "person.author-avatar",
+                    "fictional.person-avatar"
                   ]
                 }
               }
@@ -137,8 +149,15 @@
   "retrievalEligible": true,
   "rules": [],
   "assetRoles": [
+    "asset.user-supplied",
     "cms.post-image",
+    "fictional.person-avatar",
     "person.author-avatar"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "asset.user-supplied",
+    "cms.post-image",
+    "fictional.person-avatar"
+  ]
 }

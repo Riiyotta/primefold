@@ -484,7 +484,7 @@
           ]
         },
         {
-          "section": "content.legal-prose",
+          "section": "content.legal-header",
           "required": true,
           "repeatable": false,
           "variants": [
@@ -492,6 +492,11 @@
             "data-privacy",
             "terms-of-service"
           ]
+        },
+        {
+          "section": "content.legal-part",
+          "required": false,
+          "repeatable": true
         },
         {
           "section": "conversion.cta-band",
@@ -509,7 +514,9 @@
       ],
       "measuredFrom": [
         "src/pages/Legal.jsx:40",
-        "specs/company-careers-legal.md:144"
+        "specs/company-careers-legal.md:144",
+        "src/pages/Legal.jsx:48",
+        "src/pages/legal/content.js:54"
       ],
       "notes": [
         "Prose is not transcribed in the specs: structure and word counts only."
@@ -604,9 +611,14 @@
           ]
         },
         {
-          "section": "content.article",
+          "section": "content.article-header",
           "required": true,
           "repeatable": false
+        },
+        {
+          "section": "content.article-body",
+          "required": true,
+          "repeatable": true
         },
         {
           "section": "conversion.cta-band",
@@ -624,7 +636,9 @@
       ],
       "measuredFrom": [
         "src/pages/BlogPost.jsx:29",
-        "specs/blog-case-studies.md:123"
+        "specs/blog-case-studies.md:123",
+        "src/pages/BlogPost.jsx:14-28",
+        "src/pages/cms/RichText.jsx:78"
       ],
       "notes": [
         "Spec sampled all 12 posts; body prose not transcribed."
@@ -730,7 +744,22 @@
           ]
         },
         {
-          "section": "content.case-study",
+          "section": "content.case-study-header",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "proof.case-study-stats",
+          "required": true,
+          "repeatable": false
+        },
+        {
+          "section": "content.case-study-body",
+          "required": true,
+          "repeatable": true
+        },
+        {
+          "section": "content.case-study-about",
           "required": true,
           "repeatable": false
         },
@@ -750,7 +779,11 @@
       ],
       "measuredFrom": [
         "src/pages/CaseStudy.jsx:100",
-        "specs/blog-case-studies.md:181"
+        "specs/blog-case-studies.md:181",
+        "src/pages/CaseStudy.jsx:81-96",
+        "src/pages/CaseStudy.jsx:12-27",
+        "src/pages/CaseStudy.jsx:98-99",
+        "src/pages/CaseStudy.jsx:30-35"
       ],
       "notes": [
         "All 3 studies measured and structurally identical (spec 4)."

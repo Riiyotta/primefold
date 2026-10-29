@@ -1,0 +1,111 @@
+{
+  "id": "proof.case-study-stats",
+  "kind": "section",
+  "category": "PROOF",
+  "semantic": {
+    "id": "proof.case-study-stats",
+    "category": "PROOF"
+  },
+  "source": {
+    "id": "src:CaseStudy.div@14",
+    "tag": "div",
+    "file": "src/pages/CaseStudy.jsx",
+    "lines": "14-27"
+  },
+  "purpose": "Three outcome stat cards (value + label) directly under the case-study banner. Values are customer-attributed claims.",
+  "tags": [
+    "case-study",
+    "stats",
+    "proof"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/CaseStudy.jsx"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": []
+  },
+  "allowedTemplates": [
+    "template.case-study"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "stats": {
+        "type": "list",
+        "required": true,
+        "minItems": 3,
+        "maxItems": 3,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "value": {
+              "type": "text",
+              "required": true,
+              "maxWords": 3,
+              "maxWordsBasis": "real values like '0 → 150' = 3 tokens",
+              "placeholderOnly": true
+            },
+            "label": {
+              "type": "text",
+              "required": true,
+              "maxWords": 16,
+              "maxWordsBasis": "longest real stat label",
+              "placeholderOnly": true
+            },
+            "color": {
+              "type": "enum",
+              "required": true,
+              "values": [
+                "teal",
+                "green",
+                "orange"
+              ]
+            }
+          }
+        },
+        "countBasis": "three stats per study"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "none",
+        "trigger": "load",
+        "reducedMotionFallback": "no-animation",
+        "note": "static cards",
+        "measuredFrom": [
+          "src/pages/CaseStudy.jsx:12-27"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "no motion in Stats (src/pages/CaseStudy.jsx)"
+  },
+  "responsive": {
+    "desktop": "3 equal columns, gap 16",
+    "tablet": "3 columns",
+    "phone": "1 column (grid-cols-1)"
+  },
+  "notes": [
+    "Stat values are real customer outcomes: placeholder-only for other owners.",
+    "R6 decomposition: the measured page showed one section holding most of the page (legal 95%, blog post 81%, case study 81% of page height at 1440px; extraction/measured-values.json sectionHeights), so the former whole-page contract was split at real content boundaries."
+  ],
+  "measuredFrom": [
+    "src/pages/CaseStudy.jsx:12-27"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [],
+  "version": "1.1.0",
+  "generatedAssetRoles": []
+}

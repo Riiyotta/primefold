@@ -2,6 +2,16 @@
   "id": "proof.trust-image-cards",
   "kind": "section",
   "category": "PROOF",
+  "semantic": {
+    "id": "proof.trust-image-cards",
+    "category": "PROOF"
+  },
+  "source": {
+    "id": "src:TrustCards.section@23",
+    "tag": "section",
+    "file": "src/pages/security/TrustCards.jsx",
+    "lines": "23-44"
+  },
   "purpose": "Two shader-backed image cards with a dark bottom overlay and white headline + body (security trust statements).",
   "tags": [
     "cards",
@@ -43,7 +53,8 @@
               "type": "asset",
               "required": true,
               "roles": [
-                "fx.shader-fallback"
+                "fx.shader-fallback",
+                "asset.user-supplied"
               ]
             },
             "title": {
@@ -93,7 +104,12 @@
   "retrievalEligible": true,
   "rules": [],
   "assetRoles": [
+    "asset.user-supplied",
     "fx.shader-fallback"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "asset.user-supplied",
+    "fx.shader-fallback"
+  ]
 }

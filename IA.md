@@ -1,8 +1,8 @@
 # Primefold (primefold.ai) — information architecture
 
 Source: https://primefold.ai/ (sitemap.xml + clone at src/)
-Status: **draft — all 13 templates mapped to section contracts from design-repo/ (home measured; product pages spec-only, source in progress)** · production approved: **false**
-29 routes · 13 templates · 34 unique sections
+Status: **draft — all 13 templates mapped to section contracts from design-repo/ (legal, blog-post and case-study bodies decomposed into semantic units in design-repo 0.2.0) (home measured; product pages spec-only, source in progress)** · production approved: **false**
+29 routes · 13 templates · 39 unique sections
 
 > Generated from `ia.json` by `build.mjs`. Edit the JSON, not this file.
 
@@ -40,10 +40,15 @@ component library or stays local to its page.
 | `shell.navbar` | SHELL | 13 | 29 | `src/components/Navbar.jsx` | Present on all 29 routes. |
 | `conversion.cta-band` | CONVERSION | 13 | 29 | `src/components/CTA.jsx` | Present on all 29 routes. |
 | `shell.footer` | SHELL | 13 | 29 | `src/components/Footer.jsx` | Present on all 29 routes. |
-| `content.article` | CONTENT | 1 | 12 | `src/pages/BlogPost.jsx + src/pages/cms/RichText.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css` | 12 routes. |
+| `content.article-header` | CONTENT | 1 | 12 | `src/pages/BlogPost.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css` | 12 routes. |
+| `content.article-body` | CONTENT | 1 | 12 | `src/pages/cms/RichText.jsx + src/pages/cms/cms.css` | 12 routes. |
 | `features.info-card-grid` | FEATURES | 3 | 3 | `src/pages/shared-info/InfoCard.jsx + src/pages/shared-info/SectionTitle.jsx + src/pages/shared-info/MaskIcon.jsx + src/pages/plans/PlansTrust.jsx + src/pages/security/FourFacts.jsx + src/pages/company/Commitments.jsx` | 3 routes. |
-| `content.legal-prose` | CONTENT | 1 | 3 | `src/pages/Legal.jsx + src/pages/legal/content.js + src/pages/legal/legal.css` | 3 routes. |
-| `content.case-study` | CONTENT | 1 | 3 | `src/pages/CaseStudy.jsx + src/pages/cms/RichText.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css` | 3 routes. |
+| `content.legal-header` | CONTENT | 1 | 3 | `src/pages/Legal.jsx + src/pages/legal/content.js + src/pages/legal/legal.css` | 3 routes. |
+| `content.legal-part` | CONTENT | 1 | 3 | `src/pages/Legal.jsx + src/pages/legal/content.js + src/pages/legal/legal.css` | 3 routes. |
+| `content.case-study-header` | CONTENT | 1 | 3 | `src/pages/CaseStudy.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css` | 3 routes. |
+| `proof.case-study-stats` | PROOF | 1 | 3 | `src/pages/CaseStudy.jsx` | 3 routes. |
+| `content.case-study-body` | CONTENT | 1 | 3 | `src/pages/cms/RichText.jsx + src/pages/cms/cms.css` | 3 routes. |
+| `content.case-study-about` | CONTENT | 1 | 3 | `src/pages/CaseStudy.jsx + src/pages/cms/shared.jsx` | 3 routes. |
 | `hero.index-intro` | HERO | 2 | 2 | `src/pages/cms/shared.jsx + src/pages/Blog.jsx + src/pages/CaseStudies.jsx` | 2 routes. |
 | `content.card-grid` | CONTENT | 2 | 2 | `src/pages/Blog.jsx + src/pages/CaseStudies.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css` | 2 routes. |
 | `hero.product-live-chat` | HERO | 1 | 2 | _not yet built_ | 2 routes. |
@@ -74,7 +79,7 @@ component library or stays local to its page.
 
 **6 shared sections** appear in more than one template and belong in a component library.
 
-**28 single-use sections** appear in exactly one template. Building these
+**33 single-use sections** appear in exactly one template. Building these
 as "reusable" components up front would be speculative — keep them page-local
 until a second caller actually appears.
 
@@ -186,9 +191,10 @@ until a second caller actually appears.
 | # | category | section | |
 |---:|---|---|---|
 | 1 | SHELL | `shell.navbar` | shared ×13 |
-| 2 | CONTENT | `content.legal-prose` | page-local |
-| 3 | CONVERSION | `conversion.cta-band` | shared ×13 |
-| 4 | SHELL | `shell.footer` | shared ×13 |
+| 2 | CONTENT | `content.legal-header` | page-local |
+| 3 | CONTENT | `content.legal-part` | page-local |
+| 4 | CONVERSION | `conversion.cta-band` | shared ×13 |
+| 5 | SHELL | `shell.footer` | shared ×13 |
 
 ### Blog index — `template.blog-index`
 
@@ -209,9 +215,10 @@ until a second caller actually appears.
 | # | category | section | |
 |---:|---|---|---|
 | 1 | SHELL | `shell.navbar` | shared ×13 |
-| 2 | CONTENT | `content.article` | page-local |
-| 3 | CONVERSION | `conversion.cta-band` | shared ×13 |
-| 4 | SHELL | `shell.footer` | shared ×13 |
+| 2 | CONTENT | `content.article-header` | page-local |
+| 3 | CONTENT | `content.article-body` | page-local |
+| 4 | CONVERSION | `conversion.cta-band` | shared ×13 |
+| 5 | SHELL | `shell.footer` | shared ×13 |
 
 ### Case studies index — `template.case-studies-index`
 
@@ -232,9 +239,12 @@ until a second caller actually appears.
 | # | category | section | |
 |---:|---|---|---|
 | 1 | SHELL | `shell.navbar` | shared ×13 |
-| 2 | CONTENT | `content.case-study` | page-local |
-| 3 | CONVERSION | `conversion.cta-band` | shared ×13 |
-| 4 | SHELL | `shell.footer` | shared ×13 |
+| 2 | CONTENT | `content.case-study-header` | page-local |
+| 3 | PROOF | `proof.case-study-stats` | page-local |
+| 4 | CONTENT | `content.case-study-body` | page-local |
+| 5 | CONTENT | `content.case-study-about` | page-local |
+| 6 | CONVERSION | `conversion.cta-band` | shared ×13 |
+| 7 | SHELL | `shell.footer` | shared ×13 |
 
 ### 404 — `template.not-found`
 
@@ -369,6 +379,10 @@ _Social proof and trust: logos, testimonials, outcomes, security._
 
 · 1 route. · appears on 1 routes · implemented by `src/pages/security/TrustCards.jsx`
 
+**`proof.case-study-stats`** — Three outcome stat cards (value + label) directly under the case-study banner. Values are customer-attributed claims.
+
+· 3 routes. · appears on 3 routes · implemented by `src/pages/CaseStudy.jsx`
+
 ### CONVERSION
 
 _Call-to-action blocks driving to Book a call._
@@ -389,7 +403,11 @@ _Page body content: article, prose, cards, forms and other page-specific blocks.
 
 · 1 route. · appears on 1 routes · implemented by `src/pages/careers/OpenRoles.jsx`
 
-**`content.legal-prose`** — Legal document: h1 and a single 768px reading column of rich text (p, h2/h3/h4/h6, lists, empty spacers). One layout for imprint, data privacy and terms of service.
+**`content.legal-header`** — Legal document opening: h1 title plus any preamble blocks before the first heading-bounded part (the whole imprint, which has no headings; the version line of data privacy).
+
+· 3 routes. · appears on 3 routes · implemented by `src/pages/Legal.jsx + src/pages/legal/content.js + src/pages/legal/legal.css`
+
+**`content.legal-part`** — One heading-bounded part of a legal document: a heading of the document's dominant level (h2 in terms of service, h4 in data privacy) and the blocks until the next heading of that level. Repeatable; imprint has none.
 
 · 3 routes. · appears on 3 routes · implemented by `src/pages/Legal.jsx + src/pages/legal/content.js + src/pages/legal/legal.css`
 
@@ -397,13 +415,25 @@ _Page body content: article, prose, cards, forms and other page-specific blocks.
 
 · 2 routes. · appears on 2 routes · implemented by `src/pages/Blog.jsx + src/pages/CaseStudies.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css`
 
-**`content.article`** — Blog post: h1, divider, author + 'Last updated' meta row, 16:9 banner and a rich-text body (headings with anchors, lists, quote, images, YouTube facade, in-body buttons). Ends directly into the CTA.
+**`content.article-header`** — Blog post opening: h1, divider, author + 'Last updated' meta row, 16:9 banner, and any intro blocks before the first chapter heading.
 
-· 12 routes. · appears on 12 routes · implemented by `src/pages/BlogPost.jsx + src/pages/cms/RichText.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css`
+· 12 routes. · appears on 12 routes · implemented by `src/pages/BlogPost.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css`
 
-**`content.case-study`** — Customer case study: breadcrumb, h1, subtitle, pills, banner, three stat cards, rich-text body (eyebrow h6, h3, quote cards, numbered cards, video) and an About block (image card + information card).
+**`content.article-body`** — One chapter of a blog post body: a chapter heading (h2, or h3 where a post has no h2) and the rich-text blocks until the next chapter heading (paragraphs, lists, quote, images, video facade, in-body buttons). Repeatable.
 
-· 3 routes. · appears on 3 routes · implemented by `src/pages/CaseStudy.jsx + src/pages/cms/RichText.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css`
+· 12 routes. · appears on 12 routes · implemented by `src/pages/cms/RichText.jsx + src/pages/cms/cms.css`
+
+**`content.case-study-header`** — Case-study opening: breadcrumb, h1, subtitle, divider, product/industry pills and the full-width banner.
+
+· 3 routes. · appears on 3 routes · implemented by `src/pages/CaseStudy.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css`
+
+**`content.case-study-body`** — One chapter of a case-study story: an h6 eyebrow / h3 heading and the blocks until the next one (paragraphs, quote cards, numbered cards, video). Repeatable.
+
+· 3 routes. · appears on 3 routes · implemented by `src/pages/cms/RichText.jsx + src/pages/cms/cms.css`
+
+**`content.case-study-about`** — About-the-client block closing a case study: heading, image card (client imagery, client logo, description, website button) and an information card (employees / clients / industry / products in use).
+
+· 3 routes. · appears on 3 routes · implemented by `src/pages/CaseStudy.jsx + src/pages/cms/shared.jsx`
 
 **`content.not-found`** — 404 block: eyebrow, 404 h1, 'Nothing to see here.' h2, one line of copy and a black Back to homepage button.
 

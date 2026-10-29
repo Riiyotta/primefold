@@ -2,6 +2,16 @@
   "id": "hero.company-stats",
   "kind": "section",
   "category": "HERO",
+  "semantic": {
+    "id": "hero.company-stats",
+    "category": "HERO"
+  },
+  "source": {
+    "id": "src:CompanyHero.section@65",
+    "tag": "section",
+    "file": "src/pages/company/CompanyHero.jsx",
+    "lines": "65-110"
+  },
   "purpose": "Company hero over a full-bleed photo: eyebrow, h1, lead with a bold clause, two CTAs and four glass stat cards.",
   "tags": [
     "hero",
@@ -33,7 +43,8 @@
         "type": "asset",
         "required": true,
         "roles": [
-          "hero.backdrop-photo"
+          "hero.backdrop-photo",
+          "asset.user-supplied"
         ]
       },
       "eyebrow": {
@@ -92,7 +103,8 @@
               "required": true,
               "roles": [
                 "ui.illustration-svg",
-                "ui.icon-mask"
+                "ui.icon-mask",
+                "asset.user-supplied"
               ]
             }
           }
@@ -130,9 +142,16 @@
   "retrievalEligible": true,
   "rules": [],
   "assetRoles": [
+    "asset.user-supplied",
     "hero.backdrop-photo",
     "ui.icon-mask",
     "ui.illustration-svg"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "asset.user-supplied",
+    "hero.backdrop-photo",
+    "ui.icon-mask",
+    "ui.illustration-svg"
+  ]
 }

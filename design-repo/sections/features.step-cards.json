@@ -2,6 +2,16 @@
   "id": "features.step-cards",
   "kind": "section",
   "category": "FEATURES",
+  "semantic": {
+    "id": "features.step-cards",
+    "category": "FEATURES"
+  },
+  "source": {
+    "id": "src:StepCards.div@59",
+    "tag": "div",
+    "file": "src/pages/product/StepCards.jsx",
+    "lines": "59-69"
+  },
   "purpose": "'Ask. Understand. Act.' three illustrated step cards; XI uses light animated illustrations, RI uses dark A1-style demo panels.",
   "tags": [
     "steps",
@@ -74,7 +84,9 @@
               "required": true,
               "roles": [
                 "product.illustration-still",
-                "ui.illustration-svg"
+                "ui.illustration-svg",
+                "placeholder.screenshot",
+                "asset.user-supplied"
               ]
             }
           }
@@ -132,8 +144,17 @@
   "retrievalEligible": false,
   "rules": [],
   "assetRoles": [
+    "asset.user-supplied",
+    "placeholder.screenshot",
     "product.illustration-still",
     "ui.illustration-svg"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "asset.user-supplied",
+    "placeholder.screenshot",
+    "product.illustration-still",
+    "ui.illustration-svg"
+  ],
+  "retrievalReason": "Spec-only: the product routes render a placeholder page ('building...', src/pages/ExperienceIntelligence.jsx) and this section's source is not mounted by src/App.jsx, so it is not a proven, retrievable pattern."
 }

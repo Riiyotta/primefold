@@ -2,6 +2,16 @@
   "id": "proof.outcomes",
   "kind": "section",
   "category": "PROOF",
+  "semantic": {
+    "id": "proof.outcomes",
+    "category": "PROOF"
+  },
+  "source": {
+    "id": "src:Outcomes.section@39",
+    "tag": "section",
+    "file": "src/components/Outcomes.jsx",
+    "lines": "39-61"
+  },
   "purpose": "Dark customer outcome cards with rolling 80px numbers, an outcome headline, person and client logo.",
   "tags": [
     "outcomes",
@@ -62,14 +72,17 @@
               "type": "asset",
               "required": true,
               "roles": [
-                "customer.imagery"
+                "customer.imagery",
+                "generated.illustration",
+                "asset.user-supplied"
               ]
             },
             "logo": {
               "type": "asset",
               "required": true,
               "roles": [
-                "customer.logo"
+                "customer.logo",
+                "placeholder.company-logo"
               ]
             },
             "value": {
@@ -138,8 +151,16 @@
   "retrievalEligible": true,
   "rules": [],
   "assetRoles": [
+    "asset.user-supplied",
     "customer.imagery",
-    "customer.logo"
+    "customer.logo",
+    "generated.illustration",
+    "placeholder.company-logo"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "asset.user-supplied",
+    "generated.illustration",
+    "placeholder.company-logo"
+  ]
 }

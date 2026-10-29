@@ -1,12 +1,22 @@
 {
-  "id": "content.legal-prose",
+  "id": "content.legal-part",
   "kind": "section",
   "category": "CONTENT",
-  "purpose": "Legal document: h1 and a single 768px reading column of rich text (p, h2/h3/h4/h6, lists, empty spacers). One layout for imprint, data privacy and terms of service.",
+  "semantic": {
+    "id": "content.legal-part",
+    "category": "CONTENT"
+  },
+  "source": {
+    "id": "src:Legal.H@32",
+    "tag": "H",
+    "file": "src/pages/Legal.jsx",
+    "lines": "32-37"
+  },
+  "purpose": "One heading-bounded part of a legal document: a heading of the document's dominant level (h2 in terms of service, h4 in data privacy) and the blocks until the next heading of that level. Repeatable; imprint has none.",
   "tags": [
     "legal",
     "prose",
-    "document"
+    "part"
   ],
   "status": "mounted",
   "implementedBy": [
@@ -16,34 +26,37 @@
   ],
   "evidence": {
     "level": "measured",
-    "unmeasured": [
-      "legal copy itself is deliberately not transcribed in the specs (company address, register number, directors, VAT ID)"
-    ]
+    "unmeasured": []
   },
   "allowedTemplates": [
     "template.legal"
   ],
   "variants": [
-    "imprint",
-    "data-privacy",
-    "terms-of-service"
+    "default"
   ],
-  "constraints": {
-    "onePerPage": true
-  },
+  "constraints": {},
   "content": {
     "fields": {
-      "title": {
+      "heading": {
         "type": "text",
         "required": true,
-        "maxWords": 3,
-        "maxWordsBasis": "longest real instance: 3 words"
+        "maxWords": 18,
+        "maxWordsBasis": "longest real legal heading: data-privacy h4 'Notification obligation regarding rectification ...' = 18 words (src/pages/legal/content.js)"
+      },
+      "headingLevel": {
+        "type": "enum",
+        "required": true,
+        "values": [
+          "h2",
+          "h3",
+          "h4"
+        ]
       },
       "blocks": {
         "type": "list",
-        "required": true,
+        "required": false,
         "minItems": 1,
-        "maxItems": 300,
+        "maxItems": 60,
         "item": {
           "type": "object",
           "required": true,
@@ -84,7 +97,7 @@
             }
           }
         },
-        "countBasis": "estimate: upper bound over the C3 heading/paragraph enumeration for data-privacy (largest page); not an exact count"
+        "countBasis": "estimate: one heading's paragraphs, labels, lists and nested sub-headings (terms of service part 2 nests four h3 subsections); not an exact count"
       }
     },
     "additionalProperties": false
@@ -110,15 +123,17 @@
     "phone": "padding 24; column 342"
   },
   "notes": [
-    "Legal text is the company's own real legal data: never reproduce it for another owner; generate neutral placeholder prose."
+    "Part boundaries are the document's own headings (Legal.jsx renders content.js blocks in order).",
+    "R6 decomposition: the measured page showed one section holding most of the page (legal 95%, blog post 81%, case study 81% of page height at 1440px; extraction/measured-values.json sectionHeights), so the former whole-page contract was split at real content boundaries."
   ],
   "measuredFrom": [
-    "specs/company-careers-legal.md:144",
-    "specs/company-careers-legal.md:161",
-    "src/pages/Legal.jsx:6"
+    "src/pages/legal/content.js:54",
+    "src/pages/legal/content.js:69-71",
+    "specs/company-careers-legal.md:161"
   ],
   "retrievalEligible": true,
   "rules": [],
   "assetRoles": [],
-  "version": "1.0.0"
+  "version": "1.1.0",
+  "generatedAssetRoles": []
 }

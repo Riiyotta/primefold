@@ -1,0 +1,147 @@
+{
+  "id": "content.case-study-header",
+  "kind": "section",
+  "category": "CONTENT",
+  "semantic": {
+    "id": "content.case-study-header",
+    "category": "CONTENT"
+  },
+  "source": {
+    "id": "src:CaseStudy.header@81",
+    "tag": "header",
+    "file": "src/pages/CaseStudy.jsx",
+    "lines": "81-106"
+  },
+  "purpose": "Case-study opening: breadcrumb, h1, subtitle, divider, product/industry pills and the full-width banner.",
+  "tags": [
+    "case-study",
+    "header",
+    "cms"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/CaseStudy.jsx",
+    "src/pages/cms/shared.jsx",
+    "src/pages/cms/cms.css"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": []
+  },
+  "allowedTemplates": [
+    "template.case-study"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 5,
+        "maxWordsBasis": "longest real case-study title"
+      },
+      "breadcrumb": {
+        "type": "text",
+        "required": true,
+        "maxWords": 1,
+        "maxWordsBasis": "longest real instance: 1 words",
+        "placeholderOnly": true
+      },
+      "subtitle": {
+        "type": "text",
+        "required": true,
+        "maxWords": 9,
+        "maxWordsBasis": "longest real subtitle",
+        "placeholderOnly": true
+      },
+      "pills": {
+        "type": "list",
+        "required": true,
+        "minItems": 1,
+        "maxItems": 8,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "label": {
+              "type": "text",
+              "required": true,
+              "maxWords": 4,
+              "maxWordsBasis": "longest real pill label"
+            },
+            "badge": {
+              "type": "enum",
+              "required": true,
+              "values": [
+                "none",
+                "xi",
+                "ri"
+              ],
+              "primefoldBadgeValues": [
+                "xi",
+                "ri"
+              ],
+              "note": "Values in primefoldBadgeValues render a Primefold product badge/label (XI / RI / CI); mode 'generation' must use the neutral value(s), which render the new brand's own mark (brand.placeholder-mark / brand.user-supplied-mark)."
+            }
+          }
+        },
+        "countBasis": "real studies have 4-7 pills"
+      },
+      "banner": {
+        "type": "asset",
+        "required": true,
+        "roles": [
+          "customer.imagery",
+          "generated.illustration",
+          "asset.user-supplied"
+        ]
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "hover-color",
+        "trigger": "hover",
+        "reducedMotionFallback": "instant-swap",
+        "note": "breadcrumb link colour; Visit Website arrow pill glow",
+        "measuredFrom": [
+          "specs/blog-case-studies.md:190"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "absent in CaseStudy.jsx and RichText.jsx"
+  },
+  "responsive": {
+    "desktop": "content 1280; stats 3 x 416; numbered cards 3 x 416",
+    "tablet": "stats 3 x 246; numbered cards: Framer bug renders 3 fixed 300px columns clipped (prefer 1fr)",
+    "phone": "everything single column"
+  },
+  "notes": [
+    "R6 decomposition: the measured page showed one section holding most of the page (legal 95%, blog post 81%, case study 81% of page height at 1440px; extraction/measured-values.json sectionHeights), so the former whole-page contract was split at real content boundaries."
+  ],
+  "measuredFrom": [
+    "src/pages/CaseStudy.jsx:81-96",
+    "specs/blog-case-studies.md:181",
+    "src/pages/CaseStudy.jsx:75"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [
+    "asset.user-supplied",
+    "customer.imagery",
+    "generated.illustration"
+  ],
+  "version": "1.1.0",
+  "generatedAssetRoles": [
+    "asset.user-supplied",
+    "generated.illustration"
+  ]
+}

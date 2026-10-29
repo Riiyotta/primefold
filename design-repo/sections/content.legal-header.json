@@ -1,0 +1,138 @@
+{
+  "id": "content.legal-header",
+  "kind": "section",
+  "category": "CONTENT",
+  "semantic": {
+    "id": "content.legal-header",
+    "category": "CONTENT"
+  },
+  "source": {
+    "id": "src:Legal.section@45",
+    "tag": "section",
+    "file": "src/pages/Legal.jsx",
+    "lines": "45-60"
+  },
+  "purpose": "Legal document opening: h1 title plus any preamble blocks before the first heading-bounded part (the whole imprint, which has no headings; the version line of data privacy).",
+  "tags": [
+    "legal",
+    "document",
+    "title"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/Legal.jsx",
+    "src/pages/legal/content.js",
+    "src/pages/legal/legal.css"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": [
+      "legal copy itself is deliberately not transcribed in the specs (company address, register number, directors, VAT ID)"
+    ]
+  },
+  "allowedTemplates": [
+    "template.legal"
+  ],
+  "variants": [
+    "imprint",
+    "data-privacy",
+    "terms-of-service"
+  ],
+  "constraints": {
+    "onePerPage": true
+  },
+  "content": {
+    "fields": {
+      "title": {
+        "type": "text",
+        "required": true,
+        "maxWords": 3,
+        "maxWordsBasis": "longest real instance: 3 words"
+      },
+      "preamble": {
+        "type": "list",
+        "required": false,
+        "minItems": 1,
+        "maxItems": 40,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "type": {
+              "type": "enum",
+              "required": true,
+              "values": [
+                "p",
+                "h2",
+                "h3",
+                "h4",
+                "h6",
+                "ul",
+                "ol",
+                "spacer",
+                "empty"
+              ]
+            },
+            "text": {
+              "type": "text",
+              "required": false,
+              "maxWords": 400,
+              "maxWordsBasis": "spec C3: largest single paragraph is data-privacy 'Applications' 1 p ~399w"
+            },
+            "items": {
+              "type": "list",
+              "required": false,
+              "minItems": 1,
+              "maxItems": 25,
+              "item": {
+                "type": "text",
+                "required": true,
+                "maxWords": 140,
+                "maxWordsBasis": "spec C3: 'Meta Pixel' ul x3 items ~403w, i.e. ~134w per item"
+              },
+              "countBasis": "spec C3: terms-of-service prohibited-activities list has 23 items"
+            }
+          }
+        },
+        "countBasis": "imprint renders its whole body before any heading (src/pages/legal/content.js imprint blocks); bound is a design choice above the real count"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "hover-color",
+        "trigger": "hover",
+        "reducedMotionFallback": "instant-swap",
+        "note": "rich-text links #594AFF -> #212121 + underline, instant",
+        "measuredFrom": [
+          "specs/company-careers-legal.md:168"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "no motion in this section"
+  },
+  "responsive": {
+    "desktop": "section padding 152/80/120; column 768 centered",
+    "tablet": "column 650",
+    "phone": "padding 24; column 342"
+  },
+  "notes": [
+    "Legal text is the company's own real legal data: never reproduce it for another owner; generate neutral placeholder prose.",
+    "R6 decomposition: the measured page showed one section holding most of the page (legal 95%, blog post 81%, case study 81% of page height at 1440px; extraction/measured-values.json sectionHeights), so the former whole-page contract was split at real content boundaries."
+  ],
+  "measuredFrom": [
+    "specs/company-careers-legal.md:144",
+    "specs/company-careers-legal.md:161",
+    "src/pages/Legal.jsx:6",
+    "src/pages/Legal.jsx:48",
+    "src/pages/legal/content.js:74-75"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [],
+  "version": "1.1.0",
+  "generatedAssetRoles": []
+}

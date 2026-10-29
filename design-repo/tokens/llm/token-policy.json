@@ -1,5 +1,5 @@
 {
-  "$description": "What is enforced vs convention for token usage.",
+  "$description": "Token usage policy for PageSpecs and generators. Enforced: schema/semantic_validate.py TOKEN_* rules on node.styleTokens (PageSpec field added in pageSpecVersion 1.1.0); catalog drift is checked by extraction/verify_all.py.",
   "rawValueRestrictions": {
     "color": "reference tokens by path; never emit a raw literal",
     "fontFamily": "reference tokens by path; never emit a raw literal",
@@ -10,13 +10,206 @@
     "elevation": "reference tokens by path; never emit a raw literal",
     "motion": "reference tokens by path; never emit a raw literal"
   },
+  "styleSlots": {
+    "surface": {
+      "accept": [
+        "surface."
+      ],
+      "categories": [
+        "semantic"
+      ],
+      "kind": "color"
+    },
+    "text": {
+      "accept": [
+        "text."
+      ],
+      "categories": [
+        "semantic"
+      ],
+      "kind": "color"
+    },
+    "accent": {
+      "accept": [
+        "brand.",
+        "text.accent-positive"
+      ],
+      "categories": [
+        "semantic"
+      ],
+      "kind": "color"
+    },
+    "border": {
+      "accept": [
+        "border."
+      ],
+      "categories": [
+        "semantic"
+      ],
+      "kind": "color"
+    },
+    "spacingTop": {
+      "accept": [
+        "spacing.",
+        "layout.section-pad-"
+      ],
+      "categories": [
+        "spacing",
+        "layout"
+      ],
+      "kind": "spacing"
+    },
+    "spacingBottom": {
+      "accept": [
+        "spacing.",
+        "layout.section-pad-"
+      ],
+      "categories": [
+        "spacing",
+        "layout"
+      ],
+      "kind": "spacing"
+    },
+    "gap": {
+      "accept": [
+        "spacing."
+      ],
+      "categories": [
+        "spacing"
+      ],
+      "kind": "spacing"
+    },
+    "radius": {
+      "accept": [
+        "radius."
+      ],
+      "categories": [
+        "radius"
+      ],
+      "kind": "radius"
+    },
+    "headingFont": {
+      "accept": [
+        "fontFamily."
+      ],
+      "categories": [
+        "fontFamily"
+      ],
+      "kind": "font"
+    },
+    "bodyFont": {
+      "accept": [
+        "fontFamily."
+      ],
+      "categories": [
+        "fontFamily"
+      ],
+      "kind": "font"
+    },
+    "elevation": {
+      "accept": [
+        "elevation."
+      ],
+      "categories": [
+        "elevation"
+      ],
+      "kind": "elevation"
+    }
+  },
+  "rawValuePatterns": {
+    "color": "^(#[0-9a-fA-F]{3,8}|rgba?\\(|hsla?\\(|oklch\\(|color\\()",
+    "length": "^-?[0-9.]+(px|rem|em|vh|vw|%)?$",
+    "fontStack": "[,'\"]|serif|sans|mono"
+  },
+  "themes": {
+    "light": {
+      "resolves": "tokens/themes/light.json",
+      "evidence": "tokens/10-semantic/semantic.json $description per token (e.g. text.inverse 'text on dark surfaces', surface.numbered 'case-study numbered cards' rendered with white text in src/pages/cms/RichText.jsx)",
+      "lightSurfaces": [
+        "surface.page",
+        "surface.alt",
+        "surface.soft",
+        "surface.stat"
+      ],
+      "darkSurfaces": [
+        "surface.inverse",
+        "surface.dark-window",
+        "surface.dark-stage",
+        "surface.numbered"
+      ],
+      "textOnSurface": {
+        "surface.page": [
+          "text.primary",
+          "text.heading",
+          "text.body",
+          "text.body-warm",
+          "text.eyebrow",
+          "text.accent-positive",
+          "text.link-article"
+        ],
+        "surface.alt": [
+          "text.primary",
+          "text.heading",
+          "text.body",
+          "text.body-warm",
+          "text.eyebrow",
+          "text.accent-positive",
+          "text.link-article"
+        ],
+        "surface.soft": [
+          "text.primary",
+          "text.heading",
+          "text.body",
+          "text.body-warm",
+          "text.eyebrow",
+          "text.accent-positive",
+          "text.link-article"
+        ],
+        "surface.stat": [
+          "text.primary",
+          "text.heading",
+          "text.body",
+          "text.body-warm",
+          "text.eyebrow",
+          "text.accent-positive",
+          "text.link-article"
+        ],
+        "surface.inverse": [
+          "text.inverse",
+          "text.inverse-secondary",
+          "text.on-black-button"
+        ],
+        "surface.dark-window": [
+          "text.inverse",
+          "text.inverse-secondary",
+          "text.on-black-button"
+        ],
+        "surface.dark-stage": [
+          "text.inverse",
+          "text.inverse-secondary",
+          "text.on-black-button"
+        ],
+        "surface.numbered": [
+          "text.inverse",
+          "text.inverse-secondary",
+          "text.on-black-button"
+        ]
+      }
+    }
+  },
+  "generationModeTokenRules": {
+    "unsupportedFonts": {
+      "fontFamily.favorit": "ABC Favorit TRIAL licence (assets/asset-roles.json fontFaces): evaluation only, never in a generated page for another brand."
+    }
+  },
   "enforced": [
-    "asset roles are closed (schema enum + semantic validator)",
+    "asset roles are closed (schema enum + semantic validator) and mode-aware (clone / generation)",
     "motion object is closed (pattern/trigger/reducedMotionFallback)",
-    "link targets are routes, anchors or dest:<role> (never a literal live URL)"
+    "link targets are routes, anchors, dest:<role> or reserved .example/.invalid placeholder URLs (never a live URL)",
+    "styleTokens: unknown token (TOKEN_UNKNOWN), raw hex/rgb/px/font-stack values (TOKEN_RAW_VALUE), arbitrary spacing (TOKEN_ARBITRARY_SPACING), unsupported font (TOKEN_UNSUPPORTED_FONT), wrong category for a slot (TOKEN_SLOT_CATEGORY), invalid theme/token combination (TOKEN_THEME_COMBINATION)"
   ],
   "convention": [
     "token references in prose guidance (README, section purpose)"
   ],
-  "overrides": "NOT AVAILABLE. A PageSpec node carries only {section, variant, content, motion}; there is no per-instance style/token override field. Styling is owned entirely by section/component contracts, so there is nothing to validate or mutate at the PageSpec layer (MASTER-GUIDE 3.21). Drift of the catalog/policy against real token files is checked in extraction/verify_all.py instead."
+  "overrides": "AVAILABLE since pageSpecVersion 1.1.0 as node.styleTokens: a closed set of slots whose values are token paths only. Section/component contracts still own default styling; styleTokens is an optional, validated override."
 }

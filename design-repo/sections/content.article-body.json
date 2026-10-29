@@ -1,0 +1,157 @@
+{
+  "id": "content.article-body",
+  "kind": "section",
+  "category": "CONTENT",
+  "semantic": {
+    "id": "content.article-body",
+    "category": "CONTENT"
+  },
+  "source": {
+    "id": "src:RichText.Heading@89",
+    "tag": "Heading",
+    "file": "src/pages/cms/RichText.jsx",
+    "lines": "89-133"
+  },
+  "purpose": "One chapter of a blog post body: a chapter heading (h2, or h3 where a post has no h2) and the rich-text blocks until the next chapter heading (paragraphs, lists, quote, images, video facade, in-body buttons). Repeatable.",
+  "tags": [
+    "article",
+    "blog",
+    "rich-text",
+    "chapter",
+    "cms"
+  ],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/cms/RichText.jsx",
+    "src/pages/cms/cms.css"
+  ],
+  "evidence": {
+    "level": "measured",
+    "unmeasured": [
+      "code/pre/table/figure fallbacks (not used in the 12 posts)",
+      "in-body primary button hover (no CSS rule found)"
+    ]
+  },
+  "allowedTemplates": [
+    "template.blog-post"
+  ],
+  "variants": [
+    "default"
+  ],
+  "constraints": {},
+  "content": {
+    "fields": {
+      "blocks": {
+        "type": "list",
+        "required": true,
+        "minItems": 1,
+        "maxItems": 67,
+        "item": {
+          "type": "object",
+          "required": true,
+          "fields": {
+            "type": {
+              "type": "enum",
+              "required": true,
+              "values": [
+                "p",
+                "h1",
+                "h2",
+                "h3",
+                "h4",
+                "h5",
+                "ul",
+                "ol",
+                "quote",
+                "img",
+                "video",
+                "button",
+                "spacer"
+              ]
+            },
+            "text": {
+              "type": "text",
+              "required": false,
+              "maxWords": 109,
+              "maxWordsBasis": "longest real body paragraph block = 109 words (specs/cms-data.json)"
+            },
+            "items": {
+              "type": "list",
+              "required": false,
+              "minItems": 1,
+              "maxItems": 40,
+              "item": {
+                "type": "text",
+                "required": true,
+                "maxWords": 109,
+                "maxWordsBasis": "list items bounded by paragraph budget"
+              }
+            },
+            "image": {
+              "type": "asset",
+              "required": false,
+              "roles": [
+                "cms.post-image",
+                "embed.video-facade",
+                "asset.user-supplied",
+                "placeholder.screenshot"
+              ]
+            },
+            "button": {
+              "type": "link",
+              "required": false,
+              "labelMaxWords": 4,
+              "maxWordsBasis": "longest real label: 4 words"
+            }
+          }
+        },
+        "countBasis": "inherits the former whole-body bound (real posts have up to 49 blocks in total); a chapter is always smaller"
+      }
+    },
+    "additionalProperties": false
+  },
+  "motion": {
+    "allowed": [
+      {
+        "pattern": "hover-color",
+        "trigger": "hover",
+        "reducedMotionFallback": "instant-swap",
+        "note": "body links #594AFF -> #212121 + underline (instant); heading anchors #212121 -> #545454",
+        "measuredFrom": [
+          "specs/blog-case-studies.md:153"
+        ]
+      }
+    ],
+    "reducedMotionHandledInSource": "no",
+    "reducedMotionSource": "absent in BlogPost.jsx and RichText.jsx (no motion)"
+  },
+  "responsive": {
+    "desktop": "column 840 (800 content); gap 60",
+    "tablet": "770 content",
+    "phone": "350 content; meta row stacks"
+  },
+  "notes": [
+    "Body prose is intentionally not transcribed in the source specs; only block structure and word counts are recorded.",
+    "R6 decomposition: the measured page showed one section holding most of the page (legal 95%, blog post 81%, case study 81% of page height at 1440px; extraction/measured-values.json sectionHeights), so the former whole-page contract was split at real content boundaries."
+  ],
+  "measuredFrom": [
+    "src/pages/cms/RichText.jsx:78",
+    "src/pages/cms/RichText.jsx:83-89",
+    "specs/blog-case-studies.md:145",
+    "specs/cms-data.json:1815"
+  ],
+  "retrievalEligible": true,
+  "rules": [],
+  "assetRoles": [
+    "asset.user-supplied",
+    "cms.post-image",
+    "embed.video-facade",
+    "placeholder.screenshot"
+  ],
+  "version": "1.1.0",
+  "generatedAssetRoles": [
+    "asset.user-supplied",
+    "cms.post-image",
+    "placeholder.screenshot"
+  ]
+}

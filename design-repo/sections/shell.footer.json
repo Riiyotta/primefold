@@ -2,6 +2,16 @@
   "id": "shell.footer",
   "kind": "section",
   "category": "SHELL",
+  "semantic": {
+    "id": "shell.footer",
+    "category": "SHELL"
+  },
+  "source": {
+    "id": "src:Footer.footer@49",
+    "tag": "footer",
+    "file": "src/components/Footer.jsx",
+    "lines": "49-143"
+  },
   "purpose": "Footer card with brand blurb + newsletter form, four link columns, legal/social row, hosted-in-Germany line and the sticky ghost wordmark revealed as the page bottoms out.",
   "tags": [
     "footer",
@@ -148,14 +158,18 @@
         "type": "asset",
         "required": true,
         "roles": [
-          "brand.logo-mark"
+          "brand.logo-mark",
+          "brand.placeholder-mark",
+          "brand.user-supplied-mark"
         ]
       },
       "wordmark": {
         "type": "asset",
         "required": true,
         "roles": [
-          "brand.wordmark-ghost"
+          "brand.wordmark-ghost",
+          "brand.placeholder-mark",
+          "brand.user-supplied-mark"
         ]
       }
     },
@@ -204,7 +218,13 @@
   "rules": [],
   "assetRoles": [
     "brand.logo-mark",
+    "brand.placeholder-mark",
+    "brand.user-supplied-mark",
     "brand.wordmark-ghost"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "brand.placeholder-mark",
+    "brand.user-supplied-mark"
+  ]
 }

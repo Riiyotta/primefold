@@ -2,6 +2,16 @@
   "id": "content.open-roles",
   "kind": "section",
   "category": "CONTENT",
+  "semantic": {
+    "id": "content.open-roles",
+    "category": "CONTENT"
+  },
+  "source": {
+    "id": "src:OpenRoles.section@14",
+    "tag": "section",
+    "file": "src/pages/careers/OpenRoles.jsx",
+    "lines": "14-47"
+  },
   "purpose": "Open roles list (#roles): title block and static job rows with meta line, h5, description and a black Apply button.",
   "tags": [
     "jobs",
@@ -108,5 +118,6 @@
   "retrievalEligible": true,
   "rules": [],
   "assetRoles": [],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": []
 }

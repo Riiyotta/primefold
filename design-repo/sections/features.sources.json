@@ -2,6 +2,16 @@
   "id": "features.sources",
   "kind": "section",
   "category": "FEATURES",
+  "semantic": {
+    "id": "features.sources",
+    "category": "FEATURES"
+  },
+  "source": {
+    "id": "src:Sources.div@192",
+    "tag": "div",
+    "file": "src/pages/product/Sources.jsx",
+    "lines": "192-223"
+  },
   "purpose": "'Sources' block: left list of three trust points (connects in minutes, traceable, hosted in Germany) beside a Lottie (XI) or dark 'A3 Sources' loop (RI).",
   "tags": [
     "sources",
@@ -82,7 +92,9 @@
         "required": true,
         "roles": [
           "motion.lottie",
-          "product.illustration-still"
+          "product.illustration-still",
+          "placeholder.screenshot",
+          "asset.user-supplied"
         ]
       }
     },
@@ -127,9 +139,19 @@
   "retrievalEligible": false,
   "rules": [],
   "assetRoles": [
+    "asset.user-supplied",
     "motion.lottie",
+    "placeholder.screenshot",
     "product.illustration-still",
     "ui.icon-mask"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "asset.user-supplied",
+    "motion.lottie",
+    "placeholder.screenshot",
+    "product.illustration-still",
+    "ui.icon-mask"
+  ],
+  "retrievalReason": "Spec-only: the product routes render a placeholder page ('building...', src/pages/ExperienceIntelligence.jsx) and this section's source is not mounted by src/App.jsx, so it is not a proven, retrievable pattern."
 }

@@ -2,6 +2,16 @@
   "id": "features.intelligence-cards",
   "kind": "section",
   "category": "FEATURES",
+  "semantic": {
+    "id": "features.intelligence-cards",
+    "category": "FEATURES"
+  },
+  "source": {
+    "id": "src:Intelligence.section@218",
+    "tag": "section",
+    "file": "src/components/Intelligence.jsx",
+    "lines": "218-233"
+  },
   "purpose": "Three product cards (XI live, RI beta, next planned) that widen on hover on desktop and become sticky stacked cards on tablet/phone; routes visitors into a product page.",
   "tags": [
     "cards",
@@ -68,8 +78,15 @@
               "values": [
                 "XI",
                 "RI",
+                "CI",
+                "own"
+              ],
+              "primefoldBadgeValues": [
+                "XI",
+                "RI",
                 "CI"
-              ]
+              ],
+              "note": "Values in primefoldBadgeValues render a Primefold product badge/label (XI / RI / CI); mode 'generation' must use the neutral value(s), which render the new brand's own mark (brand.placeholder-mark / brand.user-supplied-mark)."
             },
             "status": {
               "type": "text",
@@ -97,7 +114,9 @@
               "type": "asset",
               "required": true,
               "roles": [
-                "brand.product-badge"
+                "brand.product-badge",
+                "brand.placeholder-mark",
+                "brand.user-supplied-mark"
               ]
             },
             "visual": {
@@ -106,7 +125,9 @@
               "roles": [
                 "product.illustration-still",
                 "motion.lottie",
-                "ui.icon-mask"
+                "ui.icon-mask",
+                "placeholder.screenshot",
+                "asset.user-supplied"
               ]
             }
           }
@@ -163,10 +184,23 @@
   "retrievalEligible": true,
   "rules": [],
   "assetRoles": [
+    "asset.user-supplied",
+    "brand.placeholder-mark",
     "brand.product-badge",
+    "brand.user-supplied-mark",
     "motion.lottie",
+    "placeholder.screenshot",
     "product.illustration-still",
     "ui.icon-mask"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "asset.user-supplied",
+    "brand.placeholder-mark",
+    "brand.user-supplied-mark",
+    "motion.lottie",
+    "placeholder.screenshot",
+    "product.illustration-still",
+    "ui.icon-mask"
+  ]
 }

@@ -2,6 +2,16 @@
   "id": "features.how-it-works",
   "kind": "section",
   "category": "FEATURES",
+  "semantic": {
+    "id": "features.how-it-works",
+    "category": "FEATURES"
+  },
+  "source": {
+    "id": "src:HowItWorks.section@74",
+    "tag": "section",
+    "file": "src/components/HowItWorks.jsx",
+    "lines": "74-89"
+  },
   "purpose": "Title stack plus the dark animated A1 Loop product demo (ask, read sources, understand, answer, act, trace): shows the value proposition as a worked example. Anchor target #see-the-platform.",
   "tags": [
     "product-demo",
@@ -51,7 +61,9 @@
         "type": "asset",
         "required": true,
         "roles": [
-          "product.illustration-still"
+          "product.illustration-still",
+          "placeholder.screenshot",
+          "asset.user-supplied"
         ]
       },
       "question": {
@@ -169,7 +181,14 @@
   "retrievalEligible": true,
   "rules": [],
   "assetRoles": [
+    "asset.user-supplied",
+    "placeholder.screenshot",
     "product.illustration-still"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "asset.user-supplied",
+    "placeholder.screenshot",
+    "product.illustration-still"
+  ]
 }

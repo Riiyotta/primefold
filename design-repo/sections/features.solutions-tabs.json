@@ -2,6 +2,16 @@
   "id": "features.solutions-tabs",
   "kind": "section",
   "category": "FEATURES",
+  "semantic": {
+    "id": "features.solutions-tabs",
+    "category": "FEATURES"
+  },
+  "source": {
+    "id": "src:product-pages.###@367",
+    "tag": "###",
+    "file": "specs/product-pages.md",
+    "lines": "367-409"
+  },
   "purpose": "'Built for every team' tabbed panel (persona tabs) with an image card and a dark card showing marquee quote pills plus 'What you get'. Not the home carousel.",
   "tags": [
     "tabs",
@@ -75,7 +85,8 @@
               "type": "asset",
               "required": true,
               "roles": [
-                "photo.scene-card"
+                "photo.scene-card",
+                "asset.user-supplied"
               ]
             },
             "cta": {
@@ -136,7 +147,13 @@
   "retrievalEligible": false,
   "rules": [],
   "assetRoles": [
+    "asset.user-supplied",
     "photo.scene-card"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "asset.user-supplied",
+    "photo.scene-card"
+  ],
+  "retrievalReason": "Spec-only: the product routes render a placeholder page ('building...', src/pages/ExperienceIntelligence.jsx) and this section's source is not mounted by src/App.jsx, so it is not a proven, retrievable pattern."
 }

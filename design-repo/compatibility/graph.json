@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "$description": "Rhythm/structure/content rules. Every rule id here must be implemented in schema/semantic_validate.py (IMPLEMENTED_RULES) and vice versa (checked by extraction/verify_all.py). Rules were checked against the 13 real templates at write time (structure.py asserts).",
+  "version": "1.1.0",
+  "$description": "Rhythm/structure/content rules. Every rule id here must be implemented in schema/semantic_validate.py (IMPLEMENTED_RULES) and vice versa (checked by extraction/verify_all.py). Rules were checked against the 13 real templates (re-checked after the R6 decomposition) at write time (structure.py asserts).",
   "severityEnum": [
     "error",
     "warn"
@@ -50,11 +50,11 @@
       "exceptions": [
         {
           "template": "template.blog-post",
-          "reason": "title/h1 lives inside the page's own content section (no separate hero) on the live site"
+          "reason": "title/h1 lives in content.article-header (no separate hero) on the live site"
         },
         {
           "template": "template.case-study",
-          "reason": "title/h1 lives inside the page's own content section (no separate hero) on the live site"
+          "reason": "title/h1 lives in content.case-study-header (no separate hero) on the live site"
         },
         {
           "template": "template.contact",
@@ -62,7 +62,7 @@
         },
         {
           "template": "template.legal",
-          "reason": "title/h1 lives inside the page's own content section (no separate hero) on the live site"
+          "reason": "title/h1 lives in content.legal-header (no separate hero) on the live site"
         },
         {
           "template": "template.not-found",
@@ -109,14 +109,14 @@
       "id": "NO_ADJACENT_SAME_SECTION",
       "severity": "error",
       "kind": "rhythm",
-      "description": "The same (section, variant) may not appear twice in a row.",
+      "description": "The same (section, variant) may not appear twice in a row, except where the template node is repeatable (content.legal-part, content.article-body, content.case-study-body).",
       "exceptions": []
     },
     {
       "id": "NO_ADJACENT_SAME_CATEGORY",
       "severity": "warn",
       "kind": "rhythm",
-      "description": "Adjacent sections should not share a category unless the real template does exactly that.",
+      "description": "Adjacent sections should not share a category unless the real template does exactly that. Consecutive repeats of the SAME repeatable section (legal parts, chapters) are not a category pair.",
       "exceptions": [
         {
           "template": "template.home",
@@ -197,6 +197,30 @@
             "features.team-ticker"
           ],
           "reason": "Commitments then Team inside the same Content wrapper."
+        },
+        {
+          "template": "template.legal",
+          "pair": [
+            "content.legal-header",
+            "content.legal-part"
+          ],
+          "reason": "The legal title/preamble and the first heading-bounded part are consecutive CONTENT units of one document (R6 decomposition of the former whole-document section)."
+        },
+        {
+          "template": "template.blog-post",
+          "pair": [
+            "content.article-header",
+            "content.article-body"
+          ],
+          "reason": "Article header and its first chapter are consecutive CONTENT units of one post (R6 decomposition)."
+        },
+        {
+          "template": "template.case-study",
+          "pair": [
+            "content.case-study-body",
+            "content.case-study-about"
+          ],
+          "reason": "The last story chapter flows straight into the About-the-client block inside the same column (src/pages/CaseStudy.jsx renders RichText then About)."
         }
       ]
     },
@@ -204,7 +228,7 @@
       "id": "PLANS_COMPARISON_TABLE_XI_ONLY",
       "severity": "error",
       "kind": "structure",
-      "description": "On template.plans the comparison table is present iff hero.pricing.content.product == 'XI' (live page removes it in the RI state).",
+      "description": "On template.plans the comparison table is present iff hero.pricing.content.product is 'XI' (or the generation-neutral 'primary'); absent for 'RI' / 'secondary' (live page removes it in the RI state).",
       "exceptions": []
     },
     {
@@ -232,7 +256,7 @@
       "id": "ASSET_ROLE_POLICY",
       "severity": "error",
       "kind": "content",
-      "description": "assetRole must be allowed for the field and assetSource must be allowed by the role's pinned generationPolicy.",
+      "description": "assetRole must be allowed for the field; assetSource must be in the role's cloneAssetSources (mode clone) or generationAssetSources (mode generation). Clone policies and availability are pinned in code (PINNED_POLICIES, PINNED_AVAILABILITY).",
       "exceptions": []
     },
     {
@@ -247,6 +271,118 @@
       "severity": "error",
       "kind": "content",
       "description": "Fields flagged placeholderOnly must not contain a real customer or person name from assets/asset-roles.json realIdentities.",
+      "exceptions": []
+    },
+    {
+      "id": "GENERATION_MODE_BRAND",
+      "kind": "generation",
+      "severity": "error",
+      "description": "mode 'generation' must declare brand.name, and no text field, meta field, alt text or brand.name may contain a Primefold brand/product name or variant (schema/source-patterns.json brand, derived from src/ with file:line evidence).",
+      "exceptions": []
+    },
+    {
+      "id": "GENERATION_MODE_ASSET",
+      "kind": "generation",
+      "severity": "error",
+      "description": "mode 'generation' may not use a clone-only Primefold identity role (logo, wordmark, product badge, site icons), may not use assetSource 'reuse-exact', and assetRef may not point at a source file (public/...) or name a real source asset file. Enum fields that select a Primefold product badge (contract primefoldBadgeValues: XI/RI/CI product selectors, xi/ri pills) must take a neutral value.",
+      "exceptions": []
+    },
+    {
+      "id": "GENERATION_MODE_PERSON",
+      "kind": "generation",
+      "severity": "error",
+      "description": "mode 'generation' may not use real-person roles (person.team-photo, person.author-avatar) nor contain a real person's name from the source (team, authors, testimonials, quote cards).",
+      "exceptions": []
+    },
+    {
+      "id": "GENERATION_MODE_CUSTOMER",
+      "kind": "generation",
+      "severity": "error",
+      "description": "mode 'generation' may not use real-customer roles (customer.logo, customer.imagery) nor contain a real customer/company name from the source.",
+      "exceptions": []
+    },
+    {
+      "id": "GENERATION_MODE_SCREENSHOT",
+      "kind": "generation",
+      "severity": "error",
+      "description": "mode 'generation' may not reference a real Primefold product screenshot / product still / editorial cover file (assetRef naming a realFiles entry of product.illustration-still or cms.post-image).",
+      "exceptions": []
+    },
+    {
+      "id": "GENERATION_MODE_COPY",
+      "kind": "generation",
+      "severity": "error",
+      "description": "mode 'generation' text may not contain any 5-word run of Primefold source copy (normalised, hashed shingles in schema/source-patterns.json).",
+      "exceptions": []
+    },
+    {
+      "id": "GENERATION_MODE_CLAIM",
+      "kind": "generation",
+      "severity": "error",
+      "description": "mode 'generation' text may not reuse a source statistic/claim value (outcome numbers, company stats, case-study stats).",
+      "exceptions": []
+    },
+    {
+      "id": "GENERATION_MODE_URL",
+      "kind": "generation",
+      "severity": "error",
+      "description": "mode 'generation' may not contain a URL or domain other than the reserved .example/.invalid placeholders, any source URL/host, or a link to a blocked-for-generation destination role (Primefold help centres, client websites).",
+      "exceptions": []
+    },
+    {
+      "id": "GENERATION_MODE_EMBED",
+      "kind": "generation",
+      "severity": "error",
+      "description": "mode 'generation' may not use the third-party video embed role nor reference YouTube/embed hosts from the source.",
+      "exceptions": []
+    },
+    {
+      "id": "RETRIEVAL_ELIGIBILITY",
+      "kind": "structure",
+      "severity": "error",
+      "description": "Section contracts' retrievalEligible must equal the pinned RETRIEVAL_INELIGIBLE set (in code); a mode 'generation' PageSpec may not use a retrieval-ineligible (spec-only, unmounted) section.",
+      "exceptions": []
+    },
+    {
+      "id": "TOKEN_UNKNOWN",
+      "kind": "token",
+      "severity": "error",
+      "description": "Every styleTokens value must be a token path in tokens/llm/token-catalog.json.",
+      "exceptions": []
+    },
+    {
+      "id": "TOKEN_RAW_VALUE",
+      "kind": "token",
+      "severity": "error",
+      "description": "styleTokens values may not be raw literals (hex/rgb/hsl colours, px/rem lengths, font stacks, numbers).",
+      "exceptions": []
+    },
+    {
+      "id": "TOKEN_ARBITRARY_SPACING",
+      "kind": "token",
+      "severity": "error",
+      "description": "Spacing slots (spacingTop, spacingBottom, gap) accept only spacing.* or the layout section-padding tokens; anything else is arbitrary spacing.",
+      "exceptions": []
+    },
+    {
+      "id": "TOKEN_UNSUPPORTED_FONT",
+      "kind": "token",
+      "severity": "error",
+      "description": "Font slots accept only fontFamily.* tokens; the trial-licensed fontFamily.favorit is unsupported in mode 'generation' (assets/asset-roles.json fontFaces: TRIAL licence).",
+      "exceptions": []
+    },
+    {
+      "id": "TOKEN_SLOT_CATEGORY",
+      "kind": "token",
+      "severity": "error",
+      "description": "Each style slot accepts only the token categories/prefixes declared in tokens/llm/token-policy.json styleSlots.",
+      "exceptions": []
+    },
+    {
+      "id": "TOKEN_THEME_COMBINATION",
+      "kind": "token",
+      "severity": "error",
+      "description": "The declared theme must exist and must resolve every semantic token used; text tokens must be legible on the chosen surface token per token-policy themes.<theme>.textOnSurface (e.g. text.inverse is for dark surfaces only).",
       "exceptions": []
     }
   ]

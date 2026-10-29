@@ -2,6 +2,16 @@
   "id": "hero.careers",
   "kind": "section",
   "category": "HERO",
+  "semantic": {
+    "id": "hero.careers",
+    "category": "HERO"
+  },
+  "source": {
+    "id": "src:CareersHero.section@47",
+    "tag": "section",
+    "file": "src/pages/careers/CareersHero.jsx",
+    "lines": "47-81"
+  },
   "purpose": "Light careers hero: eyebrow, h1, lead, black 'See open roles' anchor button, and two shader-backed cards ('How you work', 'How we hire').",
   "tags": [
     "hero",
@@ -65,7 +75,8 @@
               "type": "asset",
               "required": true,
               "roles": [
-                "fx.shader-fallback"
+                "fx.shader-fallback",
+                "asset.user-supplied"
               ]
             },
             "title": {
@@ -122,7 +133,12 @@
   "retrievalEligible": true,
   "rules": [],
   "assetRoles": [
+    "asset.user-supplied",
     "fx.shader-fallback"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "asset.user-supplied",
+    "fx.shader-fallback"
+  ]
 }

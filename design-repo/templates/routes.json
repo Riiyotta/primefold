@@ -123,7 +123,7 @@
       "kind": "static",
       "implementationStatus": "mounted",
       "variantOverrides": {
-        "content.legal-prose": "imprint"
+        "content.legal-header": "imprint"
       },
       "measuredFrom": [
         "src/App.jsx:35"
@@ -138,7 +138,7 @@
       "kind": "static",
       "implementationStatus": "mounted",
       "variantOverrides": {
-        "content.legal-prose": "data-privacy"
+        "content.legal-header": "data-privacy"
       },
       "measuredFrom": [
         "src/App.jsx:36"
@@ -153,7 +153,7 @@
       "kind": "static",
       "implementationStatus": "mounted",
       "variantOverrides": {
-        "content.legal-prose": "terms-of-service"
+        "content.legal-header": "terms-of-service"
       },
       "measuredFrom": [
         "src/App.jsx:37"

@@ -2,6 +2,16 @@
   "id": "features.use-cases",
   "kind": "section",
   "category": "FEATURES",
+  "semantic": {
+    "id": "features.use-cases",
+    "category": "FEATURES"
+  },
+  "source": {
+    "id": "src:UseCases.div@39",
+    "tag": "div",
+    "file": "src/pages/product/UseCases.jsx",
+    "lines": "39-64"
+  },
   "purpose": "Sticky 'Used by' label beside a scroll-highlighted list of use cases (only one item at opacity 1 at a time).",
   "tags": [
     "sticky",
@@ -101,5 +111,7 @@
   "retrievalEligible": false,
   "rules": [],
   "assetRoles": [],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [],
+  "retrievalReason": "Spec-only: the product routes render a placeholder page ('building...', src/pages/ExperienceIntelligence.jsx) and this section's source is not mounted by src/App.jsx, so it is not a proven, retrievable pattern."
 }

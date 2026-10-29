@@ -8,7 +8,8 @@ defect must pass. The real repo is never modified.
 Citation scenarios need the source tree: it is taken from --source, $DESIGN_REPO_SOURCE_ROOT, or the repo's parent
 directory when that looks like the source project (package.json + src/). Without it those scenarios are SKIPPED, loudly.
 
-Usage: python3 extraction/prove_drift.py [--source DIR]     (scratch dirs come from the OS temp dir; set TMPDIR to override)
+Usage: python3 extraction/prove_drift.py [--source DIR] [--scratch DIR]
+       (scratch copies go under --scratch DIR when given, otherwise the OS temp dir)
 """
 import json
 import os
@@ -46,7 +47,7 @@ def edit_text(root, rel, fn):
 
 
 def role(d, name, **kw):
-    for r in d["assetRoles"] + d["destinationRoles"] + d["formEndpointRoles"]:
+    for r in d["roles"]:
         if r["role"] == name:
             r.update(kw)
             return
@@ -73,7 +74,7 @@ def scenarios():
     add("entryPoint pointing outside the package (../ia.json)", False,
         lambda r: edit_json(r, "registry.manifest.json", lambda d: d["entryPoints"].append("../ia.json")), "bad entryPoints")
     add("README count table stale", False,
-        lambda r: edit_text(r, "README.md", lambda s: s.replace("| sections (contracts) | 34 |", "| sections (contracts) | 30 |")), "README counts stale")
+        lambda r: edit_text(r, "README.md", lambda s: s.replace("| sections (contracts) | 39 |", "| sections (contracts) | 30 |")), "README counts stale")
     add("absolute local path leaked into a file", False,
         lambda r: edit_text(r, "README.md", lambda s: s + "\nBuilt in /Us" + "ers/someone/work/design-repo\n"), "absolute paths")
     add("documented script that does not exist (drift-proof script referenced but missing)", False,
@@ -91,15 +92,15 @@ def scenarios():
     add("schema assetRole enum loses a registered role", False,
         lambda r: edit_json(r, "schema/pagespec.schema.json", lambda d: d["definitions"]["assetRole"]["enum"].remove("customer.logo")), "closed enum")
     add("PINNED ROLE: customer.logo moved to a different-but-valid policy (may-generate-new)", False,
-        lambda r: edit_json(r, "assets/asset-roles.json", lambda d: role(d, "customer.logo", generationPolicy="may-generate-new", allowedAssetSources=["generate-new", "placeholder"])), "pinned role policy changed")
+        lambda r: edit_json(r, "assets/asset-roles.json", lambda d: role(d, "customer.logo", clonePolicy="may-generate-new", cloneAssetSources=["generate-new", "placeholder"])), "pinned role policy changed")
     add("PINNED ROLE: endpoint.contact-form moved to may-generate-new", False,
-        lambda r: edit_json(r, "assets/asset-roles.json", lambda d: role(d, "endpoint.contact-form", generationPolicy="may-generate-new", allowedAssetSources=["generate-new", "placeholder"])), "pinned role policy changed")
+        lambda r: edit_json(r, "assets/asset-roles.json", lambda d: role(d, "endpoint.contact-form", clonePolicy="may-generate-new", cloneAssetSources=["generate-new", "placeholder"])), "pinned role policy changed")
     add("PINNED ROLE: person.team-photo moved to may-generate-new", False,
-        lambda r: edit_json(r, "assets/asset-roles.json", lambda d: role(d, "person.team-photo", generationPolicy="may-generate-new", allowedAssetSources=["generate-new", "placeholder"])), "pinned role policy changed")
+        lambda r: edit_json(r, "assets/asset-roles.json", lambda d: role(d, "person.team-photo", clonePolicy="may-generate-new", cloneAssetSources=["generate-new", "placeholder"])), "pinned role policy changed")
     add("PINNED ROLE: dest:booking moved to must-reuse-exact", False,
-        lambda r: edit_json(r, "assets/asset-roles.json", lambda d: role(d, "dest:booking", generationPolicy="must-reuse-exact", allowedAssetSources=["reuse-exact"])), "pin")
+        lambda r: edit_json(r, "assets/asset-roles.json", lambda d: role(d, "dest:booking", clonePolicy="must-reuse-exact", cloneAssetSources=["reuse-exact"])), "pin")
     add("policy value outside the closed enum", False,
-        lambda r: edit_json(r, "assets/asset-roles.json", lambda d: role(d, "ui.icon-mask", generationPolicy="anything-goes")), "enum")
+        lambda r: edit_json(r, "assets/asset-roles.json", lambda d: role(d, "ui.icon-mask", clonePolicy="anything-goes")), "enum")
     add("link-target pattern admits literal URLs", False,
         lambda r: edit_text(r, "schema/pagespec.schema.json", lambda s: s.replace("^(/[A-Za-z0-9/._~#-]*|", "^(https?://.*|/[A-Za-z0-9/._~#-]*|")), "pattern")
     add("deny-list loses a real ticker customer", False,
@@ -110,6 +111,51 @@ def scenarios():
         lambda r: edit_text(r, "tokens/10-semantic/semantic.json", lambda s: s.replace("{color.ink-2}", "{color.ink-9}", 1)), "unresolved")
     add("example PageSpec breaks the schema", False,
         lambda r: edit_json(r, "schema/example.pagespec.json", lambda d: d.__setitem__("template", "template.landing")), "example")
+
+    # ---- generation availability / pins (R3), retrieval (R8), gate (R9), policy binding, generated artefacts
+    add("REGISTRY: brand.logo-mark availability edited to generation-safe", False,
+        lambda r: edit_json(r, "assets/asset-roles.json", lambda d: role(d, "brand.logo-mark", availability="generation-safe")), "availability pin violated")
+    add("REGISTRY: customer.logo flipped to generation-safe with reuse allowed", False,
+        lambda r: edit_json(r, "assets/asset-roles.json", lambda d: role(d, "customer.logo", availability="generation-safe", generationAssetSources=["reuse-exact"])), "availability pin violated")
+    add("PIN REMOVED from verify_all.py (brand.wordmark-ghost)", False,
+        lambda r: edit_text(r, "extraction/verify_all.py", lambda s: s.replace('"brand.wordmark-ghost": "clone-only", ', "", 1)), "pin")
+    add("PIN REMOVED from semantic_validate.py (brand.product-badge)", False,
+        lambda r: edit_text(r, "schema/semantic_validate.py", lambda s: s.replace('"brand.product-badge": "clone-only", ', "", 1)), "pin tables differ")
+    add("substitutes removed from a clone-only role", False,
+        lambda r: edit_json(r, "assets/asset-roles.json", lambda d: role(d, "brand.site-icons", generationSafeSubstitutes=[])), "substitute problems")
+    add("CONTRACT + ALLOWLIST flipped together (features.sources made retrieval-eligible)", False,
+        lambda r: (edit_json(r, "sections/features.sources.json", lambda d: (d.update({"retrievalEligible": True}), d.pop("retrievalReason", None))),
+                   edit_json(r, "tokens/llm/component-allowlist.json", lambda d: d["retrievalIneligibleSections"].remove("features.sources"))), "retrieval pin drift")
+    add("section generatedAssetRoles drifts from its fields", False,
+        lambda r: edit_json(r, "sections/shell.footer.json", lambda d: d["generatedAssetRoles"].append("customer.logo")), "generatedAssetRoles drift")
+    add("contract gains an unknown key (closed section-contract schema)", False,
+        lambda r: edit_json(r, "sections/proof.trust.json", lambda d: d.update({"inventedKey": 1})), "contract schema errors")
+    add("contract loses its semantic object", False,
+        lambda r: edit_json(r, "sections/proof.trust.json", lambda d: d.pop("semantic")), "contract schema errors")
+    add("contract source range points at the wrong line", True,
+        lambda r: edit_json(r, "sections/shell.footer.json", lambda d: d["source"].update({"lines": "1-10"})), "source provenance drift")
+    add("measured height removed for a rendered route", False,
+        lambda r: edit_json(r, "extraction/measured-values.json", lambda d: d["sectionHeights"]["routes"].pop("/company")), "missing measurement")
+    add("wrapper-gate threshold loosened in code (HERO_ERROR_PX 9000)", False,
+        lambda r: edit_text(r, "extraction/wrapper_gate.py", lambda s: s.replace("HERO_ERROR_PX = 3000", "HERO_ERROR_PX = 9000")), "thresholds changed")
+    add("measured page turns into a whole-page wrapper (65% share)", False,
+        lambda r: edit_json(r, "extraction/measured-values.json", lambda d: next(n for n in d["sectionHeights"]["routes"]["/plans"]["nodes"] if n["section"] == "features.comparison-table").update({"heightPx": 99999})), "wrapper gate errors")
+    add("policy binding removed from the manifest (category)", False,
+        lambda r: edit_json(r, "registry.manifest.json", lambda d: d.pop("category")), "binding missing")
+    add("enforced file edited without re-hashing (policy contentHash)", False,
+        lambda r: edit_text(r, "compatibility/graph.json", lambda s: s.replace("Rhythm/structure/content rules.", "Rhythm rules.", 1)), "contentHash")
+    add("SaaS binding swapped for another policy id", False,
+        lambda r: edit_json(r, "registry.manifest.json", lambda d: d["designPolicy"].update({"policyId": "consumer-service-marketplace-web"})), "designPolicy fields disagree")
+    add("pagespec schema hand-edited (stale vs contracts)", False,
+        lambda r: edit_json(r, "sections/proof.trust.json", lambda d: d["content"]["fields"]["title"].update({"maxWords": 99})), "stale vs the contracts")
+    add("generation example leaks the Primefold brand", False,
+        lambda r: edit_json(r, "schema/examples/generated.home.pagespec.json", lambda d: d["meta"].update({"title": "Primefold clone"})), "generation examples")
+    add("source-patterns.json loses a brand term (pattern drift vs the source)", True,
+        lambda r: edit_json(r, "schema/source-patterns.json", lambda d: d["brand"].pop(0)), "source-patterns.json is stale")
+    add("token-policy styleSlot removed (slot parity)", False,
+        lambda r: edit_json(r, "tokens/llm/token-policy.json", lambda d: d["styleSlots"].pop("elevation")), "styleSlots drift")
+    add("source-usage constraint dropped from the design policy", False,
+        lambda r: edit_json(r, "policy/design-policy.json", lambda d: d["sourceUsage"].update({"status": "unrestricted"})), "source-usage constraint missing")
 
     def oor(d):
         e = next(c for c in d["citations"] if c["path"] == "CLONE_SPEC.md")
@@ -146,7 +192,10 @@ def run_verify(root, with_src, suites=False):
 
 
 def main():
-    scratch = tempfile.mkdtemp(prefix="drift-proof-")
+    base_dir = os.path.abspath(sys.argv[sys.argv.index("--scratch") + 1]) if "--scratch" in sys.argv else None
+    if base_dir:
+        os.makedirs(base_dir, exist_ok=True)
+    scratch = tempfile.mkdtemp(prefix="drift-proof-", dir=base_dir)
     results = []
     try:
         base = os.path.join(scratch, "control", "design-repo")

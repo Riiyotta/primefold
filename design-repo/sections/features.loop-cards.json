@@ -2,6 +2,16 @@
   "id": "features.loop-cards",
   "kind": "section",
   "category": "FEATURES",
+  "semantic": {
+    "id": "features.loop-cards",
+    "category": "FEATURES"
+  },
+  "source": {
+    "id": "src:ProductPage.div@95",
+    "tag": "div",
+    "file": "src/pages/product/ProductPage.jsx",
+    "lines": "95-116"
+  },
   "purpose": "'The loop' four small cards explaining how the product learns a customer's vocabulary, definitions, judgment and workspace.",
   "tags": [
     "cards",
@@ -109,5 +119,9 @@
   "assetRoles": [
     "ui.icon-mask"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "ui.icon-mask"
+  ],
+  "retrievalReason": "Spec-only: the product routes render a placeholder page ('building...', src/pages/ExperienceIntelligence.jsx) and this section's source is not mounted by src/App.jsx, so it is not a proven, retrievable pattern."
 }

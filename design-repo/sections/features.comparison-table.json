@@ -2,6 +2,16 @@
   "id": "features.comparison-table",
   "kind": "section",
   "category": "FEATURES",
+  "semantic": {
+    "id": "features.comparison-table",
+    "category": "FEATURES"
+  },
+  "source": {
+    "id": "src:ComparisonTable.section@46",
+    "tag": "section",
+    "file": "src/pages/plans/ComparisonTable.jsx",
+    "lines": "46-82"
+  },
   "purpose": "Plan comparison table with sticky plan header and sticky category rows; shown only in the XI state of /plans.",
   "tags": [
     "table",
@@ -141,5 +151,6 @@
   "retrievalEligible": true,
   "rules": [],
   "assetRoles": [],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": []
 }

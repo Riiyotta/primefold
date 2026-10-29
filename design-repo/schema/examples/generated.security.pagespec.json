@@ -1,0 +1,312 @@
+{
+  "pageSpecVersion": "1.1.0",
+  "mode": "generation",
+  "theme": "light",
+  "brand": {
+    "name": "Larkspur",
+    "domain": "larkspur.example"
+  },
+  "template": "template.security",
+  "route": "/security",
+  "meta": {
+    "title": "Larkspur - security (generation example)",
+    "description": "Fictional brand example built from this design-repo's contracts; original copy, placeholder assets and .example URLs only.",
+    "ogImage": {
+      "assetRole": "brand.placeholder-mark",
+      "assetSource": "placeholder",
+      "alt": "Larkspur placeholder mark",
+      "assetRef": "placeholder:larkspur-og"
+    }
+  },
+  "nodes": [
+    {
+      "section": "shell.navbar",
+      "variant": "overlay",
+      "content": {
+        "items": [
+          {
+            "label": "Approvals"
+          },
+          {
+            "label": "Audit trail"
+          },
+          {
+            "label": "Forecasts"
+          },
+          {
+            "label": "Exports"
+          },
+          {
+            "label": "Alerts"
+          }
+        ],
+        "signIn": {
+          "label": "Start a",
+          "to": "#how-it-works"
+        },
+        "bookCall": {
+          "label": "Read the guide",
+          "to": "dest:app-trial"
+        }
+      },
+      "motion": {
+        "pattern": "nav-state-swap",
+        "trigger": "scroll",
+        "reducedMotionFallback": "instant-swap"
+      }
+    },
+    {
+      "section": "hero.security-comet",
+      "variant": "default",
+      "content": {
+        "eyebrow": "Larkspur",
+        "title": "Clear books for growing finance teams",
+        "lead": "Larkspur pairs bank feeds with your general ledger and flags only the entries that need a human decision.",
+        "cta": {
+          "label": "Read the guide",
+          "to": "dest:app-trial"
+        },
+        "tiles": [
+          {
+            "assetRole": "ui.illustration-svg",
+            "assetSource": "generate-new",
+            "alt": "Larkspur sample image 12",
+            "assetRef": "generated:larkspur-tiles-12"
+          },
+          {
+            "assetRole": "ui.illustration-svg",
+            "assetSource": "generate-new",
+            "alt": "Larkspur sample image 13",
+            "assetRef": "generated:larkspur-tiles-13"
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "comet-dash",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-first-frame"
+      }
+    },
+    {
+      "section": "features.info-card-grid",
+      "variant": "three-up",
+      "content": {
+        "eyebrow": "Journal",
+        "title": "Clear books for growing finance",
+        "cards": [
+          {
+            "icon": {
+              "assetRole": "ui.icon-mask",
+              "assetSource": "generate-new",
+              "alt": "Larkspur sample image 16",
+              "assetRef": "generated:larkspur-icon-16"
+            },
+            "title": "Built to keep your numbers private",
+            "body": "Bank lines, invoices and receipts land in one queue, already matched where the evidence agrees."
+          },
+          {
+            "icon": {
+              "assetRole": "ui.icon-mask",
+              "assetSource": "generate-new",
+              "alt": "Larkspur sample image 19",
+              "assetRef": "generated:larkspur-icon-19"
+            },
+            "title": "Every invoice matched and every exception",
+            "body": "Approvers see the source document beside every entry, so sign-off takes minutes rather than days."
+          },
+          {
+            "icon": {
+              "assetRole": "ui.icon-mask",
+              "assetSource": "generate-new",
+              "alt": "Larkspur sample image 22",
+              "assetRef": "generated:larkspur-icon-22"
+            },
+            "title": "Built to keep your numbers private",
+            "body": "Bank lines, invoices and receipts land in one queue, already matched where the evidence agrees."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "trigger": "load",
+        "reducedMotionFallback": "no-animation"
+      }
+    },
+    {
+      "section": "proof.trust-image-cards",
+      "variant": "default",
+      "content": {
+        "cards": [
+          {
+            "backdrop": {
+              "assetRole": "fx.shader-fallback",
+              "assetSource": "generate-new",
+              "alt": "Larkspur sample image 25",
+              "assetRef": "generated:larkspur-backdrop-25"
+            },
+            "title": "Every invoice matched and every",
+            "body": "Approvers see the source document beside every entry, so sign-off takes minutes rather than days."
+          },
+          {
+            "backdrop": {
+              "assetRole": "fx.shader-fallback",
+              "assetSource": "generate-new",
+              "alt": "Larkspur sample image 28",
+              "assetRef": "generated:larkspur-backdrop-28"
+            },
+            "title": "Built to keep your numbers",
+            "body": "Bank lines, invoices and receipts land in one queue, already matched where the evidence agrees."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "shader-drift",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-first-frame"
+      }
+    },
+    {
+      "section": "conversion.cta-band",
+      "variant": "security",
+      "content": {
+        "title": "Close the month without chasing spreadsheets",
+        "body": "Bank lines, invoices and receipts land in one queue, already matched where the evidence",
+        "button": {
+          "label": "Read the guide",
+          "to": "https://help.larkspur.example/start"
+        },
+        "background": {
+          "assetRole": "fx.shader-fallback",
+          "assetSource": "generate-new",
+          "alt": "Larkspur sample image 34",
+          "assetRef": "generated:larkspur-background-34"
+        }
+      },
+      "motion": {
+        "pattern": "shader-drift",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-first-frame"
+      },
+      "styleTokens": {
+        "surface": "surface.inverse",
+        "text": "text.inverse",
+        "spacingTop": "spacing.24",
+        "headingFont": "fontFamily.headline",
+        "radius": "radius.lg"
+      }
+    },
+    {
+      "section": "shell.footer",
+      "variant": "default",
+      "content": {
+        "blurb": "Calm books for busy finance teams. Product notes once a month.",
+        "newsletter": {
+          "endpointRole": "endpoint.newsletter-form",
+          "endpoint": "project-owned-placeholder"
+        },
+        "columns": [
+          {
+            "head": "Product",
+            "links": [
+              {
+                "label": "Approvals",
+                "to": "/contact"
+              },
+              {
+                "label": "Audit trail",
+                "to": "/contact"
+              }
+            ]
+          },
+          {
+            "head": "Product",
+            "links": [
+              {
+                "label": "Exports",
+                "to": "/contact"
+              },
+              {
+                "label": "Alerts",
+                "to": "/contact"
+              }
+            ]
+          },
+          {
+            "head": "Product",
+            "links": [
+              {
+                "label": "Approvals",
+                "to": "/contact"
+              },
+              {
+                "label": "Audit trail",
+                "to": "/contact"
+              }
+            ]
+          },
+          {
+            "head": "Product",
+            "links": [
+              {
+                "label": "Exports",
+                "to": "/contact"
+              },
+              {
+                "label": "Alerts",
+                "to": "/contact"
+              }
+            ]
+          }
+        ],
+        "legalLinks": [
+          {
+            "label": "Reconciliation",
+            "to": "/contact"
+          },
+          {
+            "label": "Approvals",
+            "to": "/contact"
+          },
+          {
+            "label": "Audit trail",
+            "to": "/contact"
+          }
+        ],
+        "cookieSettingsLabel": "Larkspur keeps",
+        "copyright": "Larkspur Example Ltd, all rights reserved",
+        "socials": [
+          {
+            "label": "Alerts",
+            "to": "/contact"
+          },
+          {
+            "label": "Reconciliation",
+            "to": "/contact"
+          },
+          {
+            "label": "Approvals",
+            "to": "/contact"
+          }
+        ],
+        "hostedNote": "Hosted in a sample region for demos",
+        "logo": {
+          "assetRole": "brand.placeholder-mark",
+          "assetSource": "generate-new",
+          "alt": "Larkspur sample image 57",
+          "assetRef": "generated:larkspur-logo-57"
+        },
+        "wordmark": {
+          "assetRole": "brand.placeholder-mark",
+          "assetSource": "generate-new",
+          "alt": "Larkspur sample image 58",
+          "assetRef": "generated:larkspur-wordmark-58"
+        }
+      },
+      "motion": {
+        "pattern": "scroll-linked-offset",
+        "trigger": "scroll",
+        "reducedMotionFallback": "no-animation"
+      }
+    }
+  ]
+}

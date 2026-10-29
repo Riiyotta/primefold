@@ -2126,79 +2126,79 @@
       "quote": "function BlogCard"
     },
     {
-      "owner": "content.article",
+      "owner": "content.article-header",
       "path": "specs/blog-case-studies.md",
       "lines": "153",
       "quote": "| `a` in p (body link)"
     },
     {
-      "owner": "content.article",
+      "owner": "content.article-header",
       "path": "specs/blog-case-studies.md",
       "lines": "123",
       "quote": "## 3. Blog post template `/blog/:slug`"
     },
     {
-      "owner": "content.article",
+      "owner": "content.article-header",
       "path": "specs/blog-case-studies.md",
       "lines": "145",
       "quote": "### 3.4 Body: rich-text styles"
     },
     {
-      "owner": "content.article",
+      "owner": "content.article-header",
       "path": "src/pages/BlogPost.jsx",
       "lines": "9",
       "quote": "function Post"
     },
     {
-      "owner": "content.article",
+      "owner": "content.article-header",
       "path": "specs/cms-data.json",
       "lines": "1815",
       "quote": "\"slug\": \"primefold-xi-is-here\""
     },
     {
-      "owner": "content.case-study",
+      "owner": "content.case-study-header",
       "path": "specs/blog-case-studies.md",
       "lines": "190",
       "quote": "Breadcrumb** (flex row, gap 4"
     },
     {
-      "owner": "content.case-study",
+      "owner": "content.case-study-header",
       "path": "specs/blog-case-studies.md",
       "lines": "181",
       "quote": "## 4. Case-study template `/case-studies/:slug`"
     },
     {
-      "owner": "content.case-study",
+      "owner": "content.case-study-header",
       "path": "specs/blog-case-studies.md",
       "lines": "220",
       "quote": "**Numbered cards**"
     },
     {
-      "owner": "content.case-study",
+      "owner": "content.case-study-header",
       "path": "src/pages/CaseStudy.jsx",
       "lines": "75",
       "quote": "function Study"
     },
     {
-      "owner": "content.legal-prose",
+      "owner": "content.legal-header",
       "path": "specs/company-careers-legal.md",
       "lines": "168",
       "quote": "| `a` (DP preset)"
     },
     {
-      "owner": "content.legal-prose",
+      "owner": "content.legal-header",
       "path": "specs/company-careers-legal.md",
       "lines": "144",
       "quote": "# C. Legal template (/imprint, /data-privacy, /terms-of-service)"
     },
     {
-      "owner": "content.legal-prose",
+      "owner": "content.legal-header",
       "path": "specs/company-careers-legal.md",
       "lines": "161",
       "quote": "## C2. Rich-text styles"
     },
     {
-      "owner": "content.legal-prose",
+      "owner": "content.legal-header",
       "path": "src/pages/Legal.jsx",
       "lines": "6",
       "quote": "const PRESET"
@@ -2952,6 +2952,108 @@
       "path": "src/App.jsx",
       "lines": "42",
       "quote": "<Route path=\"*\""
+    },
+    {
+      "owner": "content.legal-header",
+      "path": "src/pages/Legal.jsx",
+      "lines": "48",
+      "quote": "<h1 className=\"legal-title\">{c.title}</h1>"
+    },
+    {
+      "owner": "content.legal-part",
+      "path": "src/pages/legal/content.js",
+      "lines": "54",
+      "quote": "function section(heading, { p, labels = 0, lines = 0, lists = [], spac"
+    },
+    {
+      "owner": "content.legal-part",
+      "path": "src/pages/legal/content.js",
+      "lines": "69-71",
+      "quote": "const h2 = (html) => ({ t: 'h2', html })"
+    },
+    {
+      "owner": "content.legal-header",
+      "path": "src/pages/legal/content.js",
+      "lines": "74-75",
+      "quote": "title: 'Imprint',"
+    },
+    {
+      "owner": "content.article-header",
+      "path": "src/pages/BlogPost.jsx",
+      "lines": "14-28",
+      "quote": "<header className=\"flex w-full flex-col gap-6\">"
+    },
+    {
+      "owner": "content.article-body",
+      "path": "src/pages/cms/RichText.jsx",
+      "lines": "78",
+      "quote": "<div className=\"cms-rt\">"
+    },
+    {
+      "owner": "content.article-body",
+      "path": "src/pages/cms/RichText.jsx",
+      "lines": "83-89",
+      "quote": "case 'h2':"
+    },
+    {
+      "owner": "content.case-study-header",
+      "path": "src/pages/CaseStudy.jsx",
+      "lines": "81-96",
+      "quote": "<header className=\"flex w-full flex-col gap-6\">"
+    },
+    {
+      "owner": "proof.case-study-stats",
+      "path": "src/pages/CaseStudy.jsx",
+      "lines": "12-27",
+      "quote": "function Stats({ stats }) {"
+    },
+    {
+      "owner": "content.case-study-body",
+      "path": "src/pages/CaseStudy.jsx",
+      "lines": "98-99",
+      "quote": "<div className=\"flex w-full flex-col gap-10\">"
+    },
+    {
+      "owner": "content.case-study-about",
+      "path": "src/pages/CaseStudy.jsx",
+      "lines": "30-35",
+      "quote": "function About({ cs }) {"
+    },
+    {
+      "owner": "policy.classification",
+      "path": "src/pages/plans/data.js",
+      "lines": "7",
+      "quote": "name: 'Free Trial',"
+    },
+    {
+      "owner": "policy.classification",
+      "path": "src/pages/plans/data.js",
+      "lines": "26",
+      "quote": "name: 'Business',"
+    },
+    {
+      "owner": "policy.classification",
+      "path": "src/pages/plans/data.js",
+      "lines": "50",
+      "quote": "name: 'Enterprise',"
+    },
+    {
+      "owner": "policy.classification",
+      "path": "src/pages/plans/data.js",
+      "lines": "35",
+      "quote": "Up to 3 users in a workspace"
+    },
+    {
+      "owner": "policy.classification",
+      "path": "src/pages/plans/PlansHero.jsx",
+      "lines": "81",
+      "quote": "Start free trial"
+    },
+    {
+      "owner": "policy.classification",
+      "path": "src/pages/plans/data.js",
+      "lines": "126",
+      "quote": "adding the second is a licensing change"
     }
   ],
   "facts": [
@@ -2977,10 +3079,10 @@
       "onMismatch": "fail"
     },
     {
-      "id": "readme-not-for-deployment",
-      "claim": "README states the clone is for reference/study only",
-      "citation": "README.md:3",
-      "quote": "Not for public deployment",
+      "id": "cms-copy-not-transcribed",
+      "claim": "The recon specs record that CMS body copy was intentionally not transcribed for copyright reasons (supporting evidence for the reference-only source usage recorded in policy/design-policy.json)",
+      "citation": "specs/cms-data.json:5",
+      "quote": "intentionally NOT transcribed (copyright)",
       "onMismatch": "fail"
     },
     {
@@ -3234,7 +3336,7 @@
       "severity": "fail"
     },
     {
-      "owner": "content.article",
+      "owner": "content.article-header",
       "files": [
         "src/pages/BlogPost.jsx",
         "src/pages/cms/RichText.jsx"
@@ -3244,7 +3346,7 @@
       "severity": "fail"
     },
     {
-      "owner": "content.case-study",
+      "owner": "content.case-study-header",
       "files": [
         "src/pages/CaseStudy.jsx",
         "src/pages/cms/RichText.jsx"
@@ -3254,7 +3356,7 @@
       "severity": "fail"
     },
     {
-      "owner": "content.legal-prose",
+      "owner": "content.legal-header",
       "files": [
         "src/pages/Legal.jsx"
       ],
@@ -3309,6 +3411,16 @@
       "pattern": "ProductPage",
       "expect": "absent",
       "severity": "warn"
+    },
+    {
+      "owner": "facts.readme-usage-statement-removed",
+      "files": [
+        "README.md"
+      ],
+      "pattern": "Not for public deployment",
+      "expect": "absent",
+      "severity": "warn",
+      "note": "README.md was emptied in d21a833; the reference/study-only constraint now lives in policy/design-policy.json sourceUsage. If the statement returns to the README this turns into a WARN to re-cite it."
     }
   ],
   "fileAbsences": [
@@ -3331,5 +3443,1964 @@
       "severity": "warn",
       "note": "recursive file count incl. MANIFEST.md; top-level only is 59"
     }
-  ]
+  ],
+  "sectionHeights": {
+    "$description": "Rendered section heights at 1440px for every route of the built clone, measured with extraction/measure_sections.mjs (headless Chromium via Playwright, after a full scroll pass). Read by extraction/wrapper_gate.py. Shell navbar is position:fixed (inFlow false).",
+    "viewport": 1440,
+    "viewportHeight": 900,
+    "measuredWith": "headless Chromium via Playwright, extraction/measure_sections.mjs",
+    "measuredOn": "2026-10-29",
+    "cloneCommit": "d21a833",
+    "routes": {
+      "/": {
+        "template": "template.home",
+        "pageHeight": 7898,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "hero.home-carousel",
+            "top": 0,
+            "heightPx": 900
+          },
+          {
+            "section": "proof.logo-ticker",
+            "top": 916,
+            "heightPx": 200,
+            "note": "rendered inside the how-it-works <section>; measured as its own band"
+          },
+          {
+            "section": "features.how-it-works",
+            "top": 1116,
+            "heightPx": 804
+          },
+          {
+            "section": "features.intelligence-cards",
+            "top": 1920,
+            "heightPx": 1008
+          },
+          {
+            "section": "proof.testimonials",
+            "top": 2928,
+            "heightPx": 794
+          },
+          {
+            "section": "features.solutions-carousel",
+            "top": 3722,
+            "heightPx": 876
+          },
+          {
+            "section": "proof.trust",
+            "top": 4598,
+            "heightPx": 828
+          },
+          {
+            "section": "proof.outcomes",
+            "top": 5426,
+            "heightPx": 1424
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 6850,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 7286,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/plans": {
+        "template": "template.plans",
+        "pageHeight": 6179,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "hero.pricing",
+            "top": 0,
+            "heightPx": 1355
+          },
+          {
+            "section": "features.comparison-table",
+            "top": 1355,
+            "heightPx": 2342
+          },
+          {
+            "section": "features.info-card-grid",
+            "top": 3697,
+            "heightPx": 526
+          },
+          {
+            "section": "features.faq-accordion",
+            "top": 4223,
+            "heightPx": 908
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 5131,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 5567,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/security": {
+        "template": "template.security",
+        "pageHeight": 3203,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "hero.security-comet",
+            "top": 0,
+            "heightPx": 1046
+          },
+          {
+            "section": "features.info-card-grid",
+            "top": 1046,
+            "heightPx": 542
+          },
+          {
+            "section": "proof.trust-image-cards",
+            "top": 1588,
+            "heightPx": 547
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 2135,
+            "heightPx": 456
+          },
+          {
+            "section": "shell.footer",
+            "top": 2591,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/contact": {
+        "template": "template.contact",
+        "pageHeight": 2040,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "conversion.contact-form",
+            "top": 0,
+            "heightPx": 1012
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 1012,
+            "heightPx": 416
+          },
+          {
+            "section": "shell.footer",
+            "top": 1428,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/company": {
+        "template": "template.company",
+        "pageHeight": 3066,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "hero.company-stats",
+            "top": 0,
+            "heightPx": 902
+          },
+          {
+            "section": "features.info-card-grid",
+            "top": 902,
+            "heightPx": 506
+          },
+          {
+            "section": "features.team-ticker",
+            "top": 1418,
+            "heightPx": 620
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 2038,
+            "heightPx": 416
+          },
+          {
+            "section": "shell.footer",
+            "top": 2454,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/careers": {
+        "template": "template.careers",
+        "pageHeight": 2997,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "hero.careers",
+            "top": 0,
+            "heightPx": 1029
+          },
+          {
+            "section": "content.open-roles",
+            "top": 1029,
+            "heightPx": 940
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 1969,
+            "heightPx": 416
+          },
+          {
+            "section": "shell.footer",
+            "top": 2385,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/imprint": {
+        "template": "template.legal",
+        "pageHeight": 1859,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "content.legal-header",
+            "top": 0,
+            "heightPx": 811,
+            "note": "title + preamble before the first undefined"
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 811,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 1247,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/data-privacy": {
+        "template": "template.legal",
+        "pageHeight": 22204,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "content.legal-header",
+            "top": 0,
+            "heightPx": 583,
+            "note": "title + preamble before the first H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 583,
+            "heightPx": 446,
+            "part": 1,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 1029,
+            "heightPx": 441,
+            "part": 2,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 1470,
+            "heightPx": 274,
+            "part": 3,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 1744,
+            "heightPx": 274,
+            "part": 4,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 2018,
+            "heightPx": 493,
+            "part": 5,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 2511,
+            "heightPx": 654,
+            "part": 6,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 3165,
+            "heightPx": 345,
+            "part": 7,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 3510,
+            "heightPx": 226,
+            "part": 8,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 3736,
+            "heightPx": 586,
+            "part": 9,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 4322,
+            "heightPx": 609,
+            "part": 10,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 4931,
+            "heightPx": 322,
+            "part": 11,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 5253,
+            "heightPx": 225,
+            "part": 12,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 5478,
+            "heightPx": 702,
+            "part": 13,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 6180,
+            "heightPx": 226,
+            "part": 14,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 6406,
+            "heightPx": 961,
+            "part": 15,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 7367,
+            "heightPx": 582,
+            "part": 16,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 7949,
+            "heightPx": 340,
+            "part": 17,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 8289,
+            "heightPx": 490,
+            "part": 18,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 8779,
+            "heightPx": 466,
+            "part": 19,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 9245,
+            "heightPx": 259,
+            "part": 20,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 9504,
+            "heightPx": 355,
+            "part": 21,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 9859,
+            "heightPx": 626,
+            "part": 22,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 10485,
+            "heightPx": 829,
+            "part": 23,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 11314,
+            "heightPx": 790,
+            "part": 24,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 12104,
+            "heightPx": 849,
+            "part": 25,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 12953,
+            "heightPx": 346,
+            "part": 26,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 13299,
+            "heightPx": 1498,
+            "part": 27,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 14797,
+            "heightPx": 1644,
+            "part": 28,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 16441,
+            "heightPx": 1652,
+            "part": 29,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 18093,
+            "heightPx": 2500,
+            "part": 30,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 20593,
+            "heightPx": 236,
+            "part": 31,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 20829,
+            "heightPx": 327,
+            "part": 32,
+            "splitLevel": "H4"
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 21156,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 21592,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/terms-of-service": {
+        "template": "template.legal",
+        "pageHeight": 18234,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "content.legal-header",
+            "top": 0,
+            "heightPx": 310,
+            "note": "title + preamble before the first H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 310,
+            "heightPx": 968,
+            "part": 1,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 1278,
+            "heightPx": 276,
+            "part": 2,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 1554,
+            "heightPx": 2680,
+            "part": 3,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 4234,
+            "heightPx": 416,
+            "part": 4,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 4650,
+            "heightPx": 228,
+            "part": 5,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 4878,
+            "heightPx": 860,
+            "part": 6,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 5738,
+            "heightPx": 744,
+            "part": 7,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 6482,
+            "heightPx": 1352,
+            "part": 8,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 7834,
+            "heightPx": 1040,
+            "part": 9,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 8874,
+            "heightPx": 792,
+            "part": 10,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 9666,
+            "heightPx": 732,
+            "part": 11,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 10398,
+            "heightPx": 372,
+            "part": 12,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 10770,
+            "heightPx": 300,
+            "part": 13,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 11070,
+            "heightPx": 324,
+            "part": 14,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 11394,
+            "heightPx": 464,
+            "part": 15,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 11858,
+            "heightPx": 512,
+            "part": 16,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 12370,
+            "heightPx": 324,
+            "part": 17,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 12694,
+            "heightPx": 1152,
+            "part": 18,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 13846,
+            "heightPx": 204,
+            "part": 19,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 14050,
+            "heightPx": 684,
+            "part": 20,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 14734,
+            "heightPx": 420,
+            "part": 21,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 15154,
+            "heightPx": 444,
+            "part": 22,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 15598,
+            "heightPx": 300,
+            "part": 23,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 15898,
+            "heightPx": 396,
+            "part": 24,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 16294,
+            "heightPx": 516,
+            "part": 25,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.legal-part",
+            "top": 16810,
+            "heightPx": 376,
+            "part": 26,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 17186,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 17622,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/blog": {
+        "template": "template.blog-index",
+        "pageHeight": 2674,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "hero.index-intro",
+            "top": 0,
+            "heightPx": 479
+          },
+          {
+            "section": "content.card-grid",
+            "top": 479,
+            "heightPx": 1147
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 1626,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 2062,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/blog/we-re-taking-real-estate-intelligence-to-expo-real-2026.-come-and-talk-to-your-portfolio": {
+        "template": "template.blog-post",
+        "pageHeight": 5693,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "content.article-header",
+            "top": 0,
+            "heightPx": 1275,
+            "note": "h1, author/meta row, banner and any preamble before the first chapter heading"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1275,
+            "heightPx": 480,
+            "part": 1,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1755,
+            "heightPx": 1255,
+            "part": 2,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3010,
+            "heightPx": 388,
+            "part": 3,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3398,
+            "heightPx": 951,
+            "part": 4,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 4349,
+            "heightPx": 296,
+            "part": 5,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 4645,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 5081,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/blog/primefold-xi-speaks-german-now": {
+        "template": "template.blog-post",
+        "pageHeight": 4953,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "content.article-header",
+            "top": 0,
+            "heightPx": 1239,
+            "note": "h1, author/meta row, banner and any preamble before the first chapter heading"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1239,
+            "heightPx": 955,
+            "part": 1,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 2194,
+            "heightPx": 927,
+            "part": 2,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3121,
+            "heightPx": 364,
+            "part": 3,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3485,
+            "heightPx": 420,
+            "part": 4,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 3905,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 4341,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/blog/we-rebuilt-our-website-primefold-ai": {
+        "template": "template.blog-post",
+        "pageHeight": 5597,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "content.article-header",
+            "top": 0,
+            "heightPx": 1159,
+            "note": "h1, author/meta row, banner and any preamble before the first chapter heading"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1159,
+            "heightPx": 412,
+            "part": 1,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1571,
+            "heightPx": 1023,
+            "part": 2,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 2594,
+            "heightPx": 883,
+            "part": 3,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3477,
+            "heightPx": 508,
+            "part": 4,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3985,
+            "heightPx": 228,
+            "part": 5,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 4213,
+            "heightPx": 336,
+            "part": 6,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 4549,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 4985,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/blog/primefold-ri-is-here-real-estate-intelligence": {
+        "template": "template.blog-post",
+        "pageHeight": 6351,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "content.article-header",
+            "top": 0,
+            "heightPx": 1411,
+            "note": "h1, author/meta row, banner and any preamble before the first chapter heading"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1411,
+            "heightPx": 408,
+            "part": 1,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1819,
+            "heightPx": 791,
+            "part": 2,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 2610,
+            "heightPx": 1139,
+            "part": 3,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3749,
+            "heightPx": 746,
+            "part": 4,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 4495,
+            "heightPx": 272,
+            "part": 5,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 4767,
+            "heightPx": 292,
+            "part": 6,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 5059,
+            "heightPx": 244,
+            "part": 7,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 5303,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 5739,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/blog/nobody-asks-their-customers-anything-right-after-they-buy.-now-you-can-right-on-shopify.": {
+        "template": "template.blog-post",
+        "pageHeight": 4595,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "content.article-header",
+            "top": 0,
+            "heightPx": 1023,
+            "note": "h1, author/meta row, banner and any preamble before the first chapter heading"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1023,
+            "heightPx": 432,
+            "part": 1,
+            "splitLevel": "H3"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1455,
+            "heightPx": 408,
+            "part": 2,
+            "splitLevel": "H3"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1863,
+            "heightPx": 482,
+            "part": 3,
+            "splitLevel": "H3"
+          },
+          {
+            "section": "content.article-body",
+            "top": 2345,
+            "heightPx": 898,
+            "part": 4,
+            "splitLevel": "H3"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3243,
+            "heightPx": 304,
+            "part": 5,
+            "splitLevel": "H3"
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 3547,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 3983,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/blog/how-we-built-sunday-s-survey-design-agent": {
+        "template": "template.blog-post",
+        "pageHeight": 5594,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "content.article-header",
+            "top": 0,
+            "heightPx": 1171,
+            "note": "h1, author/meta row, banner and any preamble before the first chapter heading"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1171,
+            "heightPx": 722,
+            "part": 1,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1893,
+            "heightPx": 1066,
+            "part": 2,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 2959,
+            "heightPx": 931,
+            "part": 3,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3890,
+            "heightPx": 656,
+            "part": 4,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 4546,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 4982,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/blog/meet-sunday-the-intelligence-layer-built-into-primefold-xi": {
+        "template": "template.blog-post",
+        "pageHeight": 7859,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "content.article-header",
+            "top": 0,
+            "heightPx": 927,
+            "note": "h1, author/meta row, banner and any preamble before the first chapter heading"
+          },
+          {
+            "section": "content.article-body",
+            "top": 927,
+            "heightPx": 787,
+            "part": 1,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1714,
+            "heightPx": 88,
+            "part": 2,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1802,
+            "heightPx": 899,
+            "part": 3,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 2701,
+            "heightPx": 831,
+            "part": 4,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3532,
+            "heightPx": 1016,
+            "part": 5,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 4548,
+            "heightPx": 879,
+            "part": 6,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 5427,
+            "heightPx": 88,
+            "part": 7,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 5515,
+            "heightPx": 664,
+            "part": 8,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 6179,
+            "heightPx": 180,
+            "part": 9,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 6359,
+            "heightPx": 88,
+            "part": 10,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 6447,
+            "heightPx": 364,
+            "part": 11,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 6811,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 7247,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/blog/design-and-reports-get-their-moment": {
+        "template": "template.blog-post",
+        "pageHeight": 5758,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "content.article-header",
+            "top": 0,
+            "heightPx": 1373,
+            "note": "h1, author/meta row, banner and any preamble before the first chapter heading"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1373,
+            "heightPx": 88,
+            "part": 1,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1461,
+            "heightPx": 1561,
+            "part": 2,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3022,
+            "heightPx": 88,
+            "part": 3,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3110,
+            "heightPx": 1084,
+            "part": 4,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 4194,
+            "heightPx": 88,
+            "part": 5,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 4282,
+            "heightPx": 428,
+            "part": 6,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 4710,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 5146,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/blog/the-insight-hub-is-about-to-get-sharper": {
+        "template": "template.blog-post",
+        "pageHeight": 5319,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "content.article-header",
+            "top": 0,
+            "heightPx": 1103,
+            "note": "h1, author/meta row, banner and any preamble before the first chapter heading"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1103,
+            "heightPx": 384,
+            "part": 1,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1487,
+            "heightPx": 988,
+            "part": 2,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 2475,
+            "heightPx": 857,
+            "part": 3,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3332,
+            "heightPx": 223,
+            "part": 4,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3555,
+            "heightPx": 268,
+            "part": 5,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3823,
+            "heightPx": 448,
+            "part": 6,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 4271,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 4707,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/blog/primefold-xi-is-here": {
+        "template": "template.blog-post",
+        "pageHeight": 5439,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "content.article-header",
+            "top": 0,
+            "heightPx": 979,
+            "note": "h1, author/meta row, banner and any preamble before the first chapter heading"
+          },
+          {
+            "section": "content.article-body",
+            "top": 979,
+            "heightPx": 743,
+            "part": 1,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1722,
+            "heightPx": 1645,
+            "part": 2,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3367,
+            "heightPx": 220,
+            "part": 3,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3587,
+            "heightPx": 200,
+            "part": 4,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3787,
+            "heightPx": 176,
+            "part": 5,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3963,
+            "heightPx": 428,
+            "part": 6,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 4391,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 4827,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/blog/introducing-primefold---saypien-is-becoming-primefold": {
+        "template": "template.blog-post",
+        "pageHeight": 4775,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "content.article-header",
+            "top": 0,
+            "heightPx": 1315,
+            "note": "h1, author/meta row, banner and any preamble before the first chapter heading"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1315,
+            "heightPx": 367,
+            "part": 1,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1682,
+            "heightPx": 974,
+            "part": 2,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 2656,
+            "heightPx": 527,
+            "part": 3,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3183,
+            "heightPx": 224,
+            "part": 4,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3407,
+            "heightPx": 320,
+            "part": 5,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 3727,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 4163,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/blog/nas-invest-turned-tenant-insight-into-tenant-strength": {
+        "template": "template.blog-post",
+        "pageHeight": 5387,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "content.article-header",
+            "top": 0,
+            "heightPx": 1772,
+            "note": "h1, author/meta row, banner and any preamble before the first chapter heading"
+          },
+          {
+            "section": "content.article-body",
+            "top": 1772,
+            "heightPx": 360,
+            "part": 1,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 2132,
+            "heightPx": 767,
+            "part": 2,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 2899,
+            "heightPx": 432,
+            "part": 3,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 3331,
+            "heightPx": 752,
+            "part": 4,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "content.article-body",
+            "top": 4083,
+            "heightPx": 256,
+            "part": 5,
+            "splitLevel": "H2"
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 4339,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 4775,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/case-studies": {
+        "template": "template.case-studies-index",
+        "pageHeight": 1879,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "hero.index-intro",
+            "top": 0,
+            "heightPx": 471
+          },
+          {
+            "section": "content.card-grid",
+            "top": 471,
+            "heightPx": 360
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 831,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 1267,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/case-studies/gainback-primefold-xi": {
+        "template": "template.case-study",
+        "pageHeight": 5469,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "content.case-study-header",
+            "top": 0,
+            "heightPx": 1319
+          },
+          {
+            "section": "proof.case-study-stats",
+            "top": 1319,
+            "heightPx": 244
+          },
+          {
+            "section": "content.case-study-body",
+            "top": 1563,
+            "heightPx": 728,
+            "part": 1,
+            "splitLevel": "H6"
+          },
+          {
+            "section": "content.case-study-body",
+            "top": 2291,
+            "heightPx": 28,
+            "part": 2,
+            "splitLevel": "H6"
+          },
+          {
+            "section": "content.case-study-body",
+            "top": 2319,
+            "heightPx": 248,
+            "part": 3,
+            "splitLevel": "H6"
+          },
+          {
+            "section": "content.case-study-body",
+            "top": 2567,
+            "heightPx": 316,
+            "part": 4,
+            "splitLevel": "H6"
+          },
+          {
+            "section": "content.case-study-body",
+            "top": 2883,
+            "heightPx": 980,
+            "part": 5,
+            "splitLevel": "H6"
+          },
+          {
+            "section": "content.case-study-body",
+            "top": 3863,
+            "heightPx": 54,
+            "part": 6,
+            "splitLevel": "H6"
+          },
+          {
+            "section": "content.case-study-about",
+            "top": 3917,
+            "heightPx": 504
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 4421,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 4857,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/case-studies/nas-primefold-xi-ri": {
+        "template": "template.case-study",
+        "pageHeight": 6241,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "content.case-study-header",
+            "top": 0,
+            "heightPx": 1319
+          },
+          {
+            "section": "proof.case-study-stats",
+            "top": 1319,
+            "heightPx": 244
+          },
+          {
+            "section": "content.case-study-body",
+            "top": 1563,
+            "heightPx": 756,
+            "part": 1,
+            "splitLevel": "H6"
+          },
+          {
+            "section": "content.case-study-body",
+            "top": 2319,
+            "heightPx": 28,
+            "part": 2,
+            "splitLevel": "H6"
+          },
+          {
+            "section": "content.case-study-body",
+            "top": 2347,
+            "heightPx": 228,
+            "part": 3,
+            "splitLevel": "H6"
+          },
+          {
+            "section": "content.case-study-body",
+            "top": 2575,
+            "heightPx": 1060,
+            "part": 4,
+            "splitLevel": "H6"
+          },
+          {
+            "section": "content.case-study-body",
+            "top": 3635,
+            "heightPx": 1000,
+            "part": 5,
+            "splitLevel": "H6"
+          },
+          {
+            "section": "content.case-study-body",
+            "top": 4635,
+            "heightPx": 54,
+            "part": 6,
+            "splitLevel": "H6"
+          },
+          {
+            "section": "content.case-study-about",
+            "top": 4689,
+            "heightPx": 504
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 5193,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 5629,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/case-studies/dirts-primefold-xi": {
+        "template": "template.case-study",
+        "pageHeight": 6021,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "content.case-study-header",
+            "top": 0,
+            "heightPx": 1363
+          },
+          {
+            "section": "proof.case-study-stats",
+            "top": 1363,
+            "heightPx": 268
+          },
+          {
+            "section": "content.case-study-body",
+            "top": 1631,
+            "heightPx": 628,
+            "part": 1,
+            "splitLevel": "H6"
+          },
+          {
+            "section": "content.case-study-body",
+            "top": 2259,
+            "heightPx": 28,
+            "part": 2,
+            "splitLevel": "H6"
+          },
+          {
+            "section": "content.case-study-body",
+            "top": 2287,
+            "heightPx": 180,
+            "part": 3,
+            "splitLevel": "H6"
+          },
+          {
+            "section": "content.case-study-body",
+            "top": 2467,
+            "heightPx": 988,
+            "part": 4,
+            "splitLevel": "H6"
+          },
+          {
+            "section": "content.case-study-body",
+            "top": 3455,
+            "heightPx": 960,
+            "part": 5,
+            "splitLevel": "H6"
+          },
+          {
+            "section": "content.case-study-body",
+            "top": 4415,
+            "heightPx": 54,
+            "part": 6,
+            "splitLevel": "H6"
+          },
+          {
+            "section": "content.case-study-about",
+            "top": 4469,
+            "heightPx": 504
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 4973,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 5409,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/404": {
+        "template": "template.not-found",
+        "pageHeight": 1948,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "content.not-found",
+            "top": 0,
+            "heightPx": 900
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 900,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 1336,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      }
+    },
+    "notRendered": {
+      "/experience-intelligence": {
+        "template": "template.product",
+        "reason": "The clone renders a placeholder page for this route ('building…' in src/pages/ExperienceIntelligence.jsx / RealEstateIntelligence.jsx); the product sections are spec-only and unmounted, so there is nothing to measure.",
+        "measuredResult": "unit count 0 != template nodes 6"
+      },
+      "/realestate-intelligence": {
+        "template": "template.product",
+        "reason": "The clone renders a placeholder page for this route ('building…' in src/pages/ExperienceIntelligence.jsx / RealEstateIntelligence.jsx); the product sections are spec-only and unmounted, so there is nothing to measure.",
+        "measuredResult": "unit count 0 != template nodes 6"
+      }
+    },
+    "whitelist": []
+  }
 }

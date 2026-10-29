@@ -2,6 +2,16 @@
   "id": "features.solutions-carousel",
   "kind": "section",
   "category": "FEATURES",
+  "semantic": {
+    "id": "features.solutions-carousel",
+    "category": "FEATURES"
+  },
+  "source": {
+    "id": "src:Solutions.section@192",
+    "tag": "section",
+    "file": "src/components/Solutions.jsx",
+    "lines": "192-220"
+  },
   "purpose": "'Built for every team' horizontally scrolling team/use-case image cards with arrow buttons and scroll-linked sideways drift.",
   "tags": [
     "carousel",
@@ -55,7 +65,8 @@
               "type": "asset",
               "required": true,
               "roles": [
-                "photo.scene-card"
+                "photo.scene-card",
+                "asset.user-supplied"
               ]
             },
             "title": {
@@ -120,7 +131,12 @@
   "retrievalEligible": true,
   "rules": [],
   "assetRoles": [
+    "asset.user-supplied",
     "photo.scene-card"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "asset.user-supplied",
+    "photo.scene-card"
+  ]
 }

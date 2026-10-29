@@ -2,6 +2,16 @@
   "id": "proof.testimonials",
   "kind": "section",
   "category": "PROOF",
+  "semantic": {
+    "id": "proof.testimonials",
+    "category": "PROOF"
+  },
+  "source": {
+    "id": "src:Testimonials.section@127",
+    "tag": "section",
+    "file": "src/components/Testimonials.jsx",
+    "lines": "127-160"
+  },
   "purpose": "Full-width dark customer-quote carousel with arrow and dot controls; each slide links to the relevant product.",
   "tags": [
     "testimonial",
@@ -44,14 +54,22 @@
               "required": true,
               "values": [
                 "XI",
+                "RI",
+                "own"
+              ],
+              "primefoldBadgeValues": [
+                "XI",
                 "RI"
-              ]
+              ],
+              "note": "Values in primefoldBadgeValues render a Primefold product badge/label (XI / RI / CI); mode 'generation' must use the neutral value(s), which render the new brand's own mark (brand.placeholder-mark / brand.user-supplied-mark)."
             },
             "backdrop": {
               "type": "asset",
               "required": true,
               "roles": [
-                "customer.imagery"
+                "customer.imagery",
+                "generated.illustration",
+                "asset.user-supplied"
               ]
             },
             "quote": {
@@ -79,7 +97,8 @@
               "type": "asset",
               "required": true,
               "roles": [
-                "customer.logo"
+                "customer.logo",
+                "placeholder.company-logo"
               ]
             },
             "cta": {
@@ -125,8 +144,16 @@
   "retrievalEligible": true,
   "rules": [],
   "assetRoles": [
+    "asset.user-supplied",
     "customer.imagery",
-    "customer.logo"
+    "customer.logo",
+    "generated.illustration",
+    "placeholder.company-logo"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "asset.user-supplied",
+    "generated.illustration",
+    "placeholder.company-logo"
+  ]
 }

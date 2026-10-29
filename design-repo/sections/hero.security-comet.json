@@ -2,6 +2,16 @@
   "id": "hero.security-comet",
   "kind": "section",
   "category": "HERO",
+  "semantic": {
+    "id": "hero.security-comet",
+    "category": "HERO"
+  },
+  "source": {
+    "id": "src:SecurityHero.section@42",
+    "tag": "section",
+    "file": "src/pages/security/SecurityHero.jsx",
+    "lines": "42-68"
+  },
   "purpose": "Dark security hero with warm glow, eyebrow, h1, lead, Book a call and an animated three-ring comet graphic around a GDPR/fingerprint pill.",
   "tags": [
     "hero",
@@ -63,7 +73,8 @@
           "type": "asset",
           "required": true,
           "roles": [
-            "ui.illustration-svg"
+            "ui.illustration-svg",
+            "asset.user-supplied"
           ]
         },
         "countBasis": "GDPR tile + fingerprint tile"
@@ -99,7 +110,12 @@
   "retrievalEligible": true,
   "rules": [],
   "assetRoles": [
+    "asset.user-supplied",
     "ui.illustration-svg"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "asset.user-supplied",
+    "ui.illustration-svg"
+  ]
 }

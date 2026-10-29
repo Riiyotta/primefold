@@ -2,6 +2,16 @@
   "id": "conversion.contact-form",
   "kind": "section",
   "category": "CONVERSION",
+  "semantic": {
+    "id": "conversion.contact-form",
+    "category": "CONVERSION"
+  },
+  "source": {
+    "id": "src:Contact.section@17",
+    "tag": "section",
+    "file": "src/pages/Contact.jsx",
+    "lines": "17-25"
+  },
   "purpose": "Two-column contact section: intro with three link cards (email, booking, LinkedIn) and a 'Send us a message' form card (name, work mail, company, optional phone with country picker, message, consent, submit).",
   "tags": [
     "contact",
@@ -199,5 +209,8 @@
   "assetRoles": [
     "ui.icon-mask"
   ],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": [
+    "ui.icon-mask"
+  ]
 }

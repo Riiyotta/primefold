@@ -2,6 +2,16 @@
   "id": "shell.navbar",
   "kind": "section",
   "category": "SHELL",
+  "semantic": {
+    "id": "shell.navbar",
+    "category": "SHELL"
+  },
+  "source": {
+    "id": "src:Navbar.header@132",
+    "tag": "header",
+    "file": "src/components/Navbar.jsx",
+    "lines": "132-213"
+  },
   "purpose": "Fixed site navigation: logo, Products/Resources/Company dropdowns, Plans and Security links, Sign in and Book a call pills. Gives every page one consistent way to move between products and to convert.",
   "tags": [
     "navigation",
@@ -143,5 +153,6 @@
   "retrievalEligible": true,
   "rules": [],
   "assetRoles": [],
-  "version": "1.0.0"
+  "version": "1.0.0",
+  "generatedAssetRoles": []
 }

@@ -9,11 +9,19 @@ Checks (each prints OK / FAIL / WARN):
   routes         every route bound to exactly one real template; templates' route lists agree; 1:1 coverage
   admission      retrievalEligible on sections, templates and routes recomputed and compared
   graph          every rule id implemented in schema/semantic_validate.py and vice versa; named exceptions match the real templates
-  assets         closed asset-role registry: closure, no orphan roles, PINNED_POLICIES (weighty roles pinned to one exact value),
-                 destination-role pattern parity, deny-list contains the real ticker customers, trial-font warning present
+  assets         closed asset-role registry: closure, no orphan roles, PINNED_POLICIES (weighty roles pinned to one exact clone policy),
+                 PINNED_AVAILABILITY (every role's clone-only / generation-safe / blocked-for-generation, also cross-checked against the
+                 copy in schema/semantic_validate.py), substitutes + generated-mode guidance, destination-role pattern parity,
+                 deny-list contains the real ticker customers, trial-font warning present, source-usage constraint recorded
+  contracts      every section contract validates against the closed schema/section-contract.schema.json; source/semantic split;
+                 source ranges re-read from the real files (tag at the cited line); retrievalEligible pinned (RETRIEVAL_INELIGIBLE)
+  policy         category + designPolicy binding in the manifest, policy/design-policy.json exists, contentHash recomputed
+  wrapper gate   extraction/wrapper_gate.py over measured sectionHeights (thresholds pinned in code)
+  generated      schema/pagespec.schema.json == fresh build from contracts; generation examples == fresh build; source patterns
+                 == fresh build from the real source (when present)
   citations      every path:line[-line] citation resolves inside the real file AND its recorded quote appears in the range
                  (degrades to WARN when no sibling source tree is present - never fails standalone)
-  schema/example Draft-07 schema is valid; the example has 0 errors (schema + semantic)
+  schema/example Draft-07 schema is valid; the clone example and every generation example have 0 errors (schema + semantic)
   suites         runs schema/tests/adversarial_test.py (every mutation rejected, every control passes)
 
 The repo root derives from __file__. The source tree is looked up next to the repo (its parent directory) unless
@@ -30,11 +38,12 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "schema"))
+sys.path.insert(0, os.path.join(ROOT, "extraction"))
 
-# Weighty roles are pinned to ONE exact generationPolicy, independent of the registry file. Membership in the
+# Weighty roles are pinned to ONE exact clonePolicy, independent of the registry file. Membership in the
 # closed policy enum is necessary but not sufficient: a live endpoint silently switched to 'may-generate-new'
 # is still enum-valid. These pins are the second, stricter check (MASTER-GUIDE 3.23).
-PINNED_POLICIES = {
+PINNED_POLICIES = {  # clone-mode policy (assets/asset-roles.json clonePolicy)
     "customer.logo": "must-not-fabricate",
     "customer.imagery": "must-not-fabricate",
     "person.team-photo": "must-not-fabricate",
@@ -49,8 +58,30 @@ PINNED_POLICIES = {
 }
 PINNED_DESTINATIONS = ["dest:booking", "dest:app-signin", "dest:app-trial", "dest:app-home", "dest:help-center-xi", "dest:help-center-ri",
                        "dest:job-posting", "dest:social-x", "dest:social-linkedin", "dest:support-mailto", "dest:client-website"]
-POLICY_SOURCES = {"may-generate-new": ["generate-new", "placeholder"], "must-reuse-exact": ["reuse-exact"],
-                  "must-not-fabricate": ["placeholder"], "must-not-reuse-live-endpoint": []}
+POLICY_SOURCES = {"must-reuse-exact": ["reuse-exact"], "may-reuse-or-generate": ["reuse-exact", "generate-new", "placeholder"],
+                  "may-generate-new": ["generate-new", "placeholder"], "must-not-fabricate": ["placeholder"], "placeholder-only": ["placeholder"],
+                  "user-supplied-only": ["user-supplied"], "must-not-reuse-live-endpoint": []}
+# Generation availability of EVERY role, pinned independently of assets/asset-roles.json (and of the validator's own copy, which
+# check_assets compares against this one). A real logo/wordmark is clone-only: never usable, let alone must-reuse-exact, in generation mode.
+PINNED_AVAILABILITY = {
+    "brand.logo-mark": "clone-only", "brand.wordmark-ghost": "clone-only", "brand.product-badge": "clone-only", "brand.site-icons": "clone-only",
+    "customer.logo": "blocked-for-generation", "customer.imagery": "blocked-for-generation",
+    "person.team-photo": "blocked-for-generation", "person.author-avatar": "blocked-for-generation", "embed.video-facade": "blocked-for-generation",
+    "dest:help-center-xi": "blocked-for-generation", "dest:help-center-ri": "blocked-for-generation", "dest:client-website": "blocked-for-generation",
+    "ui.icon-mask": "generation-safe", "ui.illustration-svg": "generation-safe", "fx.shader-fallback": "generation-safe", "hero.backdrop-photo": "generation-safe",
+    "photo.scene-card": "generation-safe", "product.illustration-still": "generation-safe", "cms.post-image": "generation-safe", "motion.lottie": "generation-safe",
+    "brand.placeholder-mark": "generation-safe", "brand.user-supplied-mark": "generation-safe", "asset.user-supplied": "generation-safe",
+    "generated.illustration": "generation-safe", "placeholder.screenshot": "generation-safe", "fictional.person-avatar": "generation-safe",
+    "placeholder.company-logo": "generation-safe", "url.placeholder": "generation-safe", "copy.original": "generation-safe",
+    "dest:booking": "generation-safe", "dest:app-signin": "generation-safe", "dest:app-trial": "generation-safe", "dest:app-home": "generation-safe",
+    "dest:job-posting": "generation-safe", "dest:social-x": "generation-safe", "dest:social-linkedin": "generation-safe", "dest:support-mailto": "generation-safe",
+    "endpoint.contact-form": "generation-safe", "endpoint.newsletter-form": "generation-safe",
+}
+REQUIRED_GENERATION_SAFE = {"brand.placeholder-mark", "brand.user-supplied-mark", "asset.user-supplied", "generated.illustration", "placeholder.screenshot",
+                            "fictional.person-avatar", "placeholder.company-logo", "url.placeholder", "copy.original"}
+RETRIEVAL_INELIGIBLE = {"features.loop-cards", "features.solutions-tabs", "features.sources", "features.step-cards", "features.use-cases", "hero.product-live-chat"}
+RUNTIME_UI_RE = re.compile(r"cookie|consent|modal|dialog|drawer|popup|pop-up|overlay|preloader|toast|lightbox", re.I)
+SAAS_POLICY = ("n0-saas-design-constraints-common", "0.1.0")
 TICKER_CUSTOMERS = ["webedia", "fischerAppelt", "SportScheck", "SPORTFIVE", "Maggiore Suites", "ECE", "NAS Real Investments", "Vickii", "t3n", "SirPlus"]
 
 ABS_PATH = re.compile("/Us" + "ers/|/home/[a-z]+/|C:\\\\Us" + "ers")  # built from pieces so this file never contains the literal
@@ -88,6 +119,10 @@ def listjson(d):
     return sorted(glob.glob(os.path.join(ROOT, d, "*.json")))
 
 
+def roles_of(A, cls):
+    return [r for r in A["roles"] if r["class"] == cls]
+
+
 def count_tokens(o):
     if isinstance(o, dict):
         if "$value" in o:
@@ -112,7 +147,10 @@ def check_structure():
     need = ["README.md", "CHANGELOG.md", "registry.manifest.json", "tokens/00-foundation", "tokens/10-semantic", "tokens/20-component", "tokens/30-layout", "tokens/themes",
             "tokens/llm/component-allowlist.json", "tokens/llm/token-catalog.json", "tokens/llm/token-policy.json", "primitives", "components", "sections", "templates/templates.json",
             "templates/routes.json", "compatibility/graph.json", "assets/asset-roles.json", "schema/pagespec.schema.json", "schema/example.pagespec.json", "schema/semantic_validate.py",
-            "schema/tests/adversarial_test.py", "extraction/measured-values.json", "extraction/verify_all.py", "extraction/prove_drift.py"]
+            "schema/tests/adversarial_test.py", "extraction/measured-values.json", "extraction/verify_all.py", "extraction/prove_drift.py",
+            "policy/design-policy.json", "schema/section-contract.schema.json", "schema/source-patterns.json", "extraction/wrapper_gate.py",
+            "extraction/measure_sections.mjs", "extraction/build_schema.py", "extraction/build_source_patterns.py", "extraction/build_generation_examples.py",
+            "extraction/policy_hash.py", "schema/examples"]
     missing = [n for n in need if not os.path.exists(os.path.join(ROOT, n))]
     check(not missing, "required files/folders present", f"missing: {missing}")
     bad = []
@@ -125,7 +163,7 @@ def check_structure():
     hits = []
     for dp, dn, fns in os.walk(ROOT):
         for fn in fns:
-            if fn.endswith((".json", ".md", ".py", ".txt")):
+            if fn.endswith((".json", ".md", ".py", ".txt", ".mjs")):
                 p = os.path.join(dp, fn)
                 for n, line in enumerate(open(p, encoding="utf-8", errors="replace"), 1):
                     if ABS_PATH.search(line):
@@ -160,10 +198,12 @@ def check_parity():
         check(not phantom and not orphan, f"allowlist.{key} parity ({len(real)} ids, both directions)", f"allowlist.{key}: phantom entries {phantom}; orphan contracts {orphan}")
     A = rj("assets/asset-roles.json")
     S = rj("schema/pagespec.schema.json")
-    reg_roles = sorted(r["role"] for r in A["assetRoles"])
+    reg_roles = sorted(r["role"] for r in roles_of(A, "asset"))
     check(sorted(allow["assetRoles"]) == reg_roles, "allowlist.assetRoles == asset registry", f"assetRoles differ: {sorted(set(allow['assetRoles']) ^ set(reg_roles))}")
-    check(sorted(allow["destinationRoles"]) == sorted(r["role"] for r in A["destinationRoles"]), "allowlist.destinationRoles == registry", "destinationRoles differ")
-    check(sorted(allow["formEndpointRoles"]) == sorted(r["role"] for r in A["formEndpointRoles"]), "allowlist.formEndpointRoles == registry", "formEndpointRoles differ")
+    check(sorted(allow["destinationRoles"]) == sorted(r["role"] for r in roles_of(A, "destination")), "allowlist.destinationRoles == registry", "destinationRoles differ")
+    check(sorted(allow["formEndpointRoles"]) == sorted(r["role"] for r in roles_of(A, "form-endpoint")), "allowlist.formEndpointRoles == registry", "formEndpointRoles differ")
+    check(sorted(allow["contentRoles"]) == sorted(r["role"] for r in roles_of(A, "content")), "allowlist.contentRoles == registry", "contentRoles differ")
+    check(set(r["class"] for r in A["roles"]) <= {"asset", "destination", "form-endpoint", "content"}, "every role has a closed class", "unknown role class")
     # every enum of assetRole that appears in the schema must be inside the registry, and every role used by a section must exist
     schema_roles = set()
 
@@ -183,12 +223,18 @@ def check_parity():
     used = set()
     for s in secs.values():
         used.update(s["assetRoles"])
-    used.add("brand.site-icons") if "ogImage" in S["properties"]["meta"]["properties"] else None
+    used.update(S["properties"]["meta"]["properties"]["ogImage"]["properties"]["assetRole"]["enum"])
+    og = sorted(r["role"] for r in roles_of(A, "asset") if r.get("ogImageEligible"))
+    check(sorted(S["properties"]["meta"]["properties"]["ogImage"]["properties"]["assetRole"]["enum"]) == og, "schema ogImage roles == registry ogImageEligible roles", "ogImage role drift")
     check(used == set(reg_roles), "asset-role closure: every registry role is used by a section field (no orphans) and every used role is registered",
           f"unregistered: {sorted(used - set(reg_roles))}; orphan roles: {sorted(set(reg_roles) - used)}")
     node = S["definitions"]["node"]
     check(sorted(allow["nodeProperties"]) == sorted(node["properties"]), "allowlist.nodeProperties == schema node properties", f"{allow['nodeProperties']} vs {sorted(node['properties'])}")
     check(sorted(allow["motionFields"]) == sorted(S["definitions"]["motion"]["properties"]), "allowlist.motionFields == schema motion fields (closed)", "motion fields differ")
+    pol_ = rj("tokens/llm/token-policy.json")
+    check(list(allow["styleSlots"]) == list(pol_["styleSlots"]) == list(S["definitions"]["styleTokens"]["properties"]) and S["definitions"]["styleTokens"].get("additionalProperties") is False,
+          f"styleTokens slots: allowlist == token-policy == schema ({len(pol_['styleSlots'])}, closed)", "styleSlots drift between allowlist / token-policy / schema")
+    check(S["properties"]["mode"]["enum"] == ["clone", "generation"] == allow["pageSpecModes"] and "mode" in S["required"], "PageSpec mode is a required closed enum clone|generation", "mode enum drift")
     check(S["definitions"]["motion"].get("additionalProperties") is False and node.get("additionalProperties") is False and S.get("additionalProperties") is False,
           "schema closed at root, node and motion (additionalProperties:false)", "schema not closed")
     check(set(S["properties"]["template"]["enum"]) == set(tpls), "schema template enum == templates.json", "template enum drift")
@@ -210,6 +256,16 @@ def check_parity():
     check(cat_paths == real_paths, f"token-catalog == real token files ({len(real_paths)} tokens, both directions)", f"catalog phantom: {sorted(cat_paths - real_paths)[:5]} orphan: {sorted(real_paths - cat_paths)[:5]}")
     pol = rj("tokens/llm/token-policy.json")
     check(set(pol["rawValueRestrictions"]) <= set(cat), "token-policy category names are real catalog keys", f"policy keys not in catalog: {set(pol['rawValueRestrictions']) - set(cat)}")
+    badslot = [k for k, v in pol["styleSlots"].items() if not set(v["categories"]) <= set(cat) or not all(any(t == a or t.startswith(a) for t in cat_paths) for a in v["accept"])]
+    check(not badslot, f"token-policy styleSlots resolve to real catalog categories/tokens ({len(pol['styleSlots'])} slots)", f"styleSlots that resolve to nothing: {badslot}")
+    badth = []
+    for th, d in pol["themes"].items():
+        if not os.path.exists(os.path.join(ROOT, "tokens", "themes", th + ".json")):
+            badth.append(th)
+        for sf, txts in d["textOnSurface"].items():
+            badth += [x for x in [sf] + txts if x not in sem]
+    check(not badth, "token-policy themes exist and textOnSurface uses real semantic tokens", f"theme/token drift: {badth[:5]}")
+    check(set(pol["generationModeTokenRules"]["unsupportedFonts"]) <= cat_paths, "unsupported-font list names real font tokens", "unsupportedFonts drift")
     refs = []
     for d in ["10-semantic", "20-component"]:
         for p in glob.glob(os.path.join(ROOT, "tokens", d, "*.json")):
@@ -243,14 +299,31 @@ def check_manifest(secs):
         for p in glob.glob(os.path.join(ROOT, "tokens", d, "*.json")):
             n += count_tokens(json.load(open(p)))
     real = {"primitives": len(listjson("primitives")), "components": len(listjson("components")), "sections": len(secs), "templates": len(tpls), "routes": len(routes),
-            "assetRoles": len(A["assetRoles"]), "destinationRoles": len(A["destinationRoles"]), "formEndpointRoles": len(A["formEndpointRoles"]),
-            "graphRules": len(G["rules"]), "tokenFiles": len(tokfiles), "tokens": n}
+            "assetRoles": len(roles_of(A, "asset")), "destinationRoles": len(roles_of(A, "destination")), "formEndpointRoles": len(roles_of(A, "form-endpoint")),
+            "contentRoles": len(roles_of(A, "content")), "graphRules": len(G["rules"]), "tokenFiles": len(tokfiles), "tokens": n,
+            "generationExamples": len(listjson("schema/examples"))}
     for k, v in real.items():
         check(M["counts"].get(k) == v, f"manifest.counts.{k} == {v} (recomputed)", f"manifest.counts.{k} = {M['counts'].get(k)} but disk has {v}")
     check(set(M["counts"]) == set(real), "manifest.counts has exactly the recomputed keys", f"count keys differ: {set(M['counts']) ^ set(real)}")
     check(M["allowlistVersion"] == allow["version"], f"allowlistVersion parity ({allow['version']})", f"manifest.allowlistVersion {M['allowlistVersion']} != allowlist.version {allow['version']}")
     check(M["pageSpecVersion"] == S["properties"]["pageSpecVersion"]["const"], "pageSpecVersion parity with schema const", "pageSpecVersion != schema const")
     check(M["status"] == "design-review-pending" and M["productionApproved"] is False, "manifest status design-review-pending, productionApproved false", "manifest status/approval wrong")
+    # common-policy / category binding (N0 Common Composition IR v0.5)
+    import policy_hash
+    dp = M.get("designPolicy", {})
+    pol_ok = os.path.exists(os.path.join(ROOT, dp.get("ref", "-")))
+    check(pol_ok and M.get("category") == "saas", "manifest binds category 'saas' and designPolicy.ref exists", f"category/designPolicy binding missing: {M.get('category')} {dp.get('ref')}")
+    if pol_ok:
+        P = rj(dp["ref"])
+        check((dp.get("policyId"), dp.get("policyVersion")) == SAAS_POLICY == (P["policyId"], P["policyVersion"]) and dp.get("commonIrVersion") == P["commonIrVersion"] == "0.5"
+              and dp.get("enforcementMode") == P["enforcementMode"] == "hard-and-soft",
+              f"designPolicy = {SAAS_POLICY[0]} v{SAAS_POLICY[1]}, commonIr 0.5, hard-and-soft (manifest == policy file)", "designPolicy fields disagree with policy file / SaaS binding")
+        check(P["classification"]["isSaaS"] is True and P["classification"]["productCategory"] == M.get("category") and len(P["classification"]["evidence"]) >= 3,
+              f"policy classification isSaaS with {len(P['classification']['evidence'])} evidence citations", "SaaS classification lacks evidence")
+        check(all(os.path.exists(os.path.join(ROOT, e)) for e in P["enforcedBy"]), "every policy enforcedBy file exists", "policy enforcedBy names a missing file")
+        want = policy_hash.compute(ROOT)
+        check(dp.get("contentHash") == want, f"designPolicy.contentHash matches the enforced files ({want[:19]}...)", f"designPolicy.contentHash {dp.get('contentHash')} != recomputed {want}")
+        check(P["approval"]["architectureDecisionRecorded"] is False, "policy approval honest: architectureDecisionRecorded false", "policy approval overstated")
     check(bool(M.get("versionFieldNote")) and "MACHINE-CHECKED" in M["versionFieldNote"], "versionFieldNote states which version fields are machine-checked", "versionFieldNote missing")
     check(M["defaultTheme"] == "light" and M["schemaValidatedThemes"] == ["light"] and os.path.exists(os.path.join(ROOT, "tokens/themes/light.json")), "defaultTheme / schemaValidatedThemes real", "theme declaration drift")
     badep = [e for e in M["entryPoints"] if e.startswith("..") or os.path.isabs(e) or "../" in e or not os.path.exists(os.path.join(ROOT, e))]
@@ -389,34 +462,75 @@ def check_graph(secs):
 
 
 def check_assets(secs):
+    import semantic_validate as sv
     A = rj("assets/asset-roles.json")
     S = rj("schema/pagespec.schema.json")
-    roles = {r["role"]: r for r in A["assetRoles"]}
-    allr = {**roles, **{r["role"]: r for r in A["destinationRoles"]}, **{r["role"]: r for r in A["formEndpointRoles"]}}
-    check(A["policyEnum"] == list(POLICY_SOURCES), "policy enum is the closed 4-value set", f"policyEnum drifted: {A['policyEnum']}")
-    check(all(r["generationPolicy"] in A["policyEnum"] for r in allr.values()), "every role's generationPolicy is a member of the closed enum", "policy not in enum")
-    wrong = [(k, allr[k]["generationPolicy"], want) for k, want in PINNED_POLICIES.items() if k not in allr or allr[k]["generationPolicy"] != want]
-    check(not wrong, f"PINNED_POLICIES: {len(PINNED_POLICIES)} weighty roles pinned to their exact policy (not just enum membership)", f"pinned role policy changed: {wrong}")
-    dwrong = [d for d in PINNED_DESTINATIONS if d not in allr or allr[d]["generationPolicy"] != "must-not-reuse-live-endpoint"]
-    check(not dwrong and sorted(PINNED_DESTINATIONS) == sorted(r["role"] for r in A["destinationRoles"]), f"{len(PINNED_DESTINATIONS)} destination roles pinned to must-not-reuse-live-endpoint (set is closed)", f"destination pin drift: {dwrong}")
-    srcbad = [r for r, v in allr.items() if v["allowedAssetSources"] != POLICY_SOURCES[v["generationPolicy"]]]
-    check(not srcbad, "allowedAssetSources matches the policy for every role", f"allowedAssetSources drift: {srcbad}")
-    check(A["assetSourceEnum"] == ["reuse-exact", "generate-new", "placeholder"], "assetSource enum closed", "assetSourceEnum drift")
+    roles = {r["role"]: r for r in roles_of(A, "asset")}
+    allr = {r["role"]: r for r in A["roles"]}
+    withpol = {k: r for k, r in allr.items() if r["class"] != "content"}
+    check(A["clonePolicyEnum"] == list(POLICY_SOURCES), "clone policy enum is the closed 7-value set", f"clonePolicyEnum drifted: {A['clonePolicyEnum']}")
+    check(all(r["clonePolicy"] in A["clonePolicyEnum"] for r in withpol.values()), "every role's clonePolicy is a member of the closed enum", "policy not in enum")
+    wrong = [(k, allr[k]["clonePolicy"], want) for k, want in PINNED_POLICIES.items() if k not in allr or allr[k].get("clonePolicy") != want]
+    check(not wrong, f"PINNED_POLICIES: {len(PINNED_POLICIES)} weighty roles pinned to their exact clone policy (not just enum membership)", f"pinned role policy changed: {wrong}")
+    dwrong = [d for d in PINNED_DESTINATIONS if d not in allr or allr[d]["clonePolicy"] != "must-not-reuse-live-endpoint"]
+    check(not dwrong and sorted(PINNED_DESTINATIONS) == sorted(r["role"] for r in roles_of(A, "destination")), f"{len(PINNED_DESTINATIONS)} destination roles pinned to must-not-reuse-live-endpoint (set is closed)", f"destination pin drift: {dwrong}")
+    srcbad = [r for r, v in withpol.items() if v["cloneAssetSources"] != POLICY_SOURCES[v["clonePolicy"]]]
+    check(not srcbad, "cloneAssetSources matches the clone policy for every role", f"cloneAssetSources drift: {srcbad}")
+    check(A["assetSourceEnum"] == ["reuse-exact", "generate-new", "placeholder", "user-supplied"], "assetSource enum closed", "assetSourceEnum drift")
+    # availability: closed enum, pinned per role in code (here AND in the validator), substitutes + guidance
+    check(A["availabilityEnum"] == ["clone-only", "generation-safe", "blocked-for-generation"] and all(r.get("availability") in A["availabilityEnum"] for r in A["roles"]),
+          f"every role ({len(A['roles'])}) has a closed availability", "availability missing or outside the closed enum")
+    avw = [(k, allr.get(k, {}).get("availability"), v) for k, v in PINNED_AVAILABILITY.items() if allr.get(k, {}).get("availability") != v]
+    avw += [(k, allr[k]["availability"], None) for k in allr if k not in PINNED_AVAILABILITY]
+    check(not avw, f"PINNED_AVAILABILITY: all {len(PINNED_AVAILABILITY)} roles pinned in verify_all.py match the registry", f"availability pin violated: {avw[:4]}")
+    check(PINNED_AVAILABILITY == sv.PINNED_AVAILABILITY and PINNED_POLICIES == sv.PINNED_POLICIES and POLICY_SOURCES == sv.POLICY_SOURCES,
+          "availability/policy pins identical in verify_all.py and schema/semantic_validate.py", "pin tables differ between verify_all.py and semantic_validate.py")
+    check(REQUIRED_GENERATION_SAFE <= {k for k, r in allr.items() if r["availability"] == "generation-safe"},
+          f"required generation-safe roles present ({len(REQUIRED_GENERATION_SAFE)}: placeholder/user-supplied mark, user asset, generated illustration, placeholder screenshot, fictional avatar, placeholder company logo, placeholder URL, original copy)",
+          f"missing generation-safe roles: {REQUIRED_GENERATION_SAFE - set(allr)}")
+    badsub = []
+    for k, r in allr.items():
+        if not isinstance(r.get("generationSafeSubstitutes"), list) or not r.get("generatedModeGuidance"):
+            badsub.append((k, "missing substitutes/guidance"))
+        elif r["availability"] != "generation-safe" and not r["generationSafeSubstitutes"]:
+            badsub.append((k, "no substitute"))
+        for x in r.get("generationSafeSubstitutes", []):
+            if x not in allr or allr[x]["availability"] != "generation-safe":
+                badsub.append((k, x))
+    check(not badsub, "every role has generationSafeSubstitutes + generatedModeGuidance; non-safe roles name generation-safe substitutes", f"substitute problems: {badsub[:4]}")
+    genbad = [k for k, r in roles.items() if (r["availability"] != "generation-safe" and r.get("generationAssetSources")) or "reuse-exact" in r.get("generationAssetSources", [])
+              or (r["availability"] == "generation-safe" and not r.get("generationAssetSources"))]
+    check(not genbad, "generation sources: never reuse-exact; empty for clone-only/blocked roles (a real logo is never must-reuse-exact in generation mode)", f"generationAssetSources wrong: {genbad}")
+    gbad = [s["id"] for s in secs.values() if s["generatedAssetRoles"] != sorted(r for r in s["assetRoles"] if roles[r]["availability"] == "generation-safe")]
+    check(not gbad, "every section's generatedAssetRoles == the generation-safe subset of its assetRoles", f"generatedAssetRoles drift: {gbad}")
+    nosafe = []
+    for s in secs.values():
+        def wf(f, path):
+            if f["type"] == "asset" and not any(roles[r]["availability"] == "generation-safe" for r in f["roles"]):
+                nosafe.append(f"{s['id']}.{path}")
+            elif f["type"] == "list":
+                wf(f["item"], path + "[]")
+            elif f["type"] == "object":
+                [wf(v, path + "." + k) for k, v in f["fields"].items()]
+        [wf(v, k) for k, v in s["content"]["fields"].items()]
+    check(not nosafe, "every asset field accepts at least one generation-safe role (generation mode can always fill it)", f"fields with no generation-safe role: {nosafe[:4]}")
     # the schema's link-target pattern must name exactly the destination roles
     sample = next(s for s in S["definitions"]["node"]["allOf"] if s["if"]["properties"]["section"]["const"] == "shell.navbar")
     pat = sample["then"]["properties"]["content"]["properties"]["signIn"]["properties"]["to"]["pattern"]
     m = re.search(r"dest:\(([^)]+)\)", pat)
     names = set(m.group(1).split("|")) if m else set()
-    check(names == {d.split(":")[1] for d in PINNED_DESTINATIONS}, "schema link-target pattern allows exactly the registered dest:<role> names (no literal URLs)", f"pattern roles {names}")
-    check("http" not in pat, "link-target pattern has no URL alternative", "pattern admits URLs")
+    check(names == {d.split(":")[1] for d in PINNED_DESTINATIONS}, "schema link-target pattern allows exactly the registered dest:<role> names", f"pattern roles {names}")
+    check("http" not in pat.replace("https://([a-z0-9-]+\\.)*[a-z0-9-]+\\.(example|invalid)", ""), "link-target pattern admits no live URL (only reserved .example/.invalid placeholders)", "pattern admits live URLs")
     ident = A["realIdentities"]["customers"]
     miss = [c for c in TICKER_CUSTOMERS if c not in ident]
     check(not miss, "deny-list contains all 10 real ticker customers", f"deny-list missing: {miss}")
     fav = next((f for f in A["fontFaces"] if f["family"].startswith("ABC Favorit")), None)
     check(bool(fav) and "TRIAL" in fav["licensing"], "ABC Favorit Trial licensing warning present", "trial-font warning missing")
-    check("not for public deployment" in A["legalNotice"].lower() or "Not for public deployment" in A["legalNotice"], "legal notice cites the clone's not-for-deployment statement", "legal notice missing")
-    # each placeholderOnly flag sits on a text field; each section lists assetRoles consistent with its fields
-    bad = []
+    P = rj("policy/design-policy.json")
+    check(P["sourceUsage"]["status"] == "reference-and-study-only" and "not for public deployment" in P["sourceUsage"]["statement"].lower()
+          and "policy/design-policy.json" in A["legalNotice"], "reference/study-only source usage recorded in policy/design-policy.json and referenced by the legal notice",
+          "source-usage constraint missing (policy/design-policy.json sourceUsage / legalNotice)")
+    bad = []  # each section lists assetRoles consistent with its fields
     for s in secs.values():
         roles_f = set()
 
@@ -556,19 +670,98 @@ def check_citations():
             ok(f"{fc['dir']} file count {n} unchanged")
 
 
+def check_contracts(secs):
+    from jsonschema import Draft7Validator
+    import semantic_validate as sv
+    CS = rj("schema/section-contract.schema.json")
+    Draft7Validator.check_schema(CS)
+    v = Draft7Validator(CS)
+    bad = [f"{k}: {'/'.join(map(str, e.absolute_path))} {e.message[:90]}" for k, sc in secs.items() for e in v.iter_errors(sc)]
+    check(not bad, f"all {len(secs)} section contracts validate against the closed schema/section-contract.schema.json", f"contract schema errors: {bad[:3]}")
+    reg = set(CS["definitions"]["assetRole"]["enum"])
+    check(reg == {r["role"] for r in roles_of(rj("assets/asset-roles.json"), "asset")}, "section-contract schema assetRole enum == registry", "section-contract assetRole enum drift")
+    ss = [k for k, sc in secs.items() if sc["semantic"]["id"] != k or sc["source"]["id"] == k or sc["semantic"]["category"] != sc["category"]]
+    check(not ss, f"source/semantic split: semantic.id == id, semantic.category == category, source.id != id ({len(secs)} contracts)", f"source/semantic problems: {ss}")
+    # retrieval eligibility pin (R8)
+    real = {k for k, sc in secs.items() if sc["retrievalEligible"] is False}
+    allow = rj("tokens/llm/component-allowlist.json")
+    check(real == RETRIEVAL_INELIGIBLE == set(allow["retrievalIneligibleSections"]) == sv.RETRIEVAL_INELIGIBLE,
+          f"retrievalEligible pinned: contracts == RETRIEVAL_INELIGIBLE (verify_all + semantic_validate) == allowlist ({len(real)} ineligible)",
+          f"retrieval pin drift: contracts {sorted(real)} allowlist {allow['retrievalIneligibleSections']}")
+    rt = [k for k, sc in secs.items() if RUNTIME_UI_RE.search(k + " " + " ".join(sc["tags"])) and k not in RETRIEVAL_INELIGIBLE]
+    check(not rt, "no runtime/utility-UI-looking section (cookie, modal, dialog, drawer, popup, preloader, toast) outside the retrieval pin", f"unpinned runtime UI: {rt}")
+    if not SOURCE:
+        warn(f"no sibling source tree: {len(secs)} source ranges NOT re-read (standalone copy)")
+        return
+    badsrc = []
+    for k, sc in secs.items():
+        src = sc["source"]
+        ls = src_lines(src["file"])
+        a_, b_ = map(int, src["lines"].split("-"))
+        if ls is None or a_ < 1 or b_ > len(ls) or a_ > b_:
+            badsrc.append(f"{k}: {src['file']}:{src['lines']} out of range")
+            continue
+        first = ls[a_ - 1]
+        if not (("<" + src["tag"]) in first or (src["file"].endswith(".md") and first.startswith(src["tag"] + " "))):
+            badsrc.append(f"{k}: tag <{src['tag']}> not at {src['file']}:{a_}")
+    check(not badsrc, f"{len(secs)} contract source ranges re-read from the real files: in range and the tag sits at the cited line", f"source provenance drift: {badsrc[:3]}")
+
+
+def check_gate(secs):
+    import wrapper_gate as wg
+    check((wg.VIEWPORT, wg.HERO_WARN_PX, wg.HERO_ERROR_PX, wg.SHARE_WARN, wg.SHARE_ERROR, wg.MIN_INFLOW) == (1440, 1800, 3000, 0.50, 0.60, 3),
+          "wrapper-gate thresholds pinned in code (1440px; HERO 1800/3000px; share 50%/60%; min 3 in-flow)", "wrapper-gate thresholds changed")
+    sh, T, R, S_ = wg.load_inputs()
+    errs, warns, oks = wg.evaluate(sh, T, R, S_)
+    for o in oks:
+        ok("wrapper gate: " + o)
+    for w in warns:
+        warn("wrapper gate: " + w)
+    check(not errs, f"wrapper gate: 0 errors over {len(sh.get('routes', {})) if sh else 0} measured routes", f"wrapper gate errors: {errs[:3]}")
+
+
+def check_generated():
+    import build_schema
+    import build_generation_examples as bge
+    fresh = build_schema.build()
+    check(fresh == rj("schema/pagespec.schema.json"), "schema/pagespec.schema.json == fresh build from the contracts (extraction/build_schema.py)", "pagespec schema is stale vs the contracts: re-run extraction/build_schema.py")
+    out, problems = bge.build_all()
+    stale = [p for p, txt in out.items() if not os.path.exists(os.path.join(ROOT, p)) or json.loads(txt) != rj(p)]
+    extra = sorted(set(os.path.relpath(p, ROOT) for p in listjson("schema/examples")) - set(out))
+    check(not problems and not stale and not extra, f"{len(out)} generation examples == fresh build and validate clean", f"generation examples: problems {problems[:2]} stale {stale} unexpected {extra}")
+    if SOURCE:
+        import build_source_patterns as bsp
+        check(bsp.build(SOURCE) == rj("schema/source-patterns.json"), "schema/source-patterns.json == fresh build from the real source (no pattern drift)", "source-patterns.json is stale vs the source: re-run extraction/build_source_patterns.py")
+    else:
+        warn("no sibling source tree: source-patterns not rebuilt")
+
+
 def check_schema_example():
     from jsonschema import Draft7Validator
     import semantic_validate as sv
+    import wrapper_gate as wg
     S = rj("schema/pagespec.schema.json")
     try:
         Draft7Validator.check_schema(S)
         ok("pagespec.schema.json is a valid Draft-07 schema")
     except Exception as e:  # noqa: BLE001
         fail(f"schema invalid: {e}")
+    ctx = sv.load_context(ROOT)
     ex = rj("schema/example.pagespec.json")
-    errs, warns = sv.validate_all(ex)
+    errs, warns = sv.validate_all(ex, ctx)
+    check(ex.get("mode") == "clone", "example.pagespec.json is mode 'clone' (real Primefold assets/copy allowed)", "example.pagespec.json is not mode clone")
     check(not errs, "example.pagespec.json: 0 errors (schema + semantic)", f"example errors: {errs[:3]}")
     check(not warns, "example.pagespec.json: 0 warnings", f"example warnings: {warns[:3]}")
+    fams = set()
+    for p in listjson("schema/examples"):
+        e = rj(os.path.relpath(p, ROOT))
+        errs, warns = sv.validate_all(e, ctx)
+        fams.add(e.get("template"))
+        check(e.get("mode") == "generation" and not errs and not warns, f"{os.path.basename(p)}: mode generation, 0 errors, 0 warnings",
+              f"{os.path.basename(p)}: mode {e.get('mode')} errors {errs[:2]} warnings {warns[:1]}")
+    want = set(t["id"] for t in rj("templates/templates.json")["templates"]) - wg.PINNED_UNRENDERED_TEMPLATES
+    check(want <= fams, f"a generation example exists for every template family except the unrendered {sorted(wg.PINNED_UNRENDERED_TEMPLATES)} ({len(fams)} templates)",
+          f"templates without a generation example: {sorted(want - fams)}")
 
 
 def run_suite():
@@ -590,7 +783,10 @@ def main():
     check_routes(secs)
     check_graph(secs)
     check_assets(secs)
+    check_contracts(secs)
+    check_gate(secs)
     check_citations()
+    check_generated()
     check_schema_example()
     if "--no-suites" not in sys.argv:
         run_suite()
