@@ -7,8 +7,8 @@ fictional customers and invented numbers. Each is built from the template's own 
 (counts, required fields, conditional rules), then validated by schema/semantic_validate.py; the build fails if any
 example is not clean (0 errors, 0 warnings).
 
-template.product is deliberately skipped: its sections are spec-only (retrievalEligible false - the product routes render
-a placeholder page in the clone), and a generation-mode PageSpec may not use retrieval-ineligible sections.
+Since 0.3.0 template.product has an example too: the product routes are built in the clone and its six sections are mounted
+and retrieval-eligible (until then they were spec-only and the family was skipped).
 
   python3 extraction/build_generation_examples.py           # (re)write schema/examples/generated.*.pagespec.json
   python3 extraction/build_generation_examples.py --check   # exit 1 if a file on disk differs from a fresh build
@@ -29,6 +29,7 @@ FAMILIES = {  # family -> (template, route)
     "legal": ("template.legal", "/terms-of-service"), "blog-index": ("template.blog-index", "/blog"),
     "blog-post": ("template.blog-post", "/blog/closing-the-books-in-four-days"), "case-studies-index": ("template.case-studies-index", "/case-studies"),
     "case-study": ("template.case-study", "/case-studies/fernhill-foods-month-end"), "not-found": ("template.not-found", "/404"),
+    "product": ("template.product", "/close"),
 }
 BANK = {
     "title": ["Ledgers that reconcile while you sleep", "Close the month without chasing spreadsheets", "Every invoice matched and every exception explained",
@@ -45,7 +46,7 @@ BANK = {
     "role": ["Controller", "Finance lead", "Treasury analyst", "Payroll manager"],
     "personRole": ["Controller at Fernhill Foods", "Finance lead at Quillby"],
     "authorRole": ["Controller at Fernhill Foods", "Finance lead at Quillby"],
-    "value": ["38%", "4.2x", "12 days", "9 of 10"],
+    "value": ["38%", "4.2x", "12 days", "9/10"],
     "heading": ["Why finance teams switch", "What changes in week one", "Questions we hear often"],
     "question": ["Can we import last year's ledger?", "Who can approve a payment run?", "Where is our data stored?"],
     "answer": ["Yes. Upload a CSV export and Larkspur maps the accounts, then shows anything it could not place.",
@@ -58,6 +59,16 @@ BANK = {
     "breadcrumb": ["Stories"], "head": ["Product"], "submitLabel": ["Send"], "quarter": ["Q3"],
     "copyright": ["Larkspur Example Ltd, all rights reserved"], "hostedNote": ["Hosted in a sample region for demos"],
     "blurb": ["Calm books for busy finance teams. Product notes once a month."],
+    # template.product (original Larkspur copy)
+    "eyebrowLabel": ["Larkspur Close"], "usedByLabel": ["Used by:"], "usedBy": ["Controllers", "Payables teams", "Treasury"],
+    "stepLabel": ["01 - Connect", "02 - Match", "03 - Approve"],
+    "pill": ["Which invoices are still unmatched?", "Where did cash dip this week?", "Who has approvals waiting?"],
+    "ask": ["Which supplier invoices from March are still unmatched, and why?", "Where did our operating cash dip this week?"],
+    "answer": ["Seven invoices lack a purchase order; four share one supplier. Ask that supplier for the missing references first.",
+               "Two payroll runs landed on the same day. Nothing is missing; the balance recovers on Friday."],
+    "side": ["Larkspur remembers how your team names accounts, cost centres and vendors, so each review starts closer to done than the one before it."],
+    "whatYouGet": ["A short queue of exceptions with the source document beside each entry and a suggested next step."],
+    "chips": ["Bank feed", "Invoices.csv", "Ledger export"],
     "consentText": ["We use your details only to reply to this message."],
     "price": ["Free", "Custom"], "date": ["Mar 4, 2027"], "lastUpdated": ["Mar 4, 2027"], "location": ["Remote, Europe"],
     "status": ["Open", "Hiring now"], "text": ["Larkspur sample paragraph written for this example page; it describes no real company."],

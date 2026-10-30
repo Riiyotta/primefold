@@ -280,7 +280,7 @@
         "bars": [
           {
             "label": "Exports",
-            "value": "9"
+            "value": "9/10"
           },
           {
             "label": "Reconciliation",
@@ -288,7 +288,7 @@
           },
           {
             "label": "Audit trail",
-            "value": "9"
+            "value": "9/10"
           }
         ],
         "nextStep": "Larkspur keeps every ledger"
@@ -553,7 +553,7 @@
               "alt": "Placeholder image",
               "assetRef": "placeholder:larkspur-logo-126"
             },
-            "value": "9 of",
+            "value": "9/10",
             "headline": "Larkspur keeps every ledger entry traceable to its source document",
             "personName": "Tobias Renn",
             "personRole": "Controller at Fernhill Foods"

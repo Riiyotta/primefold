@@ -361,15 +361,15 @@
         "items": [
           {
             "question": "Who can approve a payment run?",
-            "answer": "Yes. Upload a CSV export and Larkspur maps the accounts, then shows anything it could not place."
+            "answer": "Seven invoices lack a purchase order; four share one supplier. Ask that supplier for the missing references first."
           },
           {
             "question": "Can we import last year's ledger?",
-            "answer": "Yes. Upload a CSV export and Larkspur maps the accounts, then shows anything it could not place."
+            "answer": "Seven invoices lack a purchase order; four share one supplier. Ask that supplier for the missing references first."
           },
           {
             "question": "Where is our data stored?",
-            "answer": "Yes. Upload a CSV export and Larkspur maps the accounts, then shows anything it could not place."
+            "answer": "Seven invoices lack a purchase order; four share one supplier. Ask that supplier for the missing references first."
           }
         ]
       },

@@ -1,4 +1,7 @@
-// Placeholder — built from specs/ once recon lands
+import ProductPage from './product/ProductPage'
+import { XI } from './product/content'
+
+// /experience-intelligence — shared product template (specs/product-pages.md), XI content.
 export default function ExperienceIntelligence() {
-  return <main className="grid min-h-screen place-items-center bg-white pt-[88px] font-inter text-grey-600">ExperienceIntelligence — building…</main>
+  return <ProductPage content={XI} />
 }

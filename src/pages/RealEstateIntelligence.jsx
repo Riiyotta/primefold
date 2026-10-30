@@ -1,4 +1,7 @@
-// Placeholder — built from specs/ once recon lands
+import ProductPage from './product/ProductPage'
+import { RI } from './product/content'
+
+// /realestate-intelligence — shared product template (specs/product-pages.md), RI content.
 export default function RealEstateIntelligence() {
-  return <main className="grid min-h-screen place-items-center bg-white pt-[88px] font-inter text-grey-600">RealEstateIntelligence — building…</main>
+  return <ProductPage content={RI} />
 }

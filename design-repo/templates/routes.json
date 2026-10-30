@@ -22,7 +22,7 @@
       "template": "template.product",
       "appRoutePattern": "experience-intelligence",
       "kind": "static",
-      "implementationStatus": "placeholder-page-mounted",
+      "implementationStatus": "mounted",
       "variantOverrides": {
         "conversion.cta-band": "xi"
       },
@@ -30,16 +30,16 @@
         "src/App.jsx:28"
       ],
       "notes": [
-        "src page is a 'building…' placeholder; src/pages/product/ProductPage.jsx is unmounted and incomplete"
+        "renders src/pages/product/ProductPage.jsx (shared product template) with the XI content object"
       ],
-      "retrievalEligible": false
+      "retrievalEligible": true
     },
     {
       "path": "/realestate-intelligence",
       "template": "template.product",
       "appRoutePattern": "realestate-intelligence",
       "kind": "static",
-      "implementationStatus": "placeholder-page-mounted",
+      "implementationStatus": "mounted",
       "variantOverrides": {
         "conversion.cta-band": "main"
       },
@@ -47,9 +47,9 @@
         "src/App.jsx:29"
       ],
       "notes": [
-        "src page is a 'building…' placeholder; src/pages/product/ProductPage.jsx is unmounted and incomplete"
+        "renders src/pages/product/ProductPage.jsx (shared product template) with the RI content object"
       ],
-      "retrievalEligible": false
+      "retrievalEligible": true
     },
     {
       "path": "/plans",

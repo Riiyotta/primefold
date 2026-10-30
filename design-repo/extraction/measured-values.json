@@ -4,7 +4,7 @@
   "snapshot": {
     "sourceUrl": "https://primefold.ai/",
     "measuredAt": "2026-10-13 (per CLONE_SPEC.md / specs/*.md headers)",
-    "note": "A design-repo is a snapshot of a moving project; src/pages/product was still being edited while this repo was built."
+    "note": "A design-repo is a snapshot of a moving project. 0.3.0: the product pages (src/pages/product/*) were completed and mounted in the clone in the same change set as this repo version."
   },
   "citations": [
     {
@@ -2631,12 +2631,6 @@
     },
     {
       "owner": "templates",
-      "path": "src/pages/ExperienceIntelligence.jsx",
-      "lines": "1",
-      "quote": "Placeholder"
-    },
-    {
-      "owner": "templates",
       "path": "src/pages/Plans.jsx",
       "lines": "20",
       "quote": "<PlansHero"
@@ -3054,6 +3048,60 @@
       "path": "src/pages/plans/data.js",
       "lines": "126",
       "quote": "adding the second is a licensing change"
+    },
+    {
+      "owner": "templates",
+      "path": "src/pages/ExperienceIntelligence.jsx",
+      "lines": "5",
+      "quote": "export default function ExperienceIntelligence"
+    },
+    {
+      "owner": "templates",
+      "path": "src/pages/product/ProductPage.jsx",
+      "lines": "1",
+      "quote": "import { useEffect, useRef } from 'react'"
+    },
+    {
+      "owner": "hero.product-live-chat",
+      "path": "src/pages/product/ProductHero.jsx",
+      "lines": "9",
+      "quote": "<section className=\"pp-hero\""
+    },
+    {
+      "owner": "features.step-cards",
+      "path": "src/pages/product/StepCards.jsx",
+      "lines": "59",
+      "quote": "<div className=\"pp-steps\">"
+    },
+    {
+      "owner": "features.use-cases",
+      "path": "src/pages/product/UseCases.jsx",
+      "lines": "41",
+      "quote": "<div className=\"pp-uses\">"
+    },
+    {
+      "owner": "features.sources",
+      "path": "src/pages/product/Sources.jsx",
+      "lines": "192",
+      "quote": "pp-src pp-src--"
+    },
+    {
+      "owner": "features.solutions-tabs",
+      "path": "src/pages/product/SolutionsTabs.jsx",
+      "lines": "63",
+      "quote": "<div className=\"pp-sol\">"
+    },
+    {
+      "owner": "features.loop-cards",
+      "path": "src/pages/product/LoopCards.jsx",
+      "lines": "6",
+      "quote": "<div className=\"pp-loop\">"
+    },
+    {
+      "owner": "features.solutions-tabs",
+      "path": "src/pages/product/product.css",
+      "lines": "277",
+      "quote": "prefers-reduced-motion"
     }
   ],
   "facts": [
@@ -3093,11 +3141,11 @@
       "onMismatch": "warn"
     },
     {
-      "id": "product-page-placeholder",
-      "claim": "XI route renders a placeholder page",
-      "citation": "src/pages/ExperienceIntelligence.jsx:3",
-      "quote": "building…",
-      "onMismatch": "warn"
+      "id": "product-page-mounted",
+      "claim": "XI route renders the shared product template (ProductPage) with the XI content object",
+      "citation": "src/pages/ExperienceIntelligence.jsx:6",
+      "quote": "return <ProductPage content={XI} />",
+      "onMismatch": "fail"
     },
     {
       "id": "contact-form-inert",
@@ -3423,18 +3471,7 @@
       "note": "README.md was emptied in d21a833; the reference/study-only constraint now lives in policy/design-policy.json sourceUsage. If the statement returns to the README this turns into a WARN to re-cite it."
     }
   ],
-  "fileAbsences": [
-    {
-      "owner": "facts.solutions-tabs-missing",
-      "path": "src/pages/product/SolutionsTabs.jsx",
-      "severity": "warn"
-    },
-    {
-      "owner": "facts.product-css-missing",
-      "path": "src/pages/product/product.css",
-      "severity": "warn"
-    }
-  ],
+  "fileAbsences": [],
   "fileCounts": [
     {
       "owner": "facts.assets-file-count",
@@ -3449,8 +3486,8 @@
     "viewport": 1440,
     "viewportHeight": 900,
     "measuredWith": "headless Chromium via Playwright, extraction/measure_sections.mjs",
-    "measuredOn": "2026-10-29",
-    "cloneCommit": "d21a833",
+    "measuredOn": "2026-10-29 (27 routes); 2026-10-30 (all 29 routes re-measured; only the two product routes are new, every other value unchanged)",
+    "cloneCommit": "d21a833 (27 routes); product routes measured on the 0.3.0 working tree on top of f3159a3",
     "routes": {
       "/": {
         "template": "template.home",
@@ -3512,6 +3549,114 @@
           {
             "section": "shell.footer",
             "top": 7286,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/experience-intelligence": {
+        "template": "template.product",
+        "pageHeight": 6588,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "hero.product-live-chat",
+            "top": 0,
+            "heightPx": 900
+          },
+          {
+            "section": "features.step-cards",
+            "top": 916,
+            "heightPx": 854
+          },
+          {
+            "section": "features.use-cases",
+            "top": 1770,
+            "heightPx": 1500
+          },
+          {
+            "section": "features.sources",
+            "top": 3270,
+            "heightPx": 828
+          },
+          {
+            "section": "features.solutions-tabs",
+            "top": 4098,
+            "heightPx": 772
+          },
+          {
+            "section": "features.loop-cards",
+            "top": 4870,
+            "heightPx": 670
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 5540,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 5976,
+            "heightPx": 612,
+            "note": "footer (shell): excluded from the share gate"
+          }
+        ]
+      },
+      "/realestate-intelligence": {
+        "template": "template.product",
+        "pageHeight": 6467,
+        "nodes": [
+          {
+            "section": "shell.navbar",
+            "top": 0,
+            "heightPx": 72,
+            "inFlow": false,
+            "note": "position:fixed - takes no page height"
+          },
+          {
+            "section": "hero.product-live-chat",
+            "top": 0,
+            "heightPx": 900
+          },
+          {
+            "section": "features.step-cards",
+            "top": 916,
+            "heightPx": 854
+          },
+          {
+            "section": "features.use-cases",
+            "top": 1770,
+            "heightPx": 1500
+          },
+          {
+            "section": "features.sources",
+            "top": 3270,
+            "heightPx": 763
+          },
+          {
+            "section": "features.solutions-tabs",
+            "top": 4033,
+            "heightPx": 772
+          },
+          {
+            "section": "features.loop-cards",
+            "top": 4805,
+            "heightPx": 614
+          },
+          {
+            "section": "conversion.cta-band",
+            "top": 5419,
+            "heightPx": 436
+          },
+          {
+            "section": "shell.footer",
+            "top": 5855,
             "heightPx": 612,
             "note": "footer (shell): excluded from the share gate"
           }
@@ -5389,18 +5534,305 @@
         ]
       }
     },
-    "notRendered": {
+    "whitelist": []
+  },
+  "visualParity": {
+    "$description": "Live-vs-clone per-section parity for the two product routes (R12), captured with extraction/parity_capture.mjs and scored with extraction/parity_compare.py. Same viewport (W x 900) and same section-relative scroll offset on both sides (arrive by wheel-scrolling, section top corrected to 20px below the viewport top, sections taller than the viewport captured in 900px slices), fonts and images awaited, prefers-reduced-motion on both sides. Values per section: pixel = share of unmasked pixels whose max RGB channel diff <= 32 (the gate, >= 80% per section); ink = the same counted only where either side differs from the section background (stricter diagnostic, not the gate); masked = share of the section area excluded as truly dynamic.",
+    "measuredOn": "2026-10-30",
+    "live": "https://primefold.ai",
+    "viewports": [
+      1440,
+      810,
+      390
+    ],
+    "masks": [
+      "eyebrow braille spinner glyphs (80ms frame cycle)",
+      "hero chat thread + prompt bar (typing loop keeps running on the live page even under reduced motion)",
+      "CTA wave shader / its PNG fallback layer",
+      "XI Sources dotLottie canvas / Lottie container",
+      "solutions marquee rows (40.6px/s, phase depends on load time)"
+    ],
+    "notMasked": "hero rays shader (both sides render one fixed frame under reduced motion), XI/RI step-card illustrations and the RI A3 Sources loop (time-based on the live page; compared as captured)",
+    "consentBanner": "the live cookie-consent banner is runtime UI outside every section; it was hidden in the capture (never clicked)",
+    "gate": {
+      "metric": "pixel",
+      "threshold": 80.0,
+      "minimum": 92.6,
+      "allPass": true
+    },
+    "routes": {
       "/experience-intelligence": {
-        "template": "template.product",
-        "reason": "The clone renders a placeholder page for this route ('building…' in src/pages/ExperienceIntelligence.jsx / RealEstateIntelligence.jsx); the product sections are spec-only and unmounted, so there is nothing to measure.",
-        "measuredResult": "unit count 0 != template nodes 6"
+        "1440": {
+          "hero": {
+            "pixel": 99.8,
+            "ink": 97.5,
+            "masked": 20.6
+          },
+          "steps": {
+            "pixel": 98.8,
+            "ink": 76.8,
+            "masked": 0.7
+          },
+          "uses": {
+            "pixel": 99.5,
+            "ink": 83.2,
+            "masked": 0.7
+          },
+          "sources": {
+            "pixel": 99.3,
+            "ink": 82.6,
+            "masked": 34.8
+          },
+          "solutions": {
+            "pixel": 99.4,
+            "ink": 98.7,
+            "masked": 12.5
+          },
+          "loop": {
+            "pixel": 99.1,
+            "ink": 80.9,
+            "masked": 0.9
+          },
+          "cta": {
+            "pixel": 100.0,
+            "ink": 100.0,
+            "masked": 81.2
+          },
+          "footer": {
+            "pixel": 99.9,
+            "ink": 98.9,
+            "masked": 0.0
+          }
+        },
+        "810": {
+          "hero": {
+            "pixel": 99.6,
+            "ink": 96.6,
+            "masked": 26.0
+          },
+          "steps": {
+            "pixel": 98.7,
+            "ink": 69.5,
+            "masked": 0.0
+          },
+          "uses": {
+            "pixel": 99.3,
+            "ink": 82.5,
+            "masked": 0.0
+          },
+          "sources": {
+            "pixel": 99.0,
+            "ink": 80.7,
+            "masked": 21.0
+          },
+          "solutions": {
+            "pixel": 99.0,
+            "ink": 97.8,
+            "masked": 8.4
+          },
+          "loop": {
+            "pixel": 98.9,
+            "ink": 79.9,
+            "masked": 0.1
+          },
+          "cta": {
+            "pixel": 100.0,
+            "ink": 100.0,
+            "masked": 86.2
+          },
+          "footer": {
+            "pixel": 99.8,
+            "ink": 97.8,
+            "masked": 0.0
+          }
+        },
+        "390": {
+          "hero": {
+            "pixel": 99.1,
+            "ink": 91.1,
+            "masked": 44.9
+          },
+          "steps": {
+            "pixel": 98.2,
+            "ink": 75.9,
+            "masked": 0.1
+          },
+          "uses": {
+            "pixel": 99.9,
+            "ink": 98.4,
+            "masked": 0.0
+          },
+          "sources": {
+            "pixel": 98.2,
+            "ink": 76.8,
+            "masked": 32.1
+          },
+          "solutions": {
+            "pixel": 98.6,
+            "ink": 97.7,
+            "masked": 11.6
+          },
+          "loop": {
+            "pixel": 98.4,
+            "ink": 75.7,
+            "masked": 0.1
+          },
+          "cta": {
+            "pixel": 100.0,
+            "ink": 100.0,
+            "masked": 81.8
+          },
+          "footer": {
+            "pixel": 98.9,
+            "ink": 74.5,
+            "masked": 0.0
+          }
+        }
       },
       "/realestate-intelligence": {
-        "template": "template.product",
-        "reason": "The clone renders a placeholder page for this route ('building…' in src/pages/ExperienceIntelligence.jsx / RealEstateIntelligence.jsx); the product sections are spec-only and unmounted, so there is nothing to measure.",
-        "measuredResult": "unit count 0 != template nodes 6"
+        "1440": {
+          "hero": {
+            "pixel": 99.0,
+            "ink": 85.0,
+            "masked": 22.4
+          },
+          "steps": {
+            "pixel": 97.9,
+            "ink": 93.9,
+            "masked": 2.7
+          },
+          "uses": {
+            "pixel": 99.5,
+            "ink": 83.6,
+            "masked": 0.7
+          },
+          "sources": {
+            "pixel": 97.5,
+            "ink": 92.5,
+            "masked": 1.7
+          },
+          "solutions": {
+            "pixel": 98.8,
+            "ink": 97.5,
+            "masked": 12.5
+          },
+          "loop": {
+            "pixel": 99.1,
+            "ink": 79.9,
+            "masked": 1.0
+          },
+          "cta": {
+            "pixel": 100.0,
+            "ink": 100.0,
+            "masked": 81.2
+          },
+          "footer": {
+            "pixel": 99.9,
+            "ink": 98.9,
+            "masked": 0.0
+          }
+        },
+        "810": {
+          "hero": {
+            "pixel": 98.3,
+            "ink": 82.0,
+            "masked": 27.3
+          },
+          "steps": {
+            "pixel": 97.9,
+            "ink": 93.6,
+            "masked": 1.6
+          },
+          "uses": {
+            "pixel": 99.2,
+            "ink": 82.4,
+            "masked": 0.0
+          },
+          "sources": {
+            "pixel": 95.3,
+            "ink": 85.0,
+            "masked": 1.3
+          },
+          "solutions": {
+            "pixel": 98.5,
+            "ink": 96.6,
+            "masked": 8.4
+          },
+          "loop": {
+            "pixel": 98.8,
+            "ink": 78.1,
+            "masked": 0.1
+          },
+          "cta": {
+            "pixel": 100.0,
+            "ink": 100.0,
+            "masked": 86.2
+          },
+          "footer": {
+            "pixel": 99.8,
+            "ink": 97.8,
+            "masked": 0.0
+          }
+        },
+        "390": {
+          "hero": {
+            "pixel": 96.2,
+            "ink": 88.5,
+            "masked": 44.9
+          },
+          "steps": {
+            "pixel": 96.2,
+            "ink": 91.6,
+            "masked": 3.6
+          },
+          "uses": {
+            "pixel": 99.3,
+            "ink": 91.5,
+            "masked": 0.0
+          },
+          "sources": {
+            "pixel": 92.6,
+            "ink": 79.3,
+            "masked": 1.9
+          },
+          "solutions": {
+            "pixel": 98.0,
+            "ink": 96.7,
+            "masked": 11.4
+          },
+          "loop": {
+            "pixel": 98.4,
+            "ink": 75.3,
+            "masked": 0.1
+          },
+          "cta": {
+            "pixel": 100.0,
+            "ink": 100.0,
+            "masked": 81.8
+          },
+          "footer": {
+            "pixel": 99.8,
+            "ink": 93.9,
+            "masked": 0.0
+          }
+        }
       }
     },
-    "whitelist": []
+    "inkBelow80": {
+      "note": "Diagnostic only (the gate passes everywhere). Causes, by section: steps = time-based illustration states (XI orbit/act variants, RI 21.7s loop) are not synchronised with the live clock and the per-variant geometry was never decoded (spec section 7.1); loop and sources = lorem-ipsum placeholder for the long side/lead paragraphs (copy rule: long prose is not transcribed); XI footer @390 = the page is 1px shorter than live (9540 vs 9541), shifting the last slice by 1px. Pending human review; agent attestation, not a human sign-off.",
+      "cases": [
+        "/experience-intelligence @1440 steps ink 76.8",
+        "/experience-intelligence @810 steps ink 69.5",
+        "/experience-intelligence @810 loop ink 79.9",
+        "/experience-intelligence @390 steps ink 75.9",
+        "/experience-intelligence @390 sources ink 76.8",
+        "/experience-intelligence @390 loop ink 75.7",
+        "/experience-intelligence @390 footer ink 74.5",
+        "/realestate-intelligence @1440 loop ink 79.9",
+        "/realestate-intelligence @810 loop ink 78.1",
+        "/realestate-intelligence @390 sources ink 79.3",
+        "/realestate-intelligence @390 loop ink 75.3"
+      ]
+    }
   }
 }

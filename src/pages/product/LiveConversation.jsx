@@ -212,7 +212,7 @@ export default function LiveConversation({ data, charsPerTick = 3, holdSeconds =
   const padX = compact ? 16 : 30
   const padY = compact ? 16 : 32
   useLayoutEffect(() => {
-    if (reduce) return undefined
+    // ghosts are invisible sizing boxes, so they are kept under reduced motion too (stable body height in both modes)
     const els = ghosts.current.filter(Boolean)
     if (!els.length) return undefined
     const measure = () => {
@@ -224,7 +224,7 @@ export default function LiveConversation({ data, charsPerTick = 3, holdSeconds =
     const ro = new ResizeObserver(measure)
     els.forEach((g) => ro.observe(g))
     return () => ro.disconnect()
-  }, [reduce, compact, width])
+  }, [compact, width])
   const minHeight = ghostH ? ghostH + padY * 2 : compact ? undefined : 308 + padY * 2
 
   const fs = compact ? 13 : 14
@@ -237,7 +237,7 @@ export default function LiveConversation({ data, charsPerTick = 3, holdSeconds =
         key={`ask-${key}`}
         style={{ display: 'flex', gap: compact ? 12 : 16, alignItems: 'center', justifyContent: 'flex-end', animation: animate ? 'pfconv-in .22s ease-out' : undefined }}
       >
-        <div style={{ background: INK, border: `1px solid ${BORDER}`, borderRadius: '12px 4px 12px 12px', padding: '8px 12px', maxWidth: `calc(100% - ${compact ? 44 : 52}px)` }}>
+        <div style={{ background: INK, border: `1px solid ${BORDER}`, borderRadius: '12px 4px 12px 12px', padding: '8px 12px', maxWidth: `calc(100% - ${compact ? 44 : 52}px)`, fontSize: fs, lineHeight: lh }}>
           <span style={textStyle}>{p.ask}</span>
         </div>
         <img src={AVATAR} alt="" width={compact ? 30 : 36} height={compact ? 30 : 36} style={{ width: compact ? 30 : 36, height: compact ? 30 : 36, borderRadius: '50%', objectFit: 'cover', flexShrink: 0 }} />
@@ -249,7 +249,7 @@ export default function LiveConversation({ data, charsPerTick = 3, holdSeconds =
           >
             {data.code}
           </span>
-          <div style={{ flex: 1, minWidth: 0, background: PANEL, border: `1px solid ${BORDER}`, borderRadius: '4px 12px 12px 12px', padding: '8px 12px', minHeight: compact ? undefined : 76 }}>
+          <div style={{ flex: 1, minWidth: 0, background: PANEL, border: `1px solid ${BORDER}`, borderRadius: '4px 12px 12px 12px', padding: '8px 12px', minHeight: compact ? undefined : 76, fontSize: fs, lineHeight: lh }}>
             <span style={textStyle}>
               {text}
               {!complete && <span style={{ opacity: 0.7 }}>{'▌'}</span>}
@@ -298,8 +298,7 @@ export default function LiveConversation({ data, charsPerTick = 3, holdSeconds =
       </div>
       <div style={{ background: PANEL, borderRadius: 16, boxShadow: BODY_SHADOW, padding: `${padY}px ${padX}px`, position: 'relative', minHeight }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: compact ? 18 : 38 }}>{renderThread(prompt, typed, done, `${data.code}-${idx}`, !reduce)}</div>
-        {!reduce &&
-          data.prompts.map((p, i) => (
+        {data.prompts.map((p, i) => (
             <div
               key={`ghost-${data.code}-${i}`}
               aria-hidden="true"
@@ -310,7 +309,7 @@ export default function LiveConversation({ data, charsPerTick = 3, holdSeconds =
             >
               {renderThread(p, p.answer, true, `g-${i}`, false)}
             </div>
-          ))}
+        ))}
       </div>
       <div style={{ position: 'relative', flexShrink: 0 }}>
         <div ref={bar} className="pfconv-bar" style={{ display: 'flex', gap: 8, alignItems: 'center', padding: compact ? '10px 12px' : '12px 16px', overflowX: 'auto' }}>

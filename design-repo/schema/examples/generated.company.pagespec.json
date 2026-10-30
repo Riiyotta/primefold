@@ -79,7 +79,7 @@
         "stats": [
           {
             "label": "Audit trail",
-            "value": "9",
+            "value": "9/10",
             "icon": {
               "assetRole": "ui.illustration-svg",
               "assetSource": "generate-new",

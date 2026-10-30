@@ -7,10 +7,10 @@
     "category": "HERO"
   },
   "source": {
-    "id": "src:ProductPage.section@34",
+    "id": "src:ProductHero.section@9",
     "tag": "section",
-    "file": "src/pages/product/ProductPage.jsx",
-    "lines": "34-63"
+    "file": "src/pages/product/ProductHero.jsx",
+    "lines": "9-36"
   },
   "purpose": "Dark product hero: eyebrow badge, h1, lead, two CTAs and a typing 'Live Conversation' chat demo over a WebGL rays background; one hero template serves both intelligences via the product enum.",
   "tags": [
@@ -20,12 +20,13 @@
     "webgl",
     "typing"
   ],
-  "status": "spec-only-source-in-progress",
+  "status": "mounted",
   "implementedBy": [
+    "src/pages/product/ProductHero.jsx",
     "src/pages/product/LiveConversation.jsx",
     "src/pages/product/Rays.jsx",
-    "src/pages/product/ProductPage.jsx",
-    "src/pages/product/content.js"
+    "src/pages/product/content.js",
+    "src/pages/product/product.css"
   ],
   "evidence": {
     "level": "measured",
@@ -208,16 +209,20 @@
     "phone": "column gap 48; hero height 1137; chat 350x598"
   },
   "notes": [
-    "Source status at build time: src/pages/ExperienceIntelligence.jsx and RealEstateIntelligence.jsx are still the placeholder 'building…' pages, and App.jsx does not import ProductPage. src/pages/product/* is an in-progress, unmounted implementation (ProductPage.jsx imports ./SolutionsTabs and ./product.css, which do not exist on disk). The contract is grounded in the measured spec specs/product-pages.md, not in running source.",
+    "Mounted since 0.3.0 on /experience-intelligence and /realestate-intelligence (ProductHero in src/pages/product/, rendered by ProductPage.jsx). Measured height at 1440: /experience-intelligence 900px, /realestate-intelligence 900px (extraction/measured-values.json sectionHeights).",
+    "Mounted since 0.3.0 on /experience-intelligence and /realestate-intelligence (ProductHero in src/pages/product/, rendered by ProductPage.jsx). Measured height at 1440: /experience-intelligence 900px, /realestate-intelligence 900px (extraction/measured-values.json sectionHeights).",
+    "Mounted since 0.3.0 on /experience-intelligence and /realestate-intelligence (ProductHero in src/pages/product/, rendered by ProductPage.jsx). Measured height at 1440: /experience-intelligence 900px, /realestate-intelligence 900px (extraction/measured-values.json sectionHeights).",
+    "Mounted since 0.3.0 on /experience-intelligence and /realestate-intelligence (ProductHero in src/pages/product/, rendered by ProductPage.jsx). Measured height at 1440: /experience-intelligence 900px, /realestate-intelligence 900px (extraction/measured-values.json sectionHeights).",
     "Per spec 2a the RI accent in the chat is #EA7500, different from the RI eyebrow badge (rgb(202,123,87) in the hero, rgb(233,116,0) on plans)."
   ],
   "measuredFrom": [
     "specs/product-pages.md:49",
     "specs/product-pages.md:88",
+    "src/pages/product/ProductHero.jsx:9",
     "src/pages/product/LiveConversation.jsx:118",
     "src/pages/product/Rays.jsx:106"
   ],
-  "retrievalEligible": false,
+  "retrievalEligible": true,
   "rules": [],
   "assetRoles": [
     "brand.placeholder-mark",
@@ -228,6 +233,5 @@
   "generatedAssetRoles": [
     "brand.placeholder-mark",
     "brand.user-supplied-mark"
-  ],
-  "retrievalReason": "Spec-only: the product routes render a placeholder page ('building...', src/pages/ExperienceIntelligence.jsx) and this section's source is not mounted by src/App.jsx, so it is not a proven, retrievable pattern."
+  ]
 }

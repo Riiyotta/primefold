@@ -79,7 +79,10 @@ PINNED_AVAILABILITY = {
 }
 REQUIRED_GENERATION_SAFE = {"brand.placeholder-mark", "brand.user-supplied-mark", "asset.user-supplied", "generated.illustration", "placeholder.screenshot",
                             "fictional.person-avatar", "placeholder.company-logo", "url.placeholder", "copy.original"}
-RETRIEVAL_INELIGIBLE = {"features.loop-cards", "features.solutions-tabs", "features.sources", "features.step-cards", "features.use-cases", "hero.product-live-chat"}
+# 0.3.0: empty. The six product sections were spec-only until the product routes were built in the clone; every section is now
+# mounted and no section is runtime/utility UI. The pin, its allowlist mirror and the R8 checks stay in force (an ineligible
+# contract or allowlist entry that is not pinned here fails).
+RETRIEVAL_INELIGIBLE = set()
 RUNTIME_UI_RE = re.compile(r"cookie|consent|modal|dialog|drawer|popup|pop-up|overlay|preloader|toast|lightbox", re.I)
 SAAS_POLICY = ("n0-saas-design-constraints-common", "0.1.0")
 TICKER_CUSTOMERS = ["webedia", "fischerAppelt", "SportScheck", "SPORTFIVE", "Maggiore Suites", "ECE", "NAS Real Investments", "Vickii", "t3n", "SirPlus"]
@@ -307,7 +310,8 @@ def check_manifest(secs):
     check(set(M["counts"]) == set(real), "manifest.counts has exactly the recomputed keys", f"count keys differ: {set(M['counts']) ^ set(real)}")
     check(M["allowlistVersion"] == allow["version"], f"allowlistVersion parity ({allow['version']})", f"manifest.allowlistVersion {M['allowlistVersion']} != allowlist.version {allow['version']}")
     check(M["pageSpecVersion"] == S["properties"]["pageSpecVersion"]["const"], "pageSpecVersion parity with schema const", "pageSpecVersion != schema const")
-    check(M["status"] == "design-review-pending" and M["productionApproved"] is False, "manifest status design-review-pending, productionApproved false", "manifest status/approval wrong")
+    check(M["status"] == "complete-pending-review" and M["productionApproved"] is False,
+          "manifest status complete-pending-review, productionApproved false (production approval is a human sign-off)", "manifest status/approval wrong")
     # common-policy / category binding (N0 Common Composition IR v0.5)
     import policy_hash
     dp = M.get("designPolicy", {})
@@ -690,9 +694,16 @@ def check_contracts(secs):
           f"retrieval pin drift: contracts {sorted(real)} allowlist {allow['retrievalIneligibleSections']}")
     rt = [k for k, sc in secs.items() if RUNTIME_UI_RE.search(k + " " + " ".join(sc["tags"])) and k not in RETRIEVAL_INELIGIBLE]
     check(not rt, "no runtime/utility-UI-looking section (cookie, modal, dialog, drawer, popup, preloader, toast) outside the retrieval pin", f"unpinned runtime UI: {rt}")
+    # 0.3.0: every documented section maps to a real, mounted implementation (no spec-only contracts left)
+    unimpl = [k for k, sc in secs.items() if sc["status"] != "mounted" or not sc["implementedBy"] or sc["source"]["file"].endswith(".md")
+              or sc["source"]["file"] not in sc["implementedBy"]]
+    check(not unimpl, f"every section contract is mounted, has implementedBy, and its source points at real code listed in implementedBy ({len(secs)})",
+          f"sections without a real implementation: {unimpl}")
     if not SOURCE:
         warn(f"no sibling source tree: {len(secs)} source ranges NOT re-read (standalone copy)")
         return
+    missing = [f"{k}: {f}" for k, sc in secs.items() for f in sc["implementedBy"] if src_lines(f) is None]
+    check(not missing, "every implementedBy file exists in the source tree", f"implementedBy files missing: {missing[:3]}")
     badsrc = []
     for k, sc in secs.items():
         src = sc["source"]
@@ -760,7 +771,8 @@ def check_schema_example():
         check(e.get("mode") == "generation" and not errs and not warns, f"{os.path.basename(p)}: mode generation, 0 errors, 0 warnings",
               f"{os.path.basename(p)}: mode {e.get('mode')} errors {errs[:2]} warnings {warns[:1]}")
     want = set(t["id"] for t in rj("templates/templates.json")["templates"]) - wg.PINNED_UNRENDERED_TEMPLATES
-    check(want <= fams, f"a generation example exists for every template family except the unrendered {sorted(wg.PINNED_UNRENDERED_TEMPLATES)} ({len(fams)} templates)",
+    skipped = f" except the unrendered {sorted(wg.PINNED_UNRENDERED_TEMPLATES)}" if wg.PINNED_UNRENDERED_TEMPLATES else ""
+    check(want <= fams, f"a generation example exists for every template family{skipped} ({len(fams)} templates)",
           f"templates without a generation example: {sorted(want - fams)}")
 
 

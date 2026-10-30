@@ -45,21 +45,21 @@ const RINGS = [
 // type: icon (absorb order k) | dot (teal at step k, 0 = teal from start, null = stays white)
 const ITEMS = [
   { ring: 0, a: 150, type: 'icon', src: 'YBfKsuVihJd5As1b5tx0UaIR8rg.svg', k: 1 },
-  { ring: 0, a: 30, type: 'dot', s: 16, k: 0 },
-  { ring: 0, a: 250, type: 'dot', s: 14, k: null },
+  { ring: 0, a: 30, type: 'dot', s: 11, k: 0 },
+  { ring: 0, a: 250, type: 'dot', s: 10, k: null },
   { ring: 1, a: 20, type: 'icon', src: 'HrV7906XM5NNguIDPaNODeUaGek.svg', k: 2 },
   { ring: 1, a: 300, type: 'icon', src: 'IqTCcF1NoPgN3HPveLsmOfTTe4.svg', k: 3 },
-  { ring: 1, a: 110, type: 'dot', s: 14, k: 1 },
-  { ring: 1, a: 210, type: 'dot', s: 16, k: null },
-  { ring: 2, a: 10, type: 'dot', s: 14, k: null },
-  { ring: 2, a: 100, type: 'dot', s: 18, k: 3 },
-  { ring: 2, a: 200, type: 'dot', s: 14, k: null },
-  { ring: 2, a: 320, type: 'dot', s: 20, k: 5 },
+  { ring: 1, a: 110, type: 'dot', s: 10, k: 1 },
+  { ring: 1, a: 210, type: 'dot', s: 11, k: null },
+  { ring: 2, a: 10, type: 'dot', s: 10, k: null },
+  { ring: 2, a: 100, type: 'dot', s: 13, k: 3 },
+  { ring: 2, a: 200, type: 'dot', s: 10, k: null },
+  { ring: 2, a: 320, type: 'dot', s: 14, k: 5 },
   { ring: 3, a: 60, type: 'icon', src: '9euztWnrazUfkGrAoTxTOQk9fls.svg', k: 4 },
   { ring: 3, a: 230, type: 'icon', src: 'DOaHKQwBKxFj1mHniDaFfbQJcNk.svg', k: 5 },
-  { ring: 3, a: 170, type: 'dot', s: 16, k: 2 },
-  { ring: 3, a: 290, type: 'dot', s: 18, k: 4 },
-  { ring: 0, a: 330, type: 'dot', s: 14, k: 0 },
+  { ring: 3, a: 170, type: 'dot', s: 11, k: 2 },
+  { ring: 3, a: 290, type: 'dot', s: 13, k: 4 },
+  { ring: 0, a: 330, type: 'dot', s: 10, k: 0 },
 ]
 // V1 →1.0s→ V2 →0.1s→ V3 →1.0s→ V4 →0.1s→ V5 →1.0s→ V6 →0.3s→ V7 →1.0s→ V8 →0.2s→ V9 →1.0s→ V10 →0.3s→ V11
 const XI2_DELAYS = [1.0, 0.1, 1.0, 0.1, 1.0, 0.3, 1.0, 0.2, 1.0, 0.3]
@@ -151,11 +151,11 @@ const BARS = [
   [51, 'rgb(228,172,145)'],
   [74, 'rgb(119,178,169)'],
 ]
-// donut segments [fraction, colour] — proportions/colours read from frame 18 (approximation)
+// donut segments [fraction, colour], clockwise from 3 o'clock — read from the live final state (re-measured 2026-10-30)
 const DONUT = [
-  [0.31, 'rgb(119,178,169)'],
-  [0.17, 'rgb(68,66,62)'],
-  [0.52, 'rgb(228,172,145)'],
+  [0.25, 'rgb(119,178,169)'],
+  [0.2, 'rgb(58,55,45)'],
+  [0.55, 'rgb(228,172,145)'],
 ]
 
 export function XiAct() {

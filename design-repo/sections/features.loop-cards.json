@@ -7,10 +7,10 @@
     "category": "FEATURES"
   },
   "source": {
-    "id": "src:ProductPage.div@95",
+    "id": "src:LoopCards.div@6",
     "tag": "div",
-    "file": "src/pages/product/ProductPage.jsx",
-    "lines": "95-116"
+    "file": "src/pages/product/LoopCards.jsx",
+    "lines": "6-25"
   },
   "purpose": "'The loop' four small cards explaining how the product learns a customer's vocabulary, definitions, judgment and workspace.",
   "tags": [
@@ -18,10 +18,11 @@
     "product",
     "learning-loop"
   ],
-  "status": "spec-only-source-in-progress",
+  "status": "mounted",
   "implementedBy": [
-    "src/pages/product/ProductPage.jsx",
-    "src/pages/product/content.js"
+    "src/pages/product/LoopCards.jsx",
+    "src/pages/product/content.js",
+    "src/pages/product/product.css"
   ],
   "evidence": {
     "level": "measured",
@@ -109,12 +110,16 @@
     "phone": "1 x 350"
   },
   "notes": [
-    "Source status at build time: src/pages/ExperienceIntelligence.jsx and RealEstateIntelligence.jsx are still the placeholder 'building…' pages, and App.jsx does not import ProductPage. src/pages/product/* is an in-progress, unmounted implementation (ProductPage.jsx imports ./SolutionsTabs and ./product.css, which do not exist on disk). The contract is grounded in the measured spec specs/product-pages.md, not in running source."
+    "Mounted since 0.3.0 on /experience-intelligence and /realestate-intelligence (LoopCards in src/pages/product/, rendered by ProductPage.jsx). Measured height at 1440: /experience-intelligence 670px, /realestate-intelligence 614px (extraction/measured-values.json sectionHeights).",
+    "Mounted since 0.3.0 on /experience-intelligence and /realestate-intelligence (LoopCards in src/pages/product/, rendered by ProductPage.jsx). Measured height at 1440: /experience-intelligence 670px, /realestate-intelligence 614px (extraction/measured-values.json sectionHeights).",
+    "Mounted since 0.3.0 on /experience-intelligence and /realestate-intelligence (LoopCards in src/pages/product/, rendered by ProductPage.jsx). Measured height at 1440: /experience-intelligence 670px, /realestate-intelligence 614px (extraction/measured-values.json sectionHeights).",
+    "Mounted since 0.3.0 on /experience-intelligence and /realestate-intelligence (LoopCards in src/pages/product/, rendered by ProductPage.jsx). Measured height at 1440: /experience-intelligence 670px, /realestate-intelligence 614px (extraction/measured-values.json sectionHeights)."
   ],
   "measuredFrom": [
-    "specs/product-pages.md:410"
+    "specs/product-pages.md:410",
+    "src/pages/product/LoopCards.jsx:6"
   ],
-  "retrievalEligible": false,
+  "retrievalEligible": true,
   "rules": [],
   "assetRoles": [
     "ui.icon-mask"
@@ -122,6 +127,5 @@
   "version": "1.0.0",
   "generatedAssetRoles": [
     "ui.icon-mask"
-  ],
-  "retrievalReason": "Spec-only: the product routes render a placeholder page ('building...', src/pages/ExperienceIntelligence.jsx) and this section's source is not mounted by src/App.jsx, so it is not a proven, retrievable pattern."
+  ]
 }

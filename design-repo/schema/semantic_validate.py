@@ -63,8 +63,9 @@ POLICY_SOURCES = {"must-reuse-exact": ["reuse-exact"], "may-reuse-or-generate": 
 # Which named rule rejects a non-generation-safe role in mode 'generation'.
 GENERATION_RULE_FOR_ROLE = {"brand.": "GENERATION_MODE_ASSET", "customer.": "GENERATION_MODE_CUSTOMER", "person.": "GENERATION_MODE_PERSON",
                             "embed.": "GENERATION_MODE_EMBED", "dest:": "GENERATION_MODE_URL"}
-# Sections that are not retrievable as proven patterns (spec-only product sections; the product routes render a placeholder).
-RETRIEVAL_INELIGIBLE = {"features.loop-cards", "features.solutions-tabs", "features.sources", "features.step-cards", "features.use-cases", "hero.product-live-chat"}
+# Sections that are not retrievable as proven patterns. Empty since 0.3.0: the six product sections that were spec-only are now
+# mounted in the clone, and no section is runtime/utility UI. Any contract marked ineligible without being pinned here fails.
+RETRIEVAL_INELIGIBLE = set()
 RUNTIME_UI_RE = re.compile(r"cookie|consent|modal|dialog|drawer|popup|pop-up|overlay|preloader|toast|lightbox", re.I)
 PLACEHOLDER_URL_RE = re.compile(r"^https://([a-z0-9-]+\.)*[a-z0-9-]+\.(example|invalid)(/[A-Za-z0-9/._~#-]*)?$")
 
@@ -187,7 +188,10 @@ def node_label(i, n):
 # ---------------------------------------------------------------- rules (each returns a list of messages)
 def _route_for(ctx, spec):
     """routes.json entry for the PageSpec's route. In mode 'generation' a NEW slug may instantiate a dynamic-instance pattern
-    (blog/:slug, case-studies/:slug): the new brand's posts are not Primefold's slugs."""
+    (blog/:slug, case-studies/:slug): the new brand's posts are not Primefold's slugs. A template with a
+    generationRoutePattern (template.product: '/:slug') may also take a NEW single-segment path in generation mode, because
+    the source's own product paths are named after Primefold products (and are rejected as brand leakage there). New slugs are
+    still scanned for brand terms by the leakage rules."""
     route = spec.get("route")
     r = ctx["routes"].get(route)
     if r is not None or spec.get("mode") != "generation" or not isinstance(route, str):
@@ -198,6 +202,10 @@ def _route_for(ctx, spec):
             rx = "^/" + re.escape(pat.split(":slug")[0]) + "[a-z0-9]+(-[a-z0-9]+)*$"
             if re.match(rx, route):
                 return cand
+    for tid, t in ctx["templates"].items():
+        pat = t.get("generationRoutePattern")
+        if pat == "/:slug" and re.match(r"^/[a-z0-9]+(-[a-z0-9]+)*$", route):
+            return {"path": route, "template": tid, "kind": "generation-instance", "variantOverrides": {}}
     return None
 
 

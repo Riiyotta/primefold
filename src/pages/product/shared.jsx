@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 
 // In-view boolean that re-triggers every time (IntersectionObserver threshold).
 export function useInView(ref, threshold = 0.5) {
@@ -16,18 +16,21 @@ export function useInView(ref, threshold = 0.5) {
 // Per-character appear: blur(3px), opacity .001, y 3 → none; spring bounce 0 / .4s, stagger .025s per char.
 export function BlurChars({ text, play }) {
   let n = 0
-  return text.split(' ').map((word, wi, arr) => (
-    <span key={wi} className="pp-word">
-      {word.split('').map((ch) => {
-        const i = n++
-        return (
-          <span key={i} className={`pp-char${play ? ' is-in' : ''}`} style={{ transitionDelay: play ? `${i * 0.025}s` : '0s' }}>
-            {ch}
-          </span>
-        )
-      })}
-      {wi < arr.length - 1 && (n++, ' ')}
-    </span>
+  const words = text.split(' ')
+  return words.map((word, wi) => (
+    <Fragment key={wi}>
+      <span className="pp-word">
+        {word.split('').map((ch) => {
+          const i = n++
+          return (
+            <span key={i} className={`pp-char${play ? ' is-in' : ''}`} style={{ transitionDelay: play ? `${i * 0.025}s` : '0s' }}>
+              {ch}
+            </span>
+          )
+        })}
+      </span>
+      {wi < words.length - 1 && (n++, ' ')}
+    </Fragment>
   ))
 }
 

@@ -29,7 +29,8 @@ HERO_ERROR_PX = 3000
 SHARE_WARN = 0.50
 SHARE_ERROR = 0.60
 MIN_INFLOW = 3
-PINNED_UNRENDERED_TEMPLATES = {"template.product"}
+# empty since 0.3.0: the product template is rendered and measured like every other template
+PINNED_UNRENDERED_TEMPLATES = set()
 AGENT_ATTESTATION = "agent attestation, not a human sign-off"
 
 

@@ -8,14 +8,15 @@
     "policyVersion": "0.1.0",
     "commonIrVersion": "0.5",
     "enforcementMode": "hard-and-soft",
-    "contentHash": "sha256:c7683ed9024de5fbcdf91133ed0de342d5d4aef629763d4dae14b446b4d0d90c"
+    "contentHash": "sha256:fb8050bf1a43b6d6b78811118b2e35d7c3311eba3836fdcd8efe1706db7283ff"
   },
-  "repositoryVersion": "0.2.0",
+  "repositoryVersion": "0.3.0",
   "pageSpecVersion": "1.1.0",
   "allowlistVersion": "1.1.0",
   "versionFieldNote": "allowlistVersion is MACHINE-CHECKED: extraction/verify_all.py fails if it differs from tokens/llm/component-allowlist.json 'version'. pageSpecVersion is MACHINE-CHECKED against the const in schema/pagespec.schema.json. repositoryVersion is a hand-maintained documentation marker; nothing checks it.",
-  "status": "design-review-pending",
+  "status": "complete-pending-review",
   "productionApproved": false,
+  "statusNote": "complete-pending-review: every served route is built and mapped, every documented section is implemented and measured, and the agent-run checks pass. productionApproved stays false: production approval is a human sign-off that an agent may not set.",
   "defaultTheme": "light",
   "schemaValidatedThemes": [
     "light"
@@ -44,7 +45,7 @@
     "tokenFiles": 15,
     "tokens": 181,
     "contentRoles": 2,
-    "generationExamples": 12
+    "generationExamples": 13
   },
   "entryPoints": [
     "README.md",
@@ -71,6 +72,8 @@
     "schema/examples/generated.home.pagespec.json",
     "extraction/wrapper_gate.py",
     "extraction/measure_sections.mjs",
+    "extraction/parity_capture.mjs",
+    "extraction/parity_compare.py",
     "extraction/build_schema.py",
     "extraction/build_source_patterns.py",
     "extraction/build_generation_examples.py",
@@ -86,6 +89,6 @@
     "architectureDecisionRecorded": false,
     "assetLicensingReviewed": false,
     "humanReviewOfPatterns": false,
-    "visualParityMeasured": false
+    "visualParityMeasured": true
   }
 }

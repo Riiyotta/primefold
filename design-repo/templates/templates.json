@@ -95,8 +95,7 @@
         "level": "measured",
         "specs": [
           "specs/product-pages.md"
-        ],
-        "implementation": "not-mounted"
+        ]
       },
       "nodes": [
         {
@@ -155,18 +154,21 @@
       "measuredFrom": [
         "specs/product-pages.md:15",
         "src/App.jsx:28",
-        "src/pages/ExperienceIntelligence.jsx:1"
+        "src/pages/ExperienceIntelligence.jsx:5",
+        "src/pages/product/ProductPage.jsx:1"
       ],
       "notes": [
-        "Measured in the spec, but at build time the source routes are still 'building…' placeholders and the ProductPage implementation is unmounted and incomplete.",
-        "XI uses CTA variant 'xi' (adds Start free trial at >=1200); RI uses 'main' (routes.json variantOverrides)."
+        "Built in the clone in 0.3.0: both routes render src/pages/product/ProductPage.jsx with a per-product content object (src/pages/product/content.js); the six content sections are mounted and measured (extraction/measured-values.json sectionHeights).",
+        "XI uses CTA variant 'xi' (adds Start free trial at >=1200); RI uses 'main' (routes.json variantOverrides).",
+        "generationRoutePattern '/:slug': in mode 'generation' a product page takes a NEW single-segment path, because the source's product paths are Primefold product names (rejected as brand leakage)."
       ],
       "routes": [
         "/experience-intelligence",
         "/realestate-intelligence"
       ],
       "routeCount": 2,
-      "retrievalEligible": false
+      "generationRoutePattern": "/:slug",
+      "retrievalEligible": true
     },
     {
       "id": "template.plans",

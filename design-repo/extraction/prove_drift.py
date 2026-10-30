@@ -84,7 +84,7 @@ def scenarios():
     add("route assigned to a different template than templates[].routes says", False,
         lambda r: edit_json(r, "templates/routes.json", lambda d: d["routes"][1].__setitem__("template", "template.home")), "route binding disagrees")
     add("retrievalEligible flipped on a route", False,
-        lambda r: edit_json(r, "templates/routes.json", lambda d: d["routes"][1].__setitem__("retrievalEligible", True)), "retrievalEligible inconsistencies")
+        lambda r: edit_json(r, "templates/routes.json", lambda d: d["routes"][1].__setitem__("retrievalEligible", not d["routes"][1]["retrievalEligible"])), "retrievalEligible inconsistencies")
     add("graph rule deleted but validator still implements it", False,
         lambda r: edit_json(r, "compatibility/graph.json", lambda d: d["rules"].pop(0)), "graph/validator divergence")
     add("named category exception removed (graph no longer matches real templates)", False,
@@ -123,9 +123,15 @@ def scenarios():
         lambda r: edit_text(r, "schema/semantic_validate.py", lambda s: s.replace('"brand.product-badge": "clone-only", ', "", 1)), "pin tables differ")
     add("substitutes removed from a clone-only role", False,
         lambda r: edit_json(r, "assets/asset-roles.json", lambda d: role(d, "brand.site-icons", generationSafeSubstitutes=[])), "substitute problems")
-    add("CONTRACT + ALLOWLIST flipped together (features.sources made retrieval-eligible)", False,
-        lambda r: (edit_json(r, "sections/features.sources.json", lambda d: (d.update({"retrievalEligible": True}), d.pop("retrievalReason", None))),
-                   edit_json(r, "tokens/llm/component-allowlist.json", lambda d: d["retrievalIneligibleSections"].remove("features.sources"))), "retrieval pin drift")
+    add("CONTRACT + ALLOWLIST flipped together (features.sources made retrieval-ineligible)", False,
+        lambda r: (edit_json(r, "sections/features.sources.json", lambda d: d.update({"retrievalEligible": False, "retrievalReason": "z" * 40})),
+                   edit_json(r, "tokens/llm/component-allowlist.json", lambda d: d["retrievalIneligibleSections"].append("features.sources"))), "retrieval pin drift")
+    add("product section reverted to spec-only (status + source back to the spec)", False,
+        lambda r: edit_json(r, "sections/features.solutions-tabs.json", lambda d: (d.update({"status": "spec-only-source-in-progress"}),
+                                                                                  d["source"].update({"file": "specs/product-pages.md", "lines": "367-409", "tag": "###"}))),
+        "sections without a real implementation")
+    add("implementedBy names a file that does not exist", False,
+        lambda r: edit_json(r, "sections/features.loop-cards.json", lambda d: d["implementedBy"].append("src/pages/product/Missing.jsx")), "implementedBy files missing")
     add("section generatedAssetRoles drifts from its fields", False,
         lambda r: edit_json(r, "sections/shell.footer.json", lambda d: d["generatedAssetRoles"].append("customer.logo")), "generatedAssetRoles drift")
     add("contract gains an unknown key (closed section-contract schema)", False,

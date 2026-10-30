@@ -197,7 +197,7 @@ export default function Sources({ variant, sources }) {
             <h2 className="t-h2 m-0">{sources.h2}</h2>
             <p className="t-lead m-0">{sources.p}</p>
           </div>
-          <div style={{ height: sources.spacer, flex: 'none' }} />
+          <div className="pp-src__spacer" style={{ '--sp': `${sources.spacer}px` }} />
           <div className="flex flex-col gap-6">
             {sources.items.map((it) => (
               <div key={it.title} className="flex flex-col gap-1.5">

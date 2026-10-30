@@ -1,0 +1,561 @@
+{
+  "pageSpecVersion": "1.1.0",
+  "mode": "generation",
+  "theme": "light",
+  "brand": {
+    "name": "Larkspur",
+    "domain": "larkspur.example"
+  },
+  "template": "template.product",
+  "route": "/close",
+  "meta": {
+    "title": "Larkspur - product (generation example)",
+    "description": "Fictional brand example built from this design-repo's contracts; original copy, placeholder assets and .example URLs only.",
+    "ogImage": {
+      "assetRole": "brand.placeholder-mark",
+      "assetSource": "placeholder",
+      "alt": "Larkspur placeholder mark",
+      "assetRef": "placeholder:larkspur-og"
+    }
+  },
+  "nodes": [
+    {
+      "section": "shell.navbar",
+      "variant": "overlay",
+      "content": {
+        "items": [
+          {
+            "label": "Approvals"
+          },
+          {
+            "label": "Audit trail"
+          },
+          {
+            "label": "Forecasts"
+          },
+          {
+            "label": "Exports"
+          },
+          {
+            "label": "Alerts"
+          }
+        ],
+        "signIn": {
+          "label": "Start a",
+          "to": "#how-it-works"
+        },
+        "bookCall": {
+          "label": "Read the guide",
+          "to": "dest:app-trial"
+        }
+      },
+      "motion": {
+        "pattern": "nav-state-swap",
+        "trigger": "scroll",
+        "reducedMotionFallback": "instant-swap"
+      }
+    },
+    {
+      "section": "hero.product-live-chat",
+      "variant": "default",
+      "content": {
+        "product": "own",
+        "eyebrowLabel": "Larkspur Close",
+        "title": "Clear books for growing finance teams",
+        "lead": "Larkspur pairs bank feeds with your general ledger and flags only the entries that need a human decision.",
+        "ctaPrimary": {
+          "label": "Read the guide",
+          "to": "dest:app-trial"
+        },
+        "ctaSecondary": {
+          "label": "Talk to sales",
+          "to": "dest:booking"
+        },
+        "badge": {
+          "assetRole": "brand.placeholder-mark",
+          "assetSource": "generate-new",
+          "alt": "Larkspur sample image 13",
+          "assetRef": "generated:larkspur-badge-13"
+        },
+        "prompts": [
+          {
+            "pill": "Who has approvals waiting?",
+            "ask": "Where did our operating cash dip this week?",
+            "answer": "Seven invoices lack a purchase order; four share one supplier. Ask that supplier for the missing references first.",
+            "tiles": [
+              {
+                "value": "4.2x",
+                "label": "Reconciliation"
+              },
+              {
+                "value": "9/10",
+                "label": "Audit trail"
+              },
+              {
+                "value": "4.2x",
+                "label": "Exports"
+              }
+            ],
+            "chips": [
+              "Ledger export",
+              "Bank feed",
+              "Invoices.csv"
+            ]
+          },
+          {
+            "pill": "Who has approvals waiting?",
+            "ask": "Where did our operating cash dip this week?",
+            "answer": "Seven invoices lack a purchase order; four share one supplier. Ask that supplier for the missing references first.",
+            "tiles": [
+              {
+                "value": "4.2x",
+                "label": "Reconciliation"
+              },
+              {
+                "value": "9/10",
+                "label": "Audit trail"
+              },
+              {
+                "value": "4.2x",
+                "label": "Exports"
+              }
+            ],
+            "chips": [
+              "Ledger export",
+              "Bank feed",
+              "Invoices.csv"
+            ]
+          },
+          {
+            "pill": "Who has approvals waiting?",
+            "ask": "Where did our operating cash dip this week?",
+            "answer": "Seven invoices lack a purchase order; four share one supplier. Ask that supplier for the missing references first.",
+            "tiles": [
+              {
+                "value": "4.2x",
+                "label": "Reconciliation"
+              },
+              {
+                "value": "9/10",
+                "label": "Audit trail"
+              },
+              {
+                "value": "4.2x",
+                "label": "Exports"
+              }
+            ],
+            "chips": [
+              "Ledger export",
+              "Bank feed",
+              "Invoices.csv"
+            ]
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "typing-loop",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-final-frame"
+      }
+    },
+    {
+      "section": "features.step-cards",
+      "variant": "default",
+      "content": {
+        "eyebrow": "Pricing",
+        "title": "Clear books for growing finance teams",
+        "steps": [
+          {
+            "stepLabel": "02 - Match",
+            "title": "Built to keep your numbers",
+            "body": "Bank lines, invoices and receipts land in one queue, already matched where the evidence agrees.",
+            "illustration": {
+              "assetRole": "placeholder.screenshot",
+              "assetSource": "generate-new",
+              "alt": "Larkspur sample image 55",
+              "assetRef": "generated:larkspur-illustration-55"
+            }
+          },
+          {
+            "stepLabel": "03 - Approve",
+            "title": "Clear books for growing finance",
+            "body": "Bank lines, invoices and receipts land in one queue, already matched where the evidence agrees.",
+            "illustration": {
+              "assetRole": "placeholder.screenshot",
+              "assetSource": "generate-new",
+              "alt": "Larkspur sample image 59",
+              "assetRef": "generated:larkspur-illustration-59"
+            }
+          },
+          {
+            "stepLabel": "01 - Connect",
+            "title": "Close the month without chasing",
+            "body": "Bank lines, invoices and receipts land in one queue, already matched where the evidence agrees.",
+            "illustration": {
+              "assetRole": "placeholder.screenshot",
+              "assetSource": "generate-new",
+              "alt": "Larkspur sample image 63",
+              "assetRef": "generated:larkspur-illustration-63"
+            }
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "loop-demo",
+        "trigger": "in-view",
+        "reducedMotionFallback": "static-final-frame"
+      }
+    },
+    {
+      "section": "features.use-cases",
+      "variant": "default",
+      "content": {
+        "usedByLabel": "Used by:",
+        "usedBy": [
+          "Treasury",
+          "Controllers",
+          "Payables teams"
+        ],
+        "items": [
+          "A sample list item written",
+          "A sample list item written",
+          "A sample list item written",
+          "A sample list item written",
+          "A sample list item written",
+          "A sample list item written"
+        ]
+      },
+      "motion": {
+        "pattern": "scroll-highlight",
+        "trigger": "scroll",
+        "reducedMotionFallback": "instant-swap"
+      }
+    },
+    {
+      "section": "features.sources",
+      "variant": "default",
+      "content": {
+        "eyebrow": "Pricing",
+        "title": "Clear books for growing finance teams",
+        "lead": "Larkspur pairs bank feeds with your general ledger and flags only the entries that need a human decision.",
+        "items": [
+          {
+            "icon": {
+              "assetRole": "ui.icon-mask",
+              "assetSource": "generate-new",
+              "alt": "Larkspur sample image 77",
+              "assetRef": "generated:larkspur-icon-77"
+            },
+            "title": "Ledgers that reconcile while",
+            "body": "Approvers see the source document beside every entry, so sign-off takes minutes rather than days."
+          },
+          {
+            "icon": {
+              "assetRole": "ui.icon-mask",
+              "assetSource": "generate-new",
+              "alt": "Larkspur sample image 80",
+              "assetRef": "generated:larkspur-icon-80"
+            },
+            "title": "Clear books for growing",
+            "body": "Bank lines, invoices and receipts land in one queue, already matched where the evidence agrees."
+          },
+          {
+            "icon": {
+              "assetRole": "ui.icon-mask",
+              "assetSource": "generate-new",
+              "alt": "Larkspur sample image 83",
+              "assetRef": "generated:larkspur-icon-83"
+            },
+            "title": "Ledgers that reconcile while",
+            "body": "Approvers see the source document beside every entry, so sign-off takes minutes rather than days."
+          }
+        ],
+        "visual": {
+          "assetRole": "placeholder.screenshot",
+          "assetSource": "generate-new",
+          "alt": "Larkspur sample image 86",
+          "assetRef": "generated:larkspur-visual-86"
+        }
+      },
+      "motion": {
+        "pattern": "lottie-loop",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-first-frame"
+      }
+    },
+    {
+      "section": "features.solutions-tabs",
+      "variant": "default",
+      "content": {
+        "eyebrow": "Stories",
+        "title": "Plans that grow with",
+        "tabs": [
+          {
+            "label": "Alerts",
+            "body": "Bank lines, invoices and receipts land in one queue, already matched where the evidence",
+            "quotes": [
+              "The audit trail does the explaining",
+              "Fewer late nights at month end",
+              "The audit trail does the explaining"
+            ],
+            "image": {
+              "assetRole": "photo.scene-card",
+              "assetSource": "generate-new",
+              "alt": "Larkspur sample image 94",
+              "assetRef": "generated:larkspur-image-94"
+            },
+            "cta": {
+              "label": "Read the guide",
+              "to": "dest:app-trial"
+            },
+            "whatYouGet": "A short queue of exceptions with the source document beside each entry and a suggested next step."
+          },
+          {
+            "label": "Approvals",
+            "body": "Bank lines, invoices and receipts land in one queue, already matched where the evidence",
+            "quotes": [
+              "The audit trail does the explaining",
+              "Fewer late nights at month end",
+              "The audit trail does the explaining"
+            ],
+            "image": {
+              "assetRole": "photo.scene-card",
+              "assetSource": "generate-new",
+              "alt": "Larkspur sample image 102",
+              "assetRef": "generated:larkspur-image-102"
+            },
+            "cta": {
+              "label": "Read the guide",
+              "to": "dest:app-trial"
+            },
+            "whatYouGet": "A short queue of exceptions with the source document beside each entry and a suggested next step."
+          },
+          {
+            "label": "Forecasts",
+            "body": "Bank lines, invoices and receipts land in one queue, already matched where the evidence",
+            "quotes": [
+              "The audit trail does the explaining",
+              "Fewer late nights at month end",
+              "The audit trail does the explaining"
+            ],
+            "image": {
+              "assetRole": "photo.scene-card",
+              "assetSource": "generate-new",
+              "alt": "Larkspur sample image 110",
+              "assetRef": "generated:larkspur-image-110"
+            },
+            "cta": {
+              "label": "Read the guide",
+              "to": "dest:app-trial"
+            },
+            "whatYouGet": "A short queue of exceptions with the source document beside each entry and a suggested next step."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "marquee",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-first-frame"
+      }
+    },
+    {
+      "section": "features.loop-cards",
+      "variant": "default",
+      "content": {
+        "eyebrow": "How it",
+        "title": "Ledgers that reconcile while you sleep",
+        "side": "Larkspur remembers how your team names accounts, cost centres and vendors, so each review starts closer to done than the one before it.",
+        "cards": [
+          {
+            "icon": {
+              "assetRole": "ui.icon-mask",
+              "assetSource": "generate-new",
+              "alt": "Larkspur sample image 116",
+              "assetRef": "generated:larkspur-icon-116"
+            },
+            "title": "Clear books for",
+            "body": "Bank lines, invoices and receipts land in one queue, already matched where the evidence agrees."
+          },
+          {
+            "icon": {
+              "assetRole": "ui.icon-mask",
+              "assetSource": "generate-new",
+              "alt": "Larkspur sample image 119",
+              "assetRef": "generated:larkspur-icon-119"
+            },
+            "title": "Ledgers that reconcile",
+            "body": "Approvers see the source document beside every entry, so sign-off takes minutes rather than days."
+          },
+          {
+            "icon": {
+              "assetRole": "ui.icon-mask",
+              "assetSource": "generate-new",
+              "alt": "Larkspur sample image 122",
+              "assetRef": "generated:larkspur-icon-122"
+            },
+            "title": "Clear books for",
+            "body": "Bank lines, invoices and receipts land in one queue, already matched where the evidence agrees."
+          },
+          {
+            "icon": {
+              "assetRole": "ui.icon-mask",
+              "assetSource": "generate-new",
+              "alt": "Larkspur sample image 125",
+              "assetRef": "generated:larkspur-icon-125"
+            },
+            "title": "Ledgers that reconcile",
+            "body": "Approvers see the source document beside every entry, so sign-off takes minutes rather than days."
+          }
+        ]
+      },
+      "motion": {
+        "pattern": "none",
+        "trigger": "load",
+        "reducedMotionFallback": "no-animation"
+      }
+    },
+    {
+      "section": "conversion.cta-band",
+      "variant": "main",
+      "content": {
+        "title": "Every invoice matched and every exception",
+        "body": "Approvers see the source document beside every entry, so sign-off takes minutes rather than",
+        "button": {
+          "label": "Read the guide",
+          "to": "https://help.larkspur.example/start"
+        },
+        "background": {
+          "assetRole": "fx.shader-fallback",
+          "assetSource": "generate-new",
+          "alt": "Larkspur sample image 131",
+          "assetRef": "generated:larkspur-background-131"
+        }
+      },
+      "motion": {
+        "pattern": "shader-drift",
+        "trigger": "continuous",
+        "reducedMotionFallback": "static-first-frame"
+      },
+      "styleTokens": {
+        "surface": "surface.inverse",
+        "text": "text.inverse",
+        "spacingTop": "spacing.24",
+        "headingFont": "fontFamily.headline",
+        "radius": "radius.lg"
+      }
+    },
+    {
+      "section": "shell.footer",
+      "variant": "default",
+      "content": {
+        "blurb": "Calm books for busy finance teams. Product notes once a month.",
+        "newsletter": {
+          "endpointRole": "endpoint.newsletter-form",
+          "endpoint": "project-owned-placeholder"
+        },
+        "columns": [
+          {
+            "head": "Product",
+            "links": [
+              {
+                "label": "Audit trail",
+                "to": "/contact"
+              },
+              {
+                "label": "Forecasts",
+                "to": "/contact"
+              }
+            ]
+          },
+          {
+            "head": "Product",
+            "links": [
+              {
+                "label": "Alerts",
+                "to": "/contact"
+              },
+              {
+                "label": "Reconciliation",
+                "to": "/contact"
+              }
+            ]
+          },
+          {
+            "head": "Product",
+            "links": [
+              {
+                "label": "Audit trail",
+                "to": "/contact"
+              },
+              {
+                "label": "Forecasts",
+                "to": "/contact"
+              }
+            ]
+          },
+          {
+            "head": "Product",
+            "links": [
+              {
+                "label": "Alerts",
+                "to": "/contact"
+              },
+              {
+                "label": "Reconciliation",
+                "to": "/contact"
+              }
+            ]
+          }
+        ],
+        "legalLinks": [
+          {
+            "label": "Approvals",
+            "to": "/contact"
+          },
+          {
+            "label": "Audit trail",
+            "to": "/contact"
+          },
+          {
+            "label": "Forecasts",
+            "to": "/contact"
+          }
+        ],
+        "cookieSettingsLabel": "Larkspur keeps",
+        "copyright": "Larkspur Example Ltd, all rights reserved",
+        "socials": [
+          {
+            "label": "Reconciliation",
+            "to": "/contact"
+          },
+          {
+            "label": "Approvals",
+            "to": "/contact"
+          },
+          {
+            "label": "Audit",
+            "to": "/contact"
+          }
+        ],
+        "hostedNote": "Hosted in a sample region for demos",
+        "logo": {
+          "assetRole": "brand.placeholder-mark",
+          "assetSource": "generate-new",
+          "alt": "Larkspur sample image 154",
+          "assetRef": "generated:larkspur-logo-154"
+        },
+        "wordmark": {
+          "assetRole": "brand.placeholder-mark",
+          "assetSource": "generate-new",
+          "alt": "Larkspur sample image 155",
+          "assetRef": "generated:larkspur-wordmark-155"
+        }
+      },
+      "motion": {
+        "pattern": "scroll-linked-offset",
+        "trigger": "scroll",
+        "reducedMotionFallback": "no-animation"
+      }
+    }
+  ]
+}

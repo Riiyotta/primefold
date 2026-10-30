@@ -600,8 +600,8 @@ def _(): s = gen_example("blog-post"); node(s, "content.article-body")["content"
 def _(): s = example(); s["mode"] = "generation"; s["brand"] = {"name": "Larkspur"}; return s
 
 
-@mut("GEN: spec-only (retrieval-ineligible) section used in generation mode", "RETRIEVAL_ELIGIBILITY")
-def _(): s = synth_spec("/experience-intelligence"); s["mode"] = "generation"; s["brand"] = {"name": "Larkspur"}; return s
+@mut("GEN: product page (template.product) in generation mode keeps the live product copy (XI h1)", "GENERATION_MODE_COPY")
+def _(): s = gen_example("product"); node(s, "hero.product-live-chat")["content"]["title"] = "Built to find the value in every voice."; return s
 
 
 # ---- style tokens
@@ -664,9 +664,13 @@ def registry_cases():
     c = ctx_from_copy(lambda r: edit_json(r, "assets/asset-roles.json", lambda d: [x.update({"clonePolicy": "may-generate-new", "cloneAssetSources": ["generate-new", "placeholder"]}) for x in d["roles"] if x["role"] == "customer.logo"]))
     errs, _ = run(example(), c)
     res.append(("pin: registry moves customer.logo to a different-but-valid clone policy -> every validation fails", any("pin violation" in e for e in errs)))
-    c = ctx_from_copy(lambda r: edit_json(r, "sections/features.sources.json", lambda d: d.update({"retrievalEligible": True}) or d.pop("retrievalReason", None)))
+    c = ctx_from_copy(lambda r: edit_json(r, "sections/features.sources.json", lambda d: d.update({"retrievalEligible": False, "retrievalReason": "y" * 40})))
     errs, _ = run(example(), c)
-    res.append(("retrieval: spec-only contract flipped to eligible -> RETRIEVAL_ELIGIBILITY", any(e.startswith("RETRIEVAL_ELIGIBILITY") for e in errs)))
+    res.append(("retrieval: product section contract flipped to ineligible -> RETRIEVAL_ELIGIBILITY", any(e.startswith("RETRIEVAL_ELIGIBILITY") for e in errs)))
+    c = ctx_from_copy(lambda r: (edit_json(r, "sections/features.sources.json", lambda d: d.update({"retrievalEligible": False, "retrievalReason": "y" * 40})),
+                                 edit_json(r, "tokens/llm/component-allowlist.json", lambda d: d["retrievalIneligibleSections"].append("features.sources"))))
+    errs, _ = run(gen_example("product"), c)
+    res.append(("retrieval: contract + allowlist made ineligible together -> code pin still rejects (RETRIEVAL_ELIGIBILITY)", any(e.startswith("RETRIEVAL_ELIGIBILITY") for e in errs)))
     c = ctx_from_copy(lambda r: edit_json(r, "sections/proof.trust.json", lambda d: d.update({"retrievalEligible": False, "retrievalReason": "x" * 40})))
     errs, _ = run(example(), c)
     res.append(("retrieval: content section marked ineligible -> RETRIEVAL_ELIGIBILITY", any(e.startswith("RETRIEVAL_ELIGIBILITY") for e in errs)))

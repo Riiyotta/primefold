@@ -10,7 +10,7 @@
     "id": "src:StepCards.div@59",
     "tag": "div",
     "file": "src/pages/product/StepCards.jsx",
-    "lines": "59-69"
+    "lines": "59-67"
   },
   "purpose": "'Ask. Understand. Act.' three illustrated step cards; XI uses light animated illustrations, RI uses dark A1-style demo panels.",
   "tags": [
@@ -19,11 +19,13 @@
     "animation",
     "product"
   ],
-  "status": "spec-only-source-in-progress",
+  "status": "mounted",
   "implementedBy": [
     "src/pages/product/StepCards.jsx",
     "src/pages/product/XiIllustrations.jsx",
-    "src/pages/product/RiIllustrations.jsx"
+    "src/pages/product/RiIllustrations.jsx",
+    "src/pages/product/shared.jsx",
+    "src/pages/product/product.css"
   ],
   "evidence": {
     "level": "measured",
@@ -135,13 +137,17 @@
     "phone": "1 column 350; cards 1-2 are 518 tall"
   },
   "notes": [
-    "Source status at build time: src/pages/ExperienceIntelligence.jsx and RealEstateIntelligence.jsx are still the placeholder 'building…' pages, and App.jsx does not import ProductPage. src/pages/product/* is an in-progress, unmounted implementation (ProductPage.jsx imports ./SolutionsTabs and ./product.css, which do not exist on disk). The contract is grounded in the measured spec specs/product-pages.md, not in running source."
+    "Mounted since 0.3.0 on /experience-intelligence and /realestate-intelligence (StepCards in src/pages/product/, rendered by ProductPage.jsx). Measured height at 1440: /experience-intelligence 854px, /realestate-intelligence 854px (extraction/measured-values.json sectionHeights).",
+    "Mounted since 0.3.0 on /experience-intelligence and /realestate-intelligence (StepCards in src/pages/product/, rendered by ProductPage.jsx). Measured height at 1440: /experience-intelligence 854px, /realestate-intelligence 854px (extraction/measured-values.json sectionHeights).",
+    "Mounted since 0.3.0 on /experience-intelligence and /realestate-intelligence (StepCards in src/pages/product/, rendered by ProductPage.jsx). Measured height at 1440: /experience-intelligence 854px, /realestate-intelligence 854px (extraction/measured-values.json sectionHeights).",
+    "Mounted since 0.3.0 on /experience-intelligence and /realestate-intelligence (StepCards in src/pages/product/, rendered by ProductPage.jsx). Measured height at 1440: /experience-intelligence 854px, /realestate-intelligence 854px (extraction/measured-values.json sectionHeights)."
   ],
   "measuredFrom": [
     "specs/product-pages.md:192",
+    "src/pages/product/StepCards.jsx:59",
     "src/pages/product/XiIllustrations.jsx:75"
   ],
-  "retrievalEligible": false,
+  "retrievalEligible": true,
   "rules": [],
   "assetRoles": [
     "asset.user-supplied",
@@ -155,6 +161,5 @@
     "placeholder.screenshot",
     "product.illustration-still",
     "ui.illustration-svg"
-  ],
-  "retrievalReason": "Spec-only: the product routes render a placeholder page ('building...', src/pages/ExperienceIntelligence.jsx) and this section's source is not mounted by src/App.jsx, so it is not a proven, retrievable pattern."
+  ]
 }

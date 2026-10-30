@@ -7,10 +7,10 @@
     "category": "FEATURES"
   },
   "source": {
-    "id": "src:product-pages.###@367",
-    "tag": "###",
-    "file": "specs/product-pages.md",
-    "lines": "367-409"
+    "id": "src:SolutionsTabs.div@63",
+    "tag": "div",
+    "file": "src/pages/product/SolutionsTabs.jsx",
+    "lines": "63-119"
   },
   "purpose": "'Built for every team' tabbed panel (persona tabs) with an image card and a dark card showing marquee quote pills plus 'What you get'. Not the home carousel.",
   "tags": [
@@ -19,12 +19,16 @@
     "marquee",
     "product"
   ],
-  "status": "spec-only-source-in-progress",
-  "implementedBy": [],
+  "status": "mounted",
+  "implementedBy": [
+    "src/pages/product/SolutionsTabs.jsx",
+    "src/pages/product/product.css"
+  ],
   "evidence": {
     "level": "measured",
     "unmeasured": [
-      "tab-pill motion values beyond the spring config (spec 7.4)"
+      "tab-pill motion values beyond the spring config (spec 7.4); the clone approximates the spring with an overshooting cubic-bezier",
+      "marquee start phase (time-dependent on the live site)"
     ]
   },
   "allowedTemplates": [
@@ -129,8 +133,8 @@
         ]
       }
     ],
-    "reducedMotionHandledInSource": "unknown",
-    "reducedMotionSource": "source file src/pages/product/SolutionsTabs.jsx does not exist on disk at build time"
+    "reducedMotionHandledInSource": "partial",
+    "reducedMotionSource": "src/pages/product/product.css:277"
   },
   "responsive": {
     "desktop": "panel 400 + 864 both 440 tall",
@@ -138,13 +142,17 @@
     "phone": "stacked 350 + 350; tab bar overflows and is clipped (no scroll) on the live site"
   },
   "notes": [
-    "Source status at build time: src/pages/ExperienceIntelligence.jsx and RealEstateIntelligence.jsx are still the placeholder 'building…' pages, and App.jsx does not import ProductPage. src/pages/product/* is an in-progress, unmounted implementation (ProductPage.jsx imports ./SolutionsTabs and ./product.css, which do not exist on disk). The contract is grounded in the measured spec specs/product-pages.md, not in running source.",
+    "Mounted since 0.3.0 on /experience-intelligence and /realestate-intelligence (SolutionsTabs in src/pages/product/, rendered by ProductPage.jsx). Measured height at 1440: /experience-intelligence 772px, /realestate-intelligence 772px (extraction/measured-values.json sectionHeights).",
+    "Mounted since 0.3.0 on /experience-intelligence and /realestate-intelligence (SolutionsTabs in src/pages/product/, rendered by ProductPage.jsx). Measured height at 1440: /experience-intelligence 772px, /realestate-intelligence 772px (extraction/measured-values.json sectionHeights).",
+    "Mounted since 0.3.0 on /experience-intelligence and /realestate-intelligence (SolutionsTabs in src/pages/product/, rendered by ProductPage.jsx). Measured height at 1440: /experience-intelligence 772px, /realestate-intelligence 772px (extraction/measured-values.json sectionHeights).",
+    "Mounted since 0.3.0 on /experience-intelligence and /realestate-intelligence (SolutionsTabs in src/pages/product/, rendered by ProductPage.jsx). Measured height at 1440: /experience-intelligence 772px, /realestate-intelligence 772px (extraction/measured-values.json sectionHeights).",
     "Live-site quirk: at 390 the tab bar is clipped, not scrollable (spec 2d)."
   ],
   "measuredFrom": [
-    "specs/product-pages.md:367"
+    "specs/product-pages.md:367",
+    "src/pages/product/SolutionsTabs.jsx:63"
   ],
-  "retrievalEligible": false,
+  "retrievalEligible": true,
   "rules": [],
   "assetRoles": [
     "asset.user-supplied",
@@ -154,6 +162,5 @@
   "generatedAssetRoles": [
     "asset.user-supplied",
     "photo.scene-card"
-  ],
-  "retrievalReason": "Spec-only: the product routes render a placeholder page ('building...', src/pages/ExperienceIntelligence.jsx) and this section's source is not mounted by src/App.jsx, so it is not a proven, retrievable pattern."
+  ]
 }

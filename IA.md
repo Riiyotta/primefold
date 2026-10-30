@@ -1,7 +1,7 @@
 # Primefold (primefold.ai) — information architecture
 
 Source: https://primefold.ai/ (sitemap.xml + clone at src/)
-Status: **draft — all 13 templates mapped to section contracts from design-repo/ (legal, blog-post and case-study bodies decomposed into semantic units in design-repo 0.2.0) (home measured; product pages spec-only, source in progress)** · production approved: **false**
+Status: **complete-pending-review — all 13 templates mapped to section contracts from design-repo/ and every section implemented in the clone (product pages built in design-repo 0.3.0; legal, blog-post and case-study bodies decomposed in 0.2.0); production approval is a human sign-off** · production approved: **false**
 29 routes · 13 templates · 39 unique sections
 
 > Generated from `ia.json` by `build.mjs`. Edit the JSON, not this file.
@@ -51,12 +51,12 @@ component library or stays local to its page.
 | `content.case-study-about` | CONTENT | 1 | 3 | `src/pages/CaseStudy.jsx + src/pages/cms/shared.jsx` | 3 routes. |
 | `hero.index-intro` | HERO | 2 | 2 | `src/pages/cms/shared.jsx + src/pages/Blog.jsx + src/pages/CaseStudies.jsx` | 2 routes. |
 | `content.card-grid` | CONTENT | 2 | 2 | `src/pages/Blog.jsx + src/pages/CaseStudies.jsx + src/pages/cms/shared.jsx + src/pages/cms/cms.css` | 2 routes. |
-| `hero.product-live-chat` | HERO | 1 | 2 | _not yet built_ | 2 routes. |
-| `features.step-cards` | FEATURES | 1 | 2 | _not yet built_ | 2 routes. |
-| `features.use-cases` | FEATURES | 1 | 2 | _not yet built_ | 2 routes. |
-| `features.sources` | FEATURES | 1 | 2 | _not yet built_ | 2 routes. |
-| `features.solutions-tabs` | FEATURES | 1 | 2 | _not yet built_ | 2 routes. |
-| `features.loop-cards` | FEATURES | 1 | 2 | _not yet built_ | 2 routes. |
+| `hero.product-live-chat` | HERO | 1 | 2 | `src/pages/product/ProductHero.jsx` | 2 routes. |
+| `features.step-cards` | FEATURES | 1 | 2 | `src/pages/product/StepCards.jsx` | 2 routes. |
+| `features.use-cases` | FEATURES | 1 | 2 | `src/pages/product/UseCases.jsx` | 2 routes. |
+| `features.sources` | FEATURES | 1 | 2 | `src/pages/product/Sources.jsx` | 2 routes. |
+| `features.solutions-tabs` | FEATURES | 1 | 2 | `src/pages/product/SolutionsTabs.jsx` | 2 routes. |
+| `features.loop-cards` | FEATURES | 1 | 2 | `src/pages/product/LoopCards.jsx` | 2 routes. |
 | `hero.home-carousel` | HERO | 1 | 1 | `src/components/Hero.jsx` | 1 route. |
 | `proof.logo-ticker` | PROOF | 1 | 1 | `src/components/HowItWorks.jsx > LogoTicker` | 1 route. |
 | `features.how-it-works` | FEATURES | 1 | 1 | `src/components/HowItWorks.jsx + how/A1Loop.jsx` | 1 route. |
@@ -82,8 +82,6 @@ component library or stays local to its page.
 **33 single-use sections** appear in exactly one template. Building these
 as "reusable" components up front would be speculative — keep them page-local
 until a second caller actually appears.
-
-**6 sections have no `implementedBy` yet** — not necessarily missing, just not linked to a component in this pass: `hero.product-live-chat`, `features.step-cards`, `features.use-cases`, `features.sources`, `features.solutions-tabs`, `features.loop-cards`.
 
 ## Templates
 
@@ -281,7 +279,7 @@ _Page-opening, above-the-fold block._
 
 **`hero.product-live-chat`** — Dark product hero: eyebrow badge, h1, lead, two CTAs and a typing 'Live Conversation' chat demo over a WebGL rays background; one hero template serves both intelligences via the product enum.
 
-· 2 routes. · appears on 2 routes
+· 2 routes. · appears on 2 routes · implemented by `src/pages/product/ProductHero.jsx`
 
 **`hero.pricing`** — Plans hero: eyebrow, h1, lead, two CTAs, product and billing toggles and the three pricing cards (XI state) or one 'Explore Primefold RI' card (RI state).
 
@@ -321,23 +319,23 @@ _Product explanation and capability modules._
 
 **`features.step-cards`** — 'Ask. Understand. Act.' three illustrated step cards; XI uses light animated illustrations, RI uses dark A1-style demo panels.
 
-· 2 routes. · appears on 2 routes
+· 2 routes. · appears on 2 routes · implemented by `src/pages/product/StepCards.jsx`
 
 **`features.use-cases`** — Sticky 'Used by' label beside a scroll-highlighted list of use cases (only one item at opacity 1 at a time).
 
-· 2 routes. · appears on 2 routes
+· 2 routes. · appears on 2 routes · implemented by `src/pages/product/UseCases.jsx`
 
 **`features.sources`** — 'Sources' block: left list of three trust points (connects in minutes, traceable, hosted in Germany) beside a Lottie (XI) or dark 'A3 Sources' loop (RI).
 
-· 2 routes. · appears on 2 routes
+· 2 routes. · appears on 2 routes · implemented by `src/pages/product/Sources.jsx`
 
 **`features.solutions-tabs`** — 'Built for every team' tabbed panel (persona tabs) with an image card and a dark card showing marquee quote pills plus 'What you get'. Not the home carousel.
 
-· 2 routes. · appears on 2 routes
+· 2 routes. · appears on 2 routes · implemented by `src/pages/product/SolutionsTabs.jsx`
 
 **`features.loop-cards`** — 'The loop' four small cards explaining how the product learns a customer's vocabulary, definitions, judgment and workspace.
 
-· 2 routes. · appears on 2 routes
+· 2 routes. · appears on 2 routes · implemented by `src/pages/product/LoopCards.jsx`
 
 **`features.comparison-table`** — Plan comparison table with sticky plan header and sticky category rows; shown only in the XI state of /plans.
 

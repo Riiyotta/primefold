@@ -340,7 +340,7 @@
       "id": "RETRIEVAL_ELIGIBILITY",
       "kind": "structure",
       "severity": "error",
-      "description": "Section contracts' retrievalEligible must equal the pinned RETRIEVAL_INELIGIBLE set (in code); a mode 'generation' PageSpec may not use a retrieval-ineligible (spec-only, unmounted) section.",
+      "description": "Section contracts' retrievalEligible must equal the pinned RETRIEVAL_INELIGIBLE set (in code); a mode 'generation' PageSpec may not use a retrieval-ineligible section. The pinned set is empty since 0.3.0 (all 39 sections are mounted; none is runtime/utility UI).",
       "exceptions": []
     },
     {

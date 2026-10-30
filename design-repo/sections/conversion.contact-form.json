@@ -21,6 +21,7 @@
   ],
   "status": "mounted",
   "implementedBy": [
+    "src/pages/Contact.jsx",
     "src/pages/contact/ContactIntro.jsx",
     "src/pages/contact/ContactForm.jsx",
     "src/pages/contact/PhoneField.jsx",

@@ -238,10 +238,12 @@ export const RI = {
     chatData: RI_CHAT,
   },
   steps: {
-    h2end: 'in a conversation',
+    // live (re-measured 2026-10-30): the RI heading now ends with a period, like XI
+    h2end: 'in a conversation.',
     cards: [
       { label: '01 - Ask', h3: 'Ask in plain language', p: 'RI finds the relevant leases, amendments and rent rolls for you.' },
-      { label: '02 - Understand', h3: 'Reads every document', p: 'Every lease, rent roll and facility agreement read in full context.' },
+      // live (re-measured 2026-10-30): h3 reads "Read every document" and the p has a hard break after "agreement"
+      { label: '02 - Understand', h3: 'Read every document', p: ['Every lease, rent roll and facility agreement', 'read in full context.'] },
       { label: '03 - Act', h3: 'Know what to do next', p: 'The recommendation, with every figure and clause traceable to its source. Clear next steps.' },
     ],
   },

@@ -7,10 +7,10 @@
     "category": "FEATURES"
   },
   "source": {
-    "id": "src:UseCases.div@39",
+    "id": "src:UseCases.div@41",
     "tag": "div",
     "file": "src/pages/product/UseCases.jsx",
-    "lines": "39-64"
+    "lines": "41-64"
   },
   "purpose": "Sticky 'Used by' label beside a scroll-highlighted list of use cases (only one item at opacity 1 at a time).",
   "tags": [
@@ -19,9 +19,10 @@
     "list",
     "product"
   ],
-  "status": "spec-only-source-in-progress",
+  "status": "mounted",
   "implementedBy": [
-    "src/pages/product/UseCases.jsx"
+    "src/pages/product/UseCases.jsx",
+    "src/pages/product/product.css"
   ],
   "evidence": {
     "level": "measured",
@@ -103,15 +104,18 @@
     "phone": "column gap 40, top 80, height 648"
   },
   "notes": [
-    "Source status at build time: src/pages/ExperienceIntelligence.jsx and RealEstateIntelligence.jsx are still the placeholder 'building…' pages, and App.jsx does not import ProductPage. src/pages/product/* is an in-progress, unmounted implementation (ProductPage.jsx imports ./SolutionsTabs and ./product.css, which do not exist on disk). The contract is grounded in the measured spec specs/product-pages.md, not in running source."
+    "Mounted since 0.3.0 on /experience-intelligence and /realestate-intelligence (UseCases in src/pages/product/, rendered by ProductPage.jsx). Measured height at 1440: /experience-intelligence 1500px, /realestate-intelligence 1500px (extraction/measured-values.json sectionHeights).",
+    "Mounted since 0.3.0 on /experience-intelligence and /realestate-intelligence (UseCases in src/pages/product/, rendered by ProductPage.jsx). Measured height at 1440: /experience-intelligence 1500px, /realestate-intelligence 1500px (extraction/measured-values.json sectionHeights).",
+    "Mounted since 0.3.0 on /experience-intelligence and /realestate-intelligence (UseCases in src/pages/product/, rendered by ProductPage.jsx). Measured height at 1440: /experience-intelligence 1500px, /realestate-intelligence 1500px (extraction/measured-values.json sectionHeights).",
+    "Mounted since 0.3.0 on /experience-intelligence and /realestate-intelligence (UseCases in src/pages/product/, rendered by ProductPage.jsx). Measured height at 1440: /experience-intelligence 1500px, /realestate-intelligence 1500px (extraction/measured-values.json sectionHeights)."
   ],
   "measuredFrom": [
-    "specs/product-pages.md:309"
+    "specs/product-pages.md:309",
+    "src/pages/product/UseCases.jsx:41"
   ],
-  "retrievalEligible": false,
+  "retrievalEligible": true,
   "rules": [],
   "assetRoles": [],
   "version": "1.0.0",
-  "generatedAssetRoles": [],
-  "retrievalReason": "Spec-only: the product routes render a placeholder page ('building...', src/pages/ExperienceIntelligence.jsx) and this section's source is not mounted by src/App.jsx, so it is not a proven, retrievable pattern."
+  "generatedAssetRoles": []
 }

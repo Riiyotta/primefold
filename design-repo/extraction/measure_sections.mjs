@@ -99,6 +99,18 @@ function measurePage(templateId) {
     if (sp.preambleEnd > R(body).top) sp.parts.unshift(span(R(body).top, sp.preambleEnd));
     sp.parts.forEach((p, i) => push('content.case-study-body', p, { part: i + 1, splitLevel: sp.level }));
     push('content.case-study-about', span(R(about).top, s.top + s.h));
+  } else if (T === 'template.product') {
+    // hero <section>, then the content sheet's single #how-it-works <section> holding the five feature sections as
+    // direct children. Its scroll-linked translate(80px,80px) is cleared while measuring so tops are un-offset.
+    const [hero, how] = units;
+    const prev = how.style.transform;
+    how.style.transform = 'none';
+    push('hero.product-live-chat', box(hero));
+    const kids = [...how.children].filter((c) => c.getBoundingClientRect().height >= 1);
+    const order = window.__NODES.filter((n) => n.startsWith('features.'));
+    if (kids.length !== order.length) return { error: `feature unit count ${kids.length} != template nodes ${order.length}` };
+    order.forEach((n, i) => push(n, box(kids[i])));
+    how.style.transform = prev;
   } else {
     const order = window.__NODES.filter((n) => !n.startsWith('shell.') && n !== 'conversion.cta-band');
     const inflow = units.slice(0, -1);

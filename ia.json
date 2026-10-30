@@ -3,7 +3,7 @@
   "meta": {
     "title": "Primefold (primefold.ai) — information architecture",
     "source": "https://primefold.ai/ (sitemap.xml + clone at src/)",
-    "status": "draft — all 13 templates mapped to section contracts from design-repo/ (legal, blog-post and case-study bodies decomposed into semantic units in design-repo 0.2.0) (home measured; product pages spec-only, source in progress)",
+    "status": "complete-pending-review — all 13 templates mapped to section contracts from design-repo/ and every section implemented in the clone (product pages built in design-repo 0.3.0; legal, blog-post and case-study bodies decomposed in 0.2.0); production approval is a human sign-off",
     "productionApproved": false,
     "totalRoutes": 29,
     "totalTemplates": 13
@@ -86,32 +86,38 @@
     "hero.product-live-chat": {
       "category": "HERO",
       "description": "Dark product hero: eyebrow badge, h1, lead, two CTAs and a typing 'Live Conversation' chat demo over a WebGL rays background; one hero template serves both intelligences via the product enum.",
-      "scope": "2 routes."
+      "scope": "2 routes.",
+      "implementedBy": "src/pages/product/ProductHero.jsx"
     },
     "features.step-cards": {
       "category": "FEATURES",
       "description": "'Ask. Understand. Act.' three illustrated step cards; XI uses light animated illustrations, RI uses dark A1-style demo panels.",
-      "scope": "2 routes."
+      "scope": "2 routes.",
+      "implementedBy": "src/pages/product/StepCards.jsx"
     },
     "features.use-cases": {
       "category": "FEATURES",
       "description": "Sticky 'Used by' label beside a scroll-highlighted list of use cases (only one item at opacity 1 at a time).",
-      "scope": "2 routes."
+      "scope": "2 routes.",
+      "implementedBy": "src/pages/product/UseCases.jsx"
     },
     "features.sources": {
       "category": "FEATURES",
       "description": "'Sources' block: left list of three trust points (connects in minutes, traceable, hosted in Germany) beside a Lottie (XI) or dark 'A3 Sources' loop (RI).",
-      "scope": "2 routes."
+      "scope": "2 routes.",
+      "implementedBy": "src/pages/product/Sources.jsx"
     },
     "features.solutions-tabs": {
       "category": "FEATURES",
       "description": "'Built for every team' tabbed panel (persona tabs) with an image card and a dark card showing marquee quote pills plus 'What you get'. Not the home carousel.",
-      "scope": "2 routes."
+      "scope": "2 routes.",
+      "implementedBy": "src/pages/product/SolutionsTabs.jsx"
     },
     "features.loop-cards": {
       "category": "FEATURES",
       "description": "'The loop' four small cards explaining how the product learns a customer's vocabulary, definitions, judgment and workspace.",
-      "scope": "2 routes."
+      "scope": "2 routes.",
+      "implementedBy": "src/pages/product/LoopCards.jsx"
     },
     "hero.pricing": {
       "category": "HERO",

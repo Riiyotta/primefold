@@ -161,14 +161,7 @@
     "url.placeholder",
     "copy.original"
   ],
-  "retrievalIneligibleSections": [
-    "features.loop-cards",
-    "features.solutions-tabs",
-    "features.sources",
-    "features.step-cards",
-    "features.use-cases",
-    "hero.product-live-chat"
-  ],
+  "retrievalIneligibleSections": [],
   "pageSpecModes": [
     "clone",
     "generation"
